@@ -74,6 +74,10 @@ function Nft(developerId) {
       />
       <h1>{nft.name}</h1>
       <h2>Owner: {nft.owner}</h2>
+
+      <h5 className="mt-10 text-m">Made by the developer DAO community: {' '}
+      <a className="underline" href="https://github.com/thomasmetta/developer-dao" target="_blank" rel="noreferrer">
+       Github</a></h5>
     </>
   );
 }
