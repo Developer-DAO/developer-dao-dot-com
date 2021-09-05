@@ -1,4 +1,7 @@
-UI for developerDAO
+UI for developerDAO https://developerdao.com/
+
+When merging to the `main`, a production deployment will be made
+
 
 Twitter: https://twitter.com/developer_dao
 
