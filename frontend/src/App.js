@@ -70,7 +70,7 @@ function Nft(developerId) {
       <img
         className="border-4 lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
         alt="hero"
-        src={nft.image}
+        src={processBase64Img(nft.image)}
       />
       <h1>{nft.name}</h1>
       <h2>Owner: {nft.owner}</h2>
@@ -80,6 +80,15 @@ function Nft(developerId) {
        Github</a></h5>
     </>
   );
+}
+
+const processBase64Img = (imgStr) => {
+  const [formatInfo, base64Str] = imgStr.split(",")
+
+  // The smart contract includes items with unescaped "&", which breaks SVG rendering
+  const processedStr = atob(base64Str).replace(" & ", " &amp; ")
+  
+  return formatInfo + "," + btoa(processedStr)
 }
 
 export default App;
