@@ -20,12 +20,15 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "fmt": "prettier --write **/*.js",
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
     ]
   },
   "browserslist": {
@@ -46,8 +49,13 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "postcss": "^7",
-    "prettier": "^2.3.2",
+    "prettier": "2.3.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,html,graphql}": "prettier --write"
   }
 }
