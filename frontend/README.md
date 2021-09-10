@@ -37,15 +37,15 @@ If you want to learn more about DAOs, check out Cooper Turley's blog at https://
 
 The project was started as an experiment by [Nader Dabit](https://twitter.com/dabit3) to see what can be achieved when we bring together talented and like-minded people who are interested in learning about and building on Web3.
 
-As stated on : "Developers around the world are tired of working and contributing their time and effort to enrich the top 1%. Join the movement that is community owned, building the future from the bottom up."
-
 ## How do I join?
 
-The DAO operates inside our [discord sever](https://twitter.com/dabit3). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. The contract for purchasing one [can be found on etherscan.io](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b). If you're not sure how to purchase an NFT, [check out this how-to article](https://jonkuperman.com/how-to-join-developer-dao/) by @jkup. 
+The DAO operates inside our [discord sever](https://twitter.com/dabit3). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. The contract for purchasing one [can be found on etherscan.io](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b). If you're not sure how to mint an NFT, [check out this how-to article](https://jonkuperman.com/how-to-join-developer-dao/) by @jkup.
 
-Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to purchase the NFT. This fee can range wildy from about $40 up to and over $400 at peak times. If the fee is high you may want to wait and come back later. 
+Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. If the fee is high you may want to wait and come back later. 
 
-That said, there is a limited supply of NFT's that can be created.
+That said, there is a limited supply of NFT's that can be created so don't wait to long! 
+
+To find available tokenIDs you can mint try this tool created by the community - https://ddao.ibby.dev/.
 
 If you get stuck please reach out on our [Discord] and we'd be happy to help.
 
