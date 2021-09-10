@@ -41,7 +41,7 @@ As stated on : "Developers around the world are tired of working and contributin
 
 ## How do I join?
 
-The DAO operates inside our [discord sever](https://twitter.com/dabit3). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. You can find the contract for purchasing one [here](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b) and a good how to article on how to purchase one from @jkup, [here](https://jonkuperman.com/how-to-join-developer-dao/ ). 
+The DAO operates inside our [discord sever](https://twitter.com/dabit3). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. The contract for purchasing one [can be found on etherscan.io](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b). If you're not sure how to purchase an NFT, [check out this how-to article](https://jonkuperman.com/how-to-join-developer-dao/) by @jkup. 
 
 Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to purchase the NFT. This fee can range wildy from about $40 up to and over $400 at peak times. If the fee is high you may want to wait and come back later. 
 
