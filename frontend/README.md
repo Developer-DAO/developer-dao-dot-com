@@ -47,7 +47,7 @@ The DAO operates inside our [discord sever](https://twitter.com/dabit3). To gain
 
 Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to purchase the NFT. This fee can range wildy from about $40 up to and over $400 at peak times. If the fee is high you may want to wait and come back later. 
 
-That said, ther is a limited supply of NFT's that can be created.
+That said, there is a limited supply of NFT's that can be created.
 
 If you get stuck please reach out on our [discord](https://discord.gg/ZHZup79J) and we'd be happy to help.
 
@@ -72,8 +72,8 @@ At the moment it allows members to view their genesis NFT by entering in it's ID
 
 ### Local Development Environment
 
-1. Clonse this repo with git
-2. install dependencies by running `yarn` within the directory you clone the project (probably `developer-dao`)
+1. Clone this repo with git
+2. Install dependencies by running `yarn`
 3. Start the development server with `yarn start`
 4. Open development site by going to `http:localhost:3000`
 
