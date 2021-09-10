@@ -53,7 +53,7 @@ If you get stuck please reach out on our [discord](https://discord.gg/ZHZup79J) 
 
 ## What is this repo?
 
-This is the code DeveloperDAO's public facing - https://www.developerdoa.com.
+This is the code for the [public DeveloperDAO site](https://developerdao.com/).
 
 At the moment it allows members to view their genesis NFT by entering in it's ID. As the community takes shape we will decide what this website becomes and build it as a collective.
 
