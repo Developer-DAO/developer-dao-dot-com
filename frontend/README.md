@@ -47,7 +47,7 @@ Whilst there is no charge for the NFT you will have to pay a "gas fee" for the E
 
 That said, there is a limited supply of NFT's that can be created.
 
-If you get stuck please reach out on our [discord](https://discord.gg/ZHZup79J) and we'd be happy to help.
+If you get stuck please reach out on our [Discord] and we'd be happy to help.
 
 ## What is this repo?
 
@@ -85,4 +85,5 @@ Thanks for showing interest in contributing to DeveloperDAO. Before submitting a
   <img src="https://contrib.rocks/image?repo=developer-dao/developer-dao" />
 </a>
 
+[Discord]: https://discord.gg/ZHZup79J
 
