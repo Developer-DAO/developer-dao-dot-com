@@ -35,7 +35,7 @@ If you want to learn more about DAOs, check out Cooper Turley's blog at https://
 
 ## What is DeveloperDAO
 
-The project was started as an experiment by [Nader Dabit](https://twitter.com/dabit3) to see what can be achieved when we bring together talented and likeminded people who are interested in learning about, and building on, Web3.
+The project was started as an experiment by [Nader Dabit](https://twitter.com/dabit3) to see what can be achieved when we bring together talented and like-minded people who are interested in learning about and building on Web3.
 
 As stated on : "Developers around the world are tired of working and contributing their time and effort to enrich the top 1%. Join the movement that is community owned, building the future from the bottom up."
 
