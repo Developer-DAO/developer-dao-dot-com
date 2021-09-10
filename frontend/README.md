@@ -29,7 +29,7 @@
 
 ## What is a DAO
 
-DAO stands for Decentalized autonomous organisation. That is a group of people with shared goals/mission that are governed by an agreed set of rules coded into a smart contract(s) on a blockchain.
+DAO stands for **D**ecentalized **A**utonomous **O**rganisation. That is a group of people with shared goals/mission that are governed by an agreed set of rules coded into a smart contract(s) on a blockchain.
 
 If you want to learn more about DAOs, check out Cooper Turley's blog at https://alias.co/coopahtroopa/essays, mainly "The Rise of Micro-Economies"
 
