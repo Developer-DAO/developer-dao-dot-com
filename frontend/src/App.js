@@ -1,10 +1,12 @@
 import "./App.css";
 import React, { useCallback, useState } from "react";
 import { getDefaultProvider, Contract } from "ethers";
+import { useTranslation } from "react-i18next";
 import { NftProvider, useNft } from "use-nft";
 import logo from "./images/ddao_logo.jpeg";
 
 function App() {
+  const { t } = useTranslation();
   const [developerId, setDeveloperId] = useState(1);
 
   const ethersConfig = {
@@ -31,9 +33,7 @@ function App() {
           <div className="text-center lg:w-2/3 w-full">
             <div className="flex justify-center">
               <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                <h1 className="mb-6 text-xl text-center">
-                  Search developer DAO id
-                </h1>
+                <h1 className="mb-6 text-xl text-center">{t("searchId")}</h1>
                 <input
                   placeholder="Search developer id"
                   value={developerId}
@@ -56,16 +56,17 @@ function App() {
 }
 
 function Nft(developerId) {
+  const { t } = useTranslation();
   const { loading, error, nft } = useNft(
     "0x25ed58c027921E14D86380eA2646E3a1B5C55A8b",
     developerId.developerId
   );
 
-  if (loading) return <>Loading…</>;
+  if (loading) return <>{t("loading")}</>;
 
-  if (!developerId.developerId) return <>Please enter a developer id</>;
+  if (!developerId.developerId) return <>{t("enterDeveloperId")}</>;
 
-  if (error || !nft) return <>Error.</>;
+  if (error || !nft) return <>{t("error")}.</>;
 
   return (
     <>
@@ -75,10 +76,12 @@ function Nft(developerId) {
         src={processBase64Img(nft.image)}
       />
       <h1>{nft.name}</h1>
-      <h2>Owner: {nft.owner}</h2>
+      <h2>
+        {t("owner")}: {nft.owner}
+      </h2>
 
       <h5 className="mt-10 text-m">
-        Made by the developer DAO community:{" "}
+        {t("madeBy")}
         <a
           className="underline"
           href="https://github.com/thomasmetta/developer-dao"
