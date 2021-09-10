@@ -11,7 +11,7 @@
     </p>
 </p>
 
-[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)](https://discord.com/invite/ZHZup79J) [![Follow on Twitter](https://img.shields.io/badge/social-Twitter-1DA1F2?logo=twitter)](https://twitter.com/developer_dao) [![See on Etherscan](https://img.shields.io/badge/MintNFT-Ethereum-3C3C3D?logo=ethereum)](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract)
+[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)][Discord] [![Follow on Twitter](https://img.shields.io/badge/social-Twitter-1DA1F2?logo=twitter)](https://twitter.com/developer_dao) [![See on Etherscan](https://img.shields.io/badge/MintNFT-Ethereum-3C3C3D?logo=ethereum)](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract)
 
 <!-- Table of Contents -->
 
