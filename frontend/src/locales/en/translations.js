@@ -4,5 +4,6 @@ export default {
   error: "Error",
   madeBy: "Made by the developer DAO community: ",
   owner: "Owner",
+  unclaimed: "Unclaimed",
   enterDeveloperId: "Please enter a developer DAO id",
 };

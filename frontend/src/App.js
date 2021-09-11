@@ -77,7 +77,7 @@ function Nft(developerId) {
       />
       <h1>{nft.name}</h1>
       <h2>
-        {t("owner")}: {nft.owner}
+        {t("owner")}: {nft.owner || t("unclaimed")}
       </h2>
 
       <h5 className="mt-10 text-m">
