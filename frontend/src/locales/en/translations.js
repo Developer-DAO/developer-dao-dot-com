@@ -5,4 +5,5 @@ export default {
   madeBy: "Made by the developer DAO community: ",
   owner: "Owner",
   unclaimed: "Unclaimed",
+  enterDeveloperId: "Please enter a developer DAO id",
 };

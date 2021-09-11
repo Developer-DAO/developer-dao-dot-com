@@ -64,6 +64,8 @@ function Nft(developerId) {
 
   if (loading) return <>{t("loading")}</>;
 
+  if (!developerId.developerId) return <>{t("enterDeveloperId")}</>;
+
   if (error || !nft) return <>{t("error")}.</>;
 
   return (
