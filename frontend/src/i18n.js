@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 
 import translationEn from "./locales/en/translations";
 import translationEs from "./locales/es/translations";
+import translationFr from "./locales/fr/translations";
 
 const fallbackLng = ["en"];
 const availableLanguages = ["en", "es"];
@@ -29,6 +30,9 @@ i18n
       },
       es: {
         translation: { ...translationEs },
+      },
+      fr: {
+        translation: { ...translationFr },
       },
     },
   });
