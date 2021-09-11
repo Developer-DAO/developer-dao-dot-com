@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <section className="text-gray-600 body-font bg-gray-50">
+      <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
           <img
             src={logo}
