@@ -1,13 +1,14 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
 
-import translationEn from './locales/en/translations';
-import translationEs from './locales/es/translations';
+import translationEn from "./locales/en/translations";
+import translationEs from "./locales/es/translations";
+import translationFr from "./locales/fr/translations";
 
-const fallbackLng = ['en'];
-const availableLanguages = ['en', 'es'];
-const language = localStorage.getItem('language');
+const fallbackLng = ["en"];
+const availableLanguages = ["en", "es"];
+const language = localStorage.getItem("language");
 
 i18n
   .use(LanguageDetector)
@@ -15,7 +16,9 @@ i18n
 
   .init({
     fallbackLng,
-    debug: process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'testing',
+    debug:
+      process.env.NODE_ENV !== "production" &&
+      process.env.NODE_ENV !== "testing",
     whitelist: availableLanguages,
     interpolation: {
       escapeValue: false,
@@ -27,6 +30,9 @@ i18n
       },
       es: {
         translation: { ...translationEs },
+      },
+      fr: {
+        translation: { ...translationFr },
       },
     },
   });
