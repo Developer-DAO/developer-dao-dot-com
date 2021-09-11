@@ -64,6 +64,8 @@ function Nft(developerId) {
 
   if (loading) return <>{t("loading")}</>;
 
+  if (!developerId.developerId) return <>{t("enterDeveloperId")}</>;
+
   if (error || !nft) return <>{t("error")}.</>;
 
   return (
@@ -94,12 +96,12 @@ function Nft(developerId) {
 }
 
 const processBase64Img = (imgStr) => {
-  const [formatInfo, base64Str] = imgStr.split(",")
+  const [formatInfo, base64Str] = imgStr.split(",");
 
   // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const processedStr = atob(base64Str).replace(" & ", " &amp; ")
-  
-  return formatInfo + "," + btoa(processedStr)
-}
+  const processedStr = atob(base64Str).replace(" & ", " &amp; ");
+
+  return formatInfo + "," + btoa(processedStr);
+};
 
 export default App;
