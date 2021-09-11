@@ -1,9 +1,9 @@
-import "./App.css";
-import React, { useCallback, useState } from "react";
-import { getDefaultProvider, Contract } from "ethers";
-import { useTranslation } from "react-i18next";
-import { NftProvider, useNft } from "use-nft";
-import logo from "./images/ddao_logo.jpeg";
+import './App.css';
+import React, { useCallback, useState } from 'react';
+import { getDefaultProvider, Contract } from 'ethers';
+import { useTranslation } from 'react-i18next';
+import { NftProvider, useNft } from 'use-nft';
+import logo from './images/ddao_logo.jpeg';
 
 function App() {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ function App() {
 
   const ethersConfig = {
     ethers: { Contract },
-    provider: getDefaultProvider("homestead"),
+    provider: getDefaultProvider('homestead'),
   };
 
   const updateDeveloperId = useCallback((e) => {
@@ -33,7 +33,7 @@ function App() {
           <div className="text-center lg:w-2/3 w-full">
             <div className="flex justify-center">
               <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                <h1 className="mb-6 text-xl text-center">{t("searchId")}</h1>
+                <h1 className="mb-6 text-xl text-center">{t('searchId')}</h1>
                 <input
                   placeholder="Search developer id"
                   value={developerId}
@@ -46,7 +46,7 @@ function App() {
               </div>
             </div>
           </div>
-          <NftProvider fetcher={["ethers", ethersConfig]}>
+          <NftProvider fetcher={['ethers', ethersConfig]}>
             <Nft developerId={developerId} />
           </NftProvider>
         </div>
@@ -58,15 +58,15 @@ function App() {
 function Nft(developerId) {
   const { t } = useTranslation();
   const { loading, error, nft } = useNft(
-    "0x25ed58c027921E14D86380eA2646E3a1B5C55A8b",
-    developerId.developerId
+    '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b',
+    developerId.developerId,
   );
 
-  if (loading) return <>{t("loading")}</>;
+  if (loading) return <>{t('loading')}</>;
 
-  if (!developerId.developerId) return <>{t("enterDeveloperId")}</>;
+  if (!developerId.developerId) return <>{t('enterDeveloperId')}</>;
 
-  if (error || !nft) return <>{t("error")}.</>;
+  if (error || !nft) return <>{t('error')}.</>;
 
   return (
     <>
@@ -77,11 +77,11 @@ function Nft(developerId) {
       />
       <h1>{nft.name}</h1>
       <h2>
-        {t("owner")}: {nft.owner || t("unclaimed")}
+        {t('owner')}: {nft.owner || t('unclaimed')}
       </h2>
 
       <h5 className="mt-10 text-m">
-        {t("madeBy")}
+        {t('madeBy')}
         <a
           className="underline"
           href="https://github.com/thomasmetta/developer-dao"
@@ -96,12 +96,12 @@ function Nft(developerId) {
 }
 
 const processBase64Img = (imgStr) => {
-  const [formatInfo, base64Str] = imgStr.split(",");
+  const [formatInfo, base64Str] = imgStr.split(',');
 
   // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const processedStr = atob(base64Str).replace(" & ", " &amp; ");
+  const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
 
-  return formatInfo + "," + btoa(processedStr);
+  return formatInfo + ',' + btoa(processedStr);
 };
 
 export default App;
