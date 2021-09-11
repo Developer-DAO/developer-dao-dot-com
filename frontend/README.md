@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -98,6 +98,23 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/aesthytik"><img src="https://avatars.githubusercontent.com/u/26917061?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vipin Kumar Rawat</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=aesthytik" title="Code">💻</a></td>
+    <td align="center"><a href="https://thomaslui.me/"><img src="https://avatars.githubusercontent.com/u/8930332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Lui</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=thomasmetta" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://xdrdak.github.io/"><img src="https://avatars.githubusercontent.com/u/1198051?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Xavier Drdak</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=xdrdak" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/aej11a"><img src="https://avatars.githubusercontent.com/u/10066422?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrew Jones</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=aej11a" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/nheingit"><img src="https://avatars.githubusercontent.com/u/60185486?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nheingit</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=nheingit" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Canopix"><img src="https://avatars.githubusercontent.com/u/4460417?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emanuel Canova</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=Canopix" title="Code">💻</a> <a href="#translation-Canopix" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://kempsterrrr.xyz/"><img src="https://avatars.githubusercontent.com/u/9025997?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Will Kempster</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=kempsterrrr" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://cbetz.com/"><img src="https://avatars.githubusercontent.com/u/458549?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Christopher Betz</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=cbetz" title="Code">💻</a></td>
+    <td align="center"><a href="https://medium.com/@codingwithmanny"><img src="https://avatars.githubusercontent.com/u/318082?v=4?s=100" width="100px;" alt=""/><br /><sub><b>manny</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=codingwithmanny" title="Code">💻</a> <a href="#design-codingwithmanny" title="Design">🎨</a></td>
+    <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=with-heart" title="Code">💻</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
