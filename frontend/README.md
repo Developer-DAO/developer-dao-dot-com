@@ -70,6 +70,13 @@ At the moment it allows members to view their genesis NFT by entering in its ID.
 
 ### Local Development Environment
 
+**Note:** Make sure you have the latest version of node installed `^14.17.6`.
+
+```bash
+cd developer-dao;
+nvm install; # to install the version in .nvmrc
+```
+
 1. Clone this repo with git
 2. Install dependencies by running `yarn`
 3. Start the development server with `yarn start`
