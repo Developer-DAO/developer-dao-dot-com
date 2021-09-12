@@ -91,6 +91,23 @@ function Nft(developerId) {
           Github
         </a>
       </h5>
+      <h5 className="mt-10 text-m">
+        <div className="flex flex-row items-center">
+          {t('hosting')}
+          <a
+            className="pl-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
+          >
+            <img
+              alt="Powered by Vercel"
+              height="32"
+              src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
+            />
+          </a>
+        </div>
+      </h5>
     </>
   );
 }

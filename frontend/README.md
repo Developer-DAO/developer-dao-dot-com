@@ -85,5 +85,15 @@ Thanks for showing interest in contributing to DeveloperDAO. Before submitting a
   <img src="https://contrib.rocks/image?repo=developer-dao/developer-dao" />
 </a>
 
+## Support
+<div>
+<a href="https://vercel.com?utm_source=developdao&utm_campaign=oss">
+<img width="170px" src="https://user-images.githubusercontent.com/8930332/133003096-dbf81aa9-d165-49fd-b2dd-0108e32138a6.png" alt="Powered By Vercel" />
+</a>
+</div>
+<div>
+<p align="left">Thanks to Vercel sponsoring this project by hosting it for free</p>
+</div>
+
 [Discord]: https://discord.gg/ASjBPJuNhS
 
