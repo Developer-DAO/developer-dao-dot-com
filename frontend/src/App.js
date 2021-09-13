@@ -8,7 +8,8 @@ import PageLayout from './layout/Page';
 
 function App() {
   const { t } = useTranslation();
-  const [developerId, setDeveloperId] = useState(1);
+  const id = getSearchID();
+  const [developerId, setDeveloperId] = useState(id);
 
   const ethersConfig = {
     ethers: { Contract },
@@ -92,6 +93,11 @@ function Nft(developerId) {
       )}
     </>
   );
+}
+
+function getSearchID() {
+  const search = window.location.search;
+  return new URLSearchParams(search).get('id') || 1;
 }
 
 const processBase64Img = (imgStr) => {

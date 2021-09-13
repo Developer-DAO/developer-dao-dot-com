@@ -1,4 +1,7 @@
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
 <p align="center">
@@ -23,7 +26,7 @@
     <li><a href="#what-is-this-repo">What is this repo?</a></li>
     <li><a href="#developing">Developing</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#authors">Authors</a></li>
+    <li><a href="#contributors-">Contributors</a></li>
 </ul>
 
 
@@ -41,9 +44,9 @@ The project was started as an experiment by [Nader Dabit](https://twitter.com/da
 
 The DAO operates inside our [discord server](https://discord.gg/ASjBPJuNhS). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. The contract for purchasing one [can be found on etherscan.io](https://etherscan.io/address/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract). If you're not sure how to mint an NFT, [check out this how-to article](https://jonkuperman.com/how-to-join-developer-dao/) by @jkup.
 
-Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. You can check current gas fee uisng the [Etherum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later. 
+Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. You can check current gas fee uisng the [Etherum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later.
 
-That said, there is a limited supply of NFT's that can be created so don't wait to long! 
+That said, there is a limited supply of NFT's that can be created so don't wait to long!
 
 To find available tokenIDs you can mint try this tool created by the community - https://ddao.ibby.dev/.
 
@@ -70,6 +73,13 @@ At the moment it allows members to view their genesis NFT by entering in its ID.
 
 ### Local Development Environment
 
+**Note:** Make sure you have the latest version of node installed `^14.17.6`.
+
+```bash
+cd developer-dao;
+nvm install; # to install the version in .nvmrc
+```
+
 1. Clone this repo with git
 2. Install dependencies by running `yarn`
 3. Start the development server with `yarn start`
@@ -79,11 +89,45 @@ At the moment it allows members to view their genesis NFT by entering in its ID.
 
 Thanks for showing interest in contributing to DeveloperDAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md].
 
-## Authors
+## Contributors ✨
 
-<a href="https://github.com/developer-dao/developer-dao/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=developer-dao/developer-dao" />
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/aesthytik"><img src="https://avatars.githubusercontent.com/u/26917061?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vipin Kumar Rawat</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=aesthytik" title="Code">💻</a></td>
+    <td align="center"><a href="https://thomaslui.me/"><img src="https://avatars.githubusercontent.com/u/8930332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Lui</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=thomasmetta" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://xdrdak.github.io/"><img src="https://avatars.githubusercontent.com/u/1198051?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Xavier Drdak</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=xdrdak" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/aej11a"><img src="https://avatars.githubusercontent.com/u/10066422?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrew Jones</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=aej11a" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/nheingit"><img src="https://avatars.githubusercontent.com/u/60185486?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nheingit</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=nheingit" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Canopix"><img src="https://avatars.githubusercontent.com/u/4460417?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Emanuel Canova</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=Canopix" title="Code">💻</a> <a href="#translation-Canopix" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://kempsterrrr.xyz/"><img src="https://avatars.githubusercontent.com/u/9025997?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Will Kempster</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=kempsterrrr" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://cbetz.com/"><img src="https://avatars.githubusercontent.com/u/458549?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Christopher Betz</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=cbetz" title="Code">💻</a></td>
+    <td align="center"><a href="https://medium.com/@codingwithmanny"><img src="https://avatars.githubusercontent.com/u/318082?v=4?s=100" width="100px;" alt=""/><br /><sub><b>manny</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=codingwithmanny" title="Code">💻</a> <a href="#design-codingwithmanny" title="Design">🎨</a></td>
+    <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/developer-dao/developer-dao/commits?author=with-heart" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Support
+<div>
+<a href="https://vercel.com?utm_source=developdao&utm_campaign=oss">
+<img width="170px" src="https://user-images.githubusercontent.com/8930332/133003096-dbf81aa9-d165-49fd-b2dd-0108e32138a6.png" alt="Powered By Vercel" />
 </a>
+</div>
+<div>
+<p align="left">Thanks to Vercel sponsoring this project by hosting it for free</p>
+</div>
 
 [Discord]: https://discord.gg/ASjBPJuNhS
-

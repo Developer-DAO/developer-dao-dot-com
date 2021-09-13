@@ -1,0 +1,107 @@
+{
+  "projectName": "developer-dao",
+  "projectOwner": "developer-dao",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "aesthytik",
+      "name": "Vipin Kumar Rawat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26917061?v=4",
+      "profile": "https://github.com/aesthytik",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "thomasmetta",
+      "name": "Thomas Lui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8930332?v=4",
+      "profile": "https://thomaslui.me/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "xdrdak",
+      "name": "Xavier Drdak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1198051?v=4",
+      "profile": "http://xdrdak.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aej11a",
+      "name": "Andrew Jones",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10066422?v=4",
+      "profile": "https://github.com/aej11a",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nheingit",
+      "name": "nheingit",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60185486?v=4",
+      "profile": "https://github.com/nheingit",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Canopix",
+      "name": "Emanuel Canova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4460417?v=4",
+      "profile": "https://github.com/Canopix",
+      "contributions": [
+        "code",
+        "translation"
+      ]
+    },
+    {
+      "login": "kempsterrrr",
+      "name": "Will Kempster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9025997?v=4",
+      "profile": "https://kempsterrrr.xyz/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "cbetz",
+      "name": "Christopher Betz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/458549?v=4",
+      "profile": "http://cbetz.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "codingwithmanny",
+      "name": "manny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/318082?v=4",
+      "profile": "https://medium.com/@codingwithmanny",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "with-heart",
+      "name": "with-heart",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1954752?v=4",
+      "profile": "https://with-heart.me/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

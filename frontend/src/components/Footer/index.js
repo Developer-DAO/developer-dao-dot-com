@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <footer className="border-t border-gray-200 py-10">
-      <div className="container mx-auto max-w-6xl h-14 px-4 flex justify-center items-center flex-col">
+      <div className="container mx-auto max-w-6xl px-4 flex justify-center items-center flex-col">
         <h5 className="text-sm mb-4 text-gray-600">
           {t('madeBy')}
           <a
@@ -19,7 +19,7 @@ function Footer() {
             Github
           </a>
         </h5>
-        <ul className="flex">
+        <ul className="flex mb-4">
           <li>
             <a
               title="OpenSea"
@@ -65,6 +65,18 @@ function Footer() {
             </a>
           </li>
         </ul>
+        <a
+          className="pl-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
+        >
+          <img
+            alt="Powered by Vercel"
+            height="32"
+            src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
+          />
+        </a>
       </div>
     </footer>
   );
