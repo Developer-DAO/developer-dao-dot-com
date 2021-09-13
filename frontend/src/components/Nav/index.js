@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Icons from '../Icons';
+import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
 
 function Nav() {
@@ -25,7 +25,7 @@ function Nav() {
             title="https://github.com/Developer-DAO/developer-dao"
             className="flex items-center justify-center h-14 opacity-60 hover:opacity-100 transition-opacity duration-300 ease-in-out"
           >
-            <Icons.IconGitHub className="h-7 w-7" />
+            <IconGitHub className="h-7 w-7" />
           </a>
         </div>
       </div>

@@ -5,7 +5,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['"Inter"', 'sans-serif'],
+      sans: [
+        '"Inter"',
+        '-apple-system',
+        '"BlinkMacSystemFont"',
+        'system-ui',
+        'sans-serif',
+      ],
     },
     extend: {},
   },

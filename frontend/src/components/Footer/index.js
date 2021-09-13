@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Icons from '../Icons';
+import { IconOpenSea, IconEtherscan, IconTwitter, IconDiscord } from '../Icons';
 
 function Footer() {
   const { t } = useTranslation();
@@ -28,7 +28,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icons.IconOpenSea />
+              <IconOpenSea />
             </a>
           </li>
           <li>
@@ -39,7 +39,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icons.IconEtherscan />
+              <IconEtherscan />
             </a>
           </li>
           <li>
@@ -50,7 +50,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icons.IconTwitter />
+              <IconTwitter />
             </a>
           </li>
           <li>
@@ -61,7 +61,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icons.IconDiscord />
+              <IconDiscord />
             </a>
           </li>
         </ul>
