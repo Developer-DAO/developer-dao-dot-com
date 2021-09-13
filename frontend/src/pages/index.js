@@ -1,14 +1,15 @@
-import './App.css';
 import React, { useCallback, useState } from 'react';
 import { getDefaultProvider, Contract } from 'ethers';
 import { useTranslation } from 'react-i18next';
 import { NftProvider, useNft } from 'use-nft';
-import Logo from './components/Logo';
-import PageLayout from './layout/Page';
+import { useRouter } from 'next/router';
+import Logo from '../components/Logo';
+import PageLayout from '../layout/Page';
 
 function App() {
   const { t } = useTranslation();
-  const id = getSearchID();
+  const router = useRouter();
+  const id = router.query.id || 1;
   const [developerId, setDeveloperId] = useState(id);
 
   const ethersConfig = {
@@ -44,9 +45,11 @@ function App() {
               </div>
             </div>
           </div>
-          <NftProvider fetcher={['ethers', ethersConfig]}>
-            <Nft developerId={developerId} />
-          </NftProvider>
+          {typeof window !== 'undefined' && (
+            <NftProvider fetcher={['ethers', ethersConfig]}>
+              <Nft developerId={developerId} />
+            </NftProvider>
+          )}
         </div>
       </section>
     </PageLayout>
@@ -93,11 +96,6 @@ function Nft(developerId) {
       )}
     </>
   );
-}
-
-function getSearchID() {
-  const search = window.location.search;
-  return new URLSearchParams(search).get('id') || 1;
 }
 
 const processBase64Img = (imgStr) => {
