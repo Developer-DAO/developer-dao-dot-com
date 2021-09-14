@@ -7,9 +7,10 @@ import translationEs from './locales/es/translations';
 import translationFr from './locales/fr/translations';
 import translationZhsc from './locales/zhsc/translations';
 import translationZhtc from './locales/zhtc/translations';
+import translationRu from './locales/ru/translations';
 
-const fallbackLng = ['zhtc'];
-const availableLanguages = ['en', 'es', 'fr', 'zhsc', 'zhtc'];
+const fallbackLng = ['en'];
+const availableLanguages = ['en', 'es', 'fr', 'zhsc', 'zhtc', 'ru'];
 const language =
   typeof window !== 'undefined' ? localStorage.getItem('language') : undefined;
 
