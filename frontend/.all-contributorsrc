@@ -1,6 +1,6 @@
 {
   "projectName": "developer-dao",
-  "projectOwner": "developer-dao",
+  "projectOwner": "Developer-DAO",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -101,7 +101,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kavimaluskam",
+      "name": "Alex Kam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19992414?v=4",
+      "profile": "https://kavimaluskam.dev/",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
