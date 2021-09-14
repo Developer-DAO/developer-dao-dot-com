@@ -5,9 +5,11 @@ import { initReactI18next } from 'react-i18next';
 import translationEn from './locales/en/translations';
 import translationEs from './locales/es/translations';
 import translationFr from './locales/fr/translations';
+import translationZhsc from './locales/zhsc/translations';
+import translationZhtc from './locales/zhtc/translations';
 
-const fallbackLng = ['en'];
-const availableLanguages = ['en', 'es', 'fr'];
+const fallbackLng = ['zhtc'];
+const availableLanguages = ['en', 'es', 'fr', 'zhsc', 'zhtc'];
 const language =
   typeof window !== 'undefined' ? localStorage.getItem('language') : undefined;
 
@@ -34,6 +36,12 @@ i18n
       },
       fr: {
         translation: { ...translationFr },
+      },
+      zhsc: {
+        translation: { ...translationZhsc },
+      },
+      zhtc: {
+        translation: { ...translationZhtc },
       },
     },
   });
