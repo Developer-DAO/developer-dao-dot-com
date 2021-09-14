@@ -111,6 +111,16 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "MGrin",
+      "name": "MGrin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2393862?v=4",
+      "profile": "https://github.com/MGrin",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
