@@ -7,7 +7,7 @@ import translationEs from './locales/es/translations';
 import translationFr from './locales/fr/translations';
 
 const fallbackLng = ['en'];
-const availableLanguages = ['en', 'es'];
+const availableLanguages = ['en', 'es', 'fr'];
 const language = localStorage.getItem('language');
 
 i18n

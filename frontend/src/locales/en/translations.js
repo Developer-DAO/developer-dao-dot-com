@@ -1,4 +1,5 @@
 export default {
+  title: 'Developer DAO',
   searchId: 'Search developer DAO id',
   loading: 'Loading...',
   error: 'Error',
@@ -6,5 +7,5 @@ export default {
   owner: 'Owner',
   unclaimed: 'Unclaimed',
   enterDeveloperId: 'Please enter a developer DAO id',
-  hosting: 'Hosting is',
+  hosting: 'Hosting by:',
 };

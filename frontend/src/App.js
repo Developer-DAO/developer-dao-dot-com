@@ -3,7 +3,8 @@ import React, { useCallback, useState } from 'react';
 import { getDefaultProvider, Contract } from 'ethers';
 import { useTranslation } from 'react-i18next';
 import { NftProvider, useNft } from 'use-nft';
-import Logo from './Logo';
+import Logo from './components/Logo';
+import PageLayout from './layout/Page';
 
 function App() {
   const { t } = useTranslation();
@@ -22,14 +23,14 @@ function App() {
   }, []);
 
   return (
-    <>
+    <PageLayout>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div className="container mx-auto flex px-4 pt-16 pb-8 items-center justify-center flex-col w-full max-w-md">
           <Logo className="mb-5 w-32 h-32 object-cover object-center rounded-full" />
 
-          <div className="text-center lg:w-2/3 w-full">
+          <div className="text-center w-full">
             <div className="flex justify-center">
-              <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
+              <div className="relative w-full text-left">
                 <h1 className="mb-6 text-xl text-center">{t('searchId')}</h1>
                 <input
                   placeholder="Search developer id"
@@ -48,7 +49,7 @@ function App() {
           </NftProvider>
         </div>
       </section>
-    </>
+    </PageLayout>
   );
 }
 
@@ -68,43 +69,28 @@ function Nft(developerId) {
   return (
     <>
       <img
-        className="border-4 lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
+        className="border-4 w-full mb-8 object-cover object-center rounded"
         alt="hero"
         src={processBase64Img(nft.image)}
       />
-      <h1>{nft.name}</h1>
-      <h2>
-        {t('owner')}: {nft.owner || t('unclaimed')}
-      </h2>
-
-      <h5 className="mt-10 text-m">
-        {t('madeBy')}
+      <h1 className="font-semibold mb-2">{nft.name}</h1>
+      {nft.owner ? (
         <a
-          className="underline"
-          href="https://github.com/thomasmetta/developer-dao"
+          href={`https://etherscan.io/address/${nft.owner}`}
           target="_blank"
           rel="noreferrer"
+          title={nft.owner || t('unclaimed')}
+          className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
         >
-          Github
+          {t('owner')}:&nbsp;
+          <span className="max-w-xs">{nft.owner.slice(0, 30)}</span>...
+          {nft.owner.slice(-4)}
         </a>
-      </h5>
-      <h5 className="mt-10 text-m">
-        <div className="flex flex-row items-center">
-          {t('hosting')}
-          <a
-            className="pl-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
-          >
-            <img
-              alt="Powered by Vercel"
-              height="32"
-              src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
-            />
-          </a>
-        </div>
-      </h5>
+      ) : (
+        <span className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
+          {t('owner')}:&nbsp;{t('unclaimed')}
+        </span>
+      )}
     </>
   );
 }
