@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { getDefaultProvider, Contract } from 'ethers';
 import { useTranslation } from 'react-i18next';
 import { NftProvider, useNft } from 'use-nft';
-import logo from './images/ddao_logo.jpeg';
+import Logo from './Logo';
 
 function App() {
   const { t } = useTranslation();
@@ -25,11 +25,7 @@ function App() {
     <>
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-          <img
-            src={logo}
-            alt="hero"
-            className="mb-5 w-32 h-32 object-cover object-center rounded-full"
-          />
+          <Logo className="mb-5 w-32 h-32 object-cover object-center rounded-full" />
 
           <div className="text-center lg:w-2/3 w-full">
             <div className="flex justify-center">
