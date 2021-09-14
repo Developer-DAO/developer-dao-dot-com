@@ -12,7 +12,7 @@ function Footer() {
           {t('madeBy')}
           <a
             className="underline text-blue-400"
-            href="https://github.com/thomasmetta/developer-dao"
+            href="https://github.com/Developer-DAO"
             target="_blank"
             rel="noreferrer"
           >
