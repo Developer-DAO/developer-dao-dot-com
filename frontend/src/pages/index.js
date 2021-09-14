@@ -90,7 +90,7 @@ function Nft(developerId) {
           {nft.owner.slice(-4)}
         </a>
       ) : (
-        <span className=" max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
+        <span className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
           {t('owner')}:&nbsp;{t('unclaimed')}
         </span>
       )}
