@@ -6,5 +6,5 @@ export default {
   owner: 'Dueño',
   unclaimed: 'No reclamado',
   enterDeveloperId: 'Por favor ingrese un Developer DAO id',
-  hosting: 'Alojamiento web por:',
+  hosting: 'Alojamiento proveido por:',
 };
