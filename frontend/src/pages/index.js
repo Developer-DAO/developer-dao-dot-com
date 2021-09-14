@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { getDefaultProvider, Contract } from 'ethers';
-import { useTranslation } from 'react-i18next';
 import { NftProvider, useNft } from 'use-nft';
 import { useRouter } from 'next/router';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 function App() {
   const { t } = useTranslation();
@@ -45,10 +46,12 @@ function App() {
               </div>
             </div>
           </div>
-          {typeof window !== 'undefined' && (
+          {typeof window !== 'undefined' ? (
             <NftProvider fetcher={['ethers', ethersConfig]}>
               <Nft developerId={developerId} />
             </NftProvider>
+          ) : (
+            <>{t('loading')}</>
           )}
         </div>
       </section>
@@ -106,5 +109,11 @@ const processBase64Img = (imgStr) => {
 
   return formatInfo + ',' + btoa(processedStr);
 };
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+});
 
 export default App;

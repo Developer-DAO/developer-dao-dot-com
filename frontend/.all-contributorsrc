@@ -121,6 +121,15 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "gjsyme",
+      "name": "Greg Syme",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4706001/v4",
+      "profile": "https://github.com/gjsyme",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
