@@ -6,7 +6,7 @@
 
 <p align="center">
     <a href="https://developerdao.com">
-    <img src="/src/images/ddao_logo.jpeg" alt="logo" width="80" height="80"/>
+    <img src="public/logo512.png" alt="logo" width="80" height="80"/>
     </a>
     <h2 align="center">DeveloperDAO</h2>
     <p align="center">
