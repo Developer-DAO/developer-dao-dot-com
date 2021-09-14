@@ -83,14 +83,14 @@ function Nft(developerId) {
           target="_blank"
           rel="noreferrer"
           title={nft.owner || t('unclaimed')}
-          className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+          className="text-xs sm:text-base max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out "
         >
           {t('owner')}:&nbsp;
           <span className="max-w-xs">{nft.owner.slice(0, 30)}</span>...
           {nft.owner.slice(-4)}
         </a>
       ) : (
-        <span className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
+        <span className=" max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
           {t('owner')}:&nbsp;{t('unclaimed')}
         </span>
       )}
