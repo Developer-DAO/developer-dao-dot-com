@@ -8,7 +8,8 @@ import translationFr from './locales/fr/translations';
 
 const fallbackLng = ['en'];
 const availableLanguages = ['en', 'es', 'fr'];
-const language = localStorage.getItem('language');
+const language =
+  typeof window !== 'undefined' ? localStorage.getItem('language') : undefined;
 
 i18n
   .use(LanguageDetector)
