@@ -5,6 +5,8 @@ start contributing to the project.
 
 # Development
 
+This uses [yarn][yarn].
+
 ## Internationalization (i18n)
 
 This project uses [`next-i18next`][next-i18next] to handle translation of text
@@ -39,3 +41,5 @@ const Text = () => {
 
 [i18n-example]: https://github.com/Developer-DAO/developer-dao/pull/17/files
 [next-i18next]: https://www.npmjs.com/package/next-i18next
+
+[yarn]: [https://yarnpkg.com/]
