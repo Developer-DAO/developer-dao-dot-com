@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
 
@@ -9,14 +10,15 @@ function Nav() {
   return (
     <div className="border-b border-gray-200">
       <div className="container mx-auto max-w-6xl h-14 px-4 flex justify-between">
-        <a
-          href="/"
-          title={t('title')}
-          className="h-14 flex items-center text-gray-600 hover:text-black transition-colors duration-300 ease-in-out"
-        >
-          <Logo className="rounded-full h-7 w-7 mr-2" />
-          <span className="font-bold text-sm">{t('title')}</span>
-        </a>
+        <Link href="/">
+          <a
+            title={t('title')}
+            className="h-14 flex items-center text-gray-600 hover:text-black transition-colors duration-300 ease-in-out"
+          >
+            <Logo className="rounded-full h-7 w-7 mr-2" />
+            <span className="font-bold text-sm">{t('title')}</span>
+          </a>
+        </Link>
         <div>
           <a
             href="https://github.com/Developer-DAO/developer-dao"
