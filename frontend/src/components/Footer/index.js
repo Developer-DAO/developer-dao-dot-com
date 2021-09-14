@@ -65,6 +65,9 @@ function Footer() {
             </a>
           </li>
         </ul>
+        <p className="text-gray-500 mb-2">
+          <small>{t('hosting')}</small>
+        </p>
         <a
           className="pl-1"
           target="_blank"

@@ -7,4 +7,5 @@ export default {
   owner: 'Owner',
   unclaimed: 'Unclaimed',
   enterDeveloperId: 'Please enter a developer DAO id',
+  hosting: 'Hosting by:',
 };

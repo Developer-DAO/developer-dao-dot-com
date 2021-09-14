@@ -74,7 +74,7 @@ function Nft(developerId) {
         src={processBase64Img(nft.image)}
       />
       <h1 className="font-semibold mb-2">{nft.name}</h1>
-      {nft.owner || null ? (
+      {nft.owner ? (
         <a
           href={`https://etherscan.io/address/${nft.owner}`}
           target="_blank"

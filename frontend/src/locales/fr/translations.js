@@ -7,4 +7,5 @@ export default {
   unclaimed: 'Non réclamés',
   owner: 'Propriétaire',
   enterDeveloperId: 'Veuillez remplir le champ avec un id DAO du développeur',
+  hosting: 'Hébergement web par :',
 };
