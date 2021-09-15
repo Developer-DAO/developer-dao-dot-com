@@ -5,7 +5,8 @@ start contributing to the project.
 
 # Development
 
-This uses [yarn][yarn].
+This project uses [yarn][yarn] to manage its dependencies. After checking out
+the project, be sure to run `yarn` to install the project's dependencies.
 
 ## Internationalization (i18n)
 
