@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/index.css';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 
