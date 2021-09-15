@@ -7,10 +7,9 @@ import PageLayout from '../layout/Page';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-function App() {
+function App({ id }) {
   const { t } = useTranslation();
   const router = useRouter();
-  const id = router.query.id || 1;
   const [developerId, setDeveloperId] = useState(id);
 
   const ethersConfig = {
@@ -18,11 +17,15 @@ function App() {
     provider: getDefaultProvider('homestead'),
   };
 
-  const updateDeveloperId = useCallback((e) => {
-    if (e <= 8000) {
-      setDeveloperId(e);
-    }
-  }, []);
+  const updateDeveloperId = useCallback(
+    (e) => {
+      if (e <= 8000) {
+        setDeveloperId(e);
+        router.replace({ query: { id: e } });
+      }
+    },
+    [router],
+  );
 
   return (
     <PageLayout>
@@ -110,9 +113,10 @@ const processBase64Img = (imgStr) => {
   return formatInfo + ',' + btoa(processedStr);
 };
 
-export const getStaticProps = async ({ locale }) => ({
+export const getServerSideProps = async ({ locale, query }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
+    id: query.id || 1,
   },
 });
 
