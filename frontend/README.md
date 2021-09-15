@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -112,6 +112,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://with-heart.me/"><img src="https://avatars.githubusercontent.com/u/1954752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>with-heart</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=with-heart" title="Code">💻</a></td>
     <td align="center"><a href="https://kavimaluskam.dev/"><img src="https://avatars.githubusercontent.com/u/19992414?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Kam</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=kavimaluskam" title="Code">💻</a> <a href="#translation-kavimaluskam" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/MGrin"><img src="https://avatars.githubusercontent.com/u/2393862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MGrin</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=MGrin" title="Code">💻</a> <a href="#translation-MGrin" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/gjsyme"><img src="https://avatars.githubusercontent.com/u/4706001/v4?s=100" width="100px;" alt=""/><br /><sub><b>Greg Syme</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=gjsyme" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Dhaiwat10"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/developer-dao/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
