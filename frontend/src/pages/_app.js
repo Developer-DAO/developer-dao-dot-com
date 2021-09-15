@@ -1,7 +1,7 @@
 import React from 'react';
-import '../i18n';
 import '../styles/index.css';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
 
 function SEO() {
   return (
@@ -133,11 +133,11 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
   );
 }
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <SEO />
-      <Component {...pageProps} />
-    </>
-  );
-}
+const App = ({ Component, pageProps }) => (
+  <>
+    <SEO />
+    <Component {...pageProps} />
+  </>
+);
+
+export default appWithTranslation(App);
