@@ -7,7 +7,13 @@ import { Box, css } from '@chakra-ui/react';
  */
 function Logo(props) {
   return (
-    <Box {...props}>
+    <Box
+      rounded="full"
+      objectFit="cover"
+      objectPosition="center"
+      overflow="hidden"
+      {...props}
+    >
       <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="400" height="400" fill="black" />
         <rect

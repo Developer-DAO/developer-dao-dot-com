@@ -20,7 +20,7 @@ function Nav() {
       >
         <Link href="/" passHref>
           <HStack as="a" title={t('title')} display="flex" alignItems="center">
-            <Logo rounded="full" h={7} w={7} overflow="hidden" />
+            <Logo h={7} w={7} />
             <chakra.span
               fontWeight="bold"
               fontSize="sm"
