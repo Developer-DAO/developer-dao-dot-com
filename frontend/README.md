@@ -46,7 +46,7 @@ The DAO operates inside our [discord server](https://discord.gg/ASjBPJuNhS). To 
 
 Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. You can check current gas fee uisng the [Etherum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later.
 
-That said, there is a limited supply of NFT's that can be created so don't wait to long!
+That said, there is a limited supply of NFT's that can be created so don't wait too long!
 
 To find available tokenIDs you can mint try this tool created by the community - https://ddao.ibby.dev/.
 
