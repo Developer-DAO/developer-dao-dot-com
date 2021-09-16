@@ -4,25 +4,31 @@ import { Button, VStack } from '@chakra-ui/react';
 import IconOpenSea from '../../Icons/opensea';
 
 function DevName({ nft, developerId }) {
+  if (nft.owner) {
+    return (
+      <Button
+        as="a"
+        href={`${OPENSEA_DIRECT_LINK_PREFIX}/${developerId}`}
+        target="_blank"
+        rel="noreferrer"
+        title={nft.owner}
+        leftIcon={<IconOpenSea width="24" height="24" />}
+        iconSpacing="3"
+        fontSize={{ base: 'xs', sm: 'md' }}
+      >
+        {nft.name}
+      </Button>
+    );
+  }
+
   return (
-    <>
-      {nft.owner ? (
-        <Button
-          as="a"
-          href={`${OPENSEA_DIRECT_LINK_PREFIX}/${developerId}`}
-          target="_blank"
-          rel="noreferrer"
-          title={nft.owner}
-          leftIcon={<IconOpenSea />}
-          size="lg"
-          fontSize={{ base: 'xs', sm: 'md' }}
-        >
-          {nft.name}
-        </Button>
-      ) : (
-        <h1 className="font-semibold mb-2">{nft.name}</h1>
-      )}
-    </>
+    <Button
+      title={nft.owner}
+      disabled="true"
+      fontSize={{ base: 'xs', sm: 'md' }}
+    >
+      {nft.name}
+    </Button>
   );
 }
 
