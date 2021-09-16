@@ -21,7 +21,7 @@ import PageLayout from '../layout/Page';
 function App() {
   const { t } = useTranslation();
   const router = useRouter();
-  const id = router.query.id || 1;
+  const id = getSearchID();
   const [developerId, setDeveloperId] = useState(id);
 
   const ethersConfig = {
@@ -29,11 +29,23 @@ function App() {
     provider: getDefaultProvider('homestead'),
   };
 
-  const updateDeveloperId = useCallback((e) => {
-    if (e <= 8000) {
-      setDeveloperId(e);
+  const updateDeveloperId = useCallback(
+    (e) => {
+      if (e <= 8000) {
+        setDeveloperId(e);
+        router.replace({ query: { id: e } });
+      }
+    },
+    [router],
+  );
+
+  function getSearchID() {
+    if (process.browser) {
+      const search = window.location.search;
+      return new URLSearchParams(search).get('id') || 1;
     }
-  }, []);
+    return 1;
+  }
 
   return (
     <PageLayout>
