@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, css } from '@chakra-ui/react';
 
+/**
+ * @param {import('@chakra-ui/react').BoxProps} props
+ */
 function Logo(props) {
   return (
     <Box {...props}>
