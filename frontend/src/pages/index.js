@@ -7,9 +7,10 @@ import PageLayout from '../layout/Page';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-function App({ id }) {
+function App() {
   const { t } = useTranslation();
   const router = useRouter();
+  const id = getSearchID();
   const [developerId, setDeveloperId] = useState(id);
 
   const ethersConfig = {
@@ -26,6 +27,14 @@ function App({ id }) {
     },
     [router],
   );
+
+  function getSearchID() {
+    if (process.browser) {
+      const search = window.location.search;
+      return new URLSearchParams(search).get('id') || 1;
+    }
+    return 1;
+  }
 
   return (
     <PageLayout>
@@ -113,10 +122,9 @@ const processBase64Img = (imgStr) => {
   return formatInfo + ',' + btoa(processedStr);
 };
 
-export const getServerSideProps = async ({ locale, query }) => ({
+export const getStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
-    id: query.id || 1,
   },
 });
 
