@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../theme';
+import '@fontsource/inter/variable-full.css';
+import '@fontsource/source-code-pro/400.css';
 
 function SEO() {
   return (
