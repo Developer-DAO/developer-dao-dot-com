@@ -8,12 +8,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "ethers": "^5.4.6",
-    "i18next": "^20.6.1",
-    "i18next-browser-languagedetector": "^6.1.2",
     "next": "^11.1.2",
+    "next-i18next": "^8.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-i18next": "^11.12.0",
     "use-nft": "^0.10.1",
     "web-vitals": "^1.0.1",
     "web3": "^1.5.2"

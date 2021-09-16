@@ -15,7 +15,7 @@ function Page({ children }) {
 }
 
 Page.propTypes = {
-  children: PropTypes.children,
+  children: PropTypes.object,
 };
 
 export default Page;
