@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -46,7 +46,7 @@ The DAO operates inside our [discord server](https://discord.gg/ASjBPJuNhS). To 
 
 Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. You can check current gas fee uisng the [Etherum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later.
 
-That said, there is a limited supply of NFT's that can be created so don't wait to long!
+That said, there is a limited supply of NFT's that can be created so don't wait too long!
 
 To find available tokenIDs you can mint try this tool created by the community - https://ddao.ibby.dev/.
 
@@ -114,6 +114,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/MGrin"><img src="https://avatars.githubusercontent.com/u/2393862?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MGrin</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=MGrin" title="Code">💻</a> <a href="#translation-MGrin" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/gjsyme"><img src="https://avatars.githubusercontent.com/u/4706001/v4?s=100" width="100px;" alt=""/><br /><sub><b>Greg Syme</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=gjsyme" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Dhaiwat10"><img src="https://avatars.githubusercontent.com/u/39617427?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dhaiwat Pandya</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=Dhaiwat10" title="Code">💻</a> <a href="https://github.com/Developer-DAO/developer-dao/pulls?q=is%3Apr+reviewed-by%3ADhaiwat10" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.acollectionofatoms.me"><img src="https://avatars.githubusercontent.com/u/7197998?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=ACollectionOfAtoms" title="Documentation">📖</a></td>
   </tr>
 </table>
 

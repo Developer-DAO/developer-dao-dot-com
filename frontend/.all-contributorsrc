@@ -143,12 +143,21 @@
       ]
     },
     {
+<<<<<<< HEAD
       "login": "narbs91",
       "name": "Narb",
       "avatar_url": "https://avatars.githubusercontent.com/u/29411347?v=4",
       "profile": "https://github.com/narbs91",
       "contributions": [
         "code"
+=======
+      "login": "ACollectionOfAtoms",
+      "name": "Adam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7197998?v=4",
+      "profile": "http://www.acollectionofatoms.me",
+      "contributions": [
+        "doc"
+>>>>>>> main
       ]
     }
   ],
