@@ -19,6 +19,7 @@ import {
   Link,
   VStack,
 } from '@chakra-ui/react';
+import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
@@ -128,6 +129,10 @@ function Nft(props) {
             {t('owner')}:&nbsp;{t('unclaimed')}
           </Button>
         )}
+        <Button onClick={() => copyLinkToNFT(props.developerId)}>
+          <LinkIcon />
+          &nbsp;Copy link to this NFT
+        </Button>
       </VStack>
     </VStack>
   );
@@ -140,6 +145,11 @@ const processBase64Img = (imgStr) => {
   const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
 
   return formatInfo + ',' + btoa(processedStr);
+};
+
+const copyLinkToNFT = (id) => {
+  navigator.clipboard.writeText(`https://developerdao.com/?id=${id}`);
+  alert('Link copied!');
 };
 
 export const getStaticProps = async ({ locale }) => ({
