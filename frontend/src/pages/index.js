@@ -8,7 +8,6 @@ import {
   DEVELOPER_DAO_CONTRACT,
   ETHER_SCAN_LINK_PREFIX,
 } from '../utils/DeveloperDaoContstants';
-import Dev from '../components/Search/Dev/Dev';
 import {
   Box,
   Flex,
@@ -22,6 +21,7 @@ import {
 } from '@chakra-ui/react';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
+import DevName from '../components/Search/Dev/DevName';
 
 function App() {
   const { t } = useTranslation();
@@ -109,7 +109,7 @@ function Nft(props) {
         rounded="md"
       />
       <VStack>
-        <Dev nft={nft} developerId={props.developerId} />
+        <DevName nft={nft} developerId={props.developerId} />
         {nft.owner ? (
           <Button
             as="a"

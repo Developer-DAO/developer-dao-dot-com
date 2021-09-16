@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoContstants';
+import { Button, VStack } from '@chakra-ui/react';
+import IconOpenSea from '../../Icons/opensea';
 
-function Dev({ nft, developerId }) {
+function DevName({ nft, developerId }) {
   return (
     <>
       {nft.owner ? (
-        <a
+        <Button
+          as="a"
           href={`${OPENSEA_DIRECT_LINK_PREFIX}/${developerId}`}
           target="_blank"
           rel="noreferrer"
           title={nft.owner}
+          leftIcon={<IconOpenSea />}
+          size="lg"
+          fontSize={{ base: 'xs', sm: 'md' }}
         >
           {nft.name}
-        </a>
+        </Button>
       ) : (
         <h1 className="font-semibold mb-2">{nft.name}</h1>
       )}
@@ -20,4 +26,4 @@ function Dev({ nft, developerId }) {
   );
 }
 
-export default Dev;
+export default DevName;
