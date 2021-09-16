@@ -38,7 +38,7 @@ function App() {
   return (
     <PageLayout>
       <chakra.main>
-        <VStack mx="auto" px={4} py={16} pb={8} spacing={5} w="full" maxW="lg">
+        <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
           <Logo
             w={32}
             h={32}
@@ -86,7 +86,7 @@ function Nft(props) {
   if (error || !nft) return <Text>{t('error')}.</Text>;
 
   return (
-    <VStack w="full" spacing={4}>
+    <VStack w="full" spacing={5}>
       <chakra.img
         alt="hero"
         src={processBase64Img(nft.image)}

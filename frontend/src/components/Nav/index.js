@@ -15,7 +15,7 @@ function Nav() {
         align="center"
         mx="auto"
         maxW="6xl"
-        h={14}
+        py={3}
         px={4}
       >
         <Link href="/" passHref>
