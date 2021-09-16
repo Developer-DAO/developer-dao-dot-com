@@ -28,7 +28,7 @@ function Footer() {
             textDecor="underline"
             color="blue.600"
           >
-            Github
+            GitHub
           </chakra.a>
         </Text>
         <HStack as="ul" direction="row" spacing={4} listStyleType="none">
