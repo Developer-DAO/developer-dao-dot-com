@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Stack } from '@chakra-ui/react';
 import Footer from '../../components/Footer';
 import Nav from '../../components/Nav';
 
 function Page({ children }) {
   return (
-    <div>
+    <Stack spacing={10}>
       <Nav />
       {children}
       <Footer />
-    </div>
+    </Stack>
   );
 }
 

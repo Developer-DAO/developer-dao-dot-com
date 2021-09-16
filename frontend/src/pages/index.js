@@ -2,10 +2,21 @@ import React, { useCallback, useState } from 'react';
 import { getDefaultProvider, Contract } from 'ethers';
 import { NftProvider, useNft } from 'use-nft';
 import { useRouter } from 'next/router';
-import Logo from '../components/Logo';
-import PageLayout from '../layout/Page';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import {
+  Box,
+  Flex,
+  chakra,
+  Input,
+  Text,
+  Heading,
+  Button,
+  Link,
+  VStack,
+} from '@chakra-ui/react';
+import Logo from '../components/Logo';
+import PageLayout from '../layout/Page';
 
 function App() {
   const { t } = useTranslation();
@@ -26,78 +37,84 @@ function App() {
 
   return (
     <PageLayout>
-      <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex px-4 pt-16 pb-8 items-center justify-center flex-col w-full max-w-md">
-          <Logo className="mb-5 w-32 h-32 object-cover object-center rounded-full" />
-
-          <div className="text-center w-full">
-            <div className="flex justify-center">
-              <div className="relative w-full text-left">
-                <h1 className="mb-6 text-xl text-center">{t('searchId')}</h1>
-                <input
-                  placeholder="Search developer id"
-                  value={developerId}
-                  onChange={(e) => updateDeveloperId(e.target.value)}
-                  type="text"
-                  id="hero-field"
-                  name="hero-field"
-                  className="w-full mb-6 bg-white bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
-              </div>
-            </div>
-          </div>
+      <chakra.main>
+        <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
+          <Logo w={32} h={32} />
+          <VStack w="full">
+            <Text fontSize="xl">{t('searchId')}</Text>
+            <Input
+              aria-label="Search by developer ID"
+              placeholder="Search developer id"
+              value={developerId}
+              onChange={(e) => updateDeveloperId(e.target.value)}
+              id="hero-field"
+              name="hero-field"
+              bg="white"
+            />
+          </VStack>
           {typeof window !== 'undefined' ? (
             <NftProvider fetcher={['ethers', ethersConfig]}>
               <Nft developerId={developerId} />
             </NftProvider>
           ) : (
-            <>{t('loading')}</>
+            <Text>{t('loading')}</Text>
           )}
-        </div>
-      </section>
+        </VStack>
+      </chakra.main>
     </PageLayout>
   );
 }
 
-function Nft(developerId) {
+function Nft(props) {
   const { t } = useTranslation();
   const { loading, error, nft } = useNft(
     '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b',
-    developerId.developerId,
+    props.developerId,
   );
 
-  if (loading) return <>{t('loading')}</>;
+  if (loading) return <Text>{t('loading')}</Text>;
 
-  if (!developerId.developerId) return <>{t('enterDeveloperId')}</>;
+  if (!props.developerId) return <Text>{t('enterDeveloperId')}</Text>;
 
-  if (error || !nft) return <>{t('error')}.</>;
+  if (error || !nft) return <Text>{t('error')}.</Text>;
 
   return (
-    <>
-      <img
-        className="border-4 w-full mb-8 object-cover object-center rounded"
+    <VStack w="full" spacing={5}>
+      <chakra.img
         alt="hero"
         src={processBase64Img(nft.image)}
+        border={4}
+        borderStyle="solid"
+        borderColor="gray.200"
+        w="full"
+        objectFit="cover"
+        objectPosition="center"
+        rounded="md"
       />
-      <h1 className="font-semibold mb-2">{nft.name}</h1>
-      {nft.owner ? (
-        <a
-          href={`https://etherscan.io/address/${nft.owner}`}
-          target="_blank"
-          rel="noreferrer"
-          title={nft.owner || t('unclaimed')}
-          className="text-xs sm:text-base max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out "
-        >
-          {t('owner')}:&nbsp;
-          <span className="max-w-xs">{nft.owner.slice(0, 30)}</span>...
-          {nft.owner.slice(-4)}
-        </a>
-      ) : (
-        <span className="max-w-full overflow-hidden bg-gray-300 rounded-full h-8 whitespace-nowrap flex items-center justify-center px-3">
-          {t('owner')}:&nbsp;{t('unclaimed')}
-        </span>
-      )}
-    </>
+      <VStack>
+        <Heading as="h1" fontSize="md" textAlign="center">
+          {nft.name}
+        </Heading>
+        {nft.owner ? (
+          <Button
+            as="a"
+            href={`https://etherscan.io/address/${nft.owner}`}
+            target="_blank"
+            rel="noreferrer"
+            title={nft.owner || t('unclaimed')}
+            fontSize={{ base: 'xs', sm: 'md' }}
+          >
+            {t('owner')}:&nbsp;
+            <chakra.span maxW="xs">{nft.owner.slice(0, 30)}</chakra.span>...
+            {nft.owner.slice(-4)}
+          </Button>
+        ) : (
+          <Button isDisabled>
+            {t('owner')}:&nbsp;{t('unclaimed')}
+          </Button>
+        )}
+      </VStack>
+    </VStack>
   );
 }
 

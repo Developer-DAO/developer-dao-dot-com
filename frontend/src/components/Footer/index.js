@@ -1,25 +1,37 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  Box,
+  Flex,
+  Text,
+  HStack,
+  chakra,
+  List,
+  ListItem,
+  VStack,
+} from '@chakra-ui/react';
 import { IconOpenSea, IconEtherscan, IconTwitter, IconDiscord } from '../Icons';
 
 function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-t border-gray-200 py-10">
-      <div className="container mx-auto max-w-6xl px-4 flex justify-center items-center flex-col">
-        <h5 className="text-sm mb-4 text-gray-600">
+    <chakra.footer borderTop="1px solid" borderColor="gray.200" py={10}>
+      <VStack mx="auto" maxW="6xl" px={4} spacing={5}>
+        <Text fontSize="sm" color="gray.600">
           {t('madeBy')}
-          <a
-            className="underline text-blue-400"
+          <chakra.a
             href="https://github.com/Developer-DAO"
+            title="Developer DAO GitHub organization"
             target="_blank"
             rel="noreferrer"
+            textDecor="underline"
+            color="blue.600"
           >
             Github
-          </a>
-        </h5>
-        <ul className="flex mb-4">
+          </chakra.a>
+        </Text>
+        <HStack as="ul" direction="row" spacing={4} listStyleType="none">
           <li>
             <a
               title="OpenSea"
@@ -64,24 +76,25 @@ function Footer() {
               <IconDiscord />
             </a>
           </li>
-        </ul>
-        <p className="text-gray-500 mb-2">
-          <small>{t('hosting')}</small>
-        </p>
-        <a
-          className="pl-1"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
-        >
-          <img
-            alt="Powered by Vercel"
-            height="32"
-            src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
-          />
-        </a>
-      </div>
-    </footer>
+        </HStack>
+        <VStack>
+          <Text color="gray.600" fontSize="sm">
+            {t('hosting')}
+          </Text>
+          <chakra.a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
+          >
+            <img
+              alt="Powered by Vercel"
+              height="32"
+              src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
+            />
+          </chakra.a>
+        </VStack>
+      </VStack>
+    </chakra.footer>
   );
 }
 

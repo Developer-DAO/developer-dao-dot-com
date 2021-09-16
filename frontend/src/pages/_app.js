@@ -1,7 +1,10 @@
 import React from 'react';
-import '../styles/index.css';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
+import { ChakraProvider } from '@chakra-ui/react';
+import { theme } from '../theme';
+import '@fontsource/inter/variable-full.css';
+import '@fontsource/source-code-pro/400.css';
 
 function SEO() {
   return (
@@ -136,7 +139,9 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
 const App = ({ Component, pageProps }) => (
   <>
     <SEO />
-    <Component {...pageProps} />
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
   </>
 );
 
