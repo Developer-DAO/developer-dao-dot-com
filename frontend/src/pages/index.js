@@ -10,14 +10,10 @@ import {
   SITE_URL,
 } from '../utils/DeveloperDaoConstants';
 import {
-  Box,
-  Flex,
   chakra,
   Input,
   Text,
-  Heading,
   Button,
-  Link,
   VStack,
   useToast,
 } from '@chakra-ui/react';
