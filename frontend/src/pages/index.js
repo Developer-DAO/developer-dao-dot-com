@@ -18,6 +18,7 @@ import {
   Button,
   Link,
   VStack,
+  useToast,
 } from '@chakra-ui/react';
 import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
@@ -85,6 +86,20 @@ function App() {
 
 function Nft(props) {
   const { t } = useTranslation();
+  const toast = useToast();
+
+  const copyLinkToNFT = useCallback(() => {
+    navigator.clipboard.writeText(
+      `https://developerdao.com/?id=${props.developerId}`,
+    );
+    toast({
+      title: t('linkCopied'),
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+    });
+  }, [toast, t, props.developerId]);
+
   const { loading, error, nft } = useNft(
     DEVELOPER_DAO_CONTRACT,
     props.developerId,
@@ -129,9 +144,8 @@ function Nft(props) {
             {t('owner')}:&nbsp;{t('unclaimed')}
           </Button>
         )}
-        <Button onClick={() => copyLinkToNFT(props.developerId)}>
-          <LinkIcon />
-          &nbsp;Copy link to this NFT
+        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
+          {t('copyLinkToNFT')}
         </Button>
       </VStack>
     </VStack>
@@ -145,11 +159,6 @@ const processBase64Img = (imgStr) => {
   const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
 
   return formatInfo + ',' + btoa(processedStr);
-};
-
-const copyLinkToNFT = (id) => {
-  navigator.clipboard.writeText(`https://developerdao.com/?id=${id}`);
-  alert('Link copied!');
 };
 
 export const getStaticProps = async ({ locale }) => ({
