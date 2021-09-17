@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
   ETHER_SCAN_LINK_PREFIX,
+  SITE_URL,
 } from '../utils/DeveloperDaoConstants';
 import {
   Box,
@@ -89,9 +90,7 @@ function Nft(props) {
   const toast = useToast();
 
   const copyLinkToNFT = useCallback(() => {
-    navigator.clipboard.writeText(
-      `https://developerdao.com/?id=${props.developerId}`,
-    );
+    navigator.clipboard.writeText(`${SITE_URL}/?id=${props.developerId}`);
     toast({
       title: t('linkCopied'),
       isClosable: true,
