@@ -5,6 +5,10 @@ import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import {
+  DEVELOPER_DAO_CONTRACT,
+  ETHER_SCAN_LINK_PREFIX,
+} from '../utils/DeveloperDaoConstants';
+import {
   Box,
   Flex,
   chakra,
@@ -17,6 +21,7 @@ import {
 } from '@chakra-ui/react';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
+import DevName from '../components/Search/Dev/DevName';
 
 function App() {
   const { t } = useTranslation();
@@ -80,7 +85,7 @@ function App() {
 function Nft(props) {
   const { t } = useTranslation();
   const { loading, error, nft } = useNft(
-    '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b',
+    DEVELOPER_DAO_CONTRACT,
     props.developerId,
   );
 
@@ -104,13 +109,11 @@ function Nft(props) {
         rounded="md"
       />
       <VStack>
-        <Heading as="h1" fontSize="md" textAlign="center">
-          {nft.name}
-        </Heading>
+        <DevName nft={nft} developerId={props.developerId} />
         {nft.owner ? (
           <Button
             as="a"
-            href={`https://etherscan.io/address/${nft.owner}`}
+            href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
             target="_blank"
             rel="noreferrer"
             title={nft.owner || t('unclaimed')}
