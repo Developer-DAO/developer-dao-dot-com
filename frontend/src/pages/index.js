@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
   ETHER_SCAN_LINK_PREFIX,
-} from '../utils/DeveloperDaoContstants';
+} from '../utils/DeveloperDaoConstants';
 import {
   Box,
   Flex,

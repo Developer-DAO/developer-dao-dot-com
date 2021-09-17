@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoContstants';
+import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoConstants';
 import { Button, VStack } from '@chakra-ui/react';
 import IconOpenSea from '../../Icons/opensea';
 
