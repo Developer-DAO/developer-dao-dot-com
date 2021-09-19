@@ -49,4 +49,12 @@ describe('NFT Search', () => {
       name: 'DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
     });
   });
+
+  it('Updates url when searching for another token id', () => {
+    cy.findByRole('textbox', { name: /Search/ })
+      .clear()
+      .type('5555');
+    cy.findByRole('textbox', { name: /Search/ }).should('have.value', '5555');
+    cy.location('search').should('eq', '?id=5555');
+  });
 });
