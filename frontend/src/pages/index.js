@@ -7,18 +7,17 @@ import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
   ETHER_SCAN_LINK_PREFIX,
+  SITE_URL,
 } from '../utils/DeveloperDaoConstants';
 import {
-  Box,
-  Flex,
   chakra,
   Input,
   Text,
-  Heading,
   Button,
-  Link,
   VStack,
+  useToast,
 } from '@chakra-ui/react';
+import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
@@ -84,6 +83,16 @@ function App() {
 
 function Nft(props) {
   const { t } = useTranslation();
+  const toast = useToast();
+
+  const copyLinkToNFT = useCallback(() => {
+    navigator.clipboard.writeText(`${SITE_URL}/?id=${props.developerId}`);
+    toast({
+      title: t('linkCopied'),
+      isClosable: true,
+    });
+  }, [toast, t, props.developerId]);
+
   const { loading, error, nft } = useNft(
     DEVELOPER_DAO_CONTRACT,
     props.developerId,
@@ -128,6 +137,9 @@ function Nft(props) {
             {t('owner')}:&nbsp;{t('unclaimed')}
           </Button>
         )}
+        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
+          {t('copyLinkToNFT')}
+        </Button>
       </VStack>
     </VStack>
   );
