@@ -4,6 +4,7 @@ import { Button, VStack } from '@chakra-ui/react';
 import IconOpenSea from '../../Icons/opensea';
 
 function DevName({ nft, developerId }) {
+  console.log(nft);
   if (nft.owner) {
     return (
       <Button
