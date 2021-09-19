@@ -6,7 +6,10 @@ import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
 
+import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';
+
+const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
 function SEO() {
   const { t } = useTranslation();
@@ -27,13 +30,13 @@ function SEO() {
       <meta property="og:url" content="https://www.developerdao.com/" />
       <meta property="og:title" content="Developer DAO" />
       <meta property="og:description" content={t('description')} />
-      <meta property="og:image" content="social-banner.png" />
+      <meta property="og:image" content={socialBanner} />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.developerdao.com/" />
       <meta property="twitter:title" content="Developer DAO" />
       <meta property="twitter:description" content={t('description')} />
-      <meta property="twitter:image" content="social-banner.png" />
+      <meta property="twitter:image" content={socialBanner} />
       {/* Favicon Images */}
       <link rel="apple-touch-icon" href="logo192.png" />
       <link
