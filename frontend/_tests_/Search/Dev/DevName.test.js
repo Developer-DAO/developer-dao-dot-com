@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import DevName from '../../../src/components/Search/Dev/DevName';
 import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../src/utils/DeveloperDaoConstants';
 import testCommonLink from '../../utils/testCommons';

@@ -1,8 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import Footer from '../../src/components/Footer/index';
-import testCommonLink from '../utils/testCommons';
 
 describe('Footer', () => {
   it('Renders the github link', () => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import Nav from '../../src/components/Nav/index';
 import testCommonLink from '../utils/testCommons';
 
