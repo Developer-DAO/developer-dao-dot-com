@@ -65,6 +65,15 @@ describe('NFT Search', () => {
       .scrollIntoView()
       .realClick();
 
+    cy.findAllByRole('alert')
+      .contains('Link copied to clipboard')
+      .should('exist');
+
+    cy.findByRole('button', { name: 'Close' }).click();
+    cy.findAllByRole('alert')
+      .contains('Link copied to clipboard')
+      .should('not.exist');
+
     cy.task('getClipboard').should('eq', `${SITE_URL}/?id=1234`);
   });
 });
