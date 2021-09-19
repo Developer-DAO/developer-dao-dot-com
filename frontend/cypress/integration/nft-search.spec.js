@@ -24,4 +24,19 @@ describe('NFT Search', () => {
       .should('have.attr', 'href')
       .and('match', /^https:\/\/etherscan.io\/address\/0x\w+$/);
   });
+
+  it('Loads token id from the url', () => {
+    cy.visit('/?id=200');
+    cy.findByRole('textbox', { name: /Search/ }).should('have.value', '200');
+
+    cy.findByText(/Loading/).should('not.exist');
+    cy.findByRole('img', {
+      name: 'Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
+    });
+    cy.findByRole('link', { name: 'View NFT on OpenSea' }).should(
+      'have.attr',
+      'href',
+      `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}/200`,
+    );
+  });
 });
