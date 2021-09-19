@@ -59,6 +59,7 @@
   "devDependencies": {
     "@testing-library/cypress": "^8.0.1",
     "all-contributors-cli": "^6.20.0",
+    "clipboardy": "^2.3.0",
     "cypress": "^8.4.1",
     "cypress-real-events": "^1.5.1",
     "eslint": "^7.32.0",
