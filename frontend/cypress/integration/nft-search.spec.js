@@ -3,11 +3,8 @@
 import { DEVELOPER_DAO_CONTRACT } from '../../src/utils/DeveloperDaoConstants';
 
 describe('NFT Search', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
   it('Loads first token by default', () => {
+    cy.visit('/');
     cy.findByText(/Loading/).should('exist');
     cy.findByRole('textbox', { name: /Search/ }).should('have.value', '1');
 
@@ -51,6 +48,7 @@ describe('NFT Search', () => {
   });
 
   it('Updates url when searching for another token id', () => {
+    cy.visit('/');
     cy.findByRole('textbox', { name: /Search/ })
       .clear()
       .type('5555');
