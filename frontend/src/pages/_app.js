@@ -22,19 +22,19 @@ function SEO() {
       <meta name="theme-color" content="#000000" />
       <meta name="description" content={t('description')} />
       {/* Primary Meta Tags */}
-      <title>Developer DAO</title>
-      <meta name="title" content="Developer DAO" />
+      <title>{t('title')}</title>
+      <meta name="title" content={t('title')} />
       <meta name="description" content={t('description')} />
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.developerdao.com/" />
-      <meta property="og:title" content="Developer DAO" />
+      <meta property="og:title" content={t('title')} />
       <meta property="og:description" content={t('description')} />
       <meta property="og:image" content={socialBanner} />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.developerdao.com/" />
-      <meta property="twitter:title" content="Developer DAO" />
+      <meta property="twitter:title" content={t('title')} />
       <meta property="twitter:description" content={t('description')} />
       <meta property="twitter:image" content={socialBanner} />
       {/* Favicon Images */}
