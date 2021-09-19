@@ -104,11 +104,13 @@ function Nft(props) {
 
   if (error || !nft) return <Text>{t('error')}.</Text>;
 
+  const { nftImage, nftAltText } = processNftImageContent(nft.image);
+
   return (
     <VStack w="full" spacing={5}>
       <chakra.img
-        alt="hero"
-        src={processBase64Img(nft.image)}
+        alt={nftAltText}
+        src={nftImage}
         border={4}
         borderStyle="solid"
         borderColor="gray.200"
@@ -145,13 +147,32 @@ function Nft(props) {
   );
 }
 
-const processBase64Img = (imgStr) => {
+const processNftImageContent = (imgStr) => {
   const [formatInfo, base64Str] = imgStr.split(',');
 
   // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
+  const svgCode = atob(base64Str);
+  const processedStr = svgCode.replace(' & ', ' &amp; ');
 
-  return formatInfo + ',' + btoa(processedStr);
+  const nftImage = formatInfo + ',' + btoa(processedStr);
+  const nftAltText = getNftAltText(svgCode);
+
+  return { nftImage, nftAltText };
+};
+
+const getNftAltText = (svgCode) => {
+  const template = document.createElement('template');
+  template.innerHTML = svgCode;
+
+  const [svgTag] = template.content.childNodes;
+  if (!svgTag) {
+    return 'Developer NFT, failed to load text';
+  }
+
+  const textNodes = Array.from(svgTag.querySelectorAll('text'));
+  const nftTraits = textNodes.map((node) => node.textContent).join(', ');
+
+  return nftTraits;
 };
 
 export const getStaticProps = async ({ locale }) => ({
