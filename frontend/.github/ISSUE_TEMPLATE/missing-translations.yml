@@ -22,6 +22,7 @@ body:
     id: 'missing-locales'
     attributes:
       label: 'List of missing locales'
+      multiple: true
       description: 'Check the locales that are missing translations'
       options:
         - 'en'
