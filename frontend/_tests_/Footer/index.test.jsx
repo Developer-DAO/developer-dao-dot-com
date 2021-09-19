@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Footer from '../../src/components/Footer/index';
 import '@testing-library/jest-dom';
+import Footer from '../../src/components/Footer/index';
+import testCommonLink from '../utils/testCommons';
 
 describe('Footer', () => {
   it('Renders the github link', () => {
@@ -42,8 +43,3 @@ describe('Footer', () => {
     );
   });
 });
-
-function testCommonLink(element, linkAddress) {
-  expect(element).toBeInTheDocument();
-  expect(element.closest('a')).toHaveAttribute('href', linkAddress);
-}
