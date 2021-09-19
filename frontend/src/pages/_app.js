@@ -2,45 +2,37 @@ import React from 'react';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from '../theme';
+import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
 
+import { theme } from '../theme';
+
 function SEO() {
+  const { t } = useTranslation();
+
   return (
     <Head>
       <meta charSet="utf-8" />
       <link rel="icon" href="DeveloperDaoFavicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#000000" />
-      <meta
-        name="description"
-        content="A community of builders who believe in collective ownership of the internet."
-      />
+      <meta name="description" content={t('description')} />
       {/* Primary Meta Tags */}
       <title>Developer DAO</title>
       <meta name="title" content="Developer DAO" />
-      <meta
-        name="description"
-        content="A community of builders who believe in collective ownership of the internet."
-      />
+      <meta name="description" content={t('description')} />
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.developerdao.com/" />
       <meta property="og:title" content="Developer DAO" />
-      <meta
-        property="og:description"
-        content="A community of builders who believe in collective ownership of the internet."
-      />
+      <meta property="og:description" content={t('description')} />
       <meta property="og:image" content="social-banner.png" />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.developerdao.com/" />
       <meta property="twitter:title" content="Developer DAO" />
-      <meta
-        property="twitter:description"
-        content="A community of builders who believe in collective ownership of the internet."
-      />
+      <meta property="twitter:description" content={t('description')} />
       <meta property="twitter:image" content="social-banner.png" />
       {/* Favicon Images */}
       <link rel="apple-touch-icon" href="logo192.png" />
