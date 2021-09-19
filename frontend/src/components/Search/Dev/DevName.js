@@ -24,7 +24,7 @@ function DevName({ nft, developerId }) {
   return (
     <Button
       title={nft.owner}
-      disabled="true"
+      disabled={true}
       fontSize={{ base: 'xs', sm: 'md' }}
     >
       {nft.name}
