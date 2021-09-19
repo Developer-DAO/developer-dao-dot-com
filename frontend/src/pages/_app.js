@@ -20,7 +20,6 @@ function SEO() {
       <link rel="icon" href="DeveloperDaoFavicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#000000" />
-      <meta name="description" content={t('description')} />
       {/* Primary Meta Tags */}
       <title>{t('title')}</title>
       <meta name="title" content={t('title')} />
