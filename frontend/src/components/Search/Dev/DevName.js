@@ -11,7 +11,7 @@ function DevName({ nft, developerId }) {
         href={`${OPENSEA_DIRECT_LINK_PREFIX}/${developerId}`}
         target="_blank"
         rel="noreferrer"
-        title={nft.owner}
+        title="View NFT on OpenSea"
         leftIcon={<IconOpenSea width="24" height="24" />}
         iconSpacing="3"
         fontSize={{ base: 'xs', sm: 'md' }}
