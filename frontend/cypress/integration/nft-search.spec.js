@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 
-import { DEVELOPER_DAO_CONTRACT } from '../../src/utils/DeveloperDaoConstants';
+import {
+  DEVELOPER_DAO_CONTRACT,
+  SITE_URL,
+} from '../../src/utils/DeveloperDaoConstants';
 
 describe('NFT Search', () => {
   it('Loads first token by default', () => {
@@ -54,5 +57,14 @@ describe('NFT Search', () => {
       .type('5555');
     cy.findByRole('textbox', { name: /Search/ }).should('have.value', '5555');
     cy.location('search').should('eq', '?id=5555');
+  });
+
+  it('Copies NFT link to clipboard', () => {
+    cy.visit('/?id=1234');
+    cy.findByRole('button', { name: 'Copy link to NFT' })
+      .scrollIntoView()
+      .realClick();
+
+    cy.task('getClipboard').should('eq', `${SITE_URL}/?id=1234`);
   });
 });
