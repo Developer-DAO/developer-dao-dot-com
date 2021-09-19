@@ -39,4 +39,14 @@ describe('NFT Search', () => {
       `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}/200`,
     );
   });
+
+  it('Loads token with ampersand character fixed', () => {
+    cy.visit('/?id=404');
+    cy.findByRole('textbox', { name: /Search/ }).should('have.value', '404');
+
+    cy.findByText(/Loading/).should('not.exist');
+    cy.findByRole('img', {
+      name: 'DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
+    });
+  });
 });
