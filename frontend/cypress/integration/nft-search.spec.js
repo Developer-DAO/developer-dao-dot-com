@@ -54,7 +54,7 @@ describe('NFT Search', () => {
     cy.visit('/');
     cy.findByRole('textbox', { name: /Search/ })
       .clear()
-      .type('5555');
+      .realType('5555');
     cy.findByRole('textbox', { name: /Search/ }).should('have.value', '5555');
     cy.location('search').should('eq', '?id=5555');
   });
@@ -69,7 +69,7 @@ describe('NFT Search', () => {
       .contains('Link copied to clipboard')
       .should('exist');
 
-    cy.findByRole('button', { name: 'Close' }).click();
+    cy.findByRole('button', { name: 'Close' }).realClick();
     cy.findAllByRole('alert')
       .contains('Link copied to clipboard')
       .should('not.exist');
