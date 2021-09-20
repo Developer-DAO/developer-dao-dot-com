@@ -1,7 +1,7 @@
+import { chakra, Flex, HStack } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Link from 'next/link';
-import { Box, Flex, chakra, HStack } from '@chakra-ui/react';
 import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
 
