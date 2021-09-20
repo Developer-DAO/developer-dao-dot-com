@@ -29,7 +29,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "e2e": "cypress",
+    "e2e": "cypress run",
     "e2e:watch": "cypress open",
     "fmt": "prettier --write **/*.js",
     "prepare": "husky install",
