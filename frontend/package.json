@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "next start",
-    "build": "jest && next build",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
     "fmt": "prettier --write **/*.js",
