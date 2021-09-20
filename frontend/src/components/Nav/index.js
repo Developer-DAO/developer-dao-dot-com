@@ -32,7 +32,10 @@ function Nav() {
             </chakra.span>
           </HStack>
         </Link>
-        <Box>
+        <Flex alignItems="center" gridGap="10">
+          <Link href="/projects" passHref>
+            Projects
+          </Link>
           <chakra.a
             href="https://github.com/Developer-DAO/developer-dao"
             target="_blank"
@@ -47,7 +50,7 @@ function Nav() {
               _hover={{ opacity: 1 }}
             />
           </chakra.a>
-        </Box>
+        </Flex>
       </Flex>
     </chakra.nav>
   );
