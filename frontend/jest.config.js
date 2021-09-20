@@ -1,8 +1,23 @@
 module.exports = {
+  coverageThreshold: {
+    global: {
+      branches: 70,
+      functions: 80,
+      lines: 80,
+    },
+  },
+  collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!**/.next/**',
+    '!.**',
+    '!**.config.**',
+    '!coverage/**',
+    '!src/theme.js',
+    '!src/pages/_app.js',
+    '!src/pages/_document.js',
   ],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
