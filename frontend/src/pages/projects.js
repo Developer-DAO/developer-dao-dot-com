@@ -24,10 +24,10 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://github.com/Nazeeh21">Nazeeh</Link>
+              <Link href="https://ddao.ibby.dev/">Developer Dao Tokens</Link>
             </ListItem>
             <ListItem>
-              <Link href="https://github.com/Nazeeh21">Nazeeh</Link>
+              <Link href="https://developerdao.vercel.app/ ">Developer DAO</Link>
             </ListItem>
           </UnorderedList>
         </VStack>
