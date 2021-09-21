@@ -1,10 +1,6 @@
 /// <reference types="cypress" />
 
-import {
-  OPENSEA_DIRECT_LINK_PREFIX,
-  ETHER_SCAN_LINK_PREFIX,
-  SITE_URL,
-} from '../../src/utils/DeveloperDaoConstants';
+import { SITE_URL } from '../../src/utils/DeveloperDaoConstants';
 
 describe('NFT Search', () => {
   it('Loads first token by default', () => {
