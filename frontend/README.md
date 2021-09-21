@@ -61,8 +61,8 @@ At the moment it allows members to view their genesis NFT by entering in its ID.
 ## Built with
 
 - [React.js](https://reactjs.org/)
-- [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
-- [TailwindCSS](https://tailwindcss.com/)
+- [Next.js](https://nextjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
 - [Yarn](https://yarnpkg.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Prettier](https://prettier.io/)
@@ -82,7 +82,7 @@ nvm install; # to install the version in .nvmrc
 
 1. Clone this repo with git
 2. Install dependencies by running `yarn`
-3. Start the development server with `yarn start`
+3. Start the development server with `yarn dev`
 4. Open development site by going to `http:localhost:3000`
 
 ## Contributing

@@ -1,5 +1,6 @@
 {
   "title": "Developer DAO",
+  "description": "Una comunidad de constructores que creen en la propiedad colectiva de Internet.",
   "searchId": "Buscar $t(title) id",
   "loading": "Cargando...",
   "error": "Error",
