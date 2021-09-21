@@ -1,17 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-type IconOpenSeaProps = {
-  className?: string;
-  width?: string;
-  height?: string;
-};
 
 function IconOpenSea({
   className = '',
   width = '40',
   height = '40',
-}: IconOpenSeaProps) {
+}: {
+  className?: string;
+  width?: string;
+  height?: string;
+}) {
   return (
     <svg
       className={className}

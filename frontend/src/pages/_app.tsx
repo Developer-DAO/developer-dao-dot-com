@@ -136,7 +136,13 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
   );
 }
 
-const App = ({ Component, pageProps }) => (
+const App = ({
+  Component,
+  pageProps,
+}: {
+  Component: React.FC;
+  pageProps: any;
+}) => (
   <>
     <SEO />
     <ChakraProvider theme={theme}>

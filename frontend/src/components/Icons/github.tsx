@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box, ChakraProps } from '@chakra-ui/react';
 
 function IconGitHub(props: ChakraProps) {

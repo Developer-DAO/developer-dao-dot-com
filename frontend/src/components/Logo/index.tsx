@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box, ChakraProps, css } from '@chakra-ui/react';
 
 function Logo(props: ChakraProps) {

@@ -1,11 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-type IconTwitterProps = {
-  className?: string;
-};
-
-function IconTwitter({ className = '' }: IconTwitterProps) {
+function IconTwitter({ className = '' }: { className?: string }) {
   return (
     <svg
       className={className}

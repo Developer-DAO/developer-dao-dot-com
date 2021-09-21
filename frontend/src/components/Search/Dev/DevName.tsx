@@ -4,12 +4,13 @@ import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoConstants
 import { Button, VStack } from '@chakra-ui/react';
 import IconOpenSea from '../../Icons/opensea';
 
-type DevNameProps = {
+function DevName({
+  nft,
+  developerId,
+}: {
   nft: NftMetadata;
   developerId: string;
-};
-
-function DevName({ nft, developerId }: DevNameProps) {
+}) {
   if (nft.owner) {
     return (
       <Button
@@ -30,7 +31,7 @@ function DevName({ nft, developerId }: DevNameProps) {
   return (
     <Button
       title={nft.owner}
-      disabled={true}
+      isDisabled={true}
       fontSize={{ base: 'xs', sm: 'md' }}
     >
       {nft.name}
