@@ -17,12 +17,14 @@ Cypress.Commands.add('findDeveloperNft', (traits = '') => {
 
 Cypress.Commands.add('findOpenSeaLink', (token) => {
   cy.findByRole('link', { name: /view .+ opensea/i })
+    .should('exist')
     .should('have.attr', 'href')
     .should('eq', `${OPENSEA_DIRECT_LINK_PREFIX}/${token}`);
 });
 
 Cypress.Commands.add('findEtherscanLink', () => {
   cy.findByRole('link', { name: /view .+ etherscan/i })
+    .should('exist')
     .should('have.attr', 'href')
     .should('contain', ETHER_SCAN_LINK_PREFIX);
 });
