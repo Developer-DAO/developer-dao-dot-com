@@ -178,6 +178,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "miralsuthar",
+      "name": "Miral Suthar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57826091?v=4",
+      "profile": "https://github.com/miralsuthar",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
