@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 
 import {
-  DEVELOPER_DAO_CONTRACT,
+  OPENSEA_DIRECT_LINK_PREFIX,
+  ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
 } from '../../src/utils/DeveloperDaoConstants';
 
@@ -17,14 +18,12 @@ describe('NFT Search', () => {
     cy.findByRole('img', {
       name: 'macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
     });
-    cy.findByRole('link', { name: /view .+ opensea/i }).should(
-      'have.attr',
-      'href',
-      `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}/1`,
-    );
+    cy.findByRole('link', { name: /view .+ opensea/i })
+      .should('have.attr', 'href')
+      .should('eq', `${OPENSEA_DIRECT_LINK_PREFIX}/1`);
     cy.findByRole('link', { name: /view .+ etherscan/i })
       .should('have.attr', 'href')
-      .and('match', /^https:\/\/etherscan.io\/address\/0x\w+$/);
+      .should('contain', ETHER_SCAN_LINK_PREFIX);
   });
 
   it('Loads token id from the url', () => {
@@ -38,7 +37,7 @@ describe('NFT Search', () => {
     cy.findByRole('link', { name: /view .+ opensea/i }).should(
       'have.attr',
       'href',
-      `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}/200`,
+      `${OPENSEA_DIRECT_LINK_PREFIX}/200`,
     );
   });
 
