@@ -5,7 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../theme';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
-import { AppProps } from 'next/dist/shared/lib/router/router';
+import { AppProps } from 'next/app';
 
 function SEO() {
   return (
