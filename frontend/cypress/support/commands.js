@@ -3,6 +3,12 @@ import {
   OPENSEA_DIRECT_LINK_PREFIX,
 } from '../../src/utils/DeveloperDaoConstants';
 
+Cypress.Commands.add('checkSearchTerm', (search) => {
+  cy.findByRole('textbox', { name: /search/i })
+    .should('exist')
+    .should('have.value', search);
+});
+
 Cypress.Commands.add('findDeveloperNft', (traits = '') => {
   cy.findByRole('img', {
     name: new RegExp(`developer traits: ${traits}`, 'i'),

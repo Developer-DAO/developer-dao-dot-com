@@ -6,10 +6,8 @@ describe('NFT Search', () => {
   it('Loads first token by default', () => {
     cy.visit('/');
     cy.findByText(/loading/i).should('exist');
-    cy.findByRole('textbox', { name: /search/i })
-      .should('exist')
-      .should('have.value', '1');
 
+    cy.checkSearchTerm('1');
     cy.findDeveloperNft(
       'macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
     ).should('exist');
@@ -19,10 +17,9 @@ describe('NFT Search', () => {
 
   it('Loads token id from the url', () => {
     cy.visit('/?id=200');
-    cy.findByRole('textbox', { name: /search/i }).should('have.value', '200');
-
     cy.findByText(/loading/i).should('not.exist');
 
+    cy.checkSearchTerm('200');
     cy.findDeveloperNft(
       'Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
     ).should('exist');
@@ -32,10 +29,9 @@ describe('NFT Search', () => {
 
   it('Loads token with ampersand character fixed', () => {
     cy.visit('/?id=404');
-    cy.findByRole('textbox', { name: /search/i }).should('have.value', '404');
-
     cy.findByText(/loading/i).should('not.exist');
 
+    cy.checkSearchTerm('404');
     cy.findDeveloperNft(
       'DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
     ).should('exist');
@@ -43,8 +39,8 @@ describe('NFT Search', () => {
 
   it('Shows error message for invalid token', () => {
     cy.visit('?id=bad');
-    cy.findByRole('textbox', { name: /search/i }).should('have.value', 'bad');
 
+    cy.checkSearchTerm('bad');
     cy.findByText(/loading/i).should('not.exist');
     cy.findByText(/error/i).should('exist');
     cy.findDeveloperNft().should('not.exist');
@@ -55,7 +51,8 @@ describe('NFT Search', () => {
     cy.findByRole('textbox', { name: /search/i })
       .clear()
       .realType('5555');
-    cy.findByRole('textbox', { name: /search/i }).should('have.value', '5555');
+
+    cy.checkSearchTerm('5555');
     cy.location('search').should('eq', '?id=5555');
   });
 
