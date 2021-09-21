@@ -166,13 +166,13 @@ const getNftAltText = (svgCode) => {
 
   const [svgTag] = template.content.childNodes;
   if (!svgTag) {
-    return 'Developer NFT, failed to load text';
+    return 'Developer traits: failed to load';
   }
 
   const textNodes = Array.from(svgTag.querySelectorAll('text'));
   const nftTraits = textNodes.map((node) => node.textContent).join(', ');
 
-  return nftTraits;
+  return `Developer traits: ${nftTraits}`;
 };
 
 export const getStaticProps = async ({ locale }) => ({

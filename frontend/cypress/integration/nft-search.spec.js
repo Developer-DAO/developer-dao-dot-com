@@ -16,7 +16,7 @@ describe('NFT Search', () => {
 
     cy.findByText(/loading/i).should('not.exist');
     cy.findByRole('img', {
-      name: 'macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
+      name: 'Developer traits: macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
     });
     cy.findByRole('link', { name: /view .+ opensea/i })
       .should('have.attr', 'href')
@@ -32,7 +32,7 @@ describe('NFT Search', () => {
 
     cy.findByText(/loading/i).should('not.exist');
     cy.findByRole('img', {
-      name: 'Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
+      name: 'Developer traits: Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
     });
     cy.findByRole('link', { name: /view .+ opensea/i }).should(
       'have.attr',
@@ -47,8 +47,17 @@ describe('NFT Search', () => {
 
     cy.findByText(/loading/i).should('not.exist');
     cy.findByRole('img', {
-      name: 'DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
+      name: 'Developer traits: DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
     });
+  });
+
+  it('Shows error message for invalid token', () => {
+    cy.visit('?id=bad');
+    cy.findByRole('textbox', { name: /search/i }).should('have.value', 'bad');
+
+    cy.findByText(/loading/i).should('not.exist');
+    cy.findByText(/error/i).should('exist');
+    cy.findByRole('img', { name: /developer traits/i }).should('not.exist');
   });
 
   it('Updates url when searching for another token id', () => {
