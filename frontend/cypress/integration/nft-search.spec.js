@@ -39,9 +39,9 @@ describe('NFT Search', () => {
 
   it('Shows error message for invalid token', () => {
     cy.visit('?id=bad');
+    cy.findByText(/loading/i).should('not.exist');
 
     cy.checkSearchTerm('bad');
-    cy.findByText(/loading/i).should('not.exist');
     cy.findByText(/error/i).should('exist');
     cy.findDeveloperNft().should('not.exist');
   });
@@ -58,6 +58,7 @@ describe('NFT Search', () => {
 
   it('Copies NFT link to clipboard', () => {
     cy.visit('/?id=1234');
+
     cy.findByRole('button', { name: 'Copy link to NFT' })
       .scrollIntoView()
       .realClick();
