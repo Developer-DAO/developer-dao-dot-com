@@ -1,7 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function IconOpenSea({ className = '', width = '40', height = '40' }) {
+type IconOpenSeaProps = {
+  className?: string;
+  width?: string;
+  height?: string;
+};
+
+function IconOpenSea({
+  className = '',
+  width = '40',
+  height = '40',
+}: IconOpenSeaProps) {
   return (
     <svg
       className={className}
@@ -26,9 +36,5 @@ function IconOpenSea({ className = '', width = '40', height = '40' }) {
     </svg>
   );
 }
-
-IconOpenSea.propTypes = {
-  className: PropTypes.string,
-};
 
 export default IconOpenSea;

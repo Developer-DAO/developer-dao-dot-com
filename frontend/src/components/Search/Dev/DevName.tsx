@@ -4,12 +4,12 @@ import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoConstants
 import { Button, VStack } from '@chakra-ui/react';
 import IconOpenSea from '../../Icons/opensea';
 
-type Props = {
+type DevNameProps = {
   nft: NftMetadata;
   developerId: string;
 };
 
-function DevName({ nft, developerId }: Props) {
+function DevName({ nft, developerId }: DevNameProps) {
   if (nft.owner) {
     return (
       <Button
