@@ -1,0 +1,14 @@
+{
+  "title": "Developer DAO",
+  "description": "Uma comunidade de construtores que acreditam na propriedade coletiva da internet.",
+  "searchId": "Pesquisar Developer DAO id",
+  "loading": "A carregar...",
+  "error": "Erro",
+  "madeBy": "Feito pela comunidade Developer DAO: ",
+  "owner": "Dono",
+  "unclaimed": "Não reclamado",
+  "enterDeveloperId": "Por favor digite um Developer DAO id",
+  "hosting": "Hospedagem por:",
+  "copyLinkToNFT": "Copiar link para NFT",
+  "linkCopied": "Link copiado para área de transferência"
+}

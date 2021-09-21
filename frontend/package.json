@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.1.10",
     "ethers": "^5.4.6",
     "framer-motion": "^4",
+    "jest": "^27.2.0",
     "next": "^11.1.2",
     "next-i18next": "^8.8.0",
     "react": "^17.0.2",
@@ -31,7 +32,8 @@
     "fmt": "prettier --write **/*.js",
     "prepare": "husky install",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [

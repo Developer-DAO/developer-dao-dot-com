@@ -83,6 +83,7 @@ function Footer() {
           </Text>
           <chakra.a
             target="_blank"
+            title="Vercel"
             rel="noopener noreferrer"
             href="https://vercel.com?utm_source=developerdao&utm_campaign=oss"
           >
