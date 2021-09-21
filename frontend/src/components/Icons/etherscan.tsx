@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function IconEtherscan({ className = '' }) {
+type Props = {
+  className?: string;
+};
+
+function IconEtherscan({ className }: Props) {
   return (
     <svg
       className={className}

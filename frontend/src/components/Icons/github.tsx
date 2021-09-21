@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@chakra-ui/react';
+import { Box, ChakraProps } from '@chakra-ui/react';
 
 /**
  * @param {import('@chakra-ui/react').BoxProps} props
  */
-function IconGitHub(props) {
+
+function IconGitHub(props: ChakraProps) {
   return (
     <Box {...props}>
       <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">

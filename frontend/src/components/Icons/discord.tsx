@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function IconDiscord({ className = '' }) {
+type Props = {
+  className?: string;
+};
+
+function IconDiscord({ className }: Props) {
   return (
     <svg
       className={className}
