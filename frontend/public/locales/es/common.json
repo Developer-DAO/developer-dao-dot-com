@@ -1,10 +1,11 @@
 {
-  "searchId": "Buscar Developer DAO id",
+  "title": "Developer DAO",
+  "searchId": "Buscar $t(title) id",
   "loading": "Cargando...",
   "error": "Error",
-  "madeBy": "Hecho por la comunidad de Developer Dao: ",
+  "madeBy": "Hecho por la comunidad de $t(title): ",
   "owner": "Dueño",
   "unclaimed": "No reclamado",
-  "enterDeveloperId": "Por favor ingrese un Developer DAO id",
+  "enterDeveloperId": "Por favor ingrese un $t(title) id",
   "hosting": "Alojamiento proveido por:"
 }
