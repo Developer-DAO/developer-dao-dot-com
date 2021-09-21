@@ -164,12 +164,15 @@ const getNftAltText = (svgCode) => {
   const template = document.createElement('template');
   template.innerHTML = svgCode;
 
-  const [svgTag] = template.content.childNodes;
-  if (!svgTag) {
+  const [svgNode] = template.content.childNodes;
+  if (!svgNode) {
     return 'Developer traits: failed to load';
   }
 
-  const textNodes = Array.from(svgTag.querySelectorAll('text'));
+  // extract all developer traits from the svg text
+  const textNodes = Array.from(svgNode.querySelectorAll('text'));
+
+  // return a list of developer traits separated by commas
   const nftTraits = textNodes.map((node) => node.textContent).join(', ');
 
   return `Developer traits: ${nftTraits}`;
