@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../theme';
 import '@fontsource/inter/variable-full.css';
 import '@fontsource/source-code-pro/400.css';
+import { AppProps } from 'next/dist/shared/lib/router/router';
 
 function SEO() {
   return (
@@ -136,13 +137,7 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
   );
 }
 
-const App = ({
-  Component,
-  pageProps,
-}: {
-  Component: React.FC;
-  pageProps: any;
-}) => (
+const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
     <ChakraProvider theme={theme}>
