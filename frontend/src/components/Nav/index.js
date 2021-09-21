@@ -1,4 +1,4 @@
-import { chakra, Flex, HStack } from '@chakra-ui/react';
+import { chakra, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +7,7 @@ import Logo from '../Logo';
 
 function Nav() {
   const { t } = useTranslation();
+  const variant = useBreakpointValue({ base: '3', sm: '10' });
 
   return (
     <chakra.nav borderBottom="1px solid" borderColor="gray.200">
@@ -32,7 +33,10 @@ function Nav() {
             </chakra.span>
           </HStack>
         </Link>
-        <Flex alignItems="center" gridGap="10">
+        <Flex alignItems="center" gridGap={variant}>
+          <Link href="/" passHref>
+            Home
+          </Link>
           <Link href="/projects" passHref>
             Projects
           </Link>
