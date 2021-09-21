@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, ChakraProps } from '@chakra-ui/react';
 
-/**
- * @param {import('@chakra-ui/react').BoxProps} props
- */
-
 function IconGitHub(props: ChakraProps) {
   return (
     <Box {...props}>
@@ -27,9 +23,5 @@ function IconGitHub(props: ChakraProps) {
     </Box>
   );
 }
-
-IconGitHub.propTypes = {
-  className: PropTypes.string,
-};
 
 export default IconGitHub;

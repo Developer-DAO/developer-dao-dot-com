@@ -24,8 +24,4 @@ function IconDiscord({ className }: Props) {
   );
 }
 
-IconDiscord.propTypes = {
-  className: PropTypes.string,
-};
-
 export default IconDiscord;

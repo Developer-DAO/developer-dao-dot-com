@@ -31,8 +31,4 @@ function IconEtherscan({ className }: Props) {
   );
 }
 
-IconEtherscan.propTypes = {
-  className: PropTypes.string,
-};
-
 export default IconEtherscan;
