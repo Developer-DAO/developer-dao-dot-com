@@ -18,13 +18,13 @@ function Projects() {
     <PageLayout>
       <chakra.main>
         <Box mx="auto" maxW="6xl" py={3} px={4}>
-          <Text fontSize="lg">Projects</Text>
-          <Text my={2} fontSize="sm" color="gray.600">
+          <Text fontSize="xl">Projects</Text>
+          <Text my={2} color="gray.600">
             {t('projects')}
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://ddao.ibby.dev/">Developer Dao Tokens</Link>
+              <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>
             </ListItem>
             <ListItem>
               <Link href="https://developerdao.vercel.app/ ">
