@@ -1,12 +1,12 @@
 {
   "title": "Developer DAO",
-  "searchId": "Search developer DAO id",
+  "searchId": "Search $t(title) id",
   "loading": "Loading...",
   "error": "Error",
-  "madeBy": "Made by the developer DAO community: ",
+  "madeBy": "Made by the $t(title) community: ",
   "owner": "Owner",
   "unclaimed": "Unclaimed",
-  "enterDeveloperId": "Please enter a developer DAO id",
+  "enterDeveloperId": "Please enter a $t(title) id",
   "hosting": "Hosting by:",
   "copyLinkToNFT": "Copy link to NFT",
   "linkCopied": "Link copied to clipboard"
