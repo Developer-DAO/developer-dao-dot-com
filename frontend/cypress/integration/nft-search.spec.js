@@ -14,16 +14,11 @@ describe('NFT Search', () => {
       .should('exist')
       .should('have.value', '1');
 
-    cy.findByText(/loading/i).should('not.exist');
-    cy.findByRole('img', {
-      name: 'Developer traits: macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
-    });
-    cy.findByRole('link', { name: /view .+ opensea/i })
-      .should('have.attr', 'href')
-      .should('eq', `${OPENSEA_DIRECT_LINK_PREFIX}/1`);
-    cy.findByRole('link', { name: /view .+ etherscan/i })
-      .should('have.attr', 'href')
-      .should('contain', ETHER_SCAN_LINK_PREFIX);
+    cy.findDeveloperNft(
+      'macOS, Brackets, White Tanktop, Scala, Government, Kisumu, Divergent, JonGold',
+    ).should('exist');
+    cy.findOpenSeaLink(1).should('exist');
+    cy.findEtherscanLink().should('exist');
   });
 
   it('Loads token id from the url', () => {
@@ -31,14 +26,12 @@ describe('NFT Search', () => {
     cy.findByRole('textbox', { name: /search/i }).should('have.value', '200');
 
     cy.findByText(/loading/i).should('not.exist');
-    cy.findByRole('img', {
-      name: 'Developer traits: Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
-    });
-    cy.findByRole('link', { name: /view .+ opensea/i }).should(
-      'have.attr',
-      'href',
-      `${OPENSEA_DIRECT_LINK_PREFIX}/200`,
-    );
+
+    cy.findDeveloperNft(
+      'Linux Mint, Coda, Bubble Gum Wrapper, Whitespace, Farming, Kisumu, Analytical, Kind',
+    ).should('exist');
+    cy.findOpenSeaLink(200).should('exist');
+    cy.findEtherscanLink().should('exist');
   });
 
   it('Loads token with ampersand character fixed', () => {
@@ -46,9 +39,10 @@ describe('NFT Search', () => {
     cy.findByRole('textbox', { name: /search/i }).should('have.value', '404');
 
     cy.findByText(/loading/i).should('not.exist');
-    cy.findByRole('img', {
-      name: 'Developer traits: DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
-    });
+
+    cy.findDeveloperNft(
+      'DOS, Pen & Paper, Pink Hoodie, Java, Environmental, Shenzhen, Critical, Hater',
+    ).should('exist');
   });
 
   it('Shows error message for invalid token', () => {
@@ -57,7 +51,7 @@ describe('NFT Search', () => {
 
     cy.findByText(/loading/i).should('not.exist');
     cy.findByText(/error/i).should('exist');
-    cy.findByRole('img', { name: /developer traits/i }).should('not.exist');
+    cy.findDeveloperNft().should('not.exist');
   });
 
   it('Updates url when searching for another token id', () => {
