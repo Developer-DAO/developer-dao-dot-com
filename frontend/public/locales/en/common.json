@@ -4,6 +4,8 @@
   "description": "A community of builders who believe in collective ownership of the internet.",
   "loading": "Loading...",
   "error": "Error",
+  "developerTraits": "Developer traits",
+  "failedLoadTraits": "Failed to load traits",
   "madeBy": "Made by the $t(title) community: ",
   "owner": "Owner",
   "unclaimed": "Unclaimed",

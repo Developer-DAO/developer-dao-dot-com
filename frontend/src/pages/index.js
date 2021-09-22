@@ -21,6 +21,7 @@ import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
+import { useNftImageContent } from '../utils/useNftImageContent';
 
 function App() {
   const { t } = useTranslation();
@@ -98,13 +99,13 @@ function Nft(props) {
     props.developerId,
   );
 
+  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
+
   if (loading) return <Text>{t('loading')}</Text>;
 
   if (!props.developerId) return <Text>{t('enterDeveloperId')}</Text>;
 
   if (error || !nft) return <Text>{t('error')}.</Text>;
-
-  const { nftImage, nftAltText } = processNftImageContent(nft.image);
 
   return (
     <VStack w="full" spacing={5}>
@@ -146,37 +147,6 @@ function Nft(props) {
     </VStack>
   );
 }
-
-const processNftImageContent = (imgStr) => {
-  const [formatInfo, base64Str] = imgStr.split(',');
-
-  // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const svgCode = atob(base64Str);
-  const processedStr = svgCode.replace(' & ', ' &amp; ');
-
-  const nftImage = formatInfo + ',' + btoa(processedStr);
-  const nftAltText = getNftAltText(svgCode);
-
-  return { nftImage, nftAltText };
-};
-
-const getNftAltText = (svgCode) => {
-  const template = document.createElement('template');
-  template.innerHTML = svgCode;
-
-  const [svgNode] = template.content.childNodes;
-  if (!svgNode) {
-    return 'Developer traits: failed to load';
-  }
-
-  // extract all developer traits from the svg text
-  const textNodes = Array.from(svgNode.querySelectorAll('text'));
-
-  // return a list of developer traits separated by commas
-  const nftTraits = textNodes.map((node) => node.textContent).join(', ');
-
-  return `Developer traits: ${nftTraits}`;
-};
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
