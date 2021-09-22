@@ -60,7 +60,6 @@
     "@testing-library/cypress": "^8.0.1",
     "@testing-library/react-hooks": "^7.0.2",
     "all-contributors-cli": "^6.20.0",
-    "clipboardy": "^2.3.0",
     "cypress": "^8.4.1",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
