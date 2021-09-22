@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -119,6 +119,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.acollectionofatoms.me"><img src="https://avatars.githubusercontent.com/u/7197998?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=ACollectionOfAtoms" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/narbs91"><img src="https://avatars.githubusercontent.com/u/29411347?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Narb</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=narbs91" title="Code">💻</a></td>
     <td align="center"><a href="https://bandism.net/"><img src="https://avatars.githubusercontent.com/u/22633385?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ikko Ashimine</b></sub></a><br /><a href="https://github.com/Developer-DAO/developer-dao/commits?author=eltociear" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://trevorfrench.com"><img src="https://avatars.githubusercontent.com/u/42419234?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Trevor French</b></sub></a><br /><a href="#translation-TrevorFrench" title="Translation">🌍</a> <a href="https://github.com/Developer-DAO/developer-dao/commits?author=TrevorFrench" title="Code">💻</a></td>
   </tr>
 </table>
 
