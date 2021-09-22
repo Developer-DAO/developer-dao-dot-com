@@ -188,6 +188,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "TrevorFrench",
+      "name": "Trevor French",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42419234?v=4",
+      "profile": "http://trevorfrench.com",
+      "contributions": [
+        "translation",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

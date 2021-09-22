@@ -21,6 +21,7 @@ import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
+import { useNftImageContent } from '../utils/useNftImageContent';
 
 function App() {
   const { t } = useTranslation();
@@ -95,6 +96,8 @@ function Nft({ developerId }: { developerId: string }) {
 
   const { loading, error, nft } = useNft(DEVELOPER_DAO_CONTRACT, developerId);
 
+  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
+
   if (loading) return <Text>{t('loading')}</Text>;
 
   if (!developerId) return <Text>{t('enterDeveloperId')}</Text>;
@@ -104,8 +107,8 @@ function Nft({ developerId }: { developerId: string }) {
   return (
     <VStack w="full" spacing={5}>
       <chakra.img
-        alt="hero"
-        src={processBase64Img(nft.image)}
+        alt={nftAltText}
+        src={nftImage}
         border={4}
         borderStyle="solid"
         borderColor="gray.200"
@@ -122,7 +125,7 @@ function Nft({ developerId }: { developerId: string }) {
             href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
             target="_blank"
             rel="noreferrer"
-            title={nft.owner || t('unclaimed')}
+            title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
             {t('owner')}:&nbsp;
