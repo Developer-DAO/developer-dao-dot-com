@@ -8,10 +8,6 @@ import {
 } from '../../src/utils/DeveloperDaoConstants';
 import { ownedDeveloperNFT, unownedDeveloperNFT } from '../mocks/DeveloperNFT';
 
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
-}));
-
 const useRouter = jest
   .spyOn(require('next/router'), 'useRouter')
   .mockImplementation(() => ({
