@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-const clipboardy = require('clipboardy');
-
 /**
  * @type {Cypress.PluginConfig}
  *
@@ -9,7 +7,5 @@ const clipboardy = require('clipboardy');
  * @param config is the resolved Cypress config
  */
 module.exports = (on, config) => {
-  on('task', {
-    getClipboard: () => clipboardy.readSync(),
-  });
+  //
 };
