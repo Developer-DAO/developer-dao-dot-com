@@ -20,6 +20,12 @@ export const useNftImageContent = (imgStr) => {
 };
 
 const processNftImageContent = (imgStr) => {
+  if (typeof imgStr !== 'string') {
+    throw new Error(
+      'processNftImageContent: invalid input image, must be a string',
+    );
+  }
+
   const [formatInfo, base64Str] = imgStr.split(',');
 
   // The smart contract includes items with unescaped "&", which breaks SVG rendering
