@@ -128,7 +128,7 @@ function Nft(props) {
             href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
             target="_blank"
             rel="noreferrer"
-            title="View owner on Etherscan"
+            title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
             {t('owner')}:&nbsp;
