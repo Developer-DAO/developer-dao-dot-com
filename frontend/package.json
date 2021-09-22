@@ -29,6 +29,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "e2e": "cypress run",
+    "e2e:watch": "cypress open",
     "fmt": "prettier --write **/*.js",
     "prepare": "husky install",
     "contributors:add": "all-contributors add",
@@ -55,7 +57,10 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.1",
+    "@testing-library/react-hooks": "^7.0.2",
     "all-contributors-cli": "^6.20.0",
+    "cypress": "^8.4.1",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
