@@ -3,10 +3,6 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useNftImageContent } from '../../src/utils/useNftImageContent';
 import { ownedDeveloperNFT } from '../mocks/DeveloperNFT';
 
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
-}));
-
 describe('useNftImageContent', () => {
   it('Generates NFT alt text from input image', () => {
     const { result } = renderHook(() =>

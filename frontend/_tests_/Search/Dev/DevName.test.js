@@ -8,10 +8,6 @@ import {
   unownedDeveloperNFT,
 } from '../../mocks/DeveloperNFT';
 
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
-}));
-
 describe('Dev Name button with Owner', () => {
   it('Renders the button with link', () => {
     render(<DevName nft={ownedDeveloperNFT} developerId={'2669'} />);
