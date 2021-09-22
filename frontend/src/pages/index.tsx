@@ -107,8 +107,8 @@ function Nft({ developerId }: { developerId: string }) {
   return (
     <VStack w="full" spacing={5}>
       <chakra.img
-        alt={nftAltText}
-        src={nftImage}
+        alt={nftAltText!}
+        src={nftImage!}
         border={4}
         borderStyle="solid"
         borderColor="gray.200"
