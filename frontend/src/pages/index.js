@@ -21,6 +21,7 @@ import { LinkIcon } from '@chakra-ui/icons';
 import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
+import { useNftImageContent } from '../utils/useNftImageContent';
 
 function App() {
   const { t } = useTranslation();
@@ -98,6 +99,8 @@ function Nft(props) {
     props.developerId,
   );
 
+  const [nftImage, nftAltText] = useNftImageContent(nft?.image);
+
   if (loading) return <Text>{t('loading')}</Text>;
 
   if (!props.developerId) return <Text>{t('enterDeveloperId')}</Text>;
@@ -107,8 +110,8 @@ function Nft(props) {
   return (
     <VStack w="full" spacing={5}>
       <chakra.img
-        alt="hero"
-        src={processBase64Img(nft.image)}
+        alt={nftAltText}
+        src={nftImage}
         border={4}
         borderStyle="solid"
         borderColor="gray.200"
@@ -125,7 +128,7 @@ function Nft(props) {
             href={`${ETHER_SCAN_LINK_PREFIX}/${nft.owner}`}
             target="_blank"
             rel="noreferrer"
-            title={nft.owner || t('unclaimed')}
+            title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
             {t('owner')}:&nbsp;
@@ -144,15 +147,6 @@ function Nft(props) {
     </VStack>
   );
 }
-
-const processBase64Img = (imgStr) => {
-  const [formatInfo, base64Str] = imgStr.split(',');
-
-  // The smart contract includes items with unescaped "&", which breaks SVG rendering
-  const processedStr = atob(base64Str).replace(' & ', ' &amp; ');
-
-  return formatInfo + ',' + btoa(processedStr);
-};
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

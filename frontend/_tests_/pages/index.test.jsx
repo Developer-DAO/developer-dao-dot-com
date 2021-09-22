@@ -55,10 +55,13 @@ describe('App loads with successful searchs', () => {
     expect(searchLabel.value).toBe('2669');
     expect(searchLabel).toBeInTheDocument();
 
-    const nftImage = screen.getByAltText('hero');
-    const [openSeaDirectLink, etherScanDirectLink] = screen.getAllByTitle(
-      `${ownedDeveloperNFT.owner}`,
-    );
+    const nftImage = screen.getByAltText(/developerTraits/);
+    const openSeaDirectLink = screen.getByRole('link', {
+      name: /viewNftOpenSea/,
+    });
+    const etherScanDirectLink = screen.getByRole('link', {
+      name: /viewOwnerEtherscan/,
+    });
     const copyLinkToNft = screen.getByText('copyLinkToNFT');
 
     expect(nftImage).toBeInTheDocument();
@@ -134,7 +137,7 @@ describe('App loads with successful searchs', () => {
     expect(searchLabel.value).toBe('7899');
     expect(searchLabel).toBeInTheDocument();
 
-    const nftImage = screen.getByAltText('hero');
+    const nftImage = screen.getByRole('img', { name: /developerTraits/ });
     const devNameButton = screen.getByText(`${unownedDeveloperNFT.name}`);
     const etherScanButton = screen.getByText('owner: unclaimed');
 
