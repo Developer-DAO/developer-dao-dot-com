@@ -1,12 +1,18 @@
 {
   "title": "Developer DAO",
-  "description": "Una comunidad de constructores que creen en la propiedad colectiva de Internet.",
   "searchId": "Buscar $t(title) id",
+  "description": "Una comunidad de constructores que creen en la propiedad colectiva de Internet.",
   "loading": "Cargando...",
   "error": "Error",
+  "viewNftOpenSea": "Ver NFT en OpenSea",
+  "viewOwnerEtherscan": "Ver dueño en Etherscan",
+  "developerTraits": "Developer traits",
+  "failedLoadTraits": "Error al cargar atributos",
   "madeBy": "Hecho por la comunidad de $t(title): ",
   "owner": "Dueño",
   "unclaimed": "No reclamado",
   "enterDeveloperId": "Por favor ingrese un $t(title) id",
-  "hosting": "Alojamiento proveido por:"
+  "hosting": "Alojamiento proveido por:",
+  "copyLinkToNFT": "Copiar enlace al NFT",
+  "linkCopied": "Enlace copiado al portapapeles"
 }
