@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import { NftMetadata } from 'use-nft';
 import { useTranslation } from 'react-i18next';
 import { Button, VStack } from '@chakra-ui/react';
 
 import { OPENSEA_DIRECT_LINK_PREFIX } from '../../../utils/DeveloperDaoConstants';
 import IconOpenSea from '../../Icons/opensea';
 
-function DevName({ nft, developerId }) {
+function DevName({
+  nft,
+  developerId,
+}: {
+  nft: NftMetadata;
+  developerId: string;
+}) {
   const { t } = useTranslation();
-
   if (nft.owner) {
     return (
       <Button
@@ -28,7 +34,7 @@ function DevName({ nft, developerId }) {
   return (
     <Button
       title={nft.owner}
-      disabled={true}
+      isDisabled={true}
       fontSize={{ base: 'xs', sm: 'md' }}
     >
       {nft.name}
