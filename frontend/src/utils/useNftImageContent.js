@@ -16,7 +16,7 @@ export const useNftImageContent = (imgStr) => {
     const nftAltText = `${developerTraits}: ${developerAltText}`;
 
     return [nftImage, nftAltText];
-  }, [imgStr]);
+  }, [imgStr, t]);
 };
 
 const processNftImageContent = (imgStr) => {
