@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { chakra, Flex, HStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { Box, Flex, chakra, HStack } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
 
@@ -32,7 +32,13 @@ function Nav() {
             </chakra.span>
           </HStack>
         </Link>
-        <Box>
+        <HStack spacing={{ base: 3, sm: 10 }}>
+          <Link href="/" passHref>
+            Home
+          </Link>
+          <Link href="/projects" passHref>
+            Projects
+          </Link>
           <chakra.a
             href="https://github.com/Developer-DAO/developer-dao"
             target="_blank"
@@ -47,7 +53,7 @@ function Nav() {
               _hover={{ opacity: 1 }}
             />
           </chakra.a>
-        </Box>
+        </HStack>
       </Flex>
     </chakra.nav>
   );
