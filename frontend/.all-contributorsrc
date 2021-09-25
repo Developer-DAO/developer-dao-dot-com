@@ -176,9 +176,9 @@
       "profile": "https://github.com/moiz-lakkadkutta",
       "contributions": [
         "code"
-       ]
-  },
-  {
+      ]
+    },
+    {
       "login": "Nazeeh21",
       "name": "Nazeeh Vahora",
       "avatar_url": "https://avatars.githubusercontent.com/u/56908732?v=4",
@@ -206,6 +206,15 @@
       "contributions": [
         "translation",
         "code"
+      ]
+    },
+    {
+      "login": "marbiano",
+      "name": "Martin Bavio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5664?v=4",
+      "profile": "http://marbiano.com",
+      "contributions": [
+        "design"
       ]
     }
   ],
