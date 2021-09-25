@@ -13,7 +13,7 @@
   "madeBy": "Made by the $t(title) community: ",
   "daoGithubOrg": "Developer DAO GitHub organization",
   "daoGithubRepo": "Developer DAO GitHub repository",
-  "owner": "Owner",
+  "owner": "Owner:",
   "unclaimed": "Unclaimed",
   "enterDeveloperId": "Please enter a $t(title) id",
   "hosting": "Hosting by:",
