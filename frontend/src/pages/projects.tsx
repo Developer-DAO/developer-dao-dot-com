@@ -1,6 +1,7 @@
 import {
   Box,
   chakra,
+  Flex,
   Link,
   ListItem,
   Text,
@@ -24,12 +25,21 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>
+              <Flex alignItems="center">
+                <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>
+                <Box mx={1}>- {t('by')}</Box>
+                <Text>Filipe Oliveira</Text>
+                {/* <Link href="https://github.com/fmoliveira">fmoliveira</Link> */}
+              </Flex>
             </ListItem>
             <ListItem>
-              <Link href="https://developerdao.vercel.app/ ">
-                Developer DAO
-              </Link>
+              <Flex alignItems="center">
+                <Link href="https://developerdao.vercel.app/ ">
+                  Developer DAO
+                </Link>
+                <Box mx={1}>- {t('by')}</Box>
+                <Link href="https://github.com/fmoliveira">fmoliveira</Link>
+              </Flex>
             </ListItem>
           </UnorderedList>
         </Box>
