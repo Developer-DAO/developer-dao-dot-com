@@ -22,6 +22,7 @@ import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
 import { useNftImageContent } from '../utils/useNftImageContent';
+import DirectMint from '../components/DirectMint/DirectMint';
 
 function App() {
   const { t } = useTranslation();
@@ -133,9 +134,12 @@ function Nft({ developerId }: { developerId: string }) {
             {nft.owner.slice(-4)}
           </Button>
         ) : (
-          <Button isDisabled>
-            {t('owner')}:&nbsp;{t('unclaimed')}
-          </Button>
+          <>
+            <Button isDisabled>
+              {t('owner')}:&nbsp;{t('unclaimed')}
+            </Button>
+            <DirectMint developerId={developerId} />
+          </>
         )}
         <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
           {t('copyLinkToNFT')}
