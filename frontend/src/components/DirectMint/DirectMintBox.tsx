@@ -8,7 +8,7 @@ import { Box, Container, Flex, Heading } from '@chakra-ui/react';
 const DirectMintBox = () => {
   return (
     <>
-      <Container maxW="container.md" centerContent mt="10%">
+      <Container maxW="container.md" centerContent>
         <Box borderWidth="4px" borderRadius="lg" w="75%" padding="20">
           <Flex flexDirection="column" justify="center" align="center">
             <Logo w={52} h={52} />
