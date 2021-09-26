@@ -25,11 +25,13 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://ddao.ibby.dev/">{t('ddaoTokenSearch')}</Link> -{' '}
-              {t('by')}{' '}
+              <Link href="https://ddao.ibby.dev/">{t('ddaoTokenSearch')}</Link>{' '}
+              - {t('by')}{' '}
               <Link href="https://github.com/Ibby-devv">Brian Eter</Link>
-              <Link href="https://developerdao.vercel.app/ ">{t('title')}</Link> -{' '}
-              {t('by')}{' '}
+            </ListItem>
+            <ListItem>
+              <Link href="https://developerdao.vercel.app/ ">{t('title')}</Link>{' '}
+              - {t('by')}{' '}
               <Link href="https://github.com/fmoliveira">fmoliveira</Link>
             </ListItem>
           </UnorderedList>
