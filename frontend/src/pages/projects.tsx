@@ -25,14 +25,14 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>-{' '}
+              <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link> -{' '}
               {t('by')}{' '}
               <Link href="https://github.com/Ibby-devv">Brian Eter</Link>
             </ListItem>
             <ListItem>
               <Link href="https://developerdao.vercel.app/ ">
                 Developer DAO
-              </Link>
+              </Link>{' '}
               - {t('by')}{' '}
               <Link href="https://github.com/fmoliveira">fmoliveira</Link>
             </ListItem>
