@@ -25,21 +25,16 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Flex alignItems="center">
-                <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>
-                <Box mx={1}>- {t('by')}</Box>
-                <Text>Filipe Oliveira</Text>
-                {/* <Link href="https://github.com/fmoliveira">fmoliveira</Link> */}
-              </Flex>
+              <Link href="https://ddao.ibby.dev/">DDAO Token Search</Link>-{' '}
+              {t('by')}{' '}
+              <Link href="https://github.com/Ibby-devv">Brian Eter</Link>
             </ListItem>
             <ListItem>
-              <Flex alignItems="center">
-                <Link href="https://developerdao.vercel.app/ ">
-                  Developer DAO
-                </Link>
-                <Box mx={1}>- {t('by')}</Box>
-                <Link href="https://github.com/fmoliveira">fmoliveira</Link>
-              </Flex>
+              <Link href="https://developerdao.vercel.app/ ">
+                Developer DAO
+              </Link>
+              - {t('by')}{' '}
+              <Link href="https://github.com/fmoliveira">fmoliveira</Link>
             </ListItem>
           </UnorderedList>
         </Box>
