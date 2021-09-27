@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { chakra, Flex, HStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { Box, Flex, chakra, HStack } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 import { IconGitHub } from '../Icons';
 import Logo from '../Logo';
 
@@ -15,17 +15,12 @@ function Nav() {
         align="center"
         mx="auto"
         maxW="7xl"
+        minW="xl"
         py={3}
         px={5}
       >
         <Link href="/" passHref>
-          <HStack
-            as="a"
-            title={t('title')}
-            display="flex"
-            alignItems="center"
-            flexBasis="25%"
-          >
+          <HStack as="a" title={t('title')} display="flex" alignItems="center">
             <Logo h={7} w={7} />
             <chakra.span
               fontWeight="bold"
@@ -38,20 +33,16 @@ function Nav() {
             </chakra.span>
           </HStack>
         </Link>
-        <HStack flexBasis="33%">
-          <Link href="/mint" passHref>
-            <chakra.span
-              as="a"
-              color="gray.600"
-              fontWeight="bold"
-              transition="color 300ms ease-in-out"
-              _hover={{ color: 'black' }}
-            >
-              Mint your token
-            </chakra.span>
+        <HStack spacing={{ base: 3, sm: 10 }}>
+          <Link href="/" passHref>
+            Home
           </Link>
-        </HStack>
-        <Box>
+          <Link href="/mint" passHref>
+            Mint your token
+          </Link>
+          <Link href="/projects" passHref>
+            Projects
+          </Link>
           <chakra.a
             href="https://github.com/Developer-DAO/developer-dao"
             target="_blank"
@@ -66,7 +57,7 @@ function Nav() {
               _hover={{ opacity: 1 }}
             />
           </chakra.a>
-        </Box>
+        </HStack>
       </Flex>
     </chakra.nav>
   );

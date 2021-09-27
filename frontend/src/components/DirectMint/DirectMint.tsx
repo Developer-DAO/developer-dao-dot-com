@@ -125,8 +125,6 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       //Alert transaction is in progress
       toast({
         title: 'Transaction Being Sent',
-        status: 'info',
-        duration: 5000,
         isClosable: true,
       });
 
@@ -151,7 +149,6 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         toast({
           title: 'Transaction Cancelled by User',
           status: 'error',
-          duration: 5000,
           isClosable: true,
         });
         return;
@@ -163,7 +160,6 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         title: error.code,
         description: 'Token ID may not be available',
         status: 'error',
-        duration: 5000,
         isClosable: true,
       });
       setTokenID('');
@@ -174,8 +170,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     toast({
       title: 'Token Minted',
       description: 'Your NFT should now be in your wallet!',
-      status: 'error',
-      duration: 5000,
+      status: 'success',
       isClosable: true,
     });
     setTokenID('');
