@@ -1,3 +1,6 @@
+**This is a work in progress document and is a first attempt at establishing a
+set of developer guidelines**
+
 # Development Guidelines
 
 Developer DAO Code Contribution
