@@ -1,11 +1,19 @@
 {
-  "title": "去中心化開發者社區",
-  "searchId": "搜尋去中心化開發者編號",
+  "title": "開發者DAO",
+  "searchId": "搜尋$t(title)編號",
+  "description": "一群相信 网络集体所有权 的開發者們",
   "loading": "載入中...",
   "error": "錯誤",
-  "madeBy": "由去中心化開發者社區所創建:",
+  "viewNftOpenSea": "在 OpenSea 上查看 NFT",
+  "viewOwnerEtherscan": "在 Etherscan 上查看擁有者",
+  "developerTraits": "開發者特征 (traits)",
+  "failedLoadTraits": "無法載入開發者特征 (traits)",
+  "madeBy": "由$t(title)所創建:",
   "owner": "擁有者",
   "unclaimed": "尚未被持有",
-  "enterDeveloperId": "請輸入去中心化開發者編號",
-  "hosting": "托管於:"
+  "enterDeveloperId": "请输入$t(title)編號",
+  "hosting": "托管於:",
+  "copyLinkToNFT": "複製NFT鏈接",
+  "linkCopied": "鏈接已複製到剪貼板",
+  "projects": "$t(title) 創建的社區項目列表"
 }
