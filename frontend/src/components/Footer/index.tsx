@@ -22,7 +22,7 @@ function Footer() {
           {t('madeBy')}
           <chakra.a
             href="https://github.com/Developer-DAO"
-            title="Developer DAO GitHub organization"
+            title={t('daoGithubOrg')}
             target="_blank"
             rel="noreferrer"
             textDecor="underline"

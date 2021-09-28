@@ -128,13 +128,13 @@ function Nft({ developerId }: { developerId: string }) {
             title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
-            {t('owner')}:&nbsp;
+            {t('owner')}&nbsp;
             <chakra.span maxW="xs">{nft.owner.slice(0, 30)}</chakra.span>...
             {nft.owner.slice(-4)}
           </Button>
         ) : (
           <Button isDisabled>
-            {t('owner')}:&nbsp;{t('unclaimed')}
+            {t('owner')}&nbsp;{t('unclaimed')}
           </Button>
         )}
         <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
