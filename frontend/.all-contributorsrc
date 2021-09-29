@@ -216,6 +216,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "dheavy",
+      "name": "Davy Peter Braun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/543614?v=4",
+      "profile": "https://linkedin.com/in/davybraun",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,

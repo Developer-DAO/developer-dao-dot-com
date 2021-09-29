@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -126,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://marbiano.com"><img src="https://avatars.githubusercontent.com/u/5664?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Bavio</b></sub></a><br /><a href="#design-marbiano" title="Design">🎨</a></td>
+    <td align="center"><a href="https://linkedin.com/in/davybraun"><img src="https://avatars.githubusercontent.com/u/543614?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Davy Peter Braun</b></sub></a><br /><a href="#translation-dheavy" title="Translation">🌍</a></td>
   </tr>
 </table>
 
