@@ -87,7 +87,7 @@ nvm install; # to install the version in .nvmrc
 
 ## Contributing
 
-Thanks for showing interest in contributing to DeveloperDAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
+Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
 
 ## Contributors ✨
 
