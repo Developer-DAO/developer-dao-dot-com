@@ -1,7 +1,7 @@
 name: 'Feature request'
 description: 'File a Feature request'
 title: '[Feature]: '
-labels: ['feature']
+labels: ['feature', 'triage']
 body:
   - type: markdown
     attributes:
@@ -12,8 +12,6 @@ body:
     attributes:
       label: Context / Background / How This Idea Came To Fruition
       description: Please provide some context around your idea
-      placeholder: Tell us your inspiration for this idea!
-      value: "Feature Request Context"
     validations:
       required: true
   - type: textarea
@@ -21,17 +19,13 @@ body:
     attributes:
       label: Problem / Opportunity Of The Current State Of The App
       description: What problem(s) are we trying to solve with this feature?
-      placeholder: Tell us the problem you're trying to solve!
-      value: "Feature Request Motivation"
     validations:
       required: true
   - type: textarea
     id: solution
     attributes:
       label: Proposed Solution / How It Can Be Improved
-      description: What will your feature look like?  (i.e frontend changes should have accompanying screenshots around the solution)
-      placeholder: Show us what you're resulting change will look like!
-      value: "Feature Request Visuals"
+      description: What will your feature / enhancement look like?  (i.e frontend changes should have accompanying screenshots around the solution)
     validations:
       required: true
   - type: textarea
@@ -39,7 +33,10 @@ body:
     attributes:
       label: Testing the changes
       description: Please provide a high level description of how you'll verify your changes work and don't break existing functionality?
-      placeholder: Briefly describe your testing strategy!
-      value: "Feature Request Testing Strategy"
     validations:
       required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Please provide any additional information around your request here
