@@ -17,8 +17,8 @@ body:
   - type: textarea
     id: problem
     attributes:
-      label: Problem / Opportunity Of The Current State Of The App
-      description: What problem(s) are we trying to solve with this feature?
+      label: Problem / Opportunity
+      description: What are we trying to solve/improve with this feature?
     validations:
       required: true
   - type: textarea
@@ -32,7 +32,7 @@ body:
     id: testing
     attributes:
       label: Testing the changes
-      description: Please provide a high level description of how you'll verify your changes work and don't break existing functionality?
+      description: Please provide a high level description of how you'll verify your changes work and won't break existing functionality?
     validations:
       required: true
   - type: textarea

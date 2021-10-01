@@ -49,8 +49,7 @@ body:
   - type: checkboxes
     id: operating-system
     attributes:
-      label: "Operating System"
-      description: "The operating system(s) this issue occurred with."
+      label: "What operating system(s) did you see the problem on?"
       options:
         - label: "macOS"
         - label: "Windows"
