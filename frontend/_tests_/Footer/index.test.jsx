@@ -3,14 +3,6 @@ import { render, screen } from '@testing-library/react';
 import Footer from '../../src/components/Footer/index';
 
 describe('Footer', () => {
-  it('Renders the github link', () => {
-    render(<Footer />);
-
-    const github = screen.getByTitle('Developer DAO GitHub organization');
-
-    expect(github).toBeInTheDocument();
-  });
-
   it('Renders the icons', () => {
     render(<Footer />);
 
@@ -18,11 +10,13 @@ describe('Footer', () => {
     const etherscan = screen.getByTitle('Etherscan');
     const twitter = screen.getByTitle('Twitter');
     const discord = screen.getByTitle('Discord');
+    const github = screen.getByTitle('GitHub');
 
     expect(openSea).toBeInTheDocument();
     expect(etherscan).toBeInTheDocument();
     expect(twitter).toBeInTheDocument();
     expect(discord).toBeInTheDocument();
+    expect(github).toBeInTheDocument();
   });
 
   it('Renders the Vercel link', () => {
