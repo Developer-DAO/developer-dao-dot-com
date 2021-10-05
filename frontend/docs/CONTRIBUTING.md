@@ -5,7 +5,7 @@ Thanks for showing interest in contributing to Developer DAO(D_D)!
 This document will help you to start contributing to the DAO as quickly as
 possible. The target audience of this document is literally anybody who wants to
 contribute to the Developer DAO organization, regardless of skill level or
-technical background, in the manner that fits them the best
+technical background, in the manner that fits them the best.
 
 ## Ways to contribute
 
@@ -30,7 +30,7 @@ community members are helping out with today:
 ## Picking up an issue
 
 Oh yeah, you got this far and are looking to get some skin in the game, very
-wise choice. If your itching to get straight into the action, go to the
+wise choice. If you're itching to get straight into the action, go to the
 [issues tab](https://github.com/Developer-DAO/developer-dao/issues) and see
 which of the open issues interests you the most. How do you know an issue hasn't
 been picked up you ask? Issues are typically picked up by commenting on the
@@ -52,8 +52,8 @@ Developer DAO.
 
 ## Issue creation
 
-GitHub Issues are the primary way we discusses ideas and plans for future work
-for the website. We have
+GitHub Issues are the primary way we discuss ideas and plans for future work for
+the website. We have
 [a number of issue forms](https://github.com/Developer-DAO/developer-dao/issues/new/choose)
 to help guide you through the process of sharing a feature request or reporting
 a bug.
@@ -94,7 +94,7 @@ so let's make sure it works as intended.
 ## Documentation
 
 Documentation is the key to keeping everybody informed about the
-ongoing's/developments of the repo. As a community we want to aim to have the
+ongoings/developments of the repo. As a community we want to aim to have the
 most up to date documentation so that future contributors will have the most
 accurate information available to them. If you see an opportunity to improve
 existing documentation or add something that may be missing, open up an issue
