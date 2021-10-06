@@ -49,7 +49,7 @@ function Projects() {
                 isExternal
                 mr={1}
               >
-                {t('title')}
+                {t('ddaoUnofficalFrontend')}
               </Link>
               - {t('by')}
               <Link
