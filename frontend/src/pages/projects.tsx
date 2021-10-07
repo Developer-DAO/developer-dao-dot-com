@@ -1,15 +1,16 @@
 import {
   Box,
-  chakra,
   Link,
   ListItem,
   Text,
   UnorderedList,
+  chakra,
 } from '@chakra-ui/react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+
 import PageLayout from '../layout/Page';
+import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
   const { t } = useTranslation();
@@ -59,6 +60,25 @@ function Projects() {
                 ml={1}
               >
                 fmoliveira
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://devdao.raz.works"
+                textDecoration="underline"
+                isExternal
+                mr={1}
+              >
+                {t('ddaoTokenVisualizer')}
+              </Link>
+              - {t('by')}
+              <Link
+                href="https://github.com/RazorSiM"
+                textDecoration="underline"
+                isExternal
+                ml={1}
+              >
+                Raz
               </Link>
             </ListItem>
           </UnorderedList>
