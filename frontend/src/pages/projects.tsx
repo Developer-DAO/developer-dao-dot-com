@@ -1,16 +1,16 @@
 import {
   Box,
-  chakra,
-  Flex,
   Link,
   ListItem,
   Text,
   UnorderedList,
+  chakra,
 } from '@chakra-ui/react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+
 import PageLayout from '../layout/Page';
+import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
   const { t } = useTranslation();
@@ -25,14 +25,61 @@ function Projects() {
           </Text>
           <UnorderedList spacing="1">
             <ListItem>
-              <Link href="https://ddao.ibby.dev/">{t('ddaoTokenSearch')}</Link>{' '}
-              - {t('by')}{' '}
-              <Link href="https://github.com/Ibby-devv">Brian Eter</Link>
+              <Link
+                href="https://ddao.ibby.dev/"
+                textDecoration="underline"
+                isExternal
+                mr={1}
+              >
+                {t('ddaoTokenSearch')}
+              </Link>
+              - {t('by')}
+              <Link
+                href="https://github.com/Ibby-devv"
+                textDecoration="underline"
+                isExternal
+                ml={1}
+              >
+                Brian Eter
+              </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://developerdao.vercel.app/ ">{t('title')}</Link>{' '}
-              - {t('by')}{' '}
-              <Link href="https://github.com/fmoliveira">fmoliveira</Link>
+              <Link
+                href="https://developerdao.vercel.app/"
+                textDecoration="underline"
+                isExternal
+                mr={1}
+              >
+                {t('ddaoUnofficalFrontend')}
+              </Link>
+              - {t('by')}
+              <Link
+                href="https://github.com/fmoliveira"
+                textDecoration="underline"
+                isExternal
+                ml={1}
+              >
+                fmoliveira
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://devdao.raz.works"
+                textDecoration="underline"
+                isExternal
+                mr={1}
+              >
+                {t('ddaoTokenVisualizer')}
+              </Link>
+              - {t('by')}
+              <Link
+                href="https://github.com/RazorSiM"
+                textDecoration="underline"
+                isExternal
+                ml={1}
+              >
+                Raz
+              </Link>
             </ListItem>
           </UnorderedList>
         </Box>

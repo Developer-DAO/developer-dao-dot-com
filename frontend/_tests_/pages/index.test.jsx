@@ -139,7 +139,7 @@ describe('App loads with successful searchs', () => {
 
     const nftImage = screen.getByRole('img', { name: /developerTraits/ });
     const devNameButton = screen.getByText(`${unownedDeveloperNFT.name}`);
-    const etherScanButton = screen.getByText('owner: unclaimed');
+    const etherScanButton = screen.getByText('owner unclaimed');
 
     expect(nftImage).toBeInTheDocument();
     expect(nftImage.src).toBe(unownedDeveloperNFT.image);

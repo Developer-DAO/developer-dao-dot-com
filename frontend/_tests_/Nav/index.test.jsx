@@ -7,7 +7,7 @@ describe('Nav', () => {
   it('Renders the github link', () => {
     render(<Nav />);
 
-    const github = screen.getByTitle('Developer DAO GitHub repository');
+    const github = screen.getByTitle('daoGithubRepo');
 
     testCommonLink(github, 'https://github.com/Developer-DAO/developer-dao');
   });
