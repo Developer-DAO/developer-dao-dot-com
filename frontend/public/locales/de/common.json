@@ -3,7 +3,7 @@
   "home": "Start",
   "projects": "Projekte",
   "searchId": "$t(title) ID Suche",
-  "description": "Eine $t(community) von Entwicklern, die an den kollektiven Besitz des Internets glauben.",
+  "description": "Eine $t(community) von Entwicklern, die an den kollektiven Besitz des Internets glaubt.",
   "loading": "lädt...",
   "error": "Fehler",
   "viewNftOpenSea": "NFT auf OpenSea ansehen",
