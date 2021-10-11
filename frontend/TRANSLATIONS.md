@@ -79,10 +79,10 @@ code.
 
 As an example, visiting https://developerdao.com/fr/projects shows the projects
 page using the French locale. This also works with `localhost`:
-https://localhost:3000/fr/projects
+http://localhost:3000/fr/projects
 
-[i18next]: https://i18next.com/
-[next-i18next]: https://github.com/isaachinman/next-18next
+[i18next]: https://www.i18next.com/
+[next-i18next]: https://github.com/isaachinman/next-i18next
 [config]: ./next-i18next.config.js
 [locales]: ./public/locales
 [en]: ./public/locales/en
