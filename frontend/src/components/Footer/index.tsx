@@ -7,6 +7,7 @@ import {
   IconTwitter,
   IconDiscord,
   IconGitHub,
+  IconDiscourse,
 } from '../Icons';
 
 function Footer() {
@@ -72,6 +73,17 @@ function Footer() {
               rel="noreferrer"
             >
               <IconGitHub h={10} w={10} />
+            </a>
+          </li>
+          <li>
+            <a
+              title="Discourse"
+              className="mx-2 block"
+              href="https://forum.developerdao.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconDiscourse />
             </a>
           </li>
         </HStack>
