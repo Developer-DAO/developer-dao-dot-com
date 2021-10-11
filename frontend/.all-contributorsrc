@@ -1,5 +1,5 @@
 {
-  "projectName": "developer-dao",
+  "projectName": "developerdao.com",
   "projectOwner": "Developer-DAO",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -222,6 +222,15 @@
       "name": "Davy Peter Braun",
       "avatar_url": "https://avatars.githubusercontent.com/u/543614?v=4",
       "profile": "https://linkedin.com/in/davybraun",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "nippold",
+      "name": "Dennis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32570685?v=4",
+      "profile": "https://github.com/nippold",
       "contributions": [
         "translation"
       ]
