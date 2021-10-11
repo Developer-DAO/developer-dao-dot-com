@@ -71,6 +71,16 @@ manually reporting missing translations. This is typically created after a PR is
 merged, as the creator of the PR is the person who best knows the translations
 they've added.
 
+### Viewing the site with a specific locale
+
+`next-18next` creates locale-specific routes for each locale. This means you can
+view the site with a specific locale by prefixing the URL path with the locale
+code.
+
+As an example, visiting https://developerdao.com/fr/projects shows the projects
+page using the French locale. This also works with `localhost`:
+https://localhost:3000/fr/projects
+
 [i18next]: https://i18next.com/
 [next-i18next]: https://github.com/isaachinman/next-18next
 [config]: ./next-i18next.config.js
