@@ -19,19 +19,15 @@ function OtherDevsByOwnerContainer({
   const [otherDevs, setOtherDevs] = useState<number[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
-    let isMounted = true;
-
-    if (isMounted) {
-      onMount(nft?.owner);
-    }
+    onMount(nft?.owner);
   }, [nft, contract]);
   async function onMount(addr?: string) {
     if (addr && contract) {
-      setLoading(() => true);
+      setLoading(true);
       const _otherDevs: number[] =
         cache[nft.owner] || (await fetchOtherDevsForAddr(nft.owner));
-      setOtherDevs(() => _otherDevs);
-      setLoading(() => false);
+      setOtherDevs(_otherDevs);
+      setLoading(false);
     }
   }
   async function fetchOtherDevsForAddr(ownerAddr: string) {
