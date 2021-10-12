@@ -19,32 +19,32 @@ function OtherDevsByOwnerContainer({
   const [otherDevs, setOtherDevs] = useState<number[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
+    async function onMount(addr?: string) {
+      if (addr && contract) {
+        setLoading(true);
+        const _otherDevs: number[] =
+          cache[nft.owner] || (await fetchOtherDevsForAddr(nft.owner));
+        setOtherDevs(_otherDevs);
+        setLoading(false);
+      }
+    }
+    async function fetchOtherDevsForAddr(ownerAddr: string) {
+      const ownerTokenCount = parseInt(
+        await contract.functions.balanceOf(ownerAddr),
+      );
+      const indexes = Array.from({ length: ownerTokenCount }, (_, k) => k);
+      const tokens = await Promise.all(
+        indexes.map(async (i) =>
+          parseInt(await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)),
+        ),
+      );
+      tokens.sort();
+
+      cache[ownerAddr] = tokens;
+      return tokens;
+    }
     onMount(nft?.owner);
   }, [nft, contract]);
-  async function onMount(addr?: string) {
-    if (addr && contract) {
-      setLoading(true);
-      const _otherDevs: number[] =
-        cache[nft.owner] || (await fetchOtherDevsForAddr(nft.owner));
-      setOtherDevs(_otherDevs);
-      setLoading(false);
-    }
-  }
-  async function fetchOtherDevsForAddr(ownerAddr: string) {
-    const ownerTokenCount = parseInt(
-      await contract.functions.balanceOf(ownerAddr),
-    );
-    const indexes = Array.from({ length: ownerTokenCount }, (_, k) => k);
-    const tokens = await Promise.all(
-      indexes.map(async (i) =>
-        parseInt(await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)),
-      ),
-    );
-    tokens.sort();
-
-    cache[ownerAddr] = tokens;
-    return tokens;
-  }
   return (
     <OtherDevsByOwner
       otherDevs={otherDevs}
