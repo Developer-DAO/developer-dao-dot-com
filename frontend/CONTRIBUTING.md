@@ -110,4 +110,4 @@ purposes and our actual translations are provided by our awesome community
 members.
 
 If you'd like to work as a translator for this project, check out our
-translation guide in [`TRANSLATIONS.md`](../TRANSLATIONS.md).
+translation guide in [`TRANSLATIONS.md`](./TRANSLATIONS.md).
