@@ -26,5 +26,7 @@
   "ddaoTokenSearch": "DDAO Token Suche",
   "ddaoUnofficalFrontend": "$t(title) inoffizielles Frontend",
   "ddaoTokenVisualizer": "$t(title) Token Betrachter",
-  "by": "von"
+  "by": "von",
+  "otherTokensOwnedByThisAddress":"Andere Token, die dieser Adresse gehören",
+  "noOtherTokens":"Keine anderen Token im Besitz dieser Adresse"
 }

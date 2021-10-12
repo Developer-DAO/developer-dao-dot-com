@@ -36,7 +36,8 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "type-check": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch --detectOpenHandles"
   },
   "eslintConfig": {
     "extends": [

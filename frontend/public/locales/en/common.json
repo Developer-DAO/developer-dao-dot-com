@@ -26,5 +26,8 @@
   "ddaoTokenSearch": "DDAO Token Search",
   "ddaoUnofficalFrontend": "Developer DAO Unofficial Frontend",
   "ddaoTokenVisualizer": "Developer DAO Token Visualizer",
-  "by": "by"
+  "by": "by",
+  "otherTokensOwnedByThisAddress":"Other Tokens owned by this address",
+  "noOtherTokens":"No other tokens owned by this address"
+
 }

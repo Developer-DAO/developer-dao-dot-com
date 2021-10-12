@@ -24,5 +24,8 @@
   "linkCopied": "Enlace copiado al portapapeles",
   "projectsList": "Una lista de proyectos creados por la comunidad de Developer DAO.",
   "ddaoTokenSearch": "Busqueda de Tokens DDAO",
-  "by": "por"
+  "by": "por",
+  "otherTokensOwnedByThisAddress":"Otros tokens propiedad de esta address",
+  "noOtherTokens":"No hay otros tokens propiedad de esta address"
+
 }
