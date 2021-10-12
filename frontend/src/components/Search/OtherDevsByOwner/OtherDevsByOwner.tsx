@@ -51,7 +51,7 @@ function OtherDevsByOwnerContainer({
       loading={loading}
       currentDevName={nft.name}
       data-testid="otherDevs"
-    ></OtherDevsByOwner>
+    />
   );
 }
 
