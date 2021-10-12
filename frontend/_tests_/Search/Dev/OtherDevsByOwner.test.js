@@ -9,24 +9,21 @@ import testCommonLink from '../../utils/testCommons';
 import { SITE_URL } from '../../../src/utils/DeveloperDaoConstants';
 import { ownedDeveloperNFT } from '../../mocks/DeveloperNFT';
 
-const mockContract = {
-  functions: { balanceOf: () => {}, tokenOfOwnerByIndex: () => {} },
-};
-jest
-  .spyOn(mockContract.functions, 'balanceOf')
-  .mockResolvedValue(BigNumber.from('2'));
-jest
-  .spyOn(mockContract.functions, 'tokenOfOwnerByIndex')
-  .mockResolvedValueOnce(BigNumber.from(2669));
-jest
-  .spyOn(mockContract.functions, 'tokenOfOwnerByIndex')
-  .mockResolvedValueOnce(BigNumber.from(1950));
 describe('Other Devs By Owner Container gets ', () => {
   it('Renders owned tokens returned by contract', async () => {
+    const contract = {
+      functions: {
+        balanceOf: jest.fn().mockResolvedValue(2),
+        tokenOfOwnerByIndex: jest
+          .fn()
+          .mockResolvedValueOnce(2669)
+          .mockResolvedValueOnce(1950),
+      },
+    };
     render(
       <OtherDevsByOwnerContainer
         nft={ownedDeveloperNFT}
-        contract={mockContract}
+        contract={contract}
       />,
     );
     const otherDevs = await screen.findAllByRole('link');
