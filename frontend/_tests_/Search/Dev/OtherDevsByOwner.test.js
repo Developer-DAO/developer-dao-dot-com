@@ -29,7 +29,6 @@ describe('Other Devs By Owner Container gets ', () => {
         contract={mockContract}
       />,
     );
-    await act(() => Promise.resolve());
     const otherDevs = await screen.findAllByRole('link');
     expect(otherDevs).toHaveLength(1);
   });
