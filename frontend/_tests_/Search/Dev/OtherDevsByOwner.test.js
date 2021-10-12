@@ -9,27 +9,23 @@ import testCommonLink from '../../utils/testCommons';
 import { SITE_URL } from '../../../src/utils/DeveloperDaoConstants';
 import { ownedDeveloperNFT } from '../../mocks/DeveloperNFT';
 
-const mockContract = {
-  functions: { balanceOf: () => {}, tokenOfOwnerByIndex: () => {} },
-};
-jest
-  .spyOn(mockContract.functions, 'balanceOf')
-  .mockResolvedValue(BigNumber.from('2'));
-jest
-  .spyOn(mockContract.functions, 'tokenOfOwnerByIndex')
-  .mockResolvedValueOnce(BigNumber.from(2669));
-jest
-  .spyOn(mockContract.functions, 'tokenOfOwnerByIndex')
-  .mockResolvedValueOnce(BigNumber.from(1950));
 describe('Other Devs By Owner Container gets ', () => {
   it('Renders owned tokens returned by contract', async () => {
+    const contract = {
+      functions: {
+        balanceOf: jest.fn().mockResolvedValue(2),
+        tokenOfOwnerByIndex: jest
+          .fn()
+          .mockResolvedValueOnce(2669)
+          .mockResolvedValueOnce(1950),
+      },
+    };
     render(
       <OtherDevsByOwnerContainer
         nft={ownedDeveloperNFT}
-        contract={mockContract}
+        contract={contract}
       />,
     );
-    await act(() => Promise.resolve());
     const otherDevs = await screen.findAllByRole('link');
     expect(otherDevs).toHaveLength(1);
   });
@@ -46,9 +42,7 @@ describe('Address renders other devs', () => {
     const devName = await screen.findByText('#1950');
     const items = await screen.findAllByRole('link');
     expect(items).toHaveLength(1);
-    expect(devName).toBeInTheDocument();
     fireEvent.click(devName);
     testCommonLink(devName, `${SITE_URL}/?id=1950`);
-    expect(devName).toBeEnabled();
   });
 });

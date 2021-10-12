@@ -31,19 +31,19 @@ function OtherDevsByOwnerContainer({
     }
   }
   async function fetchOtherDevsForAddr(ownerAddr: string) {
-    const devsArr: number[] = [];
-    const tokensOwnedByAddress = parseInt(
-      (await contract.functions?.balanceOf(ownerAddr)).toString(),
+    const ownerTokenCount = parseInt(
+      await contract.functions.balanceOf(ownerAddr),
     );
-    for (let i = 0; i < tokensOwnedByAddress; i++) {
-      const otherToken = (
-        await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)
-      ).toString();
-      devsArr.push(parseInt(otherToken));
-    }
-    const sortedDevs = devsArr.sort((a, b) => a - b);
-    cache[ownerAddr] = sortedDevs;
-    return sortedDevs;
+    const indexes = Array.from({ length: ownerTokenCount }, (_, k) => k);
+    const tokens = await Promise.all(
+      indexes.map(async (i) =>
+        parseInt(await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)),
+      ),
+    );
+    tokens.sort();
+
+    cache[ownerAddr] = tokens;
+    return tokens;
   }
   return (
     <OtherDevsByOwner
@@ -51,7 +51,7 @@ function OtherDevsByOwnerContainer({
       loading={loading}
       currentDevName={nft.name}
       data-testid="otherDevs"
-    ></OtherDevsByOwner>
+    />
   );
 }
 
@@ -77,15 +77,13 @@ export function OtherDevsByOwner({
         </Text>
         <Flex align="center" justify="center" wrap="wrap" w="100%">
           {otherDevs.map(
-            (dev, i) =>
-              currentDevName !== 'Dev #' + dev && (
+            (dev) =>
+              currentDevName !== `Dev #${dev}` && (
                 <Link
-                  as="a"
                   rel="noreferrer"
                   fontSize="sm"
-                  key={i}
+                  key={dev}
                   m={1}
-                  className="margin-inline-start"
                   href={`${SITE_URL}/?id=${dev}`}
                 >
                   #{dev}
