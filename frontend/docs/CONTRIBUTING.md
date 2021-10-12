@@ -107,6 +107,7 @@ our users to actually be able to access our content if English isn't their first
 language. Our code base uses
 [next-i18next](https://github.com/isaachinman/next-i18next) for translation
 purposes and our actual translations are provided by our awesome community
-members. If you're a whiz in a given language we support (or don't have yet),
-please raise your hand to help out with making our site as multilingual as
-possible.
+members.
+
+If you'd like to work as a translator for this project, check out our
+translation guide in [`TRANSLATIONS.md`](../TRANSLATIONS.md).
