@@ -42,9 +42,7 @@ describe('Address renders other devs', () => {
     const devName = await screen.findByText('#1950');
     const items = await screen.findAllByRole('link');
     expect(items).toHaveLength(1);
-    expect(devName).toBeInTheDocument();
     fireEvent.click(devName);
     testCommonLink(devName, `${SITE_URL}/?id=1950`);
-    expect(devName).toBeEnabled();
   });
 });
