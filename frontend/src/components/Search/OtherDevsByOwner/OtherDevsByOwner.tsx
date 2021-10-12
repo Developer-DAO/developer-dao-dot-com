@@ -31,19 +31,19 @@ function OtherDevsByOwnerContainer({
     }
   }
   async function fetchOtherDevsForAddr(ownerAddr: string) {
-    const devsArr: number[] = [];
-    const tokensOwnedByAddress = parseInt(
-      (await contract.functions?.balanceOf(ownerAddr)).toString(),
+    const ownerTokenCount = parseInt(
+      await contract.functions.balanceOf(ownerAddr),
     );
-    for (let i = 0; i < tokensOwnedByAddress; i++) {
-      const otherToken = (
-        await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)
-      ).toString();
-      devsArr.push(parseInt(otherToken));
-    }
-    const sortedDevs = devsArr.sort((a, b) => a - b);
-    cache[ownerAddr] = sortedDevs;
-    return sortedDevs;
+    const indexes = Array.from({ length: ownerTokenCount }, (_, k) => k);
+    const tokens = await Promise.all(
+      indexes.map(async (i) =>
+        parseInt(await contract.functions.tokenOfOwnerByIndex(ownerAddr, i)),
+      ),
+    );
+    tokens.sort();
+
+    cache[ownerAddr] = tokens;
+    return tokens;
   }
   return (
     <OtherDevsByOwner
