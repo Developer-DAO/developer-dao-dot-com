@@ -234,6 +234,16 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "sijeesh-02",
+      "name": "Sijeesh Joshi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4103618?v=4",
+      "profile": "https://github.com/sijeesh-02",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
