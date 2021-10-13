@@ -1,10 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
 import OtherDevsByOwnerContainer, {
   OtherDevsByOwner,
 } from '../../../src/components/Search/OtherDevsByOwner/OtherDevsByOwner';
-import { BigNumber } from 'ethers';
 import testCommonLink from '../../utils/testCommons';
 import { SITE_URL } from '../../../src/utils/DeveloperDaoConstants';
 import { ownedDeveloperNFT } from '../../mocks/DeveloperNFT';
@@ -20,14 +18,20 @@ describe('Other Devs By Owner Container gets ', () => {
           .mockResolvedValueOnce(1950),
       },
     };
-    render(
-      <OtherDevsByOwnerContainer
-        nft={ownedDeveloperNFT}
-        contract={contract}
-      />,
+    const { rerender } = render(
+      <OtherDevsByOwnerContainer nft={ownedDeveloperNFT} contract={contract} />,
     );
+
     const otherDevs = await screen.findAllByRole('link');
     expect(otherDevs).toHaveLength(1);
+    expect(contract.functions.tokenOfOwnerByIndex).toHaveBeenCalledTimes(2);
+
+    // rerender and validate that cached values are used
+    rerender(
+      <OtherDevsByOwnerContainer nft={ownedDeveloperNFT} contract={contract} />,
+    );
+    await screen.findByRole('link');
+    expect(contract.functions.tokenOfOwnerByIndex).toHaveBeenCalledTimes(2);
   });
 });
 
