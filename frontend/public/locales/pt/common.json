@@ -14,5 +14,8 @@
   "enterDeveloperId": "Por favor digite um Developer DAO id",
   "hosting": "Hospedagem por:",
   "copyLinkToNFT": "Copiar link para NFT",
-  "linkCopied": "Link copiado para área de transferência"
+  "linkCopied": "Link copiado para área de transferência",
+  "otherTokensOwnedByThisAddress":"Outros tokens pertencentes a este address",
+  "noOtherTokens":"Nenhum outro tokens pertencente a este address"
+
 }

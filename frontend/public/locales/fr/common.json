@@ -24,5 +24,8 @@
   "linkCopied": "Lien copié dans le presse-papier",
   "projectsList": "Une liste des projets communs créés par la communauté du Developer DAO.",
   "ddaoTokenSearch": "Recherche de tokens DDAO",
-  "by": "par"
+  "by": "par",
+  "otherTokensOwnedByThisAddress":"Autres Tokens appartenant à cette adresse",
+  "noOtherTokens":"Aucun autre jeton appartenant à cette adresse"
+
 }

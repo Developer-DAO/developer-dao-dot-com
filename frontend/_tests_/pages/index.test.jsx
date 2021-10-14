@@ -8,6 +8,11 @@ import {
 } from '../../src/utils/DeveloperDaoConstants';
 import { ownedDeveloperNFT, unownedDeveloperNFT } from '../mocks/DeveloperNFT';
 
+jest.mock(
+  '../../src/components/Search/OtherDevsByOwner/OtherDevsByOwner',
+  () => () => <div></div>,
+);
+
 const useRouter = jest
   .spyOn(require('next/router'), 'useRouter')
   .mockImplementation(() => ({
