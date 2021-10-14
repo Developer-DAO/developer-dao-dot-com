@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -129,6 +129,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://linkedin.com/in/davybraun"><img src="https://avatars.githubusercontent.com/u/543614?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Davy Peter Braun</b></sub></a><br /><a href="#translation-dheavy" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/nippold"><img src="https://avatars.githubusercontent.com/u/32570685?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dennis</b></sub></a><br /><a href="#translation-nippold" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/sijeesh-02"><img src="https://avatars.githubusercontent.com/u/4103618?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sijeesh Joshi</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=sijeesh-02" title="Code">💻</a> <a href="https://github.com/Developer-DAO/developerdao.com/commits?author=sijeesh-02" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/marcusdiaz"><img src="https://avatars.githubusercontent.com/u/4324727?v=4?s=100" width="100px;" alt=""/><br /><sub><b>marcusdiaz</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=marcusdiaz" title="Code">💻</a></td>
   </tr>
 </table>
 
