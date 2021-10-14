@@ -57,7 +57,7 @@ function Footer() {
             <a
               title="Discord"
               className="mx-2 block"
-              href="https://discord.gg/CUpj5KY6R4"
+              href="https://discord.gg/devdao"
               target="_blank"
               rel="noreferrer"
             >
