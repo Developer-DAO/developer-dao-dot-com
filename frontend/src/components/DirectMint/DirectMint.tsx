@@ -10,7 +10,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
 import {
-  CONTRACT_ADDRESS,
+  DEVELOPER_DAO_CONTRACT,
   ERROR_CODE_TX_REJECTED_BY_USER,
   MAINNET_NETWORK_ID,
   INFURA_ID,
@@ -58,7 +58,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     const _web3 = new ethers.providers.Web3Provider(_provider);
     _signer = _web3.getSigner();
     mint_contract = new ethers.Contract(
-      CONTRACT_ADDRESS,
+      DEVELOPER_DAO_CONTRACT,
       MINT_CONTRACT.abi,
       _signer,
     );
@@ -150,7 +150,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       if (error.code === ERROR_CODE_TX_REJECTED_BY_USER) {
         // resetFields();
         toast({
-          title: 'Transaction Cancelled by User',
+          title: t('userCancelTransaction'),
           status: 'error',
           isClosable: true,
         });
