@@ -4,16 +4,19 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { useToast, Button, Input } from '@chakra-ui/react';
+import { useToast, Button, Input, Stack } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
+import {
+  CONTRACT_ADDRESS,
+  ERROR_CODE_TX_REJECTED_BY_USER,
+  MAINNET_NETWORK_ID,
+  INFURA_ID,
+} from '../../utils/DeveloperDaoConstants';
 
 import MINT_CONTRACT from '../../artifacts/ddao.json';
-const CONTRACT_ADDRESS = '0x25ed58c027921e14d86380ea2646e3a1b5c55a8b';
-const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
-const MAINNET_NETWORK_ID = 1;
 let _provider: any = null;
 let _signer: any = null;
 let mint_contract: Partial<ethers.Contract>;
@@ -26,7 +29,7 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
     options: {
-      infuraId: '86ddbc7b94ff40af908eaed373ac95d6', // required
+      infuraId: INFURA_ID, // required
     },
   },
 };
@@ -158,8 +161,8 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       //console.error(error);
       toast({
         title: error.code,
-        description: 'Token ID may not be available',
-        status: 'error',
+        description: t('tokenUnavailable'),
+        status: t('errorString'),
         isClosable: true,
       });
       setTokenID('');
@@ -168,9 +171,9 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     // If we leave the try/catch, we aren't sending a tx anymore, so we clear
     // this part of the state.
     toast({
-      title: 'Token Minted',
-      description: 'Your NFT should now be in your wallet!',
-      status: 'success',
+      title: t('TokenMintMessage'),
+      description: t('NFTMintSuccess'),
+      status: t('successString'),
       isClosable: true,
     });
     setTokenID('');
@@ -180,7 +183,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     <>
       {!userWallet && (
         <Button w="100%" colorScheme="blue" onClick={connectWallet} mt="10">
-          Connect Wallet
+          {t('connectWalletText')}
         </Button>
       )}
       {userWallet && (
@@ -190,10 +193,11 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
           value={tokenID}
           onChange={tokenNameHandler}
           type="text"
-          placeholder="Enter Token ID"
+          placeholder={t('tokenIDPlaceholder')}
           mt="10"
         ></Input>
       )}
+
       <Button
         w="100%"
         colorScheme="green"
@@ -201,10 +205,11 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         disabled={!userWallet || networkError}
         mt="10"
       >
-        Mint your token
+        {t('mintTokenText')}
       </Button>
+
       {networkError && (
-        <p className="network_error">Please Connect to the Ethereum Network</p>
+        <p className="network_error">{t('EthereumNetworkPrompt')}</p>
       )}
     </>
   );

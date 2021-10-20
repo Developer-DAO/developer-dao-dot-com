@@ -15,5 +15,16 @@
   "hosting": "Hosting by:",
   "copyLinkToNFT": "Copy link to NFT",
   "linkCopied": "Link copied to clipboard",
-  "projects": "A list of community projects created by the Developer DAO community."
+  "projects": "A list of community projects created by the Developer DAO community.",
+  "tokenUnavailable": "Token ID may not be available",
+  "errorString": "error",
+  "successString" : "success",
+  "NFTMintSuccess": "Your NFT should now be in your wallet!",
+  "TokenMintMessage": "Token Minted",
+  "tokenIDPlaceholder": "Enter Token ID",
+  "mintTokenText" : "Mint your Token",
+  "connectWalletText": "Connect Wallet",
+  "ethereumNetworkPrompt": "Please Connect to the Ethereum Network",
+  "availableTokensText": "View the available Token IDs",
+  "mintPageHeader": "DDAO Token Minter"
 }
