@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import { getDefaultProvider, Contract } from 'ethers';
+import { getDefaultProvider, Contract, ethers } from 'ethers';
 import { NftProvider, useNft } from 'use-nft';
 import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
+  DEVELOPER_DAO_CONTRACT_ABI,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
 } from '../utils/DeveloperDaoConstants';
@@ -23,6 +24,7 @@ import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
 import { useNftImageContent } from '../utils/useNftImageContent';
 import DirectMint from '../components/DirectMint/DirectMint';
+import OtherDevsByOwnerContainer from '../components/Search/OtherDevsByOwner/OtherDevsByOwner';
 
 function App() {
   const { t } = useTranslation();
@@ -120,6 +122,9 @@ function Nft({ developerId }: { developerId: string }) {
       />
       <VStack>
         <DevName nft={nft} developerId={developerId} />
+        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
+          {t('copyLinkToNFT')}
+        </Button>
         {nft.owner ? (
           <Button
             as="a"
@@ -129,21 +134,25 @@ function Nft({ developerId }: { developerId: string }) {
             title={t('viewOwnerEtherscan')}
             fontSize={{ base: 'xs', sm: 'md' }}
           >
-            {t('owner')}:&nbsp;
+            {t('owner')}&nbsp;
             <chakra.span maxW="xs">{nft.owner.slice(0, 30)}</chakra.span>...
             {nft.owner.slice(-4)}
           </Button>
         ) : (
-          <>
-            <Button isDisabled>
-              {t('owner')}:&nbsp;{t('unclaimed')}
-            </Button>
-            <DirectMint developerId={developerId} />
-          </>
+          <Button isDisabled>
+            {t('owner')}&nbsp;{t('unclaimed')}
+          </Button>
         )}
-        <Button onClick={copyLinkToNFT} leftIcon={<LinkIcon />}>
-          {t('copyLinkToNFT')}
-        </Button>
+        <OtherDevsByOwnerContainer
+          nft={nft}
+          contract={
+            new ethers.Contract(
+              DEVELOPER_DAO_CONTRACT,
+              DEVELOPER_DAO_CONTRACT_ABI,
+              getDefaultProvider('homestead'),
+            )
+          }
+        ></OtherDevsByOwnerContainer>
       </VStack>
     </VStack>
   );

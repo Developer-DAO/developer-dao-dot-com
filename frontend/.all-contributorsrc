@@ -1,5 +1,5 @@
 {
-  "projectName": "developer-dao",
+  "projectName": "developerdao.com",
   "projectOwner": "Developer-DAO",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -215,6 +215,43 @@
       "profile": "http://marbiano.com",
       "contributions": [
         "design"
+      ]
+    },
+    {
+      "login": "dheavy",
+      "name": "Davy Peter Braun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/543614?v=4",
+      "profile": "https://linkedin.com/in/davybraun",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "nippold",
+      "name": "Dennis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32570685?v=4",
+      "profile": "https://github.com/nippold",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "sijeesh-02",
+      "name": "Sijeesh Joshi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4103618?v=4",
+      "profile": "https://github.com/sijeesh-02",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "marcusdiaz",
+      "name": "marcusdiaz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4324727?v=4",
+      "profile": "https://github.com/marcusdiaz",
+      "contributions": [
+        "code"
       ]
     }
   ],

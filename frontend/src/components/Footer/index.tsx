@@ -1,16 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Text, HStack, chakra, VStack } from '@chakra-ui/react';
 import {
-  Box,
-  Flex,
-  Text,
-  HStack,
-  chakra,
-  List,
-  ListItem,
-  VStack,
-} from '@chakra-ui/react';
-import { IconOpenSea, IconEtherscan, IconTwitter, IconDiscord } from '../Icons';
+  IconOpenSea,
+  IconEtherscan,
+  IconTwitter,
+  IconDiscord,
+  IconGitHub,
+  IconDiscourse,
+} from '../Icons';
 
 function Footer() {
   const { t } = useTranslation();
@@ -20,16 +18,6 @@ function Footer() {
       <VStack mx="auto" maxW="6xl" px={4} spacing={5}>
         <Text fontSize="sm" color="gray.600">
           {t('madeBy')}
-          <chakra.a
-            href="https://github.com/Developer-DAO"
-            title="Developer DAO GitHub organization"
-            target="_blank"
-            rel="noreferrer"
-            textDecor="underline"
-            color="blue.600"
-          >
-            GitHub
-          </chakra.a>
         </Text>
         <HStack as="ul" direction="row" spacing={4} listStyleType="none">
           <li>
@@ -69,11 +57,33 @@ function Footer() {
             <a
               title="Discord"
               className="mx-2 block"
-              href="https://discord.gg/zRnZpzzY"
+              href="https://discord.gg/devdao"
               target="_blank"
               rel="noreferrer"
             >
               <IconDiscord />
+            </a>
+          </li>
+          <li>
+            <a
+              title="GitHub"
+              className="mx-2 block"
+              href="https://github.com/Developer-DAO"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconGitHub h={10} w={10} />
+            </a>
+          </li>
+          <li>
+            <a
+              title="Discourse"
+              className="mx-2 block"
+              href="https://forum.developerdao.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconDiscourse />
             </a>
           </li>
         </HStack>

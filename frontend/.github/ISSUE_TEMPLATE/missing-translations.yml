@@ -25,6 +25,7 @@ body:
       multiple: true
       description: 'Check the locales that are missing translations'
       options:
+        - 'de'
         - 'en'
         - 'es'
         - 'fr'

@@ -35,19 +35,19 @@ function Nav() {
         </Link>
         <HStack spacing={{ base: 3, sm: 10 }}>
           <Link href="/" passHref>
-            Home
+            {t('home')}
           </Link>
           <Link href="/mint" passHref>
             Mint your token
           </Link>
           <Link href="/projects" passHref>
-            Projects
+            {t('projects')}
           </Link>
           <chakra.a
             href="https://github.com/Developer-DAO/developer-dao"
             target="_blank"
             rel="noreferrer"
-            title="Developer DAO GitHub repository"
+            title={t('daoGithubRepo')}
           >
             <IconGitHub
               h={7}
