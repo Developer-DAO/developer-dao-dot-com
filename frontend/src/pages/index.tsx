@@ -23,7 +23,6 @@ import Logo from '../components/Logo';
 import PageLayout from '../layout/Page';
 import DevName from '../components/Search/Dev/DevName';
 import { useNftImageContent } from '../utils/useNftImageContent';
-import DirectMint from '../components/DirectMint/DirectMint';
 import OtherDevsByOwnerContainer from '../components/Search/OtherDevsByOwner/OtherDevsByOwner';
 
 function App() {

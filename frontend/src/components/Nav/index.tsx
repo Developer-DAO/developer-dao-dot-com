@@ -38,7 +38,7 @@ function Nav() {
             {t('home')}
           </Link>
           <Link href="/mint" passHref>
-            Mint your token
+            {t('mintTokenText')}
           </Link>
           <Link href="/projects" passHref>
             {t('projects')}

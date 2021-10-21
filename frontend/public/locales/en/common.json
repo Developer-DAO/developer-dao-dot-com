@@ -23,8 +23,6 @@
   "copyLinkToNFT": "Copy link to NFT",
   "linkCopied": "Link copied to clipboard",
   "tokenUnavailable": "Token ID may not be available",
-  "errorString": "error",
-  "successString" : "success",
   "NFTMintSuccess": "Your NFT should now be in your wallet!",
   "TokenMintMessage": "Token Minted",
   "tokenIDPlaceholder": "Enter Token ID",
@@ -32,7 +30,7 @@
   "connectWalletText": "Connect Wallet",
   "ethereumNetworkPrompt": "Please Connect to the Ethereum Network",
   "availableTokensText": "View the available Token IDs",
-  "mintPageHeader": "DDAO Token Minter",
+  "mintPageHeader": "DEVS Token Minter",
   "projectsList": "A list of community projects created by the Developer DAO community.",
   "ddaoTokenSearch": "DDAO Token Search",
   "ddaoUnofficalFrontend": "Developer DAO Unofficial Frontend",
@@ -40,5 +38,8 @@
   "by": "by",
   "otherTokensOwnedByThisAddress":"Other Tokens owned by this address",
   "noOtherTokens":"No other tokens owned by this address",
-  "userCancelTransaction": "Transaction Cancelled by User"
+  "userCancelTransaction": "Transaction Cancelled by User",
+  "transactionSending": "Transaction Being Sent",
+  "here": "here",
+  "errorMinting": "Unable to Mint NFT"
 }

@@ -6,7 +6,7 @@ export const ETHER_SCAN_LINK_PREFIX = 'https://etherscan.io/address';
 export const SITE_URL = 'https://developerdao.com';
 export const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
 export const MAINNET_NETWORK_ID = 1;
-export const INFURA_ID = '86ddbc7b94ff40af908eaed373ac95d6';
+export const TOKEN_FINDER_URL = 'http://ddao.ibby.dev';
 
 export const DEVELOPER_DAO_CONTRACT_ABI = [
   { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },

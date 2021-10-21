@@ -13,7 +13,6 @@ import {
   DEVELOPER_DAO_CONTRACT,
   ERROR_CODE_TX_REJECTED_BY_USER,
   MAINNET_NETWORK_ID,
-  INFURA_ID,
 } from '../../utils/DeveloperDaoConstants';
 
 import MINT_CONTRACT from '../../artifacts/ddao.json';
@@ -27,15 +26,13 @@ interface DirectMintProps {
 
 const providerOptions = {
   walletconnect: {
-    package: WalletConnectProvider, // required
+    package: WalletConnectProvider,
     options: {
-      infuraId: INFURA_ID, // required
+      infuraId: process.env.INFURA_ID,
     },
   },
 };
 
-// Logic & buttons needed for Direct Minting
-// Can be reused anywhere else as needed
 const DirectMint = ({ developerId }: DirectMintProps) => {
   const { t } = useTranslation();
   const [userWallet, setUserWallet] = useState('');
@@ -47,9 +44,9 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
 
   useEffect(() => {
     const web3Modal = new Web3Modal({
-      network: 'mainnet', // optional
-      cacheProvider: false, // optional
-      providerOptions, // required
+      network: 'mainnet',
+      cacheProvider: false,
+      providerOptions,
     });
     setWeb3Modal(web3Modal);
   }, []);
@@ -66,7 +63,6 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     const accounts = await _web3.listAccounts();
     const { chainId } = await _web3.getNetwork();
 
-    // MetaMask does not give you all accounts, only the selected account
     const selectedAccount = accounts[0];
 
     setUserWallet(selectedAccount);
@@ -90,17 +86,14 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       return;
     }
 
-    // Subscribe to accounts change
     _provider.on('accountsChanged', (accounts: string) => {
       fetchAccountData();
     });
 
-    // Subscribe to chainId change
     _provider.on('chainChanged', (chainId: string) => {
       fetchAccountData();
     });
 
-    // Subscribe to networkId change
     _provider.on('networkChanged', (networkId: string) => {
       setNetworkError(false);
       fetchAccountData();
@@ -117,38 +110,20 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     event,
   ) => {
     try {
-      // If a transaction fails, we save that error in the component's state.
-      // We only save one such error, so before sending a second transaction, we
-      // clear it.
-
-      // We send the transaction, and save its hash in the Dapp's state. This
-      // way we can indicate that we are waiting for it to be mined.
       const tx = await mint_contract.claim(tokenID);
 
-      //Alert transaction is in progress
       toast({
-        title: 'Transaction Being Sent',
+        title: t('transactionSending'),
         isClosable: true,
       });
 
-      // We use .wait() to wait for the transaction to be mined. This method
-      // returns the transaction's receipt.
       const receipt = await tx.wait();
 
-      // The receipt, contains a status flag, which is 0 to indicate an error.
       if (receipt.status === 0) {
-        // We can't know the exact error that make the transaction fail once it
-        // was mined, so we throw this generic one.
         throw new Error('Transaction failed');
       }
-
-      // If we got here, the transaction was successful, so you may want to
-      // update your state. Here, we update the user's balance.
     } catch (error: any) {
-      // We check the error code to see if this error was produced because the
-      // user rejected a tx. If that's the case, we do nothing.
       if (error.code === ERROR_CODE_TX_REJECTED_BY_USER) {
-        // resetFields();
         toast({
           title: t('userCancelTransaction'),
           status: 'error',
@@ -156,24 +131,21 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         });
         return;
       }
-      // Other errors are logged and stored in the Dapp's state. This is used to
-      // show them to the user, and for debugging.
-      //console.error(error);
+
       toast({
-        title: error.code,
+        title: t('errorMinting'),
         description: t('tokenUnavailable'),
-        status: t('errorString'),
+        status: 'error',
         isClosable: true,
       });
       setTokenID('');
       return;
     }
-    // If we leave the try/catch, we aren't sending a tx anymore, so we clear
-    // this part of the state.
+
     toast({
       title: t('TokenMintMessage'),
       description: t('NFTMintSuccess'),
-      status: t('successString'),
+      status: 'success',
       isClosable: true,
     });
     setTokenID('');
@@ -182,7 +154,13 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   return (
     <>
       {!userWallet && (
-        <Button w="100%" colorScheme="blue" onClick={connectWallet} mt="10">
+        <Button
+          w="100%"
+          colorScheme="blue"
+          onClick={connectWallet}
+          mt="10"
+          fontSize={{ base: 's', sm: 'xl' }}
+        >
           {t('connectWalletText')}
         </Button>
       )}
@@ -204,6 +182,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         onClick={createTokenHandler}
         disabled={!userWallet || networkError}
         mt="10"
+        fontSize={{ base: 's', sm: 'xl' }}
       >
         {t('mintTokenText')}
       </Button>
