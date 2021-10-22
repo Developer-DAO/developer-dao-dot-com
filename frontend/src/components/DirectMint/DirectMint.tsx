@@ -28,12 +28,13 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: process.env.INFURA_ID,
+      infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
     },
   },
 };
 
 const DirectMint = ({ developerId }: DirectMintProps) => {
+  console.log(process.env.NEXT_PUBLIC_INFURA_ID);
   const { t } = useTranslation();
   const [userWallet, setUserWallet] = useState('');
   const [tokenID, setTokenID] = useState(developerId ? developerId : '');
