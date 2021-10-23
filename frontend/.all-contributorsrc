@@ -262,6 +262,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "rin-st",
+      "name": "Rinat Akhunianov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25638585?v=4",
+      "profile": "https://github.com/rin-st",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
