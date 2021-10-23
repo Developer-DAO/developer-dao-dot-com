@@ -4,7 +4,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { useToast, Button, Input, Stack } from '@chakra-ui/react';
+import { useToast, Button, Input, Text } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
@@ -34,7 +34,6 @@ const providerOptions = {
 };
 
 const DirectMint = ({ developerId }: DirectMintProps) => {
-  console.log(process.env.NEXT_PUBLIC_INFURA_ID);
   const { t } = useTranslation();
   const [userWallet, setUserWallet] = useState('');
   const [tokenID, setTokenID] = useState(developerId ? developerId : '');
@@ -100,7 +99,17 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       fetchAccountData();
     });
 
+    _provider.on('disconnect', (error: { code: number; message: string }) => {
+      web3Modal?.clearCachedProvider();
+      setUserWallet('');
+    });
+
     await fetchAccountData();
+  };
+
+  const disconnectWallet = async () => {
+    await web3Modal?.clearCachedProvider();
+    setUserWallet('');
   };
 
   const tokenNameHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -188,9 +197,19 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         {t('mintTokenText')}
       </Button>
 
-      {networkError && (
-        <p className="network_error">{t('EthereumNetworkPrompt')}</p>
+      {userWallet && (
+        <Button
+          w="100%"
+          colorScheme="orange"
+          onClick={disconnectWallet}
+          mt="10"
+          fontSize={{ base: 's', sm: 'xl' }}
+        >
+          {t('disconnectWallet')}
+        </Button>
       )}
+
+      {networkError && <Text color="red">{t('ethereumNetworkPrompt')}</Text>}
     </>
   );
 };

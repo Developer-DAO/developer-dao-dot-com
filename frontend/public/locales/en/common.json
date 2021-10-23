@@ -41,5 +41,6 @@
   "userCancelTransaction": "Transaction Cancelled by User",
   "transactionSending": "Transaction Being Sent",
   "here": "here",
-  "errorMinting": "Unable to Mint NFT"
+  "errorMinting": "Unable to Mint NFT",
+  "disconnectWallet": "Disconnect Wallet"
 }
