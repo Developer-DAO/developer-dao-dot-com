@@ -4,7 +4,24 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { useToast, Button, Input, Text } from '@chakra-ui/react';
+import {
+  useToast,
+  Button,
+  Input,
+  Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  CircularProgress,
+  Center,
+  Link,
+  Stack,
+} from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { ethers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
@@ -39,6 +56,10 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   const [tokenID, setTokenID] = useState(developerId ? developerId : '');
   const [networkError, setNetworkError] = useState(false);
   const [web3Modal, setWeb3Modal] = useState<Web3Modal>();
+  const [txInProgress, setTxInProgress] = useState(false);
+  const [txReceipt, setTxReceipt] = useState('');
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const toast = useToast();
 
@@ -55,7 +76,8 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     const _web3 = new ethers.providers.Web3Provider(_provider);
     _signer = _web3.getSigner();
     mint_contract = new ethers.Contract(
-      DEVELOPER_DAO_CONTRACT,
+      //DEVELOPER_DAO_CONTRACT,
+      '0xbf114c4cbb4e70e6098589a918c84292cb40602a',
       MINT_CONTRACT.abi,
       _signer,
     );
@@ -70,7 +92,8 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   };
 
   const _checkNetwork = (chainId: number) => {
-    if (chainId === MAINNET_NETWORK_ID) {
+    if (chainId === 4) {
+      //MAINNET_NETWORK_ID) {
       return true;
     }
     setNetworkError(true);
@@ -121,18 +144,17 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   ) => {
     try {
       const tx = await mint_contract.claim(tokenID);
-
-      toast({
-        title: t('transactionSending'),
-        isClosable: true,
-      });
+      setTxInProgress(true);
+      onOpen();
 
       const receipt = await tx.wait();
+      setTxReceipt(receipt.transactionHash);
 
       if (receipt.status === 0) {
         throw new Error('Transaction failed');
       }
     } catch (error: any) {
+      setTxInProgress(false);
       if (error.code === ERROR_CODE_TX_REJECTED_BY_USER) {
         toast({
           title: t('userCancelTransaction'),
@@ -151,14 +173,13 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       setTokenID('');
       return;
     }
-
-    toast({
-      title: t('TokenMintMessage'),
-      description: t('NFTMintSuccess'),
-      status: 'success',
-      isClosable: true,
-    });
     setTokenID('');
+  };
+
+  const modalCloseHandler = () => {
+    setTxInProgress(false);
+    setTxReceipt('');
+    onClose();
   };
 
   return (
@@ -175,38 +196,78 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         </Button>
       )}
       {userWallet && (
-        <Input
-          w="100%"
-          size="md"
-          value={tokenID}
-          onChange={tokenNameHandler}
-          type="text"
-          placeholder={t('tokenIDPlaceholder')}
-          mt="10"
-        ></Input>
+        <>
+          <Input
+            w="100%"
+            size="md"
+            value={tokenID}
+            onChange={tokenNameHandler}
+            type="text"
+            placeholder={t('tokenIDPlaceholder')}
+            mt="10"
+          ></Input>
+
+          <Button
+            w="100%"
+            colorScheme="green"
+            onClick={createTokenHandler}
+            disabled={networkError}
+            mt="10"
+            fontSize={{ base: 's', sm: 'xl' }}
+          >
+            {t('mintTokenText')}
+          </Button>
+
+          {userWallet && (
+            <Button
+              w="100%"
+              colorScheme="orange"
+              onClick={disconnectWallet}
+              mt="10"
+              fontSize={{ base: 's', sm: 'xl' }}
+            >
+              {t('disconnectWallet')}
+            </Button>
+          )}
+        </>
       )}
 
-      <Button
-        w="100%"
-        colorScheme="green"
-        onClick={createTokenHandler}
-        disabled={!userWallet || networkError}
-        mt="10"
-        fontSize={{ base: 's', sm: 'xl' }}
-      >
-        {t('mintTokenText')}
-      </Button>
-
-      {userWallet && (
-        <Button
-          w="100%"
-          colorScheme="orange"
-          onClick={disconnectWallet}
-          mt="10"
-          fontSize={{ base: 's', sm: 'xl' }}
-        >
-          {t('disconnectWallet')}
-        </Button>
+      {txInProgress && (
+        <Modal isOpen={isOpen} onClose={modalCloseHandler} isCentered>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Minting your NFT...</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Center h="160px">
+                {!txReceipt && (
+                  <CircularProgress
+                    isIndeterminate
+                    color="green.300"
+                    size="100px"
+                  />
+                )}
+                {txReceipt && (
+                  <>
+                    <Stack spacing={6}>
+                      <Text color="green.500" fontSize="lg">
+                        Your NFT has been minted!
+                      </Text>
+                      <Link
+                        fontSize="lg"
+                        color="#3182ce"
+                        href={`https://rinkeby.etherscan.io/tx/${txReceipt}`}
+                        isExternal
+                      >
+                        View your TX on Etherscan <ExternalLinkIcon mx="2px" />
+                      </Link>
+                    </Stack>
+                  </>
+                )}
+              </Center>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       )}
 
       {networkError && <Text color="red">{t('ethereumNetworkPrompt')}</Text>}
