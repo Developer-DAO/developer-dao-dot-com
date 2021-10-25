@@ -42,5 +42,6 @@
   "transactionSending": "Transaction Being Sent",
   "here": "here",
   "errorMinting": "Unable to Mint NFT",
-  "disconnectWallet": "Disconnect Wallet"
+  "disconnectWallet": "Disconnect Wallet",
+  "etherscanMessage": "View your TX on Etherscan"
 }

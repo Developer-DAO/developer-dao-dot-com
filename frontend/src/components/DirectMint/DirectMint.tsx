@@ -30,6 +30,7 @@ import {
   DEVELOPER_DAO_CONTRACT,
   ERROR_CODE_TX_REJECTED_BY_USER,
   MAINNET_NETWORK_ID,
+  ETHERSCAN_TX_URL,
 } from '../../utils/DeveloperDaoConstants';
 
 import MINT_CONTRACT from '../../artifacts/ddao.json';
@@ -125,6 +126,8 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     _provider.on('disconnect', (error: { code: number; message: string }) => {
       web3Modal?.clearCachedProvider();
       setUserWallet('');
+      setTxInProgress(false);
+      setTxReceipt('');
     });
 
     await fetchAccountData();
@@ -133,6 +136,8 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   const disconnectWallet = async () => {
     await web3Modal?.clearCachedProvider();
     setUserWallet('');
+    setTxInProgress(false);
+    setTxReceipt('');
   };
 
   const tokenNameHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -218,26 +223,29 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
             {t('mintTokenText')}
           </Button>
 
-          {userWallet && (
-            <Button
-              w="100%"
-              colorScheme="orange"
-              onClick={disconnectWallet}
-              mt="10"
-              fontSize={{ base: 's', sm: 'xl' }}
-            >
-              {t('disconnectWallet')}
-            </Button>
-          )}
+          <Button
+            w="100%"
+            colorScheme="orange"
+            onClick={disconnectWallet}
+            mt="10"
+            fontSize={{ base: 's', sm: 'xl' }}
+          >
+            {t('disconnectWallet')}
+          </Button>
         </>
       )}
 
       {txInProgress && (
-        <Modal isOpen={isOpen} onClose={modalCloseHandler} isCentered>
+        <Modal
+          isOpen={isOpen}
+          onClose={modalCloseHandler}
+          closeOnOverlayClick={false}
+          isCentered
+        >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Minting your NFT...</ModalHeader>
-            <ModalCloseButton />
+            <ModalHeader>Processing transaction...</ModalHeader>
+            {txReceipt && <ModalCloseButton />}
             <ModalBody>
               <Center h="160px">
                 {!txReceipt && (
@@ -248,21 +256,14 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
                   />
                 )}
                 {txReceipt && (
-                  <>
-                    <Stack spacing={6}>
-                      <Text color="green.500" fontSize="lg">
-                        Your NFT has been minted!
-                      </Text>
-                      <Link
-                        fontSize="lg"
-                        color="#3182ce"
-                        href={`https://rinkeby.etherscan.io/tx/${txReceipt}`}
-                        isExternal
-                      >
-                        View your TX on Etherscan <ExternalLinkIcon mx="2px" />
-                      </Link>
-                    </Stack>
-                  </>
+                  <Link
+                    fontSize="lg"
+                    color="#3182ce"
+                    href={`${ETHERSCAN_TX_URL}${txReceipt}`}
+                    isExternal
+                  >
+                    {t('etherscanMessage')} <ExternalLinkIcon mx="2px" />
+                  </Link>
                 )}
               </Center>
             </ModalBody>
