@@ -19,7 +19,6 @@ import {
   CircularProgress,
   Center,
   Link,
-  Stack,
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { ethers } from 'ethers';
@@ -77,8 +76,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
     const _web3 = new ethers.providers.Web3Provider(_provider);
     _signer = _web3.getSigner();
     mint_contract = new ethers.Contract(
-      //DEVELOPER_DAO_CONTRACT,
-      '0xbf114c4cbb4e70e6098589a918c84292cb40602a',
+      DEVELOPER_DAO_CONTRACT,
       MINT_CONTRACT.abi,
       _signer,
     );
@@ -93,8 +91,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   };
 
   const _checkNetwork = (chainId: number) => {
-    if (chainId === 4) {
-      //MAINNET_NETWORK_ID) {
+    if (chainId === MAINNET_NETWORK_ID) {
       return true;
     }
     setNetworkError(true);

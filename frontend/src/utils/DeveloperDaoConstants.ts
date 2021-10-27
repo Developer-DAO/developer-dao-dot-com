@@ -7,7 +7,7 @@ export const SITE_URL = 'https://developerdao.com';
 export const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
 export const MAINNET_NETWORK_ID = 1;
 export const TOKEN_FINDER_URL = 'http://ddao.ibby.dev';
-export const ETHERSCAN_TX_URL = 'https://rinkeby.etherscan.io/tx/';
+export const ETHERSCAN_TX_URL = 'https://etherscan.io/tx/';
 
 export const DEVELOPER_DAO_CONTRACT_ABI = [
   { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },

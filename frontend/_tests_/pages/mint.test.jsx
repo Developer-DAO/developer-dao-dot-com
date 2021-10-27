@@ -46,13 +46,8 @@ describe('Positive Interactions', () => {
       name: /connectWalletText/,
     });
 
-    const disconnectWalletButton = screen.getByRole('button', {
-      name: /disconnectWallet/,
-    });
-
     // - [Button] - Connect Wallet
     expect(connectWalletButton).toBeInTheDocument();
-    expect(disconnectWalletButton).toBeInTheDocument();
   });
 });
 

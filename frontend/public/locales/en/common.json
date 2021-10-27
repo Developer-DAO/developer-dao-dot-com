@@ -28,7 +28,7 @@
   "tokenIDPlaceholder": "Enter Token ID",
   "mintTokenText" : "Mint your Token",
   "connectWalletText": "Connect Wallet",
-  "ethereumNetworkPrompt": "Please Connect to the Ethereum Network",
+  "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
   "availableTokensText": "View the available Token IDs",
   "mintPageHeader": "DEVS Token Minter",
   "projectsList": "A list of community projects created by the Developer DAO community.",
