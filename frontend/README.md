@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -132,6 +132,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/marcusdiaz"><img src="https://avatars.githubusercontent.com/u/4324727?v=4?s=100" width="100px;" alt=""/><br /><sub><b>marcusdiaz</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=marcusdiaz" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cmotta"><img src="https://avatars.githubusercontent.com/u/4283535?v=4?s=100" width="100px;" alt=""/><br /><sub><b>cmotta</b></sub></a><br /><a href="#translation-cmotta" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/rin-st"><img src="https://avatars.githubusercontent.com/u/25638585?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rinat Akhunianov</b></sub></a><br /><a href="#translation-rin-st" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://nagmakapoor.com"><img src="https://avatars.githubusercontent.com/u/16668970?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nagma</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=nagmak" title="Code">💻</a></td>
   </tr>
 </table>
 
