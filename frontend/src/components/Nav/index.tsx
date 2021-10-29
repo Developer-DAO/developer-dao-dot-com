@@ -14,9 +14,10 @@ function Nav() {
         justify="space-between"
         align="center"
         mx="auto"
-        maxW="6xl"
+        maxW="7xl"
+        minW="xl"
         py={3}
-        px={4}
+        px={5}
       >
         <Link href="/" passHref>
           <HStack as="a" title={t('title')} display="flex" alignItems="center">
@@ -35,6 +36,9 @@ function Nav() {
         <HStack spacing={{ base: 3, sm: 10 }}>
           <Link href="/" passHref>
             {t('home')}
+          </Link>
+          <Link href="/mint" passHref>
+            {t('mintTokenText')}
           </Link>
           <Link href="/projects" passHref>
             {t('projects')}

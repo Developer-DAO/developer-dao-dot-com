@@ -22,12 +22,26 @@
   "hosting": "Hosting by:",
   "copyLinkToNFT": "Copy link to NFT",
   "linkCopied": "Link copied to clipboard",
+  "tokenUnavailable": "Token ID may not be available",
+  "NFTMintSuccess": "Your NFT should now be in your wallet!",
+  "TokenMintMessage": "Token Minted",
+  "tokenIDPlaceholder": "Enter Token ID",
+  "mintTokenText" : "Mint your Token",
+  "connectWalletText": "Connect Wallet",
+  "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
+  "availableTokensText": "View the available Token IDs",
+  "mintPageHeader": "DEVS Token Minter",
   "projectsList": "A list of community projects created by the Developer DAO community.",
   "ddaoTokenSearch": "DDAO Token Search",
   "ddaoUnofficalFrontend": "Developer DAO Unofficial Frontend",
   "ddaoTokenVisualizer": "Developer DAO Token Visualizer",
   "by": "by",
   "otherTokensOwnedByThisAddress":"Other Tokens owned by this address",
-  "noOtherTokens":"No other tokens owned by this address"
-
+  "noOtherTokens":"No other tokens owned by this address",
+  "userCancelTransaction": "Transaction Cancelled by User",
+  "transactionSending": "Transaction Being Sent",
+  "here": "here",
+  "errorMinting": "Unable to Mint NFT",
+  "disconnectWallet": "Disconnect Wallet",
+  "etherscanMessage": "View your TX on Etherscan"
 }

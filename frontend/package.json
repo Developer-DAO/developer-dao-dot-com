@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@walletconnect/web3-provider": "^1.6.5",
     "ethers": "^5.4.6",
     "framer-motion": "^4",
     "jest": "^27.2.0",
@@ -22,7 +23,8 @@
     "react-dom": "^17.0.2",
     "use-nft": "^0.10.1",
     "web-vitals": "^1.0.1",
-    "web3": "^1.5.2"
+    "web3": "^1.5.3",
+    "web3modal": "^1.9.4"
   },
   "scripts": {
     "start": "next start",
