@@ -280,6 +280,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Ibby-devv",
+      "name": "Brian Eter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23090443?v=4",
+      "profile": "http://www.ibby.dev",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
