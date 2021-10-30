@@ -40,7 +40,7 @@ describe('Positive Interactions', () => {
       name: /here/,
     });
 
-    testCommonLink(ddaoTokenSearch, 'http://ddao.ibby.dev');
+    testCommonLink(ddaoTokenSearch, 'https://developerdao.vercel.app/');
 
     const connectWalletButton = screen.getByRole('button', {
       name: /connectWalletText/,
