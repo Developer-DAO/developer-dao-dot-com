@@ -1,40 +1,34 @@
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-
-import {
-  DEVELOPER_DAO_CONTRACT,
-  DEVELOPER_DAO_CONTRACT_ABI,
-} from '../utils/DeveloperDaoConstants';
 import {
   AlchemyProvider,
   FallbackProvider,
   InfuraProvider,
 } from '@ethersproject/providers';
 
+import { DEVELOPER_DAO_CONTRACT } from '../utils/DeveloperDaoConstants';
+import { Ddao__factory } from '../../types/ethers-contracts/factories/Ddao__factory';
+
 // TokenIDs start at 1. Tokens 1-7777 (supply of 7777) are open to mint by anyone. 7778-8000 are locked to mint by contract owner
 const MAX_SUPPLY = 8000;
 const PUBLIC_MAX_SUPPLY = 7777;
-
-const contract = new ethers.Contract(
-  DEVELOPER_DAO_CONTRACT,
-  DEVELOPER_DAO_CONTRACT_ABI,
-  new FallbackProvider([
-    { provider: new InfuraProvider() },
-    { provider: new AlchemyProvider() },
-  ]),
-);
 
 export default function useDevNFTSupply() {
   const [totalSupply, setTotalSupply] = useState<number>(-1);
   const [lockedSupply, setLockedSupply] = useState<number>(-1);
 
   useEffect(() => {
+    const contract = Ddao__factory.connect(
+      DEVELOPER_DAO_CONTRACT,
+      new FallbackProvider([
+        { provider: new InfuraProvider() },
+        { provider: new AlchemyProvider() },
+      ]),
+    );
+
     // Fetches the count of minted DEV NFTs
     const fetchTotalSupply = async () => {
-      const totalSupply: number = (
-        await contract.functions.totalSupply()
-      )[0].toNumber();
-
+      const totalSupply: number = (await contract.totalSupply()).toNumber();
       setTotalSupply(totalSupply);
     };
 
@@ -48,9 +42,9 @@ export default function useDevNFTSupply() {
         lockedTokenId++
       ) {
         requests.push(
-          contract.functions.ownerOf(lockedTokenId).then(
+          contract.ownerOf(lockedTokenId).then(
             // Return the owner's address
-            (addressResponse) => addressResponse[0],
+            (addressResponse) => addressResponse,
             // Return the zero-address if no owner was found
             () => ethers.constants.AddressZero,
           ),
