@@ -12,11 +12,13 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
+import useDevNFTSupply from '../../hooks/useDevNFTSupply';
 
 // Layout for the Direct Mint Box
 // used on the minting page
 const DirectMintBox = () => {
   const { t } = useTranslation();
+  const { loading, remainingPublicSupply } = useDevNFTSupply();
   return (
     <>
       <Container maxW="container.md" centerContent>
@@ -36,6 +38,11 @@ const DirectMintBox = () => {
               <Link color="#3182ce" href={TOKEN_FINDER_URL} isExternal>
                 {t('here')}
               </Link>
+            </Text>
+            <Text fontSize={{ base: 'xs', sm: 'xl' }}>
+              {t('remainingTokensText', {
+                remainingTokens: loading ? '...' : remainingPublicSupply,
+              })}
             </Text>
             <DirectMint />
           </Stack>
