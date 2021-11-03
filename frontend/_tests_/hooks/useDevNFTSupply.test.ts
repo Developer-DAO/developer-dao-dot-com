@@ -21,9 +21,9 @@ test('should return correct supply values & transition loading state', async () 
 
   const { result, waitForValueToChange } = renderHook(() => useDevNFTSupply());
 
-  expect(result.current.loading).toBe(true);
-  await waitForValueToChange(() => result.current.loading);
-  expect(result.current.loading).toBe(false);
+  expect(result.current.isLoading).toBe(true);
+  await waitForValueToChange(() => result.current.isLoading);
+  expect(result.current.isLoading).toBe(false);
 
   expect(result.current.maxSupply).toBe(8000);
   expect(result.current.totalSupply).toBe(2345);
@@ -46,9 +46,9 @@ test('should correctly handle "all minted" state', async () => {
 
   const { result, waitForValueToChange } = renderHook(() => useDevNFTSupply());
 
-  expect(result.current.loading).toBe(true);
-  await waitForValueToChange(() => result.current.loading);
-  expect(result.current.loading).toBe(false);
+  expect(result.current.isLoading).toBe(true);
+  await waitForValueToChange(() => result.current.isLoading);
+  expect(result.current.isLoading).toBe(false);
 
   expect(result.current.maxSupply).toBe(8000);
   expect(result.current.totalSupply).toBe(8000);

@@ -67,7 +67,7 @@ export default function useDevNFTSupply() {
   }, []);
 
   return {
-    loading: totalSupply === -1 || lockedSupply === -1,
+    isLoading: totalSupply === -1 || lockedSupply === -1,
     // This is the amount of total minted DEV NFTs, same as calling `totalSupply()` on the contract
     totalSupply,
     // This is the amount of minted DEV NFTs that only the contract owner can mint (TokenIDs 7778-8000, incl.)

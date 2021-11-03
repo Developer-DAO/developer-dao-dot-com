@@ -18,7 +18,7 @@ import useDevNFTSupply from '../../hooks/useDevNFTSupply';
 // used on the minting page
 const DirectMintBox = () => {
   const { t } = useTranslation();
-  const { loading, remainingPublicSupply } = useDevNFTSupply();
+  const { isLoading, remainingPublicSupply } = useDevNFTSupply();
   return (
     <>
       <Container maxW="container.md" centerContent>
@@ -41,7 +41,7 @@ const DirectMintBox = () => {
             </Text>
             <Text fontSize={{ base: 'xs', sm: 'xl' }}>
               {t('remainingTokensText', {
-                remainingTokens: loading ? '...' : remainingPublicSupply,
+                remainingTokens: isLoading ? '...' : remainingPublicSupply,
               })}
             </Text>
             <DirectMint />
