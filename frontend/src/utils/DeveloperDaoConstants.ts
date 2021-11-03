@@ -1,13 +1,35 @@
+export const NODE_ENV = process.env.NODE_ENV || 'development';
 export const DEVELOPER_DAO_CONTRACT =
-  '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b';
+  NODE_ENV === 'production'
+    ? '0x25ed58c027921E14D86380eA2646E3a1B5C55A8b'
+    : '0xbf114c4cbb4e70e6098589a918c84292cb40602a';
+export const DEVELOPER_DAO_CONTRACT_NETWORK =
+  NODE_ENV === 'production' ? 'mainnet' : 'rinkeby';
+export const DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER =
+  NODE_ENV === 'production' ? 'homestead' : 'rinkeby';
+export const NETWORK_ID = NODE_ENV === 'production' ? 1 : 4;
 export const DEVELOPER_DAO_WEBSITE = 'https://www.developerdao.com';
-export const OPENSEA_DIRECT_LINK_PREFIX = `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}`;
-export const ETHER_SCAN_LINK_PREFIX = 'https://etherscan.io/address';
+export const OPENSEA_DIRECT_LINK_PREFIX =
+  NODE_ENV === 'production'
+    ? `https://opensea.io/assets/${DEVELOPER_DAO_CONTRACT}`
+    : `https://testnets.opensea.io/assets/${DEVELOPER_DAO_CONTRACT}`;
+export const OPENSEA_COLLECTION_LINK =
+  NODE_ENV === 'production'
+    ? `https://opensea.io/collection/devs-for-revolution`
+    : `https://testnets.opensea.io/collection/devs-for-revolution-kexfxbcvp8`;
+export const ETHER_SCAN_LINK_PREFIX =
+  NODE_ENV === 'production'
+    ? 'https://etherscan.io/address'
+    : 'https://rinkeby.etherscan.io/address';
+
 export const SITE_URL = 'https://developerdao.com';
 export const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
-export const MAINNET_NETWORK_ID = 1;
+
 export const TOKEN_FINDER_URL = 'https://developerdao.vercel.app/';
-export const ETHERSCAN_TX_URL = 'https://etherscan.io/tx/';
+export const ETHERSCAN_TX_URL =
+  NODE_ENV === 'production'
+    ? 'https://etherscan.io/tx/'
+    : 'https://rinkeby.etherscan.io/tx/';
 
 export const DEVELOPER_DAO_CONTRACT_ABI = [
   { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },
