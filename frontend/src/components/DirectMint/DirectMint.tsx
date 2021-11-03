@@ -27,8 +27,9 @@ import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
+  DEVELOPER_DAO_CONTRACT_NETWORK,
   ERROR_CODE_TX_REJECTED_BY_USER,
-  MAINNET_NETWORK_ID,
+  NETWORK_ID,
   ETHERSCAN_TX_URL,
 } from '../../utils/DeveloperDaoConstants';
 
@@ -65,7 +66,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
 
   useEffect(() => {
     const web3Modal = new Web3Modal({
-      network: 'mainnet',
+      network: DEVELOPER_DAO_CONTRACT_NETWORK,
       cacheProvider: false,
       providerOptions,
     });
@@ -91,7 +92,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   };
 
   const _checkNetwork = (chainId: number) => {
-    if (chainId === MAINNET_NETWORK_ID) {
+    if (chainId === NETWORK_ID) {
       return true;
     }
     setNetworkError(true);
