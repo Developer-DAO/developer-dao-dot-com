@@ -269,12 +269,14 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
           </ModalContent>
         </Modal>
       )}
-
-      {networkError && NODE_ENV === 'development' && (
-        <Text color="red">{t('ethereumDevNetworkPrompt')}</Text>
-      )}
-      {networkError && NODE_ENV === 'production' && (
-        <Text color="red">{t('ethereumNetworkPrompt')}</Text>
+      {networkError && (
+        <Text color="red">
+          {t(
+            NODE_ENV === 'development'
+              ? 'ethereumDevNetworkPrompt'
+              : 'ethereumNetworkPrompt',
+          )}
+        </Text>
       )}
     </>
   );
