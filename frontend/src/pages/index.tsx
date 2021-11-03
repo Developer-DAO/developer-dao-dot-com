@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_ABI,
+  DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
 } from '../utils/DeveloperDaoConstants';
@@ -33,7 +34,7 @@ function App() {
 
   const ethersConfig = {
     ethers: { Contract },
-    provider: getDefaultProvider('homestead'),
+    provider: getDefaultProvider(DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER),
   };
 
   const updateDeveloperId = useCallback(
@@ -148,7 +149,7 @@ function Nft({ developerId }: { developerId: string }) {
             new ethers.Contract(
               DEVELOPER_DAO_CONTRACT,
               DEVELOPER_DAO_CONTRACT_ABI,
-              getDefaultProvider('homestead'),
+              getDefaultProvider(DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER),
             )
           }
         ></OtherDevsByOwnerContainer>
