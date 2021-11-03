@@ -26,6 +26,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
 import {
+  NODE_ENV,
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_NETWORK,
   ERROR_CODE_TX_REJECTED_BY_USER,
@@ -269,7 +270,12 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
         </Modal>
       )}
 
-      {networkError && <Text color="red">{t('ethereumNetworkPrompt')}</Text>}
+      {networkError && NODE_ENV === 'development' && (
+        <Text color="red">{t('ethereumDevNetworkPrompt')}</Text>
+      )}
+      {networkError && NODE_ENV === 'production' && (
+        <Text color="red">{t('ethereumNetworkPrompt')}</Text>
+      )}
     </>
   );
 };

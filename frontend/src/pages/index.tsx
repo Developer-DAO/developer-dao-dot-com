@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import {
+  NODE_ENV,
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_ABI,
   DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
@@ -13,6 +14,7 @@ import {
 } from '../utils/DeveloperDaoConstants';
 import {
   chakra,
+  Badge,
   Input,
   Text,
   Button,
@@ -61,6 +63,9 @@ function App() {
         <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
           <Logo w={32} h={32} />
           <VStack w="full">
+            {NODE_ENV === 'development' && (
+              <Badge colorScheme="orange">{t('testnet')}</Badge>
+            )}
             <Text fontSize="xl">{t('searchId')}</Text>
             <Input
               aria-label="Search by developer ID"

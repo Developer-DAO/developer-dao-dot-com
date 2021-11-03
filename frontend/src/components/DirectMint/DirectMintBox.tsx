@@ -2,6 +2,7 @@ import React from 'react';
 import DirectMint from './DirectMint';
 import Logo from '../../components/Logo';
 import {
+  Badge,
   Box,
   Container,
   Flex,
@@ -11,7 +12,7 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
-import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
+import { NODE_ENV, TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
 
 // Layout for the Direct Mint Box
 // used on the minting page
@@ -28,6 +29,9 @@ const DirectMintBox = () => {
         >
           <Stack spacing={6} align="center">
             <Logo w={52} h={52} />
+            {NODE_ENV === 'development' && (
+              <Badge colorScheme="orange">{t('testnet')}</Badge>
+            )}
             <Heading fontSize={{ base: '1.25rem', sm: '2rem' }}>
               {t('mintPageHeader')}
             </Heading>
