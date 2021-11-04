@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import {
-  NODE_ENV,
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_ABI,
+  DEVELOPER_DAO_CONTRACT_NETWORK,
   DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
@@ -63,7 +63,7 @@ function App() {
         <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
           <Logo w={32} h={32} />
           <VStack w="full">
-            {NODE_ENV === 'development' && (
+            {DEVELOPER_DAO_CONTRACT_NETWORK === 'rinkeby' && (
               <Badge colorScheme="orange">{t('testnet')}</Badge>
             )}
             <Text fontSize="xl">{t('searchId')}</Text>

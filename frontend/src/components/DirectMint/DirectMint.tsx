@@ -26,12 +26,12 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
 import {
-  NODE_ENV,
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_NETWORK,
   ERROR_CODE_TX_REJECTED_BY_USER,
   NETWORK_ID,
   ETHERSCAN_TX_URL,
+  INFURA_ID,
 } from '../../utils/DeveloperDaoConstants';
 
 import MINT_CONTRACT from '../../artifacts/ddao.json';
@@ -47,7 +47,7 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
+      infuraId: INFURA_ID,
     },
   },
 };
@@ -272,7 +272,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
       {networkError && (
         <Text color="red">
           {t(
-            NODE_ENV === 'development'
+            DEVELOPER_DAO_CONTRACT_NETWORK === 'rinkeby'
               ? 'ethereumDevNetworkPrompt'
               : 'ethereumNetworkPrompt',
           )}
