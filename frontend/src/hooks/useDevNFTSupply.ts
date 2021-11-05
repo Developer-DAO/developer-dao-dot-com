@@ -13,69 +13,85 @@ import { Ddao__factory } from '../../types/ethers-contracts/factories/Ddao__fact
 const MAX_SUPPLY = 8000;
 const PUBLIC_MAX_SUPPLY = 7777;
 
-export default function useDevNFTSupply() {
+export function useDevNFTSupply() {
   const [totalSupply, setTotalSupply] = useState<number>(-1);
   const [lockedSupply, setLockedSupply] = useState<number>(-1);
+  const [uniqueTokenHolderCount, setUniqueTokenHolderCount] =
+    useState<number>(-1);
 
   useEffect(() => {
-    const contract = Ddao__factory.connect(
-      DEVELOPER_DAO_CONTRACT,
-      new FallbackProvider([
-        { provider: new InfuraProvider() },
-        { provider: new AlchemyProvider() },
-      ]),
-    );
+    const fetch = async () => {
+      const contract = Ddao__factory.connect(
+        DEVELOPER_DAO_CONTRACT,
+        new FallbackProvider([
+          { provider: new InfuraProvider() },
+          { provider: new AlchemyProvider() },
+        ]),
+      );
 
-    // Fetches the count of minted DEV NFTs
-    const fetchTotalSupply = async () => {
-      const totalSupply: number = (await contract.totalSupply()).toNumber();
-      setTotalSupply(totalSupply);
-    };
+      // Get all TransferEvents
+      const transferredTokens = await contract.queryFilter(
+        contract.filters.Transfer(),
+        0,
+        'latest',
+      );
 
-    // Counts how many tokens of the locked supply have been minted
-    const fetchLockedSupply = async () => {
-      const requests = [];
+      // Track the latest owner of each token
+      const claimedTokens: Record<string, string> = {};
+      transferredTokens.forEach((tx) => {
+        const tokenId = tx.args.tokenId.toNumber();
+        claimedTokens[tokenId] = tx.args.to;
+      });
 
+      // Amount of minted tokens
+      const totalSupply = Object.keys(claimedTokens).length;
+
+      // Put the addresses in a set to get the amount of unique addresses
+      const uniqueAddresses = new Set<string>(Object.values(claimedTokens));
+
+      // Count how many tokens of the locked supply have been minted
+      let countLockedAndMinted = 0;
       for (
         let lockedTokenId = PUBLIC_MAX_SUPPLY + 1;
         lockedTokenId <= MAX_SUPPLY;
         lockedTokenId++
       ) {
-        requests.push(
-          contract.ownerOf(lockedTokenId).then(
-            // Return the owner's address
-            (addressResponse) => addressResponse,
-            // Return the zero-address if no owner was found
-            () => ethers.constants.AddressZero,
-          ),
-        );
+        if (
+          claimedTokens[lockedTokenId] &&
+          claimedTokens[lockedTokenId] !== ethers.constants.AddressZero
+        )
+          countLockedAndMinted++;
       }
 
-      const addresses = await Promise.all(requests);
-
-      const countMinted = addresses.reduce(
-        (count, address) =>
-          address !== ethers.constants.AddressZero ? ++count : count,
-        0,
-      );
-
-      setLockedSupply(countMinted);
+      setLockedSupply(countLockedAndMinted);
+      setTotalSupply(totalSupply);
+      setUniqueTokenHolderCount(uniqueAddresses.size);
     };
 
-    fetchTotalSupply();
-    fetchLockedSupply();
+    fetch();
   }, []);
 
   return {
-    isLoading: totalSupply === -1 || lockedSupply === -1,
+    isLoading:
+      totalSupply === -1 ||
+      lockedSupply === -1 ||
+      uniqueTokenHolderCount === -1,
+
     // This is the amount of total minted DEV NFTs, same as calling `totalSupply()` on the contract
     totalSupply,
+
+    // Count of unique token holder addresses
+    uniqueTokenHolders: uniqueTokenHolderCount,
+
     // This is the amount of minted DEV NFTs that only the contract owner can mint (TokenIDs 7778-8000, incl.)
     lockedSupply,
+
     // This is the amount of publicly minted DEV NFTs, which is open to mint by anyone (TokenIDs 1-7777, incl.)
     publicSupply: totalSupply - lockedSupply,
+
     // Total number of possible DEV NFT. This is a constant that cannot be changed
     maxSupply: MAX_SUPPLY,
+
     // Some calculations to make these values easily accessible for display in UI
     remainingTotalSupply: MAX_SUPPLY - totalSupply,
     remainingPublicSupply: PUBLIC_MAX_SUPPLY - (totalSupply - lockedSupply),

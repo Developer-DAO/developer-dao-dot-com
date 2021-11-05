@@ -12,13 +12,15 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { TOKEN_FINDER_URL } from '../../utils/DeveloperDaoConstants';
-import useDevNFTSupply from '../../hooks/useDevNFTSupply';
+import { useDevNFTSupply } from '../../hooks/useDevNFTSupply';
 
 // Layout for the Direct Mint Box
 // used on the minting page
 const DirectMintBox = () => {
   const { t } = useTranslation();
-  const { isLoading, remainingPublicSupply, totalSupply } = useDevNFTSupply();
+  const { isLoading, remainingPublicSupply, uniqueTokenHolders } =
+    useDevNFTSupply();
+
   return (
     <>
       <Container maxW="container.md" centerContent>
@@ -44,7 +46,9 @@ const DirectMintBox = () => {
                 remainingTokens: isLoading
                   ? '...'
                   : remainingPublicSupply.toLocaleString(),
-                totalSupply: isLoading ? '...' : totalSupply.toLocaleString(),
+                uniqueAddressCount: isLoading
+                  ? '...'
+                  : uniqueTokenHolders?.toLocaleString(),
               })}
             </Text>
             <DirectMint />
