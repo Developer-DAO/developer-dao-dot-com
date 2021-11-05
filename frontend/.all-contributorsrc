@@ -290,6 +290,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "theprojectcode",
+      "name": "theprojectcode",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88997637?v=4",
+      "profile": "https://github.com/theprojectcode",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
