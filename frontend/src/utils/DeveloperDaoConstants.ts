@@ -1,29 +1,23 @@
 export const DEVELOPER_DAO_CONTRACT =
-  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT ||
-  '0xbf114c4cbb4e70e6098589a918c84292cb40602a';
+  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT;
 export const DEVELOPER_DAO_CONTRACT_NETWORK =
-  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT_NETWORK || 'rinkeby';
+  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT_NETWORK;
 export const DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER =
-  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT_NETWORK || 'rinkeby';
-export const NETWORK_ID = process.env.NEXT_PUBLIC_NETWORK_ID || 4;
+  process.env.NEXT_PUBLIC_DEVELOPER_DAO_CONTRACT_NETWORK;
+export const NETWORK_ID = process.env.NEXT_PUBLIC_NETWORK_ID;
 export const DEVELOPER_DAO_WEBSITE = 'https://www.developerdao.com';
 export const OPENSEA_DIRECT_LINK_PREFIX =
-  process.env.NEXT_PUBLIC_OPENSEA_DIRECT_LINK_PREFIX ||
-  `https://testnets.opensea.io/assets/${DEVELOPER_DAO_CONTRACT}`;
+  process.env.NEXT_PUBLIC_OPENSEA_DIRECT_LINK_PREFIX;
 export const OPENSEA_COLLECTION_LINK =
-  process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_LINK ||
-  `https://testnets.opensea.io/collection/devs-for-revolution-kexfxbcvp8`;
+  process.env.NEXT_PUBLIC_OPENSEA_COLLECTION_LINK;
 export const ETHER_SCAN_LINK_PREFIX =
-  process.env.NEXT_PUBLIC_ETHER_SCAN_LINK_PREFIX ||
-  'https://rinkeby.etherscan.io/address';
+  process.env.NEXT_PUBLIC_ETHER_SCAN_LINK_PREFIX;
 
 export const SITE_URL = 'https://developerdao.com';
 export const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
 
 export const TOKEN_FINDER_URL = 'https://developerdao.vercel.app/';
-export const ETHERSCAN_TX_URL =
-  process.env.NEXT_PUBLIC_ETHERSCAN_TX_URL ||
-  'https://rinkeby.etherscan.io/tx/';
+export const ETHERSCAN_TX_URL = process.env.NEXT_PUBLIC_ETHERSCAN_TX_URL;
 
 export const INFURA_ID = process.env.NEXT_PUBLIC_INFURA_ID;
 
