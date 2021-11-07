@@ -93,7 +93,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   };
 
   const _checkNetwork = (chainId: number) => {
-    if (chainId === NETWORK_ID) {
+    if (chainId === Number(NETWORK_ID)) {
       return true;
     }
     setNetworkError(true);
