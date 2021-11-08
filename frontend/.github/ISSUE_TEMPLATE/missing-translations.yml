@@ -22,7 +22,7 @@ body:
     id: 'missing-locales'
     attributes:
       label: 'List of missing locales'
-      multiple: true
+      multiple: false
       description: 'Check the locales that are missing translations'
       options:
         - 'de'

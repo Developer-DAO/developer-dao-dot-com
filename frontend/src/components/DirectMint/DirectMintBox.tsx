@@ -16,11 +16,15 @@ import {
   DEVELOPER_DAO_CONTRACT_NETWORK,
   TOKEN_FINDER_URL,
 } from '../../utils/DeveloperDaoConstants';
+import { useDevNFTSupply } from '../../hooks/useDevNFTSupply';
 
 // Layout for the Direct Mint Box
 // used on the minting page
 const DirectMintBox = () => {
   const { t } = useTranslation();
+  const { isLoading, remainingPublicSupply, uniqueTokenHolders } =
+    useDevNFTSupply();
+
   return (
     <>
       <Container maxW="container.md" centerContent>
@@ -43,6 +47,16 @@ const DirectMintBox = () => {
               <Link color="#3182ce" href={TOKEN_FINDER_URL} isExternal>
                 {t('here')}
               </Link>
+            </Text>
+            <Text fontSize={{ base: 'xs', sm: 'xl' }}>
+              {t('remainingTokensText', {
+                remainingTokens: isLoading
+                  ? '...'
+                  : remainingPublicSupply.toLocaleString(),
+                uniqueAddressCount: isLoading
+                  ? '...'
+                  : uniqueTokenHolders?.toLocaleString(),
+              })}
             </Text>
             <DirectMint />
           </Stack>

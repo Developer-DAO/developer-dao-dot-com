@@ -31,6 +31,7 @@
   "ethereumDevNetworkPrompt": "Please Connect to the Ethereum Rinkeby Testnet",
   "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
   "availableTokensText": "View the available Token IDs",
+  "remainingTokensText": "{{remainingTokens}} tokens left / {{uniqueAddressCount}} devs joined",
   "mintPageHeader": "DEVS Token Minter",
   "projectsList": "A list of community projects created by the Developer DAO community.",
   "ddaoTokenSearch": "DDAO Token Search",
