@@ -6,7 +6,10 @@ import {
   InfuraProvider,
 } from '@ethersproject/providers';
 
-import { DEVELOPER_DAO_CONTRACT } from '../utils/DeveloperDaoConstants';
+import {
+  DEVELOPER_DAO_CONTRACT,
+  DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
+} from '../utils/DeveloperDaoConstants';
 import { Ddao__factory } from '../../types/ethers-contracts/factories/Ddao__factory';
 
 // TokenIDs start at 1. Tokens 1-7777 (supply of 7777) are open to mint by anyone. 7778-8000 are locked to mint by contract owner
@@ -24,8 +27,16 @@ export function useDevNFTSupply() {
       const contract = Ddao__factory.connect(
         DEVELOPER_DAO_CONTRACT,
         new FallbackProvider([
-          { provider: new InfuraProvider() },
-          { provider: new AlchemyProvider() },
+          {
+            provider: new InfuraProvider(
+              DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
+            ),
+          },
+          {
+            provider: new AlchemyProvider(
+              DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
+            ),
+          },
         ]),
       );
 
