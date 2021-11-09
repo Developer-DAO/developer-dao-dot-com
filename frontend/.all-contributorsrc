@@ -299,6 +299,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "embiem",
+      "name": "Martin Beierling-Mutz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3866457?v=4",
+      "profile": "https://embiem.me",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
