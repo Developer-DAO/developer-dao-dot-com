@@ -27,9 +27,11 @@ import Web3Modal from 'web3modal';
 import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
+  DEVELOPER_DAO_CONTRACT_NETWORK,
   ERROR_CODE_TX_REJECTED_BY_USER,
-  MAINNET_NETWORK_ID,
+  NETWORK_ID,
   ETHERSCAN_TX_URL,
+  INFURA_ID,
 } from '../../utils/DeveloperDaoConstants';
 
 import MINT_CONTRACT from '../../artifacts/ddao.json';
@@ -45,7 +47,7 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
+      infuraId: INFURA_ID,
     },
   },
 };
@@ -65,7 +67,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
 
   useEffect(() => {
     const web3Modal = new Web3Modal({
-      network: 'mainnet',
+      network: DEVELOPER_DAO_CONTRACT_NETWORK,
       cacheProvider: false,
       providerOptions,
     });
@@ -91,7 +93,7 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
   };
 
   const _checkNetwork = (chainId: number) => {
-    if (chainId === MAINNET_NETWORK_ID) {
+    if (chainId === Number(NETWORK_ID)) {
       return true;
     }
     setNetworkError(true);
@@ -267,8 +269,15 @@ const DirectMint = ({ developerId }: DirectMintProps) => {
           </ModalContent>
         </Modal>
       )}
-
-      {networkError && <Text color="red">{t('ethereumNetworkPrompt')}</Text>}
+      {networkError && (
+        <Text color="red">
+          {t(
+            DEVELOPER_DAO_CONTRACT_NETWORK === 'rinkeby'
+              ? 'ethereumDevNetworkPrompt'
+              : 'ethereumNetworkPrompt',
+          )}
+        </Text>
+      )}
     </>
   );
 };

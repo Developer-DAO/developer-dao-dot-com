@@ -28,6 +28,7 @@
   "tokenIDPlaceholder": "Enter Token ID",
   "mintTokenText" : "Mint your Token",
   "connectWalletText": "Connect Wallet",
+  "ethereumDevNetworkPrompt": "Please Connect to the Ethereum Rinkeby Testnet",
   "ethereumNetworkPrompt": "Please Connect to the Ethereum Mainnet",
   "availableTokensText": "View the available Token IDs",
   "remainingTokensText": "{{remainingTokens}} tokens left / {{uniqueAddressCount}} devs joined",
@@ -44,5 +45,6 @@
   "here": "here",
   "errorMinting": "Unable to Mint NFT",
   "disconnectWallet": "Disconnect Wallet",
-  "etherscanMessage": "View your TX on Etherscan"
+  "etherscanMessage": "View your TX on Etherscan",
+  "testnet": "Testnet"
 }

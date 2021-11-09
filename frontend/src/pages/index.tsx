@@ -7,11 +7,14 @@ import { useTranslation } from 'next-i18next';
 import {
   DEVELOPER_DAO_CONTRACT,
   DEVELOPER_DAO_CONTRACT_ABI,
+  DEVELOPER_DAO_CONTRACT_NETWORK,
+  DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER,
   ETHER_SCAN_LINK_PREFIX,
   SITE_URL,
 } from '../utils/DeveloperDaoConstants';
 import {
   chakra,
+  Badge,
   Input,
   Text,
   Button,
@@ -33,7 +36,7 @@ function App() {
 
   const ethersConfig = {
     ethers: { Contract },
-    provider: getDefaultProvider('homestead'),
+    provider: getDefaultProvider(DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER),
   };
 
   const updateDeveloperId = useCallback(
@@ -60,6 +63,9 @@ function App() {
         <VStack mx="auto" px={4} spacing={5} w="full" maxW="lg">
           <Logo w={32} h={32} />
           <VStack w="full">
+            {DEVELOPER_DAO_CONTRACT_NETWORK === 'rinkeby' && (
+              <Badge colorScheme="orange">{t('testnet')}</Badge>
+            )}
             <Text fontSize="xl">{t('searchId')}</Text>
             <Input
               aria-label="Search by developer ID"
@@ -148,7 +154,7 @@ function Nft({ developerId }: { developerId: string }) {
             new ethers.Contract(
               DEVELOPER_DAO_CONTRACT,
               DEVELOPER_DAO_CONTRACT_ABI,
-              getDefaultProvider('homestead'),
+              getDefaultProvider(DEVELOPER_DAO_CONTRACT_NETWORK_PROVIDER),
             )
           }
         ></OtherDevsByOwnerContainer>

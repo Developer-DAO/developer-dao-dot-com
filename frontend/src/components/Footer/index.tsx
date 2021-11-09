@@ -9,6 +9,11 @@ import {
   IconGitHub,
   IconDiscourse,
 } from '../Icons';
+import {
+  DEVELOPER_DAO_CONTRACT,
+  ETHER_SCAN_LINK_PREFIX,
+  OPENSEA_COLLECTION_LINK,
+} from '../../utils/DeveloperDaoConstants';
 
 function Footer() {
   const { t } = useTranslation();
@@ -24,7 +29,7 @@ function Footer() {
             <a
               title="OpenSea"
               className="mx-2 block"
-              href="https://opensea.io/collection/devs-for-revolution"
+              href={OPENSEA_COLLECTION_LINK}
               target="_blank"
               rel="noreferrer"
             >
@@ -35,7 +40,7 @@ function Footer() {
             <a
               title="Etherscan"
               className="mx-2 block"
-              href="https://etherscan.io/address/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b"
+              href={`${ETHER_SCAN_LINK_PREFIX}/${DEVELOPER_DAO_CONTRACT}`}
               target="_blank"
               rel="noreferrer"
             >

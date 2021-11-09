@@ -84,6 +84,8 @@ nvm install; # to install the version in .nvmrc
 2. Install dependencies by running `yarn`
 3. Start the development server with `yarn dev`
 4. Open development site by going to `http:localhost:3000`
+5. To test Walletconnect functionality, copy `.env.development` to `.env.local` and fill in your `INFURA_ID`.
+   `INFURA_ID` can be easily obtained by register at <https://infura.io/>, then create a new Ethereum project for free.
 
 ## Contributing
 
