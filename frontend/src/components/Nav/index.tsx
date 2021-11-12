@@ -40,12 +40,7 @@ export default function Gslr() {
           </HStack>
         </Link>
         <HStack display="flex" alignItems="center" spacing={1}>
-          <HStack
-            spacing={5}
-            mr={1}
-            color="brand.500"
-            display={{ base: 'none', md: 'inline-flex' }}
-          >
+          <HStack spacing={{ base: 3, md: 10 }}>
             <Link href="/" passHref>
               <a>{t('home')}</a>
             </Link>
