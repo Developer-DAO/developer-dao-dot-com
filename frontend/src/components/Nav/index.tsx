@@ -47,13 +47,13 @@ export default function Gslr() {
             display={{ base: 'none', md: 'inline-flex' }}
           >
             <Link href="/" passHref>
-              {t('home')}
+              <a>{t('home')}</a>
             </Link>
             <Link href="/mint" passHref>
-              {t('mintTokenText')}
+              <a>{t('mintTokenText')}</a>
             </Link>
             <Link href="/projects" passHref>
-              {t('projects')}
+              <a>{t('projects')}</a>
             </Link>
             <chakra.a
               href="https://github.com/Developer-DAO/developer-dao"
@@ -103,15 +103,15 @@ export default function Gslr() {
               />
 
               <Link href="/" passHref>
-                {t('home')}
+                <a>{t('home')}</a>
               </Link>
 
               <Link href="/mint" passHref>
-                {t('mintTokenText')}
+                <a>{t('mintTokenText')}</a>
               </Link>
 
               <Link href="/projects" passHref>
-                {t('projects')}
+                <a>{t('projects')}</a>
               </Link>
 
               <chakra.a
