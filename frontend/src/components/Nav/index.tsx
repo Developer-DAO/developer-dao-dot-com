@@ -55,13 +55,20 @@ export default function Gslr() {
             <Link href="/projects" passHref>
               {t('projects')}
             </Link>
-            <IconGitHub
-              h={7}
-              w={7}
-              opacity={0.6}
-              transition="opacity 300ms ease-in-out"
-              _hover={{ opacity: 1 }}
-            />
+            <chakra.a
+              href="https://github.com/Developer-DAO/developer-dao"
+              target="_blank"
+              rel="noreferrer"
+              title={t('daoGithubRepo')}
+            >
+              <IconGitHub
+                h={7}
+                w={7}
+                opacity={0.6}
+                transition="opacity 300ms ease-in-out"
+                _hover={{ opacity: 1 }}
+              />
+            </chakra.a>
           </HStack>
 
           <Box display={{ base: 'inline-flex', md: 'none' }}>
