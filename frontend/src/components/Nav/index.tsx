@@ -23,15 +23,21 @@ export default function Gslr() {
   const { t } = useTranslation();
 
   return (
-    <chakra.header bg={bg} w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md">
-      <Flex alignItems="center" justifyContent="space-between" mx="auto">
+    <chakra.nav borderBottom="1px solid" borderColor="gray.200">
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        mx="auto"
+        maxW="7xl"
+        py={3}
+        px={5}
+      >
         <Link href="/" passHref>
           <HStack as="a" title={t('title')} display="flex" alignItems="center">
             <Logo h={7} w={7} />
             <chakra.span
               fontWeight="bold"
               fontSize="sm"
-              color="gray.600"
               transition="color 300ms ease-in-out"
               _hover={{ color: 'black' }}
             >
@@ -40,7 +46,10 @@ export default function Gslr() {
           </HStack>
         </Link>
         <HStack display="flex" alignItems="center" spacing={1}>
-          <HStack spacing={{ base: 3, md: 10 }}>
+          <HStack
+            spacing={{ base: 3, sm: 10 }}
+            display={{ base: 'none', md: 'inline-flex' }}
+          >
             <Link href="/" passHref>
               <a>{t('home')}</a>
             </Link>
@@ -127,6 +136,6 @@ export default function Gslr() {
           </Box>
         </HStack>
       </Flex>
-    </chakra.header>
+    </chakra.nav>
   );
 }
