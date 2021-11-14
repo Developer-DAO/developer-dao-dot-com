@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -12,6 +12,14 @@ import { theme } from '../theme';
 import PlausibleProvider from 'next-plausible';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
+
+const Plausible = ({ children }: { children: ReactNode }) => {
+  return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? (
+    <PlausibleProvider domain="developerdao.com">{children}</PlausibleProvider>
+  ) : (
+    <>{children}</>
+  );
+};
 
 function SEO() {
   const { t } = useTranslation();
@@ -135,11 +143,11 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
-    <PlausibleProvider domain="developerdao.com">
+    <Plausible>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
-    </PlausibleProvider>
+    </Plausible>
   </>
 );
 
