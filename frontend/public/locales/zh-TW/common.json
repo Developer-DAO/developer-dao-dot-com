@@ -25,6 +25,6 @@
   "projectsList": "$t(title) 創建的$t(community)$t(projects)列表",
   "ddaoTokenSearch": "DDAO 代幣搜索",
   "by": "作者：",
-  "otherTokensOwnedByThisAddress":"此 address 拥有的其他代币",
+  "otherTokensOwnedByThisAddress":"此地址擁有的其他代幣",
   "noOtherTokens":"此 address 没有其他代幣"
 }
