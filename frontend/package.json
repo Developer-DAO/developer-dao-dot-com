@@ -42,7 +42,7 @@
     "type-check": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch --detectOpenHandles",
-    "generate-types": "typechain --target ethers-v5 src/artifacts/*.json",
+    "generate-types": "typechain --target ethers-v5 src/artifacts/*.json && prettier --write \"types/ethers-contracts/**/*.ts\"",
     "postinstall": "yarn generate-types"
   },
   "eslintConfig": {
