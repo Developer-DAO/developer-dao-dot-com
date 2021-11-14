@@ -10,7 +10,7 @@
   "viewOwnerEtherscan": "在 Etherscan 上查看擁有者",
   "developerTraits": "開發者特征 (traits)",
   "failedLoadTraits": "無法載入開發者特征 (traits)",
-  "madeBy": "由$t(title)所創建:",
+  "madeBy": "由$t(title)所創建：",
   "organization": "組織",
   "repository": "Repository",
   "community": "社群",
