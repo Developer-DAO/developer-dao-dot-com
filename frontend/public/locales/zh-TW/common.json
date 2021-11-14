@@ -3,7 +3,7 @@
   "home": "首頁",
   "projects": "專案",
   "searchId": "搜尋$t(title)編號",
-  "description": "相信 網絡集體所有權 的開發者$t(community)",
+  "description": "一個相信網絡共享所有權的開發者 $t(community)",
   "loading": "載入中...",
   "error": "錯誤",
   "viewNftOpenSea": "在 OpenSea 上查看 NFT",
