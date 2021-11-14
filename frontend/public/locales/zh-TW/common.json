@@ -4,7 +4,7 @@
   "projects": "專案",
   "searchId": "搜尋$t(title)編號",
   "description": "一個相信網絡共享所有權的開發者 $t(community)",
-  "loading": "載入中...",
+  "loading": "下載中...",
   "error": "錯誤",
   "viewNftOpenSea": "在 OpenSea 上查看 NFT",
   "viewOwnerEtherscan": "在 Etherscan 上查看擁有者",
