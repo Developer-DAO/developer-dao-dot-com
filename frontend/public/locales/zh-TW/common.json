@@ -17,7 +17,7 @@
   "daoGithubOrg": "$t(title) GitHub $t(organization)",
   "daoGithubRepo": "$t(title) GitHub $t(repository)",
   "owner": "擁有者",
-  "unclaimed": "尚未被持有",
+  "unclaimed": "尚未被擁有",
   "enterDeveloperId": "請輸入$t(title)編號",
   "hosting": "托管於:",
   "copyLinkToNFT": "複製NFT鏈接",
