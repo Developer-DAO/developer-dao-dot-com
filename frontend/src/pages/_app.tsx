@@ -9,6 +9,7 @@ import { AppProps } from 'next/app';
 
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
 import { theme } from '../theme';
+import PlausibleProvider from 'next-plausible';
 
 const socialBanner = `${DEVELOPER_DAO_WEBSITE}/social-banner.png`;
 
@@ -134,9 +135,11 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <SEO />
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <PlausibleProvider domain="developerdao.com">
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </PlausibleProvider>
   </>
 );
 
