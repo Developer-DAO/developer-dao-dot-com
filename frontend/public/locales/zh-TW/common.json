@@ -20,7 +20,7 @@
   "unclaimed": "尚未被擁有",
   "enterDeveloperId": "請輸入$t(title)編號",
   "hosting": "托管於:",
-  "copyLinkToNFT": "複製NFT鏈接",
+  "copyLinkToNFT": "複製 NFT 鏈接",
   "linkCopied": "鏈接已複製到剪貼板",
   "projectsList": "$t(title) 創建的$t(community)$t(projects)列表",
   "ddaoTokenSearch": "DDAO 代幣搜索",
