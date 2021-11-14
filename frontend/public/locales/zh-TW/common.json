@@ -18,7 +18,7 @@
   "daoGithubRepo": "$t(title) GitHub $t(repository)",
   "owner": "擁有者",
   "unclaimed": "尚未被持有",
-  "enterDeveloperId": "请輸入$t(title)編號",
+  "enterDeveloperId": "請輸入$t(title)編號",
   "hosting": "托管於:",
   "copyLinkToNFT": "複製NFT鏈接",
   "linkCopied": "鏈接已複製到剪貼板",
