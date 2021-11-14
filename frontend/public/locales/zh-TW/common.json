@@ -1,7 +1,7 @@
 {
   "title": "開發者 DAO",
   "home": "首頁",
-  "projects": "專案",
+  "projects": "項目",
   "searchId": "搜尋$t(title)編號",
   "description": "一個相信網絡共享所有權的開發者 $t(community)",
   "loading": "下載中...",
