@@ -146,7 +146,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://amazingandyyy.com"><img src="https://avatars.githubusercontent.com/u/7886068?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andy Chen</b></sub></a><br /><a href="#translation-amazingandyyy" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/G3root"><img src="https://avatars.githubusercontent.com/u/84864519?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nafees Nazik</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/pulls?q=is%3Apr+reviewed-by%3AG3root" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/Developer-DAO/developerdao.com/commits?author=G3root" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/G3root"><img src="https://avatars.githubusercontent.com/u/84864519?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nafees Nazik</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=G3root" title="Code">💻</a></td>
   </tr>
 </table>
 
