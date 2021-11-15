@@ -308,6 +308,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "erain9",
+      "name": "erain9",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77944593?v=4",
+      "profile": "https://github.com/erain9",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,

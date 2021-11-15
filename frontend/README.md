@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -140,6 +140,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.ibby.dev"><img src="https://avatars.githubusercontent.com/u/23090443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Eter</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=Ibby-devv" title="Code">💻</a> <a href="https://github.com/Developer-DAO/developerdao.com/commits?author=Ibby-devv" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/theprojectcode"><img src="https://avatars.githubusercontent.com/u/88997637?v=4?s=100" width="100px;" alt=""/><br /><sub><b>theprojectcode</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=theprojectcode" title="Code">💻</a></td>
     <td align="center"><a href="https://embiem.me"><img src="https://avatars.githubusercontent.com/u/3866457?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Beierling-Mutz</b></sub></a><br /><a href="https://github.com/Developer-DAO/developerdao.com/commits?author=embiem" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/erain9"><img src="https://avatars.githubusercontent.com/u/77944593?v=4?s=100" width="100px;" alt=""/><br /><sub><b>erain9</b></sub></a><br /><a href="#translation-erain9" title="Translation">🌍</a></td>
   </tr>
 </table>
 
