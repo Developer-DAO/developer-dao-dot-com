@@ -87,6 +87,21 @@ nvm install; # to install the version in .nvmrc
 5. To test Walletconnect functionality, copy `.env.development` to `.env.local` and fill in your `INFURA_ID`.
    `INFURA_ID` can be easily obtained by register at <https://infura.io/>, then create a new Ethereum project for free.
 
+### Deployment
+
+This project uses Vercel to manage deployments. We use the Vercel GitHub integration to automatically deploy in two situations:
+
+- When code is merged into `main`, a production deployment is triggered. Vercel will build the project and deploy it to `developerdao.com`.
+- When a pull request is created, a preview deployment is triggered. Vercel will build the project from the PR's code and deploy it to an auto-generated URL.
+
+In both cases, Vercel runs `next build` to build the project. Since running `next build` automatically sets `NODE_ENV` to `production`, if you need to distinguish between an actual production deployment and a PR preview deployment (example: we only want to run code that connects to analytics in production and not for preview deploys), use the `NEXT_PUBLIC_VERCEL_ENV` (`process.env.NEXT_PUBLIC_VERCEL_ENV`) environment variable. This variable exists in Vercel and provides the following values:
+
+| Vercel Environment | value |
+| --- | --- |
+| Production | `production` |
+| Preview | `preview` |
+| Development | `development` |
+
 ## Contributing
 
 Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](./CONTRIBUTING.md).
