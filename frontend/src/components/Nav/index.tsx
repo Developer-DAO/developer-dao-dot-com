@@ -17,7 +17,7 @@ import { IconGitHub } from '../Icons';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-export default function Gslr() {
+export default function Nav() {
   const bg = useColorModeValue('white', 'gray.800');
   const mobileNav = useDisclosure();
   const { t } = useTranslation();
