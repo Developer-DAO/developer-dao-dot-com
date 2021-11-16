@@ -88,7 +88,7 @@ export default function Nav() {
 
             <VStack
               pos="absolute"
-              top={2}
+              top={0}
               left={0}
               right={0}
               display={mobileNav.isOpen ? 'flex' : 'none'}
