@@ -5,23 +5,38 @@ import {
   Heading,
   ListItem,
   Stack,
+  StackDivider,
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
 
 export default function IndexPage() {
-  const { t } = useTranslation();
-
   return (
     <Container>
-      <Stack minH="100vh" py={8} justify="center" spacing={12}>
-        <Heading as="h1" fontSize="5xl">
+      <Stack
+        as="main"
+        minH="100vh"
+        py={8}
+        px={{ base: 6, md: 4 }}
+        justify="center"
+        spacing={10}
+        divider={
+          <StackDivider
+            h="4px"
+            rounded="sm"
+            bgGradient="linear(to-r, red.300, orange.300, yellow.300, green.300, blue.300, purple.300, pink.300)"
+          />
+        }
+      >
+        <Heading as="h1" fontSize="3xl">
           Developer DAO
         </Heading>
 
         <Stack spacing={10}>
           <Stack spacing={6}>
-            <Heading as="h2">Mission</Heading>
+            <Heading as="h2" fontSize="2xl">
+              Mission
+            </Heading>
             <Text>
               Developer DAO exists to accelerate the education and impact of a
               new wave of web3 builders.
@@ -29,7 +44,9 @@ export default function IndexPage() {
           </Stack>
 
           <Stack spacing={6}>
-            <Heading as="h2">Values</Heading>
+            <Heading as="h2" fontSize="2xl">
+              Values
+            </Heading>
             <UnorderedList spacing={2}>
               <ListItem>
                 <Text as="span" fontWeight="bold">
@@ -65,7 +82,9 @@ export default function IndexPage() {
           </Stack>
 
           <Stack spacing={6}>
-            <Heading as="h2">Goals</Heading>
+            <Heading as="h2" fontSize="2xl">
+              Goals
+            </Heading>
             <UnorderedList spacing={2}>
               <ListItem>
                 Onboard, Educate, &amp; Support Web3 Developers
