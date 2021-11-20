@@ -16,6 +16,7 @@ import {
   Text,
   UnorderedList,
   useBreakpointValue,
+  useTheme,
 } from '@chakra-ui/react';
 import { FiLayers } from 'react-icons/fi';
 import {
@@ -104,7 +105,7 @@ export default function IndexPage() {
         py={10}
         px={{ base: 6, md: 4 }}
         justify="center"
-        spacing={12}
+        spacing={6}
         divider={
           <StackDivider
             h="2px"
@@ -113,77 +114,76 @@ export default function IndexPage() {
           />
         }
       >
-        <Heading as="h1" fontSize="2xl">
+        <Heading as="h1" fontSize="xl">
           Developer DAO
         </Heading>
 
         <Stack spacing={12}>
           <CurrentStatus />
 
-          <Stack spacing={10}>
-            <Stack spacing={6}>
-              <Heading as="h2" fontSize="xl">
-                Mission
-              </Heading>
-              <Text>
-                Developer DAO exists to accelerate the education and impact of a
-                new wave of web3 builders.
-              </Text>
-            </Stack>
+          <Stack spacing={8}>
+            <Heading as="h2" fontSize="lg">
+              Mission
+            </Heading>
+            <Text>
+              Developer DAO exists to accelerate the education and impact of a
+              new wave of web3 builders.
+            </Text>
+          </Stack>
 
-            <Stack spacing={6}>
-              <Heading as="h2" fontSize="xl">
-                Values
-              </Heading>
-              <UnorderedList spacing={2}>
-                <ListItem>
-                  <Text as="span" fontWeight="bold">
-                    Transparency
-                  </Text>
-                  : open source everything, conversations in public, document
-                  and share journey
-                </ListItem>
-                <ListItem>
-                  <Text as="span" fontWeight="bold">
-                    Diversity and Inclusion
-                  </Text>
-                  : seek to foster as diverse a membership as possible and
-                  support everyone to contribute
-                </ListItem>
-                <ListItem>
-                  <Text as="span" fontWeight="bold">
-                    Responsibility
-                  </Text>
-                  : as a self-governed community we rely on members to be
-                  personally responsible for their actions and commitments to
-                  the community
-                </ListItem>
-                <ListItem>
-                  <Text as="span" fontWeight="bold">
-                    Kindness and Empathy
-                  </Text>
-                  : we know that we are living in a complex, stressful, and
-                  diverse world and go out of our way to make people’s lives and
-                  days better through our interactions
-                </ListItem>
-              </UnorderedList>
-            </Stack>
+          <Stack spacing={8}>
+            <Heading as="h2" fontSize="lg">
+              Values
+            </Heading>
+            <UnorderedList spacing={3}>
+              <ListItem>
+                <Text as="span" fontWeight="bold">
+                  Transparency
+                </Text>
+                : open source everything, conversations in public, document and
+                share journey
+              </ListItem>
+              <ListItem>
+                <Text as="span" fontWeight="bold">
+                  Diversity and Inclusion
+                </Text>
+                : seek to foster as diverse a membership as possible and support
+                everyone to contribute
+              </ListItem>
+              <ListItem>
+                <Text as="span" fontWeight="bold">
+                  Responsibility
+                </Text>
+                : as a self-governed community we rely on members to be
+                personally responsible for their actions and commitments to the
+                community
+              </ListItem>
+              <ListItem>
+                <Text as="span" fontWeight="bold">
+                  Kindness and Empathy
+                </Text>
+                : we know that we are living in a complex, stressful, and
+                diverse world and go out of our way to make people’s lives and
+                days better through our interactions
+              </ListItem>
+            </UnorderedList>
+          </Stack>
 
-            <Stack spacing={6}>
-              <Heading as="h2" fontSize="xl">
-                Goals
-              </Heading>
-              <UnorderedList spacing={2}>
-                <ListItem>
-                  Onboard, Educate, &amp; Support Web3 Developers
-                </ListItem>
-                <ListItem>
-                  Foster &amp; Build Web3 Tools &amp; Public Goods
-                </ListItem>
-              </UnorderedList>
-            </Stack>
+          <Stack spacing={8}>
+            <Heading as="h2" fontSize="lg">
+              Goals
+            </Heading>
+            <UnorderedList spacing={3}>
+              <ListItem>
+                Onboard, Educate, &amp; Support Web3 Developers
+              </ListItem>
+              <ListItem>
+                Foster &amp; Build Web3 Tools &amp; Public Goods
+              </ListItem>
+            </UnorderedList>
           </Stack>
         </Stack>
+
         <HStack as="footer" justify="center">
           <IconButton
             size="lg"
