@@ -177,9 +177,9 @@ const CurrentStatus = () => {
       align="center"
       direction={{ base: 'column', md: 'row' }}
       spacing={{ base: 5, md: 8 }}
-      bg="gray.50"
+      bg="white"
       rounded="lg"
-      color="gray.900"
+      color="black"
     >
       <Icon as={GiCrownedHeart} boxSize={iconSize} />
 
@@ -199,10 +199,10 @@ const CurrentStatus = () => {
             href="https://snapshot.org/#/devdao.eth/proposal/0x52fc76fe5865cf038b89b8c6ef78b6e691c0ab9c2b1228b84b0813b7832ce369"
             size={buttonSize}
             fontSize="xs"
-            bg="gray.50"
+            bg="white"
             border="1px"
             borderStyle="solid"
-            borderColor="gray.900"
+            borderColor="black"
             _hover={{ bg: 'gray.100' }}
             _active={{ bg: 'gray.200' }}
             leftIcon={<BsLightningCharge />}
