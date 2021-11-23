@@ -30,7 +30,7 @@ export default function IndexPage() {
         minH="100vh"
         py={10}
         px={{ base: 6, md: 4 }}
-        spacing={6}
+        spacing={{ base: 6, md: 8 }}
         divider={
           <StackDivider
             h="2px"
@@ -167,14 +167,14 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 
 const CurrentStatus = () => {
   const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
-  const iconSize = useBreakpointValue({ base: 16, md: 24 });
+  const iconSize = useBreakpointValue({ base: 20, md: 24 });
 
   return (
     <Stack
       as="aside"
       py={6}
       px={8}
-      align={{ base: 'flex-start', md: 'center' }}
+      align="center"
       direction={{ base: 'column', md: 'row' }}
       spacing={{ base: 5, md: 8 }}
       bg="gray.50"
