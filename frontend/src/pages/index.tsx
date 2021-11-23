@@ -164,8 +164,8 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 });
 
 const CurrentStatus = () => {
+  const shouldShowIcon = useBreakpointValue({ base: false, md: true });
   const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
-  const iconSize = useBreakpointValue({ base: 20, md: 24 });
 
   return (
     <Stack
@@ -179,8 +179,7 @@ const CurrentStatus = () => {
       rounded="lg"
       color="black"
     >
-      <Icon as={GiCrownedHeart} boxSize={iconSize} />
-
+      {shouldShowIcon && <Icon as={GiCrownedHeart} boxSize={20} />}
       <Stack spacing={4}>
         <Stack fontSize="xs">
           <Text fontSize="sm" fontWeight="bold">
