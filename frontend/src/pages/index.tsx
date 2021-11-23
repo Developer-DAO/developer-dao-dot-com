@@ -120,7 +120,7 @@ export default function IndexPage() {
         <Stack spacing={12}>
           <CurrentStatus />
 
-          <Stack spacing={8}>
+          <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
               Mission
             </Heading>
@@ -130,7 +130,7 @@ export default function IndexPage() {
             </Text>
           </Stack>
 
-          <Stack spacing={8}>
+          <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
               Values
             </Heading>
@@ -168,7 +168,7 @@ export default function IndexPage() {
             </UnorderedList>
           </Stack>
 
-          <Stack spacing={8}>
+          <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
               Goals
             </Heading>
