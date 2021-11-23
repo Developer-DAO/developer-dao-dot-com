@@ -41,7 +41,7 @@ export default function IndexPage() {
           Developer DAO
         </Heading>
 
-        <Stack spacing={12}>
+        <Stack spacing={{ base: 10, md: 12 }}>
           <CurrentStatus />
 
           <Stack spacing={6}>
