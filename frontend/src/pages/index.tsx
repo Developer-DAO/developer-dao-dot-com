@@ -14,6 +14,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ReactElement } from 'react';
 import { BsLightningCharge } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
@@ -106,24 +107,21 @@ export default function IndexPage() {
         </Stack>
 
         <HStack as="footer" justify="center">
-          <IconButton
-            size="lg"
-            variant="ghost"
-            aria-label="Twitter"
-            icon={<FaTwitter />}
-          />
-          <IconButton
-            size="lg"
-            variant="ghost"
-            aria-label="Discord"
-            icon={<FaDiscord />}
-          />
-          <IconButton
-            size="lg"
-            variant="ghost"
-            aria-label="GitHub"
-            icon={<FaGithub />}
-          />
+          <SocialIconLink
+            href="https://twitter.com/developer_dao"
+            label="Twitter"
+          >
+            <FaTwitter />
+          </SocialIconLink>
+          <SocialIconLink href="https://discord.gg/devdao" label="Discord">
+            <FaDiscord />
+          </SocialIconLink>
+          <SocialIconLink
+            href="https://github.com/Developer-DAO"
+            label="GitHub"
+          >
+            <FaGithub />
+          </SocialIconLink>
         </HStack>
       </Stack>
     </Container>
@@ -183,5 +181,27 @@ const CurrentStatus = () => {
         </Box>
       </Stack>
     </Stack>
+  );
+};
+
+const SocialIconLink = ({
+  children,
+  href,
+  label,
+}: {
+  children: ReactElement;
+  href: string;
+  label: string;
+}) => {
+  return (
+    <IconButton
+      as="a"
+      aria-label={label}
+      cursor="pointer"
+      href={href}
+      icon={children}
+      size="lg"
+      variant="ghost"
+    />
   );
 };
