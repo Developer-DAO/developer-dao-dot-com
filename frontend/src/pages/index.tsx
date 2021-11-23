@@ -104,7 +104,6 @@ export default function IndexPage() {
         minH="100vh"
         py={10}
         px={{ base: 6, md: 4 }}
-        justify="center"
         spacing={6}
         divider={
           <StackDivider
