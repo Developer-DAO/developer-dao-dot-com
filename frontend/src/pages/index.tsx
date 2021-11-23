@@ -28,8 +28,6 @@ export default function IndexPage() {
       <Stack
         as="main"
         minH="100vh"
-        py={10}
-        px={{ base: 6, md: 4 }}
         spacing={{ base: 6, md: 8 }}
         divider={
           <StackDivider

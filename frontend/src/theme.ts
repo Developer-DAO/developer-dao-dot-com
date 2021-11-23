@@ -27,7 +27,9 @@ export const theme = extendTheme({
       body: {
         bg: 'black',
         color: 'white',
-        fontSize: 'md',
+        fontSize: { base: 'sm', md: 'md' },
+        py: 10,
+        px: { base: 2, sm: 4, md: 8 },
       },
     },
   },
