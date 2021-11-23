@@ -7,7 +7,6 @@ import {
   HStack,
   Icon,
   IconButton,
-  Link,
   ListItem,
   Stack,
   StackDivider,
@@ -107,6 +106,16 @@ export default function IndexPage() {
                 Foster &amp; Build Web3 Tools &amp; Public Goods
               </ListItem>
             </UnorderedList>
+          </Stack>
+
+          <Stack spacing={6}>
+            <Heading as="h2" fontSize="lg">
+              How do I join?
+            </Heading>
+            <Text>
+              Membership is temporarily closed but will be open again soon.
+              Follow us on Twitter for updates!
+            </Text>
           </Stack>
         </Stack>
 
