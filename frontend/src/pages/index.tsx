@@ -192,7 +192,7 @@ const CurrentStatus = () => {
             fontSize="xs"
             bg="gray.50"
             border="1px"
-            borderStyle="dashed"
+            borderStyle="solid"
             borderColor="gray.900"
             _hover={{ bg: 'gray.100' }}
             _active={{ bg: 'gray.200' }}
