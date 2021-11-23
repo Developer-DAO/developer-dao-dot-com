@@ -2,22 +2,26 @@ import {
   Box,
   Button,
   Container,
+  Flex,
   Heading,
   HStack,
   Icon,
   IconButton,
+  Link,
   ListItem,
   Stack,
   StackDivider,
   Text,
   UnorderedList,
   useBreakpointValue,
+  VStack,
 } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ReactElement } from 'react';
 import { BsLightningCharge } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
+import Image from 'next/image';
 
 export default function IndexPage() {
   return (
@@ -106,23 +110,41 @@ export default function IndexPage() {
           </Stack>
         </Stack>
 
-        <HStack as="footer" justify="center">
-          <SocialIconLink
-            href="https://twitter.com/developer_dao"
-            label="Twitter"
+        <VStack spacing={4}>
+          <HStack as="footer" justify="center">
+            <SocialIconLink
+              href="https://twitter.com/developer_dao"
+              label="Twitter"
+            >
+              <FaTwitter />
+            </SocialIconLink>
+            <SocialIconLink href="https://discord.gg/devdao" label="Discord">
+              <FaDiscord />
+            </SocialIconLink>
+            <SocialIconLink
+              href="https://github.com/Developer-DAO"
+              label="GitHub"
+            >
+              <FaGithub />
+            </SocialIconLink>
+          </HStack>
+
+          <HStack
+            as="a"
+            href="https://vercel.com/?utm_source=developerdao&utm_campaign=oss"
+            fontSize="sm"
           >
-            <FaTwitter />
-          </SocialIconLink>
-          <SocialIconLink href="https://discord.gg/devdao" label="Discord">
-            <FaDiscord />
-          </SocialIconLink>
-          <SocialIconLink
-            href="https://github.com/Developer-DAO"
-            label="GitHub"
-          >
-            <FaGithub />
-          </SocialIconLink>
-        </HStack>
+            <Text>Powered by</Text>
+            <Flex align="center">
+              <Image
+                src="/vercel-logotype-light.svg"
+                alt="Vercel"
+                width="100px"
+                height="22px"
+              />
+            </Flex>
+          </HStack>
+        </VStack>
       </Stack>
     </Container>
   );
