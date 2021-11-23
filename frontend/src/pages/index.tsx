@@ -175,11 +175,11 @@ const CurrentStatus = () => {
       <Icon as={GiCrownedHeart} boxSize={iconSize} />
 
       <Stack spacing={4}>
-        <Stack>
+        <Stack fontSize="xs">
           <Text fontSize="sm" fontWeight="bold">
             Current Status: Season 0
           </Text>
-          <Text fontSize="xs">
+          <Text>
             We&apos;re forming guilds, creating culture, strengthening our
             community, teaching &amp; learning, and building cool shit together.
           </Text>
