@@ -1,100 +1,22 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
 import {
   Box,
   Button,
   Container,
-  Flex,
   Heading,
   HStack,
   Icon,
   IconButton,
-  LightMode,
   ListItem,
   Stack,
   StackDivider,
   Text,
   UnorderedList,
   useBreakpointValue,
-  useTheme,
 } from '@chakra-ui/react';
-import { FiLayers } from 'react-icons/fi';
-import {
-  ImHeart,
-  ImMagicWand,
-  ImMakeGroup,
-  ImSphere,
-  ImStarEmpty,
-  ImStarFull,
-  ImTerminal,
-} from 'react-icons/im';
-import {
-  GiAbstract015,
-  GiAbstract016,
-  GiAbstract038,
-  GiAbstract061,
-  GiAbstract063,
-  GiAbstract102,
-  GiAbstract107,
-  GiAllForOne,
-  GiAngelWings,
-  GiBlackBook,
-  GiBookAura,
-  GiBookCover,
-  GiBubblingFlask,
-  GiBurningBook,
-  GiCrownedHeart,
-} from 'react-icons/gi';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { BsLightningCharge } from 'react-icons/bs';
-import { FaTwitter, FaDiscord, FaGithub } from 'react-icons/fa';
-
-const CurrentStatus = () => {
-  const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
-  const iconSize = useBreakpointValue({ base: 16, md: 24 });
-
-  return (
-    <Stack
-      as="aside"
-      py={6}
-      px={8}
-      align={{ base: 'flex-start', md: 'center' }}
-      direction={{ base: 'column', md: 'row' }}
-      spacing={{ base: 5, md: 8 }}
-      bg="gray.50"
-      rounded="lg"
-      color="gray.900"
-    >
-      <Icon as={GiCrownedHeart} boxSize={iconSize} />
-
-      <Stack spacing={4}>
-        <Stack>
-          <Text fontSize="sm" fontWeight="bold">
-            Current Status: Season 0
-          </Text>
-          <Text fontSize="xs">
-            We&apos;re forming guilds, creating culture, strengthening our
-            community, teaching &amp; learning, and building cool shit together.
-          </Text>
-        </Stack>
-        <Box>
-          <Button
-            size={buttonSize}
-            fontSize="xs"
-            bg="gray.50"
-            border="1px"
-            borderStyle="dashed"
-            borderColor="gray.900"
-            _hover={{ bg: 'gray.100' }}
-            _active={{ bg: 'gray.200' }}
-            leftIcon={<BsLightningCharge />}
-          >
-            Read our Season 0 Snapshot
-          </Button>
-        </Box>
-      </Stack>
-    </Stack>
-  );
-};
+import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
+import { GiCrownedHeart } from 'react-icons/gi';
 
 export default function IndexPage() {
   return (
@@ -213,3 +135,53 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
     ...(await serverSideTranslations(locale, ['common'])),
   },
 });
+
+const CurrentStatus = () => {
+  const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
+  const iconSize = useBreakpointValue({ base: 16, md: 24 });
+
+  return (
+    <Stack
+      as="aside"
+      py={6}
+      px={8}
+      align={{ base: 'flex-start', md: 'center' }}
+      direction={{ base: 'column', md: 'row' }}
+      spacing={{ base: 5, md: 8 }}
+      bg="gray.50"
+      rounded="lg"
+      color="gray.900"
+    >
+      <Icon as={GiCrownedHeart} boxSize={iconSize} />
+
+      <Stack spacing={4}>
+        <Stack>
+          <Text fontSize="sm" fontWeight="bold">
+            Current Status: Season 0
+          </Text>
+          <Text fontSize="xs">
+            We&apos;re forming guilds, creating culture, strengthening our
+            community, teaching &amp; learning, and building cool shit together.
+          </Text>
+        </Stack>
+        <Box>
+          <Button
+            as="a"
+            href="https://snapshot.org/#/devdao.eth/proposal/0x52fc76fe5865cf038b89b8c6ef78b6e691c0ab9c2b1228b84b0813b7832ce369"
+            size={buttonSize}
+            fontSize="xs"
+            bg="gray.50"
+            border="1px"
+            borderStyle="dashed"
+            borderColor="gray.900"
+            _hover={{ bg: 'gray.100' }}
+            _active={{ bg: 'gray.200' }}
+            leftIcon={<BsLightningCharge />}
+          >
+            Read our Season 0 Snapshot
+          </Button>
+        </Box>
+      </Stack>
+    </Stack>
+  );
+};
