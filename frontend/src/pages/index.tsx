@@ -173,8 +173,8 @@ const CurrentStatus = () => {
       py={6}
       px={8}
       align="center"
-      direction={{ base: 'column', md: 'row' }}
-      spacing={{ base: 5, md: 8 }}
+      direction="row"
+      spacing={8}
       bg="white"
       rounded="lg"
       color="black"
