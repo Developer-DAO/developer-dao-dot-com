@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   i18n: {
     defaultLocale: 'en',
@@ -16,5 +18,6 @@ module.exports = {
       'zh-HK',
       'zh-TW',
     ],
+    localePath: path.resolve('./public/locales'),
   },
 };
