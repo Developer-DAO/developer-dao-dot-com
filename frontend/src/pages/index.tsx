@@ -22,8 +22,11 @@ import { BsLightningCharge } from 'react-icons/bs';
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 export default function IndexPage() {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Stack
@@ -39,7 +42,7 @@ export default function IndexPage() {
         }
       >
         <Heading as="h1" fontSize="xl">
-          Developer DAO
+          {t('title')}
         </Heading>
 
         <Stack spacing={{ base: 10, md: 12 }}>
@@ -47,74 +50,58 @@ export default function IndexPage() {
 
           <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
-              Mission
+              {t('mission.title')}
             </Heading>
-            <Text>
-              Developer DAO exists to accelerate the education and impact of a
-              new wave of web3 builders.
-            </Text>
+            <Text>{t('mission.body')}</Text>
           </Stack>
 
           <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
-              Values
+              {t('values.title')}
             </Heading>
             <UnorderedList spacing={3}>
               <ListItem>
                 <Text as="span" fontWeight="bold">
-                  Transparency
+                  {t('values.transparency.title')}
                 </Text>
-                : open source everything, conversations in public, document and
-                share journey
+                : {t('values.transparency.body')}
               </ListItem>
               <ListItem>
                 <Text as="span" fontWeight="bold">
-                  Diversity and Inclusion
+                  {t('values.diversity.title')}
                 </Text>
-                : seek to foster as diverse a membership as possible and support
-                everyone to contribute
+                : {t('values.diversity.body')}
               </ListItem>
               <ListItem>
                 <Text as="span" fontWeight="bold">
-                  Responsibility
+                  {t('values.responsibility.title')}
                 </Text>
-                : as a self-governed community we rely on members to be
-                personally responsible for their actions and commitments to the
-                community
+                : {t('values.responsibility.body')}
               </ListItem>
               <ListItem>
                 <Text as="span" fontWeight="bold">
-                  Kindness and Empathy
+                  {t('values.kindness.title')}
                 </Text>
-                : we know that we are living in a complex, stressful, and
-                diverse world and go out of our way to make people’s lives and
-                days better through our interactions
+                : {t('values.kindness.body')}
               </ListItem>
             </UnorderedList>
           </Stack>
 
           <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
-              Goals
+              {t('goals.title')}
             </Heading>
             <UnorderedList spacing={3}>
-              <ListItem>
-                Onboard, Educate, &amp; Support Web3 Developers
-              </ListItem>
-              <ListItem>
-                Foster &amp; Build Web3 Tools &amp; Public Goods
-              </ListItem>
+              <ListItem>{t('goals.body1')}</ListItem>
+              <ListItem>{t('goals.body2')}</ListItem>
             </UnorderedList>
           </Stack>
 
           <Stack spacing={6}>
             <Heading as="h2" fontSize="lg">
-              How do I join?
+              {t('membership.title')}
             </Heading>
-            <Text>
-              Membership is temporarily closed but will be open again soon.
-              Follow us on Twitter for updates!
-            </Text>
+            <Text>{t('membership.body')}</Text>
           </Stack>
         </Stack>
 
@@ -127,7 +114,7 @@ export default function IndexPage() {
               <>
                 <FaTwitter />
                 <VisuallyHidden>
-                  Opens the Discord DAO Twitter in the current tab
+                  {t('socialLinkLabel', { platform: 'Twitter' })}
                 </VisuallyHidden>
               </>
             </SocialIconLink>
@@ -135,7 +122,7 @@ export default function IndexPage() {
               <>
                 <FaDiscord />
                 <VisuallyHidden>
-                  Opens the Discord DAO Discord in the current tab
+                  {t('socialLinkLabel', { platform: 'Discord' })}
                 </VisuallyHidden>
               </>
             </SocialIconLink>
@@ -146,7 +133,7 @@ export default function IndexPage() {
               <>
                 <FaGithub />
                 <VisuallyHidden>
-                  Opens the Discord DAO GitHub organization in the current tab
+                  {t('socialLinkLabel', { platform: 'GitHub' })}
                 </VisuallyHidden>
               </>
             </SocialIconLink>
@@ -182,6 +169,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 const CurrentStatus = () => {
   const shouldShowIcon = useBreakpointValue({ base: false, md: true });
   const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' });
+  const { t } = useTranslation();
 
   return (
     <Stack
@@ -199,12 +187,9 @@ const CurrentStatus = () => {
       <Stack spacing={4}>
         <Stack fontSize="xs">
           <Text fontSize="sm" fontWeight="bold">
-            Current Status: Season 0
+            {t('currentStatus')}: {t('season')} 0
           </Text>
-          <Text>
-            We&apos;re forming guilds, creating culture, strengthening our
-            community, teaching &amp; learning, and building cool shit together.
-          </Text>
+          <Text>{t('callout')}</Text>
         </Stack>
         <Box>
           <Button
@@ -220,7 +205,7 @@ const CurrentStatus = () => {
             _active={{ bg: 'gray.200' }}
             leftIcon={<BsLightningCharge />}
           >
-            Read our Snapshot
+            {t('calloutButton')}
           </Button>
         </Box>
       </Stack>
