@@ -13,6 +13,7 @@ import {
   Text,
   UnorderedList,
   useBreakpointValue,
+  VisuallyHidden,
   VStack,
 } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -123,16 +124,31 @@ export default function IndexPage() {
               href="https://twitter.com/developer_dao"
               label="Twitter"
             >
-              <FaTwitter />
+              <>
+                <FaTwitter />
+                <VisuallyHidden>
+                  Opens the Discord DAO Twitter in the current tab
+                </VisuallyHidden>
+              </>
             </SocialIconLink>
             <SocialIconLink href="https://discord.gg/devdao" label="Discord">
-              <FaDiscord />
+              <>
+                <FaDiscord />
+                <VisuallyHidden>
+                  Opens the Discord DAO Discord in the current tab
+                </VisuallyHidden>
+              </>
             </SocialIconLink>
             <SocialIconLink
               href="https://github.com/Developer-DAO"
               label="GitHub"
             >
-              <FaGithub />
+              <>
+                <FaGithub />
+                <VisuallyHidden>
+                  Opens the Discord DAO GitHub organization in the current tab
+                </VisuallyHidden>
+              </>
             </SocialIconLink>
           </HStack>
 
