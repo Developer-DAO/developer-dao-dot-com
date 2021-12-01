@@ -220,7 +220,7 @@ const CurrentStatus = () => {
             _active={{ bg: 'gray.200' }}
             leftIcon={<BsLightningCharge />}
           >
-            Read our Season 0 Snapshot
+            Read our Snapshot
           </Button>
         </Box>
       </Stack>
