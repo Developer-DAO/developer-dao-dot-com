@@ -36,5 +36,11 @@
     "title": "How do I join?",
     "body": "Membership is temporarily closed but will be open again soon. Follow us on Twitter for updates!"
   },
+  "links": {
+    "title": "Useful links",
+    "wiki": "Wiki",
+    "forum": "Forum",
+    "snapshot": "Snapshot"
+  },
   "socialLinkLabel": "Opens the Developer DAO {{platform}} in the current tab"
 }

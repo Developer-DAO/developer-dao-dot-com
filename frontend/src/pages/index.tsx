@@ -103,6 +103,17 @@ export default function IndexPage() {
             </Heading>
             <Text>{t('membership.body')}</Text>
           </Stack>
+
+          <Stack spacing={6}>
+            <Heading as="h2" fontSize="lg">
+              {t('links.title')}
+            </Heading>
+            <UnorderedList spacing={3}>
+              <ListItem><a href="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">{t('links.wiki')}</a></ListItem>
+              <ListItem><a href="https://forum.developerdao.com">{t('links.forum')}</a></ListItem>
+              <ListItem><a href="https://snapshot.org/#/devdao.eth">{t('links.snapshot')}</a></ListItem>
+            </UnorderedList>
+          </Stack>
         </Stack>
 
         <VStack spacing={4}>
