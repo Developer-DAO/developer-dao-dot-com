@@ -31,7 +31,7 @@ function Page({ children }: { children?: object }) {
           </Text>
         </Flex>
       </Marquee>
-      <Stack spacing={10}>
+      <Stack paddingY="2.06rem" paddingX="5rem" spacing={10}>
         <Header />
         {children}
       </Stack>
