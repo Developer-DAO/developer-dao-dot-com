@@ -38,6 +38,13 @@ export const theme = extendTheme({
         fontStyle: 'normal',
         lineHeight: '2rem',
       },
+      medium: {
+        fontFamily: 'Inter',
+        fontSize: '1rem',
+        fontWeight: '500',
+        fontStyle: 'normal',
+        lineHeight: '1.21rem',
+      },
     },
   },
   Heading: {
