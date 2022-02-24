@@ -39,7 +39,11 @@ export default function IndexPage() {
       <IntroComponent />
       <Values />
       <Partners />
-      <Divider w="full" color={colorMode === 'dark' ? '#ffffff' : '#000000'} />
+      <Divider
+        w="full"
+        size="1px"
+        color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+      />
       <Footer />
     </VStack>
   );
