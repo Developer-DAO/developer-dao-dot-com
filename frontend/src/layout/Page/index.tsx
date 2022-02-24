@@ -9,7 +9,7 @@ function Page({ children }: { children?: object }) {
     <Box>
       <Marquee
         style={{
-          background: '#fff',
+          background: `${colorMode === 'dark' ? '#ffffff' : '#000000'}`,
           width: '100%',
           height: '44px',
           top: '0',
@@ -19,11 +19,14 @@ function Page({ children }: { children?: object }) {
         gradient={false}
         loop={1}
         speed={60}
-        pauseOnHover={true}
       >
         <Flex>
-          <Image src="/Blur-img-dark.svg" alt="Blur" />
+          <Image
+            src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
+            alt="Blur"
+          />
           <Text
+            ml={2}
             variant="medium"
             color={colorMode === 'light' ? '#ffffff' : '#000000'}
           >
@@ -35,6 +38,33 @@ function Page({ children }: { children?: object }) {
         <Header />
         {children}
       </Stack>
+      <Marquee
+        style={{
+          background: `${colorMode === 'light' ? '#ffffff' : '#000000'}`,
+          width: '100%',
+          height: '44px',
+          bottom: '0',
+          left: '0',
+          position: 'fixed',
+        }}
+        gradient={false}
+        loop={1}
+        speed={60}
+      >
+        <Flex>
+          <Image
+            src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
+            alt="Blur"
+          />
+          <Text
+            variant="medium"
+            color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+            ml={2}
+          >
+            Current Status: Season 0
+          </Text>
+        </Flex>
+      </Marquee>
     </Box>
   );
 }

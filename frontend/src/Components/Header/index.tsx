@@ -13,7 +13,12 @@ const Header = () => {
   return (
     <Flex alignItems={'center'} justify="space-between" w={'full'}>
       <Flex alignItems="center">
-        <Image width="4rem" h="4rem" src="/D_D_logo-dark.svg" alt="logo" />
+        <Image
+          width="4rem"
+          h="4rem"
+          src={`/D_D_logo-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
+          alt="logo"
+        />
         <Text
           ml={'1.25rem'}
           fontWeight="bold"
