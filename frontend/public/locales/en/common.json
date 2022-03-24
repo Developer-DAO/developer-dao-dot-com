@@ -41,7 +41,8 @@
     "title": "Useful links",
     "wiki": "Wiki",
     "forum": "Forum",
-    "snapshot": "Snapshot"
+    "snapshot": "Snapshot",
+    "blog": "Blog"
   },
   "socialLinkLabel": "Opens the Developer DAO {{platform}} in the current tab"
 }

@@ -23,7 +23,7 @@ import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 import { GiCrownedHeart } from 'react-icons/gi';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import DeveloperDaoLogo from "../components/Logo"
+import DeveloperDaoLogo from '../components/Logo';
 
 export default function IndexPage() {
   const { t } = useTranslation();
@@ -110,9 +110,22 @@ export default function IndexPage() {
               {t('links.title')}
             </Heading>
             <UnorderedList spacing={3}>
-              <ListItem><a href="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">{t('links.wiki')}</a></ListItem>
-              <ListItem><a href="https://forum.developerdao.com">{t('links.forum')}</a></ListItem>
-              <ListItem><a href="https://snapshot.org/#/devdao.eth">{t('links.snapshot')}</a></ListItem>
+              <ListItem>
+                <a href="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">
+                  {t('links.wiki')}
+                </a>
+              </ListItem>
+              <ListItem>
+                <a href="https://forum.developerdao.com">{t('links.forum')}</a>
+              </ListItem>
+              <ListItem>
+                <a href="https://snapshot.org/#/devdao.eth">
+                  {t('links.snapshot')}
+                </a>
+              </ListItem>
+              <ListItem>
+                <a href="https://blog.developerdao.com/">{t('links.blog')}</a>
+              </ListItem>
             </UnorderedList>
           </Stack>
         </Stack>
