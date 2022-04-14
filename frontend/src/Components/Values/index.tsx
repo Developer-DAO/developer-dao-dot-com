@@ -1,19 +1,19 @@
 import {
-  Flex,
   Box,
+  Flex,
   Heading,
-  Text,
-  OrderedList,
-  ListItem,
+  Icon,
   LinkBox,
   LinkOverlay,
-  Icon,
-  useColorModeValue,
+  ListItem,
+  OrderedList,
+  Text,
   useBreakpointValue,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { DEVELOPER_DAO_WIKI } from '../../utils/DeveloperDaoConstants';
 import { BsArrowUpRight } from 'react-icons/bs';
+import { DEVELOPER_DAO_WIKI } from '../../utils/DeveloperDaoConstants';
 
 const Values = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });

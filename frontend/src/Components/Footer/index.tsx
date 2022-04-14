@@ -1,16 +1,16 @@
-import { ReactNode } from 'react';
 import {
   Box,
+  ButtonGroup,
+  Flex,
+  Image,
   Link,
   SimpleGrid,
   Stack,
   Text,
-  Flex,
-  Image,
   useColorMode,
-  ButtonGroup,
 } from '@chakra-ui/react';
-import { FaTwitter, FaDiscord, FaGithub } from 'react-icons/fa';
+import { ReactNode } from 'react';
+import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (

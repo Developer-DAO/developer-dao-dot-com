@@ -1,18 +1,17 @@
 import {
   Box,
-  Flex,
-  Text,
   Button,
-  Image,
+  Flex,
   Grid,
   GridItem,
-  useBreakpointValue,
+  Image,
+  Text,
 } from '@chakra-ui/react';
-import { BsFillLightningChargeFill } from 'react-icons/bs';
-import { FaDiscord } from 'react-icons/fa';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
+import { BsFillLightningChargeFill } from 'react-icons/bs';
+import { FaDiscord } from 'react-icons/fa';
 
 const codeLaunched = false;
 

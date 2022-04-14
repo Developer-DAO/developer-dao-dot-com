@@ -1,16 +1,15 @@
-import React, { ReactNode, useState } from 'react';
 import {
-  Link,
   Box,
   Flex,
-  Text,
-  Switch,
-  Image,
-  Stack,
-  useColorMode,
   HStack,
-  BoxProps,
+  Image,
+  Link,
+  Stack,
+  Switch,
+  Text,
+  useColorMode,
 } from '@chakra-ui/react';
+import React, { ReactNode, useState } from 'react';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
