@@ -19,7 +19,7 @@ const codeLaunched = false;
 const IntroComponent = () => {
   return (
     <Flex
-      direction={{ base: 'column', lg: 'row' }}
+      flexDirection={{ base: 'column', lg: 'row' }}
       justifyContent="space-between"
       pt={{ base: '0', lg: '4.5rem' }}
       w="100%"
