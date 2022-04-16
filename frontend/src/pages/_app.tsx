@@ -7,7 +7,7 @@ import PlausibleProvider from 'next-plausible';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
-import Page from '../layout/Page';
+import Page from '../layout';
 import '../styles/globals.css';
 import { theme } from '../theme';
 import { DEVELOPER_DAO_WEBSITE } from '../utils/DeveloperDaoConstants';
