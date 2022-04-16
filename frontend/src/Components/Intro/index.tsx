@@ -88,6 +88,12 @@ const IntroComponent = () => {
               py={{ base: '1rem', xl: '1.5rem' }}
               borderRadius={{ base: '.438rem', xl: '0.688rem' }}
               fontSize={{ base: '0.75rem', xl: '1.25rem' }}
+              onClick={() => {
+                window.open(
+                  'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff',
+                  '_blank',
+                );
+              }}
             >
               <Box as={BsFillLightningChargeFill} mr=".5rem" color="#FFD666" />
               Read our snapshot

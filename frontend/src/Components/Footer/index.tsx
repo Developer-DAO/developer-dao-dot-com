@@ -139,15 +139,15 @@ const Footer = () => {
         <Stack align={'flex-start'}>
           <ListHeader>Social</ListHeader>
           <ButtonGroup>
-            <a href="https://twitter.com/developer_dao">
+            <Link target={'_blank'} href="https://twitter.com/developer_dao">
               <FaTwitter aria-label="Twitter" />
-            </a>
-            <a href="https://t.co/k407RuG8eV">
+            </Link>
+            <Link target={'_blank'} href="https://t.co/k407RuG8eV">
               <FaDiscord aria-label="Discord" />
-            </a>
-            <a href="https://github.com/Developer-DAO">
+            </Link>
+            <Link target={'_blank'} href="https://github.com/Developer-DAO">
               <FaGithub aria-label="Github" />
-            </a>
+            </Link>
           </ButtonGroup>
         </Stack>
       </SimpleGrid>
