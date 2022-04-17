@@ -1,3 +1,4 @@
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import {
   Button,
   Flex,
@@ -85,8 +86,7 @@ const Partners = () => {
         mb={'4rem'}
         onClick={handleButtonClick}
       >
-        Become a partner{' '}
-        <Image src="/arrow.svg" alt="arrow" width="15px" ml="8px" />
+        Become a partner <ArrowForwardIcon w="1.5rem" h={'22px'} ml="8px" />
       </Button>
     </Flex>
   );
