@@ -6,6 +6,7 @@ import {
   GridItem,
   Image,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
@@ -16,6 +17,7 @@ import { FaDiscord } from 'react-icons/fa';
 const codeLaunched = false;
 
 const IntroComponent = () => {
+  const { colorMode } = useColorMode();
   return (
     <Flex
       flexDirection={{ base: 'column', lg: 'row' }}
@@ -83,7 +85,8 @@ const IntroComponent = () => {
               pl="1rem"
               border="1px solid black"
               fontWeight="bold"
-              color="black"
+              color={colorMode === 'dark' ? 'black' : 'white  '}
+              backgroundColor={colorMode === 'dark' ? 'white' : 'black'}
               pr={{ base: '1rem', xl: '1.2rem' }}
               py={{ base: '1rem', xl: '1.5rem' }}
               borderRadius={{ base: '.438rem', xl: '0.688rem' }}
