@@ -119,7 +119,7 @@ const MenuItem = ({
   to: string;
 }) => {
   return (
-    <Link href={to}>
+    <Link target="_blank" href={to}>
       <Text display="block" fontSize={'20px'} {...rest}>
         {children}
       </Text>
@@ -137,11 +137,19 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
         direction={{ base: 'column', md: 'row' }}
         pt={[8, 4, 0, 0]}
       >
-        <MenuItem to="/">Latest Updates</MenuItem>
-        <MenuItem to="/how">Events</MenuItem>
-        <MenuItem to="/DAO Wiki">DAO Wiki </MenuItem>
-        <MenuItem to="/pricing">Job Board </MenuItem>
-        <MenuItem to="/pricing">Projects </MenuItem>
+        <MenuItem to="https://twitter.com/developer_dao">
+          Latest Updates
+        </MenuItem>
+        <MenuItem to="/">Events</MenuItem>
+        <MenuItem to="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">
+          DAO Wiki{' '}
+        </MenuItem>
+        <MenuItem to="https://developerdao.pallet.com/jobs">
+          Job Board{' '}
+        </MenuItem>
+        <MenuItem to="https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db">
+          Projects{' '}
+        </MenuItem>
         <Switch
           size="md"
           display={{ base: 'block', md: 'none' }}

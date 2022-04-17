@@ -83,7 +83,7 @@ const Footer = () => {
           <Link
             textDecoration="underline"
             _hover={{ textDecoration: 'none' }}
-            href={'#'}
+            href={'https://www.youtube.com/channel/UCoYk_C5So-Tec1OGzbGKhRw'}
             isExternal
           >
             Podcast
