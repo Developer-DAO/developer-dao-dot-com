@@ -72,8 +72,8 @@ const Partners = () => {
         </Link>
       </Flex>
       <Button
-        backgroundColor="white"
-        textColor="black"
+        backgroundColor={colorMode === 'dark' ? 'white' : 'black'}
+        color={colorMode === 'dark' ? 'black' : 'white'}
         fontFamily="Inter"
         fontWeight="500"
         fontSize={{ base: '1rem', xl: '1.25rem' }}
@@ -81,7 +81,6 @@ const Partners = () => {
         paddingX={'1.5rem'}
         paddingY={'1.5rem'}
         mt={{ base: '5rem', xl: '6.85rem' }}
-        _hover={{ color: 'black' }}
         alignSelf="center"
         mb={'4rem'}
         onClick={handleButtonClick}
