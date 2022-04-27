@@ -29,7 +29,7 @@ function Page({ children }: { children?: object }) {
         loop={0}
         speed={60}
       >
-        <HStack gridGap={8}>
+        <HStack gridGap={10}>
           <Flex>
             <Image
               src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
@@ -41,6 +41,19 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
               Current Status: Season 0
+            </Text>
+          </Flex>
+          <Flex>
+            <Image
+              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
+              alt="Blur"
+            />
+            <Text
+              ml={2}
+              variant="medium"
+              color={colorMode === 'light' ? '#ffffff' : '#000000'}
+            >
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
           <Flex>
@@ -66,7 +79,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              Current Status: Season 0
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
           <Flex>
@@ -92,7 +105,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              Current Status: Season 0
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
         </HStack>
@@ -119,7 +132,7 @@ function Page({ children }: { children?: object }) {
         loop={0}
         speed={60}
       >
-        <HStack gridGap={8}>
+        <HStack gridGap={10}>
           <Flex>
             <Image
               src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
@@ -131,6 +144,19 @@ function Page({ children }: { children?: object }) {
               ml={2}
             >
               Current Status: Season 0
+            </Text>
+          </Flex>
+          <Flex>
+            <Image
+              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
+              alt="Blur"
+            />
+            <Text
+              variant="medium"
+              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+              ml={2}
+            >
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
           <Flex>
@@ -156,7 +182,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              Current Status: Season 0
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
           <Flex>
@@ -170,6 +196,19 @@ function Page({ children }: { children?: object }) {
               ml={2}
             >
               Current Status: Season 0
+            </Text>
+          </Flex>
+          <Flex>
+            <Image
+              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
+              alt="Blur"
+            />
+            <Text
+              variant="medium"
+              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+              ml={2}
+            >
+              MEMEBERSHIP BACK OPEN SOON!
             </Text>
           </Flex>
           <Flex>
