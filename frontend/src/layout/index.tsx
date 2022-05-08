@@ -53,7 +53,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -79,7 +79,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -105,7 +105,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
         </HStack>
@@ -156,7 +156,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -182,7 +182,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -208,7 +208,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP BACK OPEN SOON!
+              MEMEBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
