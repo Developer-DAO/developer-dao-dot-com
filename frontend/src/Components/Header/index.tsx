@@ -137,12 +137,12 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
         direction={{ base: 'column', md: 'row' }}
         pt={[8, 4, 0, 0]}
       >
-        <MenuItem to="https://twitter.com/developer_dao">
-          Latest Updates
+        <MenuItem to="https://twitter.com/developer_dao">Twitter</MenuItem>
+        <MenuItem to="https://calendar.google.com/calendar/u/0/embed?src=ctuhf0ekul1dps36lp1st1s54mesj7mj@import.calendar.google.com&ctz=UTC">
+          Events
         </MenuItem>
-        <MenuItem to="/">Events</MenuItem>
         <MenuItem to="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">
-          DAO Wiki{' '}
+          Wiki{' '}
         </MenuItem>
         <MenuItem to="https://developerdao.pallet.com/jobs">
           Job Board{' '}
