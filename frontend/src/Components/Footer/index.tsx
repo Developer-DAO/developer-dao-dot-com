@@ -10,7 +10,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -90,16 +90,12 @@ const Footer = () => {
               text: 'Forum',
             },
             {
-              href: 'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff',
+              href: 'https://snapshot.org/#/devdao.eth',
               text: 'Snapshot',
             },
             {
-              href: 'https://www.youtube.com/channel/UCoYk_C5So-Tec1OGzbGKhRw',
-              text: 'Podcast',
-            },
-            {
-              href: 'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9',
-              text: 'Newsletter',
+              href: 'https://docs.google.com/forms/d/e/1FAIpQLSfEBUILgv1MVf6TP_LlIoA4BKJPA93A75Owz5NwDdfk6oX0IA/viewform',
+              text: 'Become a partner',
             },
           ])}
         </Stack>
@@ -111,16 +107,12 @@ const Footer = () => {
               text: 'Blog',
             },
             {
-              href: 'https://airtable.com/shrzgqiMiHE18Iy9O/tbljejdzelezqT0W7/',
-              text: 'Learning Resources',
+              href: 'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9',
+              text: 'Newsletter',
             },
             {
               href: 'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db',
               text: 'Projects',
-            },
-            {
-              href: '#',
-              text: 'Partners',
             },
           ])}
         </Stack>
@@ -135,6 +127,12 @@ const Footer = () => {
             </Link>
             <Link target={'_blank'} href="https://github.com/Developer-DAO">
               <FaGithub aria-label="Github" />
+            </Link>
+            <Link
+              target={'_blank'}
+              href="hhttps://www.youtube.com/c/DeveloperDAO"
+            >
+              <FaYoutube aria-label="Youtube" />
             </Link>
           </ButtonGroup>
         </Stack>
