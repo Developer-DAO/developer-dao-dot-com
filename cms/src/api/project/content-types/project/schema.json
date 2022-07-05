@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,24 +41,6 @@
         "Complete"
       ]
     },
-    "guilds_involved": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "json",
-      "required": true
-    },
-    "contributors": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "json",
-      "required": true
-    },
     "notes": {
       "pluginOptions": {
         "i18n": {
@@ -65,6 +48,21 @@
         }
       },
       "type": "richtext"
+    },
+    "guilds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::guild.guild",
+      "inversedBy": "projects"
+    },
+    "pinned": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }
