@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "logo": {
-      "type": "string",
-      "required": true
-    },
     "website": {
       "type": "string",
       "required": true
@@ -27,6 +23,16 @@
     "twitter_handle": {
       "type": "string",
       "required": true
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
