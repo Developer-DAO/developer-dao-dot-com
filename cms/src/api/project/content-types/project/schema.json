@@ -61,30 +61,27 @@
       "type": "string",
       "required": true
     },
-    "project_social_links": {
+    "twitterUrl": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "string"
     },
-    "governance_proposal_links": {
+    "website": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "richtext",
-      "required": false
+      "type": "string"
     },
     "contributors": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::contributor.contributor",
+      "mappedBy": "projects"
     }
   }
 }
