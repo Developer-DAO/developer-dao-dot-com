@@ -23,25 +23,45 @@
         }
       },
       "type": "string",
-      "required": true,
-      "maxLength": 128,
-      "minLength": 5,
-      "unique": false
+      "required": true
     },
-    "status": {
+    "hero_image": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "enumeration",
-      "enum": [
-        "Pending",
-        "Active",
-        "Complete"
-      ]
+      "type": "string",
+      "required": true
     },
-    "notes": {
+    "description_short": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "description_long": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "required": true
+    },
+    "ens_name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "project_social_links": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -49,20 +69,22 @@
       },
       "type": "richtext"
     },
-    "guilds": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::guild.guild",
-      "inversedBy": "projects"
-    },
-    "pinned": {
+    "governance_proposal_links": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "boolean",
-      "default": false
+      "type": "richtext",
+      "required": false
+    },
+    "contributors": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }
