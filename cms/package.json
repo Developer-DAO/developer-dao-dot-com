@@ -6,8 +6,8 @@
   "scripts": {
     "develop": "strapi develop",
     "develop-pg": "NODE_ENV=pg strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
+    "start": "NODE_ENV=production strapi start",
+    "build": "NODE_ENV=production strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {},
