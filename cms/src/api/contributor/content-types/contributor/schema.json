@@ -16,10 +16,10 @@
       "type": "string",
       "required": true
     },
-    "twitterHandle": {
+    "twitter_handle": {
       "type": "string"
     },
-    "discordHandle": {
+    "discord_handle": {
       "type": "string"
     },
     "projects": {

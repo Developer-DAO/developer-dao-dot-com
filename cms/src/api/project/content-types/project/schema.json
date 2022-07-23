@@ -61,7 +61,7 @@
       "type": "string",
       "required": true
     },
-    "twitterUrl": {
+    "twitter_handle": {
       "pluginOptions": {
         "i18n": {
           "localized": true
