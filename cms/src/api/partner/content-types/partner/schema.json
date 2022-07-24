@@ -24,7 +24,18 @@
       "type": "string",
       "required": true
     },
-    "logo": {
+    "logo_dark": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "logo_light": {
       "allowedTypes": [
         "images",
         "files",
