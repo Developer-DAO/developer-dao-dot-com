@@ -8,9 +8,12 @@
     "develop-pg": "NODE_ENV=pg strapi develop",
     "start": "NODE_ENV=production strapi start",
     "build": "NODE_ENV=production strapi build",
+    "seed": "FORCE_APP_BOOTSTRAP_ONLY=true NODE_ENV=development strapi start",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0"
+  },
   "dependencies": {
     "@strapi/plugin-graphql": "4.2.2",
     "@strapi/plugin-i18n": "4.2.2",
