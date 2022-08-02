@@ -33,7 +33,6 @@ const Partners = ({ partnerData }: Props) => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        {console.log(partnerData)}
         {partnerData ? (
           partnerData?.map((item: any, index: number) => {
             return (
@@ -47,8 +46,8 @@ const Partners = ({ partnerData }: Props) => {
                 <Image
                   src={
                     colorMode === 'dark'
-                      ? `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_dark.data?.attributes.url}`
-                      : `${process.env.NEXT_PUBLIC_CMS_URL}${item.attributes.logo_light.data?.attributes.url}`
+                      ? `${item.attributes.logo_dark.data?.attributes.url}`
+                      : `${item.attributes.logo_light.data?.attributes.url}`
                   }
                   alt={item.attributes?.name || 'partner image'}
                 />
