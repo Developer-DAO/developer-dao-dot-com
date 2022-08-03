@@ -2,6 +2,7 @@ const { seedUserExists, generateUserData } = require('./user');
 const { clearData } = require('./helpers');
 const { generatePartnerData } = require('./partner');
 const { generateProjectAndContributorData } = require('./project-and-contributor');
+const { fillHomePage } = require('./pages');
 
 /**
  * @param {Strapi} strapi
@@ -32,6 +33,14 @@ const generateSeedData = async (strapi) => {
     generateUserData(strapi)
   ]).catch(e => {
     console.error('error during generating seed data! Stopping the application...')
+    throw new Error(e)
+  })
+
+  // Pages
+  await Promise.all([
+    fillHomePage(strapi),
+  ]).catch(e => {
+    console.error('error during generating page data! Stopping the application...')
     throw new Error(e)
   })
 

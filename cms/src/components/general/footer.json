@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_general_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "angle-double-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "useful_links": {
+      "displayName": "Useful Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link"
+    },
+    "discover": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link",
+      "required": false
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link"
+    }
+  }
+}

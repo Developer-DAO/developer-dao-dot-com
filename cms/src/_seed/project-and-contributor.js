@@ -40,10 +40,11 @@ const generateProjectAndContributorData = async (strapi) => {
 }
 
 const _randomProject = () => {
-  const username = faker.internet.userName().toLowerCase()
+  const name = faker.company.companyName()
+  const username = faker.internet.userName(name).toLowerCase()
 
   return {
-    name: faker.company.companyName(),
+    name,
     hero_image: faker.image.avatar(),
     description_short: faker.company.bs(),
     description_long: faker.lorem.paragraph(),
@@ -55,10 +56,11 @@ const _randomProject = () => {
 }
 
 const _randomContributor = () => {
-  const username = faker.internet.userName().toLowerCase()
+  const name = faker.name.findName()
+  const username = faker.internet.userName(name).toLowerCase()
 
   return {
-    name: faker.name.findName(),
+    name,
     ens_name: `${ username }.eth`,
     twitter_handle: username,
     discord_handle: `${ username }#${ faker.random.numeric(4) }`,

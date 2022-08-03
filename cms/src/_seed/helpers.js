@@ -1,4 +1,5 @@
 const { APPLICATION_COLLECTION_TYPE_UIDS } = require('./constants');
+const { statSync } = require('fs');
 
 /**
  * @param {Strapi} strapi
@@ -47,9 +48,42 @@ const sampleSize = (arr, num = Math.floor(Math.random() * arr.length)) => {
   return shuffled.slice(0, num);
 }
 
+/**
+ * @param {Strapi} strapi
+ * @param {Object} data
+ * @param {Object} file
+ * @returns {Promise<{ id }>}
+ */
+const uploadFile = async (strapi, {
+  data,
+  file,
+}) => {
+  const { refId, ref, field } = data
+  const { name, path, type } = file
+
+  const fileStat = statSync(path);
+
+  const [uploadedFile] = await strapi.plugins.upload.services.upload.upload({
+    data: {
+      refId,
+      ref,
+      field
+    },
+    files: {
+      path,
+      name,
+      type,
+      size: fileStat.size,
+    },
+  });
+
+  return uploadedFile
+}
+
 module.exports = {
   ensureSQLite,
   randomBoolean,
   clearData,
-  sampleSize
+  sampleSize,
+  uploadFile,
 }

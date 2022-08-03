@@ -18,6 +18,10 @@ const seedUserExists = async (strapi) => {
  * @returns {Promise<void>}
  */
 const createSeedUser = async (strapi) => {
+  // TODO: needs update - cannot login with this API-created user
+  // checkout how [user-permissions] plugin registers user via REST - jwt issuing required
+  // https://github.com/strapi/strapi/blob/master/packages/plugins/users-permissions/server/controllers/auth.js#L239
+
   const now = Date.now()
 
   await strapi.entityService.create('plugin::users-permissions.user', {
