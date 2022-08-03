@@ -1,5 +1,7 @@
-module.exports = ({ env }) => ({
-  // ...
+const { isDevelopment } = require('../src/helpers');
+
+const getDevPlugins = (env) => ({})
+const getProductionPlugins = (env) => ({
   upload: {
     config: {
       provider: "aws-s3",
@@ -13,5 +15,8 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // ...
+})
+
+module.exports = ({ env }) => ({
+  ...(isDevelopment() ? getDevPlugins(env) : getProductionPlugins(env))
 });

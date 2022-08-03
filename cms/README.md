@@ -22,7 +22,9 @@ By default, on the first application _DEVELOPMENT_ start(with `yarn develop`), *
 yarn seed
 ```
 
-> ⚠️ This will clear all data from all available collections
+> ⚠️ This will **clear all data** from all available collections
+ 
+> ⚠️ If something happens during seeding and data starts to grow rapidly - **clear User collection** manually
 
 #### How it works?
 
