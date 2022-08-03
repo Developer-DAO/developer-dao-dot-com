@@ -1,14 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Image,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text, useColorMode } from '@chakra-ui/react';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
@@ -191,78 +182,7 @@ const IntroComponent = () => {
         mb={{ base: '2rem', xl: 0 }}
         transform={{ base: 'translateY(0)', xl: 'translateY(-40px)' }}
       >
-        <Image
-          h={{ base: '2rem', xl: '2.6875rem' }}
-          alignSelf="end"
-          opacity={Number(showImages)}
-          transition=".3s"
-          src="/intro_person_top.svg"
-          alt="intro_person_top"
-          mr={{ base: '3rem', lg: '5rem', xl: '7.75rem' }}
-        />
-        <Grid
-          templateRows="repeat(2, 1fr)"
-          templateColumns="repeat(2, 1fr)"
-          columnGap={10}
-          rowGap={20}
-          mt="2rem"
-          w={{ base: '80vw', lg: '50vw', xl: 'auto' }}
-        >
-          <GridItem justifySelf="center">
-            <Image
-              src="/intro_person_1.png"
-              alt="intro_person_1"
-              opacity={Number(showImages)}
-              transition=".3s"
-              transitionDelay=".2s"
-              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
-              transform={{
-                base: 'translateX(0)',
-                xl: 'translateX(-100px)',
-              }}
-            />
-          </GridItem>
-          <GridItem justifySelf="center">
-            <Image
-              src="/intro_person_2.png"
-              alt="intro_person_2"
-              opacity={Number(showImages)}
-              transition=".3s"
-              transitionDelay=".4s"
-              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
-              transform={{
-                base: 'translateY(30px)',
-              }}
-            />
-          </GridItem>
-          <GridItem justifySelf="center">
-            <Image
-              src="/intro_person_3.png"
-              alt="intro_person_3"
-              opacity={Number(showImages)}
-              transition=".3s"
-              transitionDelay=".6s"
-              w={{ base: '15rem', xl: '17rem', '2xl': '19.75rem' }}
-              transform={{
-                base: 'translate(40px)',
-                md: 'translate(0)',
-                lg: 'translateX(60px)',
-                xl: 'translate(0)',
-              }}
-            />
-          </GridItem>
-          <GridItem justifySelf="center">
-            <Image
-              src="/intro_person_4.png"
-              alt="intro_person_4"
-              opacity={Number(showImages)}
-              transition=".3s"
-              transitionDelay=".8s"
-              w={{ base: '9rem', md: '12rem', lg: '13rem', '2xl': '15.75rem' }}
-              style={{ transform: 'translate(-30px, 30px)' }}
-            />
-          </GridItem>
-        </Grid>
+        <Image src="/main.png" alt="main" />
       </Flex>
     </Flex>
   );
