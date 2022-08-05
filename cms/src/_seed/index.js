@@ -1,8 +1,9 @@
 const { seedUserExists, generateUserData } = require('./user');
-const { clearData } = require('./helpers');
+const { clearData, updateStrapiPublicRole } = require('./helpers');
 const { generatePartnerData } = require('./partner');
 const { generateProjectAndContributorData } = require('./project-and-contributor');
 const { fillHomePage } = require('./pages');
+const { fillGeneralData } = require('./general');
 
 /**
  * @param {Strapi} strapi
@@ -36,13 +37,17 @@ const generateSeedData = async (strapi) => {
     throw new Error(e)
   })
 
-  // Pages
+  // Single Types
   await Promise.all([
     fillHomePage(strapi),
+    fillGeneralData(strapi),
   ]).catch(e => {
     console.error('error during generating page data! Stopping the application...')
     throw new Error(e)
   })
+
+  console.log('updating Public role to access pages and data')
+  await updateStrapiPublicRole(strapi)
 
   console.log('generating seed data has been finished successfully!')
 }

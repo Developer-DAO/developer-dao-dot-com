@@ -12,7 +12,8 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0"
+    "@faker-js/faker": "^7.3.0",
+    "lodash.merge": "^4.6.2"
   },
   "dependencies": {
     "@strapi/plugin-graphql": "4.2.2",
