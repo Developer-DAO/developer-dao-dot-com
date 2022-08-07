@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.footer",
+      "required": false
+    },
+    "mission": {
+      "type": "text"
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.statement"
+    },
+    "goals": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.statement"
+    },
+    "news_ticker": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.statement"
+    },
+    "meta_og": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.open-graph"
+    },
+    "current_status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.current-status"
+    }
+  }
+}
