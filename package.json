@@ -6,9 +6,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "concurrently": "^7.3.0"
-  },
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
