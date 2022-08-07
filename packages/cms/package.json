@@ -1,5 +1,5 @@
 {
-  "name": "dd-website-backend",
+  "name": "cms",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -25,7 +25,7 @@
     "pg": "^8.7.3"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Developer DAO"
   },
   "strapi": {
     "uuid": "796ea8ec-5221-4389-ac0d-2f188bb2673d"
