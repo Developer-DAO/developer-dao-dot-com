@@ -1,6 +1,7 @@
 {
   "name": "developer-dao-website",
-  "version": "1.0.0",
+  "author": "Developer DAO",
+  "version": "2.0.1",
   "private": true,
   "license": "MIT",
   "workspaces": [
@@ -15,6 +16,11 @@
     "run-cms": "yarn --cwd packages/cms start"
   },
   "devDependencies": {
-    "turbo": "^1.4.2"
+    "turbo": "^1.4.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,html,graphql}": "prettier --write"
   }
 }
