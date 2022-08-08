@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
+  "type": "module",
   "scripts": {
     "dev": "strapi develop",
     "develop-pg": "NODE_ENV=pg strapi develop",
@@ -12,7 +13,11 @@
     "strapi": "strapi"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/eslint-parser": "^7.18.9",
     "@faker-js/faker": "^7.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.21.0",
     "lodash.merge": "^4.6.2"
   },
   "dependencies": {
@@ -23,6 +28,12 @@
     "@strapi/strapi": "4.2.2",
     "better-sqlite3": "7.4.6",
     "pg": "^8.7.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,graphql}": [
+      "eslint",
+      "prettier --write"
+    ]
   },
   "author": {
     "name": "Developer DAO"

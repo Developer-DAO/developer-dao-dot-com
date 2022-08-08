@@ -22,6 +22,12 @@
     "react-icons": "^4.3.1",
     "web-vitals": "2.1.4"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,html,graphql}": [
+      "eslint",
+      "prettier --write"
+    ]
+  },
   "scripts": {
     "start": "next start",
     "build": "next build",
@@ -54,7 +60,7 @@
     "@testing-library/cypress": "^8.0.1",
     "@testing-library/react-hooks": "^7.0.2",
     "all-contributors-cli": "^6.20.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.21.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

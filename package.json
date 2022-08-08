@@ -20,8 +20,5 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "turbo": "^1.4.2"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,md,html,graphql}": "prettier --write"
   }
 }
