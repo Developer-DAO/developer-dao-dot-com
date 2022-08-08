@@ -15,6 +15,7 @@ const IntroComponent = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowImages(true);
+      console.log('test');
     }, 1000);
   }, []);
 

@@ -13,12 +13,13 @@
     "lint": "turbo run lint",
     "dev": "turbo run dev",
     "run-frontend": "yarn --cwd packages/frontend start",
-    "run-cms": "yarn --cwd packages/cms start"
+    "run-cms": "yarn --cwd packages/cms start",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "turbo": "^1.4.2",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "turbo": "^1.4.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,html,graphql}": "prettier --write"
