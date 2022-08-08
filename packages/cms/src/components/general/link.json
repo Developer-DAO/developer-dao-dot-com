@@ -20,10 +20,7 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": [
-        "link",
-        "social"
-      ],
+      "enum": ["link", "social"],
       "default": "link",
       "required": true
     },

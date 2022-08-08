@@ -1,5 +1,5 @@
-const { fillHomePage } = require('./home-page')
+const { fillHomePage } = require('./home-page');
 
 module.exports = {
-  fillHomePage
-}
+  fillHomePage,
+};

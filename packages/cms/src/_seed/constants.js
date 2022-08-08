@@ -6,4 +6,4 @@ module.exports = {
     'api::partner.partner',
     'api::project.project',
   ],
-}
+};

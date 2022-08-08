@@ -5,69 +5,71 @@ const { randomBoolean, sampleSize } = require('./helpers');
  * @returns {Promise<void>}
  */
 const generateProjectAndContributorData = async (strapi) => {
-  console.log(`generating projects and contributors`)
+  console.log('generating projects and contributors');
 
-  const { DEV_SEED_DATA_PROJECTS, DEV_SEED_DATA_CONTRIBUTORS } = process.env
-  const projectsSize = DEV_SEED_DATA_PROJECTS ? parseInt(DEV_SEED_DATA_PROJECTS) : 8
-  const contributorsSize = DEV_SEED_DATA_CONTRIBUTORS ? parseInt(DEV_SEED_DATA_CONTRIBUTORS) : 15
+  const { DEV_SEED_DATA_PROJECTS, DEV_SEED_DATA_CONTRIBUTORS } = process.env;
+  const projectsSize = DEV_SEED_DATA_PROJECTS ? parseInt(DEV_SEED_DATA_PROJECTS) : 8;
+  const contributorsSize = DEV_SEED_DATA_CONTRIBUTORS ? parseInt(DEV_SEED_DATA_CONTRIBUTORS) : 15;
 
-  const bulkProjectPromises = []
-  const bulkContributorPromises = []
+  const bulkProjectPromises = [];
+  const bulkContributorPromises = [];
 
-  const randomProjectsData = new Array(projectsSize).fill(null).map(_randomProject)
-  const randomContributorsData = new Array(contributorsSize).fill(null).map(_randomContributor)
+  const randomProjectsData = new Array(projectsSize).fill(null).map(_randomProject);
+  const randomContributorsData = new Array(contributorsSize).fill(null).map(_randomContributor);
 
   for (const randomProjectData of randomProjectsData) {
-    const randomProjectPromise = strapi.entityService.create('api::project.project', { data: randomProjectData })
-    bulkProjectPromises.push(randomProjectPromise)
+    const randomProjectPromise = strapi.entityService.create('api::project.project', {
+      data: randomProjectData,
+    });
+    bulkProjectPromises.push(randomProjectPromise);
   }
 
-  const projects = await Promise.all(bulkProjectPromises)
+  const projects = await Promise.all(bulkProjectPromises);
 
   for (const randomContributorData of randomContributorsData) {
-    const addProject = randomBoolean()
+    const addProject = randomBoolean();
 
     const randomContributorPromise = strapi.entityService.create('api::contributor.contributor', {
       data: {
         ...randomContributorData,
-        ...addProject ? ({ projects: sampleSize(projects).map(project => project.id) }) : {}
-      }
-    })
-    bulkContributorPromises.push(randomContributorPromise)
+        ...(addProject ? { projects: sampleSize(projects).map((project) => project.id) } : {}),
+      },
+    });
+    bulkContributorPromises.push(randomContributorPromise);
   }
 
-  await Promise.all(bulkContributorPromises)
-}
+  await Promise.all(bulkContributorPromises);
+};
 
 const _randomProject = () => {
-  const name = faker.company.companyName()
-  const username = faker.internet.userName(name).toLowerCase()
+  const name = faker.company.companyName();
+  const username = faker.internet.userName(name).toLowerCase();
 
   return {
     name,
     hero_image: faker.image.avatar(),
     description_short: faker.company.bs(),
     description_long: faker.lorem.paragraph(),
-    ens_name: `${ username }.eth`,
+    ens_name: `${username}.eth`,
     website: faker.internet.url(),
     twitter_handle: username,
-    publishedAt: randomBoolean() ? new Date().toISOString() : null
-  }
-}
+    publishedAt: randomBoolean() ? new Date().toISOString() : null,
+  };
+};
 
 const _randomContributor = () => {
-  const name = faker.name.findName()
-  const username = faker.internet.userName(name).toLowerCase()
+  const name = faker.name.findName();
+  const username = faker.internet.userName(name).toLowerCase();
 
   return {
     name,
-    ens_name: `${ username }.eth`,
+    ens_name: `${username}.eth`,
     twitter_handle: username,
-    discord_handle: `${ username }#${ faker.random.numeric(4) }`,
-    publishedAt: randomBoolean() ? new Date().toISOString() : null
-  }
-}
+    discord_handle: `${username}#${faker.random.numeric(4)}`,
+    publishedAt: randomBoolean() ? new Date().toISOString() : null,
+  };
+};
 
 module.exports = {
-  generateProjectAndContributorData
-}
+  generateProjectAndContributorData,
+};

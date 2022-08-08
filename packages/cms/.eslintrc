@@ -27,7 +27,6 @@
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["off", "unix"],
-    "no-console": "error",
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "no-var": "error",

@@ -11,9 +11,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "useful_links": {
       "displayName": "Useful Links",
