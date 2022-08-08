@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "strapi develop",
     "develop-pg": "NODE_ENV=pg strapi develop",
