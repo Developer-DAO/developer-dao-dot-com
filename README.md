@@ -1,6 +1,7 @@
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- LOGO -->
 
@@ -14,7 +15,7 @@
     </p>
 </p>
 
-[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)][Discord] [![Follow on Twitter](https://img.shields.io/badge/social-Twitter-1DA1F2?logo=twitter)](https://twitter.com/developer_dao) [![See on Etherscan](https://img.shields.io/badge/MintNFT-Ethereum-3C3C3D?logo=ethereum)](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract)
+[![Chat on Discord](https://img.shields.io/badge/chat-Discord-7289DA?logo=discord)][discord] [![Follow on Twitter](https://img.shields.io/badge/social-Twitter-1DA1F2?logo=twitter)](https://twitter.com/developer_dao) [![See on Etherscan](https://img.shields.io/badge/MintNFT-Ethereum-3C3C3D?logo=ethereum)](https://etherscan.io/token/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract)
 
 <!-- Table of Contents -->
 
@@ -28,7 +29,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contributors-">Contributors</a></li>
 </ul>
-
 
 ## What is a DAO
 
@@ -96,11 +96,11 @@ This project uses Vercel to manage deployments. We use the Vercel GitHub integra
 
 In both cases, Vercel runs `next build` to build the project. Since running `next build` automatically sets `NODE_ENV` to `production`, if you need to distinguish between an actual production deployment and a PR preview deployment (example: we only want to run code that connects to analytics in production and not for preview deploys), use the `NEXT_PUBLIC_VERCEL_ENV` (`process.env.NEXT_PUBLIC_VERCEL_ENV`) environment variable. This variable exists in Vercel and provides the following values:
 
-| Vercel Environment | value |
-| --- | --- |
-| Production | `production` |
-| Preview | `preview` |
-| Development | `development` |
+| Vercel Environment | value         |
+| ------------------ | ------------- |
+| Production         | `production`  |
+| Preview            | `preview`     |
+| Development        | `development` |
 
 ## Contributing
 
@@ -175,6 +175,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Support
+
 <div>
 <a href="https://vercel.com?utm_source=developdao&utm_campaign=oss">
 <img width="170px" src="https://user-images.githubusercontent.com/8930332/133003096-dbf81aa9-d165-49fd-b2dd-0108e32138a6.png" alt="Powered By Vercel" />
@@ -184,4 +185,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 <p align="left">Thanks to Vercel sponsoring this project by hosting it for free</p>
 </div>
 
-[Discord]: https://discord.gg/ASjBPJuNhS
+[discord]: https://discord.gg/ASjBPJuNhS
