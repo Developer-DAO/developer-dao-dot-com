@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Box, Button, Flex, Image, Text, useColorMode } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
@@ -36,7 +44,7 @@ const IntroComponent = () => {
           p="2rem"
         >
           <Box pr="4rem">
-            <Text
+            <Heading
               fontFamily="Inter"
               fontWeight="800"
               mr="2rem"
@@ -44,7 +52,7 @@ const IntroComponent = () => {
               lineHeight={{ base: '2.625rem', xl: '4rem' }}
             >
               Build web3 with friends.
-            </Text>
+            </Heading>
             <Text
               fontFamily="Inter"
               fontWeight="500"

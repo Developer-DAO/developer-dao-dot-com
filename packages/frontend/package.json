@@ -36,7 +36,8 @@
     "fmt": "prettier --write **/*.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +61,7 @@
     "@testing-library/cypress": "^8.0.1",
     "@testing-library/react-hooks": "^7.0.2",
     "all-contributors-cli": "^6.20.0",
+    "cypress": "^10.4.0",
     "eslint": "^8.21.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
