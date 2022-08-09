@@ -38,7 +38,7 @@ const listLinks = (links: Link[], translate: TFunction) => {
             href={link.link}
             isExternal
           >
-            {translate(link.title)}
+            {translate(link.title) as any}
           </ChakraLink>
         );
       })}
