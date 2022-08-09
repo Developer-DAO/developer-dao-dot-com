@@ -1,30 +1,24 @@
-import { useState, useEffect } from 'react';
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
+import { FC } from 'react';
+import { Box, Button, Flex, Image, Text, useColorMode } from '@chakra-ui/react';
+import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import { BsFillLightningChargeFill } from 'react-icons/bs';
 import { FaDiscord } from 'react-icons/fa';
+import { HomePage } from '../../types';
 
 const codeLaunched = false;
 
-const IntroComponent = () => {
-  const { colorMode } = useColorMode();
-  const [showImages, setShowImages] = useState(false);
+type IntroProps = {
+  heading: HomePage['heading'];
+  subHeading: HomePage['sub_heading'];
+  currentStatus: HomePage['current_status'];
+};
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowImages(true);
-    }, 1000);
-  }, []);
+const Intro: FC<IntroProps> = ({ heading, subHeading, currentStatus }) => {
+  const { t } = useTranslation();
+  const { colorMode } = useColorMode();
 
   return (
     <Flex
@@ -44,15 +38,15 @@ const IntroComponent = () => {
           p="2rem"
         >
           <Box pr="4rem">
-            <Heading
+            <Text
               fontFamily="Inter"
               fontWeight="800"
               mr="2rem"
               fontSize={{ base: '2.625rem', xl: '3.375rem' }}
               lineHeight={{ base: '2.625rem', xl: '4rem' }}
             >
-              Build web3 with friends.
-            </Heading>
+              {t(heading!)}
+            </Text>
             <Text
               fontFamily="Inter"
               fontWeight="500"
@@ -60,8 +54,7 @@ const IntroComponent = () => {
               lineHeight="1.5"
               fontSize={{ base: '1.25rem', xl: '1.5rem' }}
             >
-              Developer DAO is a community of thousand of web3 builders creating
-              a better internet. Join us and create the future.
+              {t(subHeading!)}
             </Text>
           </Box>
           <Box
@@ -78,7 +71,7 @@ const IntroComponent = () => {
               color="black"
               fontSize={{ base: '1rem', xl: '1.5rem' }}
             >
-              Current Status: Season 0
+              {t(currentStatus?.statement.title!)}
             </Text>
             <Text
               fontFamily="Inter"
@@ -88,8 +81,7 @@ const IntroComponent = () => {
               fontSize={{ base: '0.8rem', xl: '1.25rem' }}
               lineHeight={{ base: '1.125rem', xl: '1.75rem' }}
             >
-              We&rsquo;re forming guilds, creating culture, strengthening our
-              community, teaching & learning, and building cool things together.
+              {t(currentStatus?.statement.description!)}
             </Text>
             <Button
               mt="1rem"
@@ -103,19 +95,17 @@ const IntroComponent = () => {
               borderRadius={{ base: '.438rem', xl: '0.688rem' }}
               fontSize={{ base: '0.75rem', xl: '1.25rem' }}
               onClick={() => {
-                window.open(
-                  'https://developerdao.notion.site/How-to-use-Snapshot-32692309faf446ddb2a898f22050fb5f#05f55b4052c044169402a443b36945ff',
-                  '_blank',
-                );
+                window.open(currentStatus?.link.link, '_blank');
               }}
             >
               <Box as={BsFillLightningChargeFill} mr=".5rem" color="#FFD666" />
-              Read our snapshot
+              {t(currentStatus?.link.title!)}
             </Button>
           </Box>
         </Box>
       )}
 
+      {/* todo: create match Strapi's "current_status" block when $CODE launches: statement{} and link{} */}
       {codeLaunched && (
         <Box
           w={{ base: '100%', xl: '40%' }}
@@ -128,7 +118,7 @@ const IntroComponent = () => {
             fontSize={{ base: '3.3rem', lg: '4rem', xl: '5.375rem' }}
             lineHeight={{ base: '4.375rem', xl: '6.5rem' }}
           >
-            Build web3 with friends.
+            {t(heading!)}
           </Text>
           <Text
             fontFamily="Inter"
@@ -137,8 +127,7 @@ const IntroComponent = () => {
             lineHeight="1.5"
             fontSize={{ base: '1.25rem', xl: '1.5rem' }}
           >
-            Developer DAO is a community of thousand of web3 builders creating a
-            better internet. Join us and create the future.
+            {t(subHeading!)}
           </Text>
 
           <Flex justifyContent="center" w="100" mt="3rem">
@@ -181,6 +170,7 @@ const IntroComponent = () => {
           </Flex>
         </Box>
       )}
+      {/*todo: Create Strapi Component that would show Curated Contributors - */}
       <Flex
         direction="column"
         maxWidth={{ base: 'none', xl: '45%', '2xl': 'none' }}
@@ -196,4 +186,4 @@ const IntroComponent = () => {
   );
 };
 
-export default IntroComponent;
+export default Intro;

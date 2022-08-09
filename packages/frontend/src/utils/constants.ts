@@ -15,6 +15,11 @@ export const OPENSEA_COLLECTION_LINK = process.env
 export const ETHER_SCAN_LINK_PREFIX = process.env
   .NEXT_PUBLIC_ETHER_SCAN_LINK_PREFIX as string;
 
+export const NEXT_PUBLIC_GRAPHQL_API = process.env
+  .NEXT_PUBLIC_GRAPHQL_API as string;
+
+export const NEXT_PUBLIC_CMS_URL = process.env.NEXT_PUBLIC_CMS_URL as string;
+
 export const SITE_URL = 'https://developerdao.com';
 export const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
 

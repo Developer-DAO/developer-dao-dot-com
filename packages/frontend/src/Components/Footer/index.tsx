@@ -3,15 +3,18 @@ import {
   ButtonGroup,
   Flex,
   Image,
-  Link,
+  Link as ChakraLink,
   SimpleGrid,
   Stack,
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { FC, ReactNode, useCallback } from 'react';
 import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { IconOpenSea } from '../OpenSea';
+import { Footer, Media, Link, SocialLinkName } from '../../types';
+import { NEXT_PUBLIC_CMS_URL } from '../../utils';
+import { TFunction, useTranslation } from 'next-i18next';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -21,35 +24,60 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   );
 };
 
-type link = {
-  href: string;
-  text: string;
-};
-
-const ListLinks = (links: link[]) => {
+const listLinks = (links: Link[], translate: TFunction) => {
   return (
     <>
-      {links.map((link: link, key) => {
+      {links.map((link) => {
         return (
-          <Link
-            key={key}
+          <ChakraLink
+            key={link.id}
             textDecoration="underline"
             fontSize="1.3rem"
             color="#C3C3C3"
             _hover={{ textDecoration: 'none' }}
-            href={link.href}
+            href={link.link}
             isExternal
           >
-            {link.text}
-          </Link>
+            {translate(link.title)}
+          </ChakraLink>
         );
       })}
     </>
   );
 };
 
-const Footer = () => {
+type FooterProps = {
+  data: Footer;
+};
+
+const Footer: FC<FooterProps> = ({ data: footer }) => {
   const { colorMode } = useColorMode();
+  const { t } = useTranslation();
+
+  // // todo: use when footer would have logo-light/dark
+  // const getLogoSrc = useCallback(
+  //   (logo?: Media) =>
+  //     logo?.provider === 'local'
+  //       ? `${NEXT_PUBLIC_CMS_URL}${logo?.url}`
+  //       : logo?.url,
+  //   [],
+  // );
+
+  const getSocialIcon = useCallback(
+    (name: SocialLinkName) => {
+      return {
+        twitter: <FaTwitter aria-label="Twitter" />,
+        discord: <FaDiscord aria-label="Discord" />,
+        github: <FaGithub aria-label="Github" />,
+        youtube: <FaYoutube aria-label="Youtube" />,
+        opensea: (
+          <IconOpenSea color={colorMode === 'dark' ? 'white' : 'black'} />
+        ),
+      }[name];
+    },
+    [colorMode],
+  );
+
   return (
     <Box pt="6rem" pb="5.875rem" width="100%">
       <SimpleGrid
@@ -81,66 +109,20 @@ const Footer = () => {
 
         <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Useful Links</ListHeader>
-          {ListLinks([
-            {
-              href: 'https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e',
-              text: 'Wiki',
-            },
-            {
-              href: 'https://forum.developerdao.com/',
-              text: 'Forum',
-            },
-            {
-              href: 'https://snapshot.org/#/devdao.eth',
-              text: 'Snapshot',
-            },
-            {
-              href: 'https://airtable.com/shrYLrOrjhOHJUdVl',
-              text: 'Become a partner',
-            },
-          ])}
+          {listLinks(footer?.useful_links!, t)}
         </Stack>
         <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Discover</ListHeader>
-          {ListLinks([
-            {
-              href: 'https://devdao.mirror.xyz/',
-              text: 'Blog',
-            },
-            {
-              href: 'https://developerdao.notion.site/Newsletter-d9c971f2bea446338624042ea20547f9',
-              text: 'Newsletter',
-            },
-            {
-              href: 'https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db',
-              text: 'Projects',
-            },
-          ])}
+          {listLinks(footer?.discover!, t)}
         </Stack>
         <Stack align={'flex-start'} paddingTop="1.4375rem">
           <ListHeader>Social</ListHeader>
           <ButtonGroup>
-            <Link target={'_blank'} href="https://twitter.com/developer_dao">
-              <FaTwitter aria-label="Twitter" />
-            </Link>
-            <Link target={'_blank'} href="https://t.co/k407RuG8eV">
-              <FaDiscord aria-label="Discord" />
-            </Link>
-            <Link target={'_blank'} href="https://github.com/Developer-DAO">
-              <FaGithub aria-label="Github" />
-            </Link>
-            <Link
-              target={'_blank'}
-              href="hhttps://www.youtube.com/c/DeveloperDAO"
-            >
-              <FaYoutube aria-label="Youtube" />
-            </Link>
-            <Link
-              target="_blank"
-              href="https://opensea.io/collection/devs-for-revolution"
-            >
-              <IconOpenSea color={colorMode === 'dark' ? 'white' : 'black'} />
-            </Link>
+            {footer?.social?.map((link) => (
+              <ChakraLink key={link.id} target={'_blank'} href={link.link}>
+                {getSocialIcon(link.name as SocialLinkName)}
+              </ChakraLink>
+            ))}
           </ButtonGroup>
         </Stack>
       </SimpleGrid>

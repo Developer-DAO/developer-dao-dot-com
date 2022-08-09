@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   Box,
   Flex,
@@ -13,9 +14,12 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { DEVELOPER_DAO_WIKI } from '../../utils/DeveloperDaoConstants';
+import { DEVELOPER_DAO_WIKI } from '../../utils';
+import { HomePage } from '../../types';
 
-const Values = () => {
+type PurposeProps = Pick<HomePage, 'values' | 'mission' | 'goals'>;
+
+const Purpose: FC<PurposeProps> = ({ values, mission, goals }) => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
   const { t } = useTranslation();
   const valuesListStyle = {
@@ -41,15 +45,7 @@ const Values = () => {
     },
   };
 
-  const capitalized = (body: String) => {
-    return body
-      .toLowerCase()
-      .split(' ')
-      .map((word) => word[0].toUpperCase() + word.substring(1))
-      .join(' ');
-  };
-
-  const ValuesItem = (title: String, body: String) => {
+  const getValuesItem = (title: string, body: string) => {
     return (
       <Box flexDir="column">
         <Text
@@ -57,31 +53,12 @@ const Values = () => {
           fontWeight="bold"
           mb="1rem"
         >
-          {title}
+          {t(title)}
         </Text>
-        <Text variant={isMobile ? 'normalMobile' : 'normal'}>
-          {capitalized(body)}
-        </Text>
+        <Text variant={isMobile ? 'normalMobile' : 'normal'}>{t(body)}</Text>
       </Box>
     );
   };
-
-  const transparency = ValuesItem(
-    t('values.transparency.title'),
-    t('values.transparency.body'),
-  );
-  const diversity = ValuesItem(
-    t('values.diversity.title'),
-    t('values.diversity.body'),
-  );
-  const responsibility = ValuesItem(
-    t('values.responsibility.title'),
-    t('values.responsibility.body'),
-  );
-  const kindness = ValuesItem(
-    t('values.kindness.title'),
-    t('values.kindness.body'),
-  );
 
   return (
     <Flex justify="center" wrap="wrap-reverse">
@@ -90,10 +67,11 @@ const Values = () => {
           {t('values.title')}
         </Heading>
         <OrderedList sx={valuesListStyle}>
-          <ListItem>{transparency}</ListItem>
-          <ListItem>{diversity}</ListItem>
-          <ListItem>{responsibility}</ListItem>
-          <ListItem>{kindness}</ListItem>
+          {values?.map((value) => (
+            <ListItem key={value.id}>
+              {getValuesItem(value.title, value.description)}
+            </ListItem>
+          ))}
         </OrderedList>
       </Box>
       <Flex
@@ -115,7 +93,7 @@ const Values = () => {
               {t('mission.title')}
             </Text>
             <Text variant={isMobile ? 'normalMobile' : 'normal'}>
-              {t('mission.body')}
+              {t(mission!)}
             </Text>
           </Box>
           <Box mb="3.4rem">
@@ -123,16 +101,13 @@ const Values = () => {
               {t('goals.title')}
             </Text>
             <OrderedList sx={goalsListStyle}>
-              <ListItem>
-                <Text variant={isMobile ? 'normalMobile' : 'normal'}>
-                  {t('goals.body1')}
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text variant={isMobile ? 'normalMobile' : 'normal'}>
-                  {t('goals.body2')}
-                </Text>
-              </ListItem>
+              {goals?.map((goal) => (
+                <ListItem key={goal.id}>
+                  <Text variant={isMobile ? 'normalMobile' : 'normal'}>
+                    {t(goal.description)}
+                  </Text>
+                </ListItem>
+              ))}
             </OrderedList>
           </Box>
         </Box>
@@ -146,6 +121,7 @@ const Values = () => {
           height="18rem"
           padding="1rem"
         >
+          {/*todo: check if need to add to CMS*/}
           <LinkOverlay href={DEVELOPER_DAO_WIKI} target="_blank">
             <Icon
               as={BsArrowUpRight}
@@ -171,4 +147,4 @@ const Values = () => {
     </Flex>
   );
 };
-export default Values;
+export default Purpose;

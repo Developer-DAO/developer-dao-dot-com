@@ -9,16 +9,35 @@ import {
 } from '@chakra-ui/react';
 import { useCallback } from 'react';
 
-interface Props {
-  partnerData: Array<Record<string, any>>;
+import { Media, Partner, StrapiMultipleData } from '../../types';
+import { NEXT_PUBLIC_CMS_URL } from '../../utils';
+
+interface PartnersProps {
+  data: StrapiMultipleData<Partner>;
 }
 
-const Partners = ({ partnerData }: Props) => {
+const Partners = ({ data: partners }: PartnersProps) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
     const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
     window.open(partnerFormUrl, '_blank');
   }, []);
+
+  const getLogo = useCallback(
+    (partner: Partner) =>
+      colorMode === 'dark'
+        ? partner.logo_dark.data?.attributes
+        : partner.logo_light.data?.attributes,
+    [colorMode],
+  );
+
+  const getLogoSrc = useCallback(
+    (logo?: Media) =>
+      logo?.provider === 'local'
+        ? `${NEXT_PUBLIC_CMS_URL}${logo?.url}`
+        : logo?.url,
+    [],
+  );
 
   return (
     <Flex flexDir="column" justifyContent="center" pt="5.5rem" pb="5.5rem">
@@ -33,23 +52,19 @@ const Partners = ({ partnerData }: Props) => {
         Our Partners
       </Heading>
       <Flex flexDir={{ base: 'column', xl: 'row' }} alignItems={'center'}>
-        {partnerData ? (
-          partnerData?.map((item: any, index: number) => {
+        {partners?.data ? (
+          partners.data.map((partnerEntity) => {
             return (
               <Link
-                href={item.attributes.website}
-                key={index}
+                href={partnerEntity.attributes.website}
+                key={partnerEntity.id}
                 mb={{ base: '4rem', xl: '0' }}
-                mr={{ base: '0', xl: '6rem' }}
+                mx={{ base: '0', xl: '3rem' }}
                 target="_blank"
               >
                 <Image
-                  src={
-                    colorMode === 'dark'
-                      ? `${item.attributes.logo_dark.data?.attributes.url}`
-                      : `${item.attributes.logo_light.data?.attributes.url}`
-                  }
-                  alt={item.attributes?.name || 'partner image'}
+                  src={getLogoSrc(getLogo(partnerEntity.attributes))}
+                  alt={partnerEntity.attributes.name || 'partner image'}
                 />
               </Link>
             );

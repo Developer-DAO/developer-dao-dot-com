@@ -1,34 +1,56 @@
 import { Divider, useColorMode, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 import nextI18nextConfig from '../../next-i18next.config';
 
 // COMPONENTS
 import Footer from '../Components/Footer';
-import IntroComponent from '../Components/Intro';
+import Intro from '../Components/Intro';
 import Partners from '../Components/Partners';
-import Values from '../Components/Values';
+import Purpose from '../Components/Purpose';
+import SEO from '../Components/SEO';
 
-interface Props {
-  partnerData: Array<Record<string, any>>;
-}
+import { HomePage, StrapiComponent, StrapiSingleData } from '../types';
 
-export default function IndexPage({ partnerData }: Props) {
+type HomePageProps = StrapiComponent<HomePage>;
+
+export default function IndexPage({
+  heading,
+  sub_heading,
+  current_status,
+  partners,
+  values,
+  mission,
+  goals,
+  footer,
+  meta_og,
+}: HomePageProps) {
   const { colorMode } = useColorMode();
 
   return (
-    <VStack w="full" justify="center" spacing={4}>
-      <IntroComponent />
-      <Values />
-      <Partners partnerData={partnerData} />
-
-      <Divider
-        w="full"
-        size="1px"
-        color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+    <>
+      <SEO
+        title={meta_og?.title}
+        description={meta_og?.description}
+        image={meta_og?.image_media.data?.attributes.url}
       />
-      <Footer />
-    </VStack>
+
+      <VStack w="full" justify="center" spacing={4}>
+        <Intro
+          heading={heading}
+          subHeading={sub_heading}
+          currentStatus={current_status}
+        />
+        <Purpose values={values} mission={mission} goals={goals} />
+        <Partners data={partners!} />
+        <Divider
+          w="full"
+          size="1px"
+          color={colorMode === 'dark' ? '#ffffff' : '#000000'}
+        />
+        <Footer data={footer!} />
+      </VStack>
+    </>
   );
 }
 
@@ -38,38 +60,136 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     cache: new InMemoryCache(),
   });
 
-  const partnerData = await client.query({
-    query: gql`
-      query HomePage {
-        partners {
-          data {
-            attributes {
-              website
-              logo_dark {
-                data {
-                  attributes {
-                    url
+  const { data } = await client.query<{ homePage: StrapiSingleData<HomePage> }>(
+    {
+      query: gql`
+        query HomePage {
+          homePage {
+            data {
+              attributes {
+                meta_og {
+                  id
+                  title
+                  description
+                  image
+                  image_media {
+                    data {
+                      id
+                      attributes {
+                        provider
+                        url
+                      }
+                    }
                   }
                 }
-              }
-              logo_light {
-                data {
-                  attributes {
-                    url
+                heading
+                sub_heading
+                news_ticker {
+                  id
+                  name
+                  title
+                  description
+                }
+                current_status {
+                  statement {
+                    id
+                    name
+                    title
+                    description
+                  }
+                  link {
+                    id
+                    name
+                    type
+                    title
+                    link
+                    disabled
+                  }
+                }
+                values {
+                  id
+                  name
+                  description
+                  title
+                }
+                mission
+                goals {
+                  id
+                  name
+                  description
+                  title
+                }
+                partners {
+                  data {
+                    id
+                    attributes {
+                      name
+                      website
+                      logo_dark {
+                        data {
+                          attributes {
+                            provider
+                            url
+                          }
+                        }
+                      }
+                      logo_light {
+                        data {
+                          attributes {
+                            provider
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                footer {
+                  logo {
+                    data {
+                      attributes {
+                        provider
+                        url
+                      }
+                    }
+                  }
+                  useful_links {
+                    id
+                    name
+                    type
+                    title
+                    link
+                    disabled
+                  }
+                  discover {
+                    id
+                    name
+                    type
+                    title
+                    link
+                    disabled
+                  }
+                  social {
+                    id
+                    name
+                    type
+                    title
+                    link
+                    disabled
                   }
                 }
               }
             }
           }
         }
-      }
-    `,
-  });
+      `,
+    },
+  );
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], nextI18nextConfig)),
-      partnerData: partnerData.data ? partnerData.data.partners.data : null,
+      ...(data?.homePage?.data ? { ...data.homePage.data.attributes } : {}),
     },
   };
 };

@@ -53,7 +53,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -79,7 +79,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -105,7 +105,7 @@ function Page({ children }: { children?: object }) {
               variant="medium"
               color={colorMode === 'light' ? '#ffffff' : '#000000'}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -118,10 +118,8 @@ function Page({ children }: { children?: object }) {
         paddingX={{ base: '16px', md: '4px', lg: '48px' }}
         spacing={10}
       >
-        <>
-          <Header />
-          {children}
-        </>
+        <Header />
+        {children}
       </Stack>
       <Marquee
         style={{
@@ -161,7 +159,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -187,7 +185,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>
@@ -213,7 +211,7 @@ function Page({ children }: { children?: object }) {
               color={colorMode === 'dark' ? '#ffffff' : '#000000'}
               ml={2}
             >
-              MEMEBERSHIP OPEN!
+              MEMBERSHIP OPEN!
             </Text>
           </Flex>
           <Flex>

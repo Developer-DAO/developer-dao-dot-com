@@ -26,3 +26,7 @@ yarn-error.log*
 
 # editors
 .idea
+
+# local .env
+.env
+.env.local
