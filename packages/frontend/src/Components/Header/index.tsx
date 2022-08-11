@@ -11,6 +11,25 @@ import {
 } from '@chakra-ui/react';
 import React, { ReactNode, useState } from 'react';
 
+const NavLinks = [
+  {
+    text: 'Blog',
+    href: 'https://blog.developerdao.com/',
+  },
+  {
+    text: 'School of Code',
+    href: 'https://schoolofcode.developerdao.com/',
+  },
+  {
+    text: 'Perks',
+    href: 'https://p3rks.xyz/',
+  },
+  {
+    text: 'Claim $CODE',
+    href: 'https://claim.developerdao.com/',
+  },
+];
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { colorMode, toggleColorMode } = useColorMode();
@@ -113,10 +132,12 @@ const MenuToggle = ({
 const MenuItem = ({
   children,
   to = '/',
+  key,
   ...rest
 }: {
   children: ReactNode;
   to: string;
+  key: number;
 }) => {
   return (
     <Link target="_blank" href={to}>
@@ -137,19 +158,11 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
         direction={{ base: 'column', md: 'row' }}
         pt={[8, 4, 0, 0]}
       >
-        <MenuItem to="https://twitter.com/developer_dao">Twitter</MenuItem>
-        <MenuItem to="https://calendar.google.com/calendar/u/0/embed?src=ctuhf0ekul1dps36lp1st1s54mesj7mj@import.calendar.google.com&ctz=UTC">
-          Events
-        </MenuItem>
-        <MenuItem to="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">
-          Wiki{' '}
-        </MenuItem>
-        <MenuItem to="https://developerdao.pallet.com/jobs">
-          Job Board{' '}
-        </MenuItem>
-        <MenuItem to="https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db">
-          Projects{' '}
-        </MenuItem>
+        {NavLinks.map((item, index) => (
+          <MenuItem to={item.href} key={index}>
+            {item.text}
+          </MenuItem>
+        ))}
         <Switch
           size="md"
           display={{ base: 'block', md: 'none' }}
