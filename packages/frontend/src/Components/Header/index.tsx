@@ -196,7 +196,10 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
             to={item.href}
             key={index}
             style={{
-              marginBottom: NavLinks.length - 1 === index ? '1.5rem' : '0',
+              marginBottom: {
+                base: NavLinks.length - 1 === index ? '1.5rem' : '0',
+                md: '0',
+              },
             }}
           >
             {item.text}
