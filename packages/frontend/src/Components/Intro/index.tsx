@@ -32,16 +32,17 @@ const Intro: FC<IntroProps> = ({ heading, subHeading, currentStatus }) => {
         <Box
           w={{ base: '100%', xl: '40%' }}
           minW={{ base: '0', xl: '34rem' }}
+          maxW={{ xl: '34rem' }}
           margin={{ lg: '0.75rem' }}
           border="1px solid"
           borderRadius="11px"
-          p="2rem"
+          p={{ base: '1rem', md: '2rem' }}
         >
-          <Box pr="4rem">
+          <Box>
             <Text
               fontFamily="Inter"
               fontWeight="800"
-              mr="2rem"
+              // mr="2rem"
               fontSize={{ base: '2.625rem', xl: '3.375rem' }}
               lineHeight={{ base: '2.625rem', xl: '4rem' }}
             >
