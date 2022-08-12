@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import Header from '../Components/Header';
+import ReactMarkdown from 'react-markdown';
 
 function Page({
   children,
@@ -30,93 +31,19 @@ function Page({
           left: '0',
           position: 'fixed',
           zIndex: 10,
+          color: `${colorMode === 'dark' ? 'black' : 'white'}`,
+          fontSize: '1rem',
         }}
         gradient={false}
         loop={0}
         speed={60}
       >
-        <HStack gridGap={10}>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              {newsTickerContent}
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'dark' : 'light'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              ml={2}
-              variant="medium"
-              color={colorMode === 'light' ? '#ffffff' : '#000000'}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            {/* equal spacing hack for first and last carousel items  */}
-          </Flex>
+        <HStack spacing="2rem" as="span" justifyContent="space-between">
+          {[...Array(5)].map((x, index) => (
+            <ReactMarkdown key={index}>
+              {newsTickerContent ? newsTickerContent : ''}
+            </ReactMarkdown>
+          ))}
         </HStack>
       </Marquee>
       <Stack
@@ -138,106 +65,19 @@ function Page({
           left: '0',
           position: 'fixed',
           zIndex: 10,
+          color: `${colorMode === 'dark' ? 'white' : 'black'}`,
+          fontSize: '1rem',
         }}
         gradient={false}
         loop={0}
         speed={60}
       >
-        <HStack gridGap={10}>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              MEMBERSHIP OPEN!
-            </Text>
-          </Flex>
-          <Flex>
-            <Image
-              src={`/Blur-img-${colorMode === 'dark' ? 'light' : 'dark'}.svg`}
-              alt="Blur"
-            />
-            <Text
-              variant="medium"
-              color={colorMode === 'dark' ? '#ffffff' : '#000000'}
-              ml={2}
-            >
-              Current Status: Season 0
-            </Text>
-          </Flex>
-          <Flex>
-            {/* equal spacing hack for first and last carousel items  */}
-          </Flex>
+        <HStack spacing="2rem" as="span" justifyContent="space-between">
+          {[...Array(6)].map((x, index) => (
+            <ReactMarkdown key={index}>
+              {newsTickerContent ? newsTickerContent : ''}
+            </ReactMarkdown>
+          ))}
         </HStack>
       </Marquee>
     </Box>

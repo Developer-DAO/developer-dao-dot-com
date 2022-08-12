@@ -62,134 +62,135 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query<{ homePage: StrapiSingleData<HomePage> }>(
-    {
-      query: gql`
-        query HomePage {
-          general {
-            data {
-              attributes {
-                news_ticker {
-                  content
-                }
+  const { data } = await client.query<{
+    general: any;
+    homePage: StrapiSingleData<HomePage>;
+  }>({
+    query: gql`
+      query HomePage {
+        general {
+          data {
+            attributes {
+              news_ticker {
+                content
               }
             }
           }
-          homePage {
-            data {
-              attributes {
-                meta_og {
-                  id
-                  title
-                  description
-                  image
-                  image_media {
-                    data {
-                      id
-                      attributes {
-                        provider
-                        url
-                      }
-                    }
-                  }
-                }
-                heading
-                sub_heading
-                current_status {
-                  statement {
-                    id
-                    name
-                    title
-                    description
-                  }
-                  link {
-                    id
-                    name
-                    type
-                    title
-                    link
-                    disabled
-                  }
-                }
-                values {
-                  id
-                  name
-                  description
-                  title
-                }
-                mission
-                goals {
-                  id
-                  name
-                  description
-                  title
-                }
-                partners {
+        }
+        homePage {
+          data {
+            attributes {
+              meta_og {
+                id
+                title
+                description
+                image
+                image_media {
                   data {
                     id
                     attributes {
-                      name
-                      website
-                      logo_dark {
-                        data {
-                          attributes {
-                            provider
-                            url
-                          }
+                      provider
+                      url
+                    }
+                  }
+                }
+              }
+              heading
+              sub_heading
+              current_status {
+                statement {
+                  id
+                  name
+                  title
+                  description
+                }
+                link {
+                  id
+                  name
+                  type
+                  title
+                  link
+                  disabled
+                }
+              }
+              values {
+                id
+                name
+                description
+                title
+              }
+              mission
+              goals {
+                id
+                name
+                description
+                title
+              }
+              partners {
+                data {
+                  id
+                  attributes {
+                    name
+                    website
+                    logo_dark {
+                      data {
+                        attributes {
+                          provider
+                          url
                         }
                       }
-                      logo_light {
-                        data {
-                          attributes {
-                            provider
-                            url
-                          }
+                    }
+                    logo_light {
+                      data {
+                        attributes {
+                          provider
+                          url
                         }
                       }
                     }
                   }
                 }
-                footer {
-                  logo {
-                    data {
-                      attributes {
-                        provider
-                        url
-                      }
+              }
+              footer {
+                logo {
+                  data {
+                    attributes {
+                      provider
+                      url
                     }
                   }
-                  useful_links {
-                    id
-                    name
-                    type
-                    title
-                    link
-                    disabled
-                  }
-                  discover {
-                    id
-                    name
-                    type
-                    title
-                    link
-                    disabled
-                  }
-                  social {
-                    id
-                    name
-                    type
-                    title
-                    link
-                    disabled
-                  }
+                }
+                useful_links {
+                  id
+                  name
+                  type
+                  title
+                  link
+                  disabled
+                }
+                discover {
+                  id
+                  name
+                  type
+                  title
+                  link
+                  disabled
+                }
+                social {
+                  id
+                  name
+                  type
+                  title
+                  link
+                  disabled
                 }
               }
             }
           }
         }
-      `,
-    },
-  );
+      }
+    `,
+  });
 
   console.log(data);
 

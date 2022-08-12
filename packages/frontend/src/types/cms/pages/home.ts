@@ -7,7 +7,7 @@ export type HomePage = {
   meta_og?: StrapiComponent<MetaOpenGraph>;
   heading?: string;
   sub_heading?: string;
-  news_ticker?: object;
+  news_ticker?: { content: string };
   current_status?: CurrentStatus;
   values?: StrapiComponent<Statement>[];
   mission?: string;
