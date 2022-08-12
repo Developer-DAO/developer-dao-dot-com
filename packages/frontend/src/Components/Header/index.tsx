@@ -17,16 +17,24 @@ const NavLinks = [
     href: 'https://blog.developerdao.com/',
   },
   {
-    text: 'School of Code',
-    href: 'https://schoolofcode.developerdao.com/',
+    text: 'Claim',
+    href: 'https://claim.developerdao.com/',
+  },
+  {
+    text: 'Twitter',
+    href: 'https://twitter.com/developer_dao',
+  },
+  {
+    text: 'Forum',
+    href: 'https://forum.developerdao.com/',
   },
   {
     text: 'Perks',
     href: 'https://p3rks.xyz/',
   },
   {
-    text: 'Claim $CODE',
-    href: 'https://claim.developerdao.com/',
+    text: 'Become a Partner',
+    href: 'https://airtable.com/shrYLrOrjhOHJUdVl',
   },
 ];
 
