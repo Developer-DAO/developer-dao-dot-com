@@ -9,6 +9,7 @@ import Intro from '../Components/Intro';
 import Partners from '../Components/Partners';
 import Purpose from '../Components/Purpose';
 import SEO from '../Components/SEO';
+import Layout from '../layout';
 
 import { HomePage, StrapiComponent, StrapiSingleData } from '../types';
 
@@ -24,11 +25,12 @@ export default function IndexPage({
   goals,
   footer,
   meta_og,
+  news_ticker,
 }: HomePageProps) {
   const { colorMode } = useColorMode();
 
   return (
-    <>
+    <Layout newsTickerContent={news_ticker?.content}>
       <SEO
         title={meta_og?.title}
         description={meta_og?.description}
@@ -50,7 +52,7 @@ export default function IndexPage({
         />
         <Footer data={footer!} />
       </VStack>
-    </>
+    </Layout>
   );
 }
 
@@ -64,6 +66,15 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     {
       query: gql`
         query HomePage {
+          general {
+            data {
+              attributes {
+                news_ticker {
+                  content
+                }
+              }
+            }
+          }
           homePage {
             data {
               attributes {
@@ -84,12 +95,6 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
                 }
                 heading
                 sub_heading
-                news_ticker {
-                  id
-                  name
-                  title
-                  description
-                }
                 current_status {
                   statement {
                     id
@@ -186,10 +191,13 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     },
   );
 
+  console.log(data);
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], nextI18nextConfig)),
       ...(data?.homePage?.data ? { ...data.homePage.data.attributes } : {}),
+      ...(data?.general?.data ? { ...data.general.data.attributes } : {}),
     },
   };
 };
