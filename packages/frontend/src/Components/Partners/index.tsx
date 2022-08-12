@@ -62,7 +62,8 @@ const Partners = ({ data: partners }: PartnersProps) => {
                 mx={{ base: '0', xl: '3rem' }}
                 target="_blank"
               >
-                <Image
+                <img
+                  loading="lazy"
                   src={getLogoSrc(getLogo(partnerEntity.attributes))}
                   alt={partnerEntity.attributes.name || 'partner image'}
                 />
