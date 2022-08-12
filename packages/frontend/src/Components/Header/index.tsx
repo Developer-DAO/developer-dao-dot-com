@@ -97,7 +97,12 @@ const NavBar = () => {
 const CloseIcon = () => {
   const { colorMode } = useColorMode();
   return (
-    <svg width="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="32px"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="white"
+    >
       <title>Close</title>
       <path
         fill={colorMode === 'dark' ? 'white' : 'black'}
@@ -115,9 +120,10 @@ const MenuIcon = () => {
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
       fill={colorMode === 'dark' ? 'white' : 'black'}
+      stroke="white"
     >
       <title>Menu</title>
-      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0" />
     </svg>
   );
 };
@@ -182,12 +188,17 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
         justify={{ base: 'flex-start', md: 'flex-end' }}
         direction={{ base: 'column', md: 'row' }}
         marginTop={{ base: '1rem', md: '0' }}
-        // margin={{ base: '0 -24px 0 -24px', md: 0 }}
         width="full"
         pt={[8, 4, 0, 0]}
       >
         {NavLinks.map((item, index) => (
-          <MenuItem to={item.href} key={index}>
+          <MenuItem
+            to={item.href}
+            key={index}
+            style={{
+              marginBottom: NavLinks.length - 1 === index ? '1.5rem' : '0',
+            }}
+          >
             {item.text}
           </MenuItem>
         ))}
@@ -206,10 +217,16 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
           <Text display="block" fontSize={{ base: '20px' }}>
             Become a Partner
           </Text>
-          <ArrowForwardIcon w={8} h={8} display={{ md: 'none' }} />
+          <ArrowForwardIcon
+            w={8}
+            h={8}
+            style={{ strokeWidth: '1px' }}
+            display={{ md: 'none' }}
+          />
         </Link>
         <Divider
           display={{ md: 'none' }}
+          marginTop="100px"
           borderColor={colorMode === 'dark' ? 'white' : 'black'}
         />
         <Switch
