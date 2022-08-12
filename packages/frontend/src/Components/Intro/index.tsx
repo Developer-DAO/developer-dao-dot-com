@@ -183,7 +183,7 @@ const Intro: FC<IntroProps> = ({ heading, subHeading, currentStatus }) => {
         mb={{ base: '2rem', xl: 0 }}
         transform={{ base: 'translateY(0)', xl: 'translateY(-40px)' }}
       >
-        <Image src={mainImg} alt="main" />
+        <Image src={mainImg} alt="main" loading="eager" />
       </Flex>
     </Flex>
   );
