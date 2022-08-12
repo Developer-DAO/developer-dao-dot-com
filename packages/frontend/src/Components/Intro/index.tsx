@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Box, Button, Flex, Image, Text, useColorMode } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useColorMode } from '@chakra-ui/react';
+import Image from 'next/future/image';
 import { useTranslation } from 'next-i18next';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
@@ -9,6 +10,8 @@ import { FaDiscord } from 'react-icons/fa';
 import { HomePage } from '../../types';
 
 const codeLaunched = false;
+
+import mainImg from '../../../public/main.png';
 
 type IntroProps = {
   heading: HomePage['heading'];
@@ -180,7 +183,7 @@ const Intro: FC<IntroProps> = ({ heading, subHeading, currentStatus }) => {
         mb={{ base: '2rem', xl: 0 }}
         transform={{ base: 'translateY(0)', xl: 'translateY(-40px)' }}
       >
-        <Image src="/main.png" alt="main" />
+        <Image src={mainImg} alt="main" />
       </Flex>
     </Flex>
   );
