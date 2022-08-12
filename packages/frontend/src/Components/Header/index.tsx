@@ -156,6 +156,7 @@ const MenuItem = ({
   children: ReactNode;
   to: string;
   key?: number;
+  style: object;
 }) => {
   return (
     <Link
@@ -169,7 +170,6 @@ const MenuItem = ({
       <Text display="block" fontSize={{ base: '29px', md: '20px' }} {...rest}>
         {children}
       </Text>
-
       <ArrowForwardIcon w={8} h={8} display={{ md: 'none' }} />
     </Link>
   );
