@@ -18,7 +18,7 @@ import { TFunction, useTranslation } from 'next-i18next';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'md'} mb={6}>
+    <Text fontWeight={'500'} fontSize={'md'} mb={6} textDecoration="underline">
       {children}
     </Text>
   );
@@ -31,9 +31,9 @@ const listLinks = (links: Link[], translate: TFunction) => {
         return (
           <ChakraLink
             key={link.id}
-            textDecoration="underline"
+            // textDecoration="underline"
             fontSize="1.3rem"
-            color="#C3C3C3"
+            // color="#C3C3C3"
             _hover={{ textDecoration: 'none' }}
             href={link.link}
             isExternal
