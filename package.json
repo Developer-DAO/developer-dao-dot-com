@@ -12,7 +12,7 @@
     "test": "turbo run test",
     "dev": "turbo run dev",
     "run-cms": "yarn --cwd packages/cms start",
-    "build-cms": "yarn --cwd packages/cms build",
+    "build-cms": "turbo run build --filter=cms",
     "prepare": "husky install"
   },
   "devDependencies": {

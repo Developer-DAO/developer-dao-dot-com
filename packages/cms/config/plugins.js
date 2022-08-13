@@ -6,14 +6,15 @@ const getProductionPlugins = (env) => ({
     config: {
       provider: 'aws-s3',
       providerOptions: {
-        accessKeyId: env('STORAGE_ACCESS_KEY_ID'), // env("SCALEWAY_ACCESS_KEY_ID"),
-        secretAccessKey: env('STORAGE_SECRET_KEY'), // env("SCALEWAY_ACCESS_SECRET"),
-        endpoint: 'ams3.digitaloceanspaces.com', // env("SCALEWAY_ENDPOINT"), // e.g. "s3.fr-par.scw.cloud"
+        accessKeyId: env('STORAGE_ACCESS_KEY_ID'),
+        secretAccessKey: env('STORAGE_SECRET_KEY'),
+        endpoint: 'ams3.digitaloceanspaces.com',
         params: {
-          Bucket: 'sitemedia', //env("SCALEWAY_BUCKET"),
+          Bucket: 'sitemedia',
         },
       },
     },
+    cdn: '',
   },
 });
 

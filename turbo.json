@@ -9,7 +9,15 @@
       "outputs": []
     },
     "test": {
+      "dependsOn": [
+        "build"
+      ],
       "outputs": []
+    },
+    "start": {
+      "dependsOn": [
+        "build"
+      ]
     },
     "lint-staged": {
       "outputs": []
