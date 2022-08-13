@@ -11,7 +11,11 @@ import {
 import { format } from 'date-fns';
 import Layout from '../layout';
 
-export default function TermsPage({ news_ticker }) {
+export default function TermsPage({
+  news_ticker,
+}: {
+  news_ticker: { content: string };
+}) {
   return (
     <Layout newsTickerContent={news_ticker?.content}>
       <Flex
