@@ -30,7 +30,7 @@ export default function IndexPage({
   const { colorMode } = useColorMode();
 
   return (
-    <Layout newsTickerContent={news_ticker?.content}>
+    <Layout newsTickerContent={news_ticker?.content} footer={footer!}>
       <SEO
         title={meta_og?.title}
         description={meta_og?.description}
@@ -50,7 +50,6 @@ export default function IndexPage({
           size="1px"
           color={colorMode === 'dark' ? '#ffffff' : '#000000'}
         />
-        <Footer data={footer!} />
       </VStack>
     </Layout>
   );

@@ -11,13 +11,17 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 import Header from '../Components/Header';
 import ReactMarkdown from 'react-markdown';
+import Footer from '../Components/Footer';
+import { Footer as footer } from '../types/cms/footer';
 
 function Page({
   children,
   newsTickerContent,
+  footer,
 }: {
   children?: object;
   newsTickerContent?: string;
+  footer: footer;
 }) {
   const { colorMode } = useColorMode();
   return (
@@ -54,6 +58,7 @@ function Page({
         <>
           <Header />
           {children}
+          <Footer data={footer!} />
         </>
       </Stack>
       <Marquee
