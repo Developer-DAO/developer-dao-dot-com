@@ -1,7 +1,6 @@
 import {
   Box,
   ButtonGroup,
-  Flex,
   Image,
   Link as ChakraLink,
   SimpleGrid,
@@ -88,7 +87,7 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
         spacing={{ base: 10, md: 16 }}
       >
         <Stack>
-          <Flex alignItems="center">
+          <ChakraLink href="/" display="flex" alignItems="center">
             <Image
               width="5rem"
               h="5rem"
@@ -104,7 +103,7 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
             >
               Developer DAO
             </Text>
-          </Flex>
+          </ChakraLink>
         </Stack>
 
         <Stack align={'flex-start'} paddingTop="1.4375rem">

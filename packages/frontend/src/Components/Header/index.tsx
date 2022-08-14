@@ -54,7 +54,12 @@ const NavBar = () => {
         width="100%"
       >
         <Box>
-          <Flex alignItems="center">
+          <Link
+            href="/"
+            display="flex"
+            alignItems="center"
+            textDecoration="none"
+          >
             <Image
               w="4rem"
               h="4rem"
@@ -62,6 +67,7 @@ const NavBar = () => {
               alt="logo"
             />
             <Text
+              textDecoration="none"
               ml={'1.25rem'}
               mr={{ base: '1rem', sm: '3rem' }}
               fontWeight="bold"
@@ -70,7 +76,7 @@ const NavBar = () => {
             >
               Developer DAO
             </Text>
-          </Flex>
+          </Link>
         </Box>
         <MenuToggle toggle={toggle} isOpen={isOpen} />
       </Flex>
