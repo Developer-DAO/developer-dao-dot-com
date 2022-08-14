@@ -9,11 +9,9 @@ import '../styles/globals.css';
 import { theme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  </>
+  <ChakraProvider theme={theme}>
+    <Component {...pageProps} />
+  </ChakraProvider>
 );
 
 export default appWithTranslation(App);

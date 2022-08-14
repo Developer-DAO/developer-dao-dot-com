@@ -1,7 +1,8 @@
 import { Divider, useColorMode, VStack } from '@chakra-ui/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { gql } from '@apollo/client';
 import nextI18nextConfig from '../../next-i18next.config';
+import client from '../utils/apollo-client';
 
 // COMPONENTS
 import Footer from '../Components/Footer';
@@ -56,11 +57,6 @@ export default function IndexPage({
 }
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
-  const client = new ApolloClient({
-    uri: process.env.NEXT_PUBLIC_GRAPHQL_API,
-    cache: new InMemoryCache(),
-  });
-
   const { data } = await client.query<{
     general: any;
     homePage: StrapiSingleData<HomePage>;

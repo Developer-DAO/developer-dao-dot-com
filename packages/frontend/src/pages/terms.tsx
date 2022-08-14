@@ -1,4 +1,4 @@
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { gql } from '@apollo/client';
 import {
   Box,
   Flex,
@@ -9,6 +9,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { format } from 'date-fns';
+import client from '../utils/apollo-client';
+
+// COMPONENTS
 import Layout from '../layout';
 
 export default function TermsPage({
@@ -483,12 +486,7 @@ export default function TermsPage({
   );
 }
 
-export const getStaticProps = async ({ locale }: { local: string }) => {
-  const client = new ApolloClient({
-    uri: process.env.NEXT_PUBLIC_GRAPHQL_API,
-    cache: new InMemoryCache(),
-  });
-
+export const getStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       query TermsPage {
