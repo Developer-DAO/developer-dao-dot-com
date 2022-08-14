@@ -24,12 +24,6 @@
     "sub_heading": {
       "type": "text"
     },
-    "footer": {
-      "type": "component",
-      "repeatable": false,
-      "component": "general.footer",
-      "required": false
-    },
     "mission": {
       "type": "text"
     },

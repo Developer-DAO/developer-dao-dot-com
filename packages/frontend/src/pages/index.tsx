@@ -5,7 +5,6 @@ import nextI18nextConfig from '../../next-i18next.config';
 import client from '../utils/apollo-client';
 
 // COMPONENTS
-import Footer from '../Components/Footer';
 import Intro from '../Components/Intro';
 import Partners from '../Components/Partners';
 import Purpose from '../Components/Purpose';
@@ -24,14 +23,14 @@ export default function IndexPage({
   values,
   mission,
   goals,
-  footer,
+  Footer,
   meta_og,
   news_ticker,
 }: HomePageProps) {
   const { colorMode } = useColorMode();
 
   return (
-    <Layout newsTickerContent={news_ticker?.content} footer={footer!}>
+    <Layout newsTickerContent={news_ticker?.content} footer={Footer!}>
       <SEO
         title={meta_og?.title}
         description={meta_og?.description}
@@ -68,6 +67,27 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
             attributes {
               news_ticker {
                 content
+              }
+              Footer {
+                logo {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                useful_links {
+                  title
+                  link
+                }
+                discover {
+                  title
+                  link
+                }
+                social {
+                  name
+                  link
+                }
               }
             }
           }
@@ -144,40 +164,6 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
                       }
                     }
                   }
-                }
-              }
-              footer {
-                logo {
-                  data {
-                    attributes {
-                      provider
-                      url
-                    }
-                  }
-                }
-                useful_links {
-                  id
-                  name
-                  type
-                  title
-                  link
-                  disabled
-                }
-                discover {
-                  id
-                  name
-                  type
-                  title
-                  link
-                  disabled
-                }
-                social {
-                  id
-                  name
-                  type
-                  title
-                  link
-                  disabled
                 }
               }
             }

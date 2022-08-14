@@ -14,17 +14,17 @@ import client from '../utils/apollo-client';
 
 // COMPONENTS
 import Layout from '../layout';
-import { Footer } from '../types/cms/footer';
+import { Footer as footer } from '../types/cms/footer';
 
 export default function PrivcayPolicyPage({
   news_ticker,
-  footer,
+  Footer,
 }: {
   news_ticker: { content: string };
-  footer: Footer;
+  Footer: footer;
 }) {
   return (
-    <Layout newsTickerContent={news_ticker?.content} footer={footer!}>
+    <Layout newsTickerContent={news_ticker?.content} footer={Footer!}>
       <Flex
         mx="auto"
         flexDirection={{ base: 'column' }}
@@ -1020,6 +1020,27 @@ export const getStaticProps = async () => {
             attributes {
               news_ticker {
                 content
+              }
+              Footer {
+                logo {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                useful_links {
+                  title
+                  link
+                }
+                discover {
+                  title
+                  link
+                }
+                social {
+                  name
+                  link
+                }
               }
             }
           }

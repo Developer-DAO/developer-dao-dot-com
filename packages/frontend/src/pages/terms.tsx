@@ -13,14 +13,17 @@ import client from '../utils/apollo-client';
 
 // COMPONENTS
 import Layout from '../layout';
+import { Footer as footer } from '../types';
 
 export default function TermsPage({
   news_ticker,
+  Footer,
 }: {
   news_ticker: { content: string };
+  Footer: footer;
 }) {
   return (
-    <Layout newsTickerContent={news_ticker?.content}>
+    <Layout newsTickerContent={news_ticker?.content} footer={Footer!}>
       <Flex
         mx="auto"
         flexDirection={{ base: 'column' }}
@@ -495,6 +498,27 @@ export const getStaticProps = async () => {
             attributes {
               news_ticker {
                 content
+              }
+              Footer {
+                logo {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                useful_links {
+                  title
+                  link
+                }
+                discover {
+                  title
+                  link
+                }
+                social {
+                  name
+                  link
+                }
               }
             }
           }

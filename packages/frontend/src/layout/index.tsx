@@ -1,29 +1,26 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  Image,
-  Stack,
-  Text,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Box, HStack, Stack, useColorMode } from '@chakra-ui/react';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import Header from '../Components/Header';
 import ReactMarkdown from 'react-markdown';
-import Footer from '../Components/Footer';
-import { Footer as footer } from '../types/cms/footer';
+import client from '../utils/apollo-client';
 
-function Page({
+// COMPONENTS
+import Header from '../Components/Header';
+import FooterComponent from '../Components/Footer';
+import { Footer } from '../types/cms/footer';
+import { gql } from '@apollo/client';
+
+function Layout({
   children,
   newsTickerContent,
   footer,
 }: {
   children?: object;
   newsTickerContent?: string;
-  footer: footer;
+  footer: Footer;
 }) {
   const { colorMode } = useColorMode();
+  console.log(footer);
   return (
     <Box>
       <Marquee
@@ -58,7 +55,7 @@ function Page({
         <>
           <Header />
           {children}
-          <Footer data={footer!} />
+          <FooterComponent data={footer!} />
         </>
       </Stack>
       <Marquee
@@ -89,4 +86,21 @@ function Page({
   );
 }
 
-export default Page;
+export default Layout;
+
+export const getStaticProps = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query General {
+        general {
+         
+        }
+      }
+    `,
+  });
+  return {
+    props: {
+      ...(data?.general?.data ? { ...data.general.data.attributes } : {}),
+    },
+  };
+};

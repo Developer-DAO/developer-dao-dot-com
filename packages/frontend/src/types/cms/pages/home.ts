@@ -13,7 +13,7 @@ export type HomePage = {
   mission?: string;
   goals?: StrapiComponent<Statement>[];
   partners?: StrapiMultipleData<Partner>;
-  footer?: Footer;
+  Footer?: Footer;
 } & StrapiId;
 
 export type CurrentStatus = {
