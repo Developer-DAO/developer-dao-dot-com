@@ -36,6 +36,13 @@ jobs:
 
       - name: Run
         run: yarn turbo run dev
+        env:
+          APP_KEYS: value_1,value_2,value_3
+          API_TOKEN_SALT: API_TOKEN_SALT_VALUE
+          ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
+          JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
+          NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
+          NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
 
       - name: Test
         run: yarn turbo run test
