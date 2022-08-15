@@ -1,5 +1,6 @@
 import {
   Box,
+  Divider,
   Flex,
   HStack,
   Image,
@@ -9,7 +10,35 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import React, { ReactNode, useState } from 'react';
+
+const NavLinks = [
+  {
+    text: 'Blog',
+    href: 'https://blog.developerdao.com/',
+  },
+  {
+    text: 'Claim',
+    href: 'https://claim.developerdao.com/',
+  },
+  {
+    text: 'Twitter',
+    href: 'https://twitter.com/developer_dao',
+  },
+  {
+    text: 'Newsletter',
+    href: 'https://developerdao.substack.com/',
+  },
+  {
+    text: 'Forum',
+    href: 'https://forum.developerdao.com/',
+  },
+  {
+    text: 'Perks',
+    href: 'https://p3rks.xyz/',
+  },
+];
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,7 +54,12 @@ const NavBar = () => {
         width="100%"
       >
         <Box>
-          <Flex alignItems="center">
+          <Link
+            href="/"
+            display="flex"
+            alignItems="center"
+            textDecoration="none"
+          >
             <Image
               w="4rem"
               h="4rem"
@@ -33,6 +67,7 @@ const NavBar = () => {
               alt="logo"
             />
             <Text
+              textDecoration="none"
               ml={'1.25rem'}
               mr={{ base: '1rem', sm: '3rem' }}
               fontWeight="bold"
@@ -41,13 +76,15 @@ const NavBar = () => {
             >
               Developer DAO
             </Text>
-          </Flex>
+          </Link>
         </Box>
         <MenuToggle toggle={toggle} isOpen={isOpen} />
       </Flex>
       <HStack
         spacing={{ base: 4, xl: 10 }}
         display={{ base: isOpen ? 'flex' : 'none', md: 'flex' }}
+        height={{ base: isOpen ? 'calc(100vh - 196px)' : '' }}
+        zIndex={{ base: '999999' }}
         flexShrink={1}
         width={{ base: '100%', md: 'auto' }}
       >
@@ -66,7 +103,12 @@ const NavBar = () => {
 const CloseIcon = () => {
   const { colorMode } = useColorMode();
   return (
-    <svg width="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="32px"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="white"
+    >
       <title>Close</title>
       <path
         fill={colorMode === 'dark' ? 'white' : 'black'}
@@ -84,9 +126,10 @@ const MenuIcon = () => {
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
       fill={colorMode === 'dark' ? 'white' : 'black'}
+      stroke="white"
     >
       <title>Menu</title>
-      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0" />
     </svg>
   );
 };
@@ -113,46 +156,92 @@ const MenuToggle = ({
 const MenuItem = ({
   children,
   to = '/',
+  key,
   ...rest
 }: {
   children: ReactNode;
   to: string;
+  key?: number;
+  style: object;
 }) => {
   return (
-    <Link target="_blank" href={to}>
-      <Text display="block" fontSize={'20px'} {...rest}>
+    <Link
+      target="_blank"
+      href={to}
+      width="full"
+      display={{ base: 'flex' }}
+      justifyContent={{ base: 'space-between' }}
+      alignItems="center"
+    >
+      <Text display="block" fontSize={{ base: '29px', md: '20px' }} {...rest}>
         {children}
       </Text>
+      <ArrowForwardIcon w={8} h={8} display={{ md: 'none' }} />
     </Link>
   );
 };
 
 const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box display={{ base: isOpen ? 'flex' : 'none', md: 'block' }}>
+    <Box
+      display={{ base: isOpen ? 'flex' : 'none', md: 'block' }}
+      width="full"
+      height="full"
+    >
       <Stack
-        spacing={[0, '16px', null, '24px', '44px']}
-        justify={{ base: 'space-between', md: 'flex-end' }}
+        spacing={['16px', '16px', null, '24px', '44px']}
+        justify={{ base: 'flex-start', md: 'flex-end' }}
         direction={{ base: 'column', md: 'row' }}
+        marginTop={{ base: '1rem', md: '0' }}
+        width="full"
         pt={[8, 4, 0, 0]}
       >
-        <MenuItem to="https://twitter.com/developer_dao">Twitter</MenuItem>
-        <MenuItem to="https://calendar.google.com/calendar/u/0/embed?src=ctuhf0ekul1dps36lp1st1s54mesj7mj@import.calendar.google.com&ctz=UTC">
-          Events
-        </MenuItem>
-        <MenuItem to="https://developerdao.notion.site/developerdao/Developer-DAO-Wiki-eff4dcb00bef46fbaa93e9e4cf940e2e">
-          Wiki{' '}
-        </MenuItem>
-        <MenuItem to="https://developerdao.pallet.com/jobs">
-          Job Board{' '}
-        </MenuItem>
-        <MenuItem to="https://developerdao.notion.site/Projects-c2240a6c0b0c41bea285f1ef9629f6db">
-          Projects{' '}
-        </MenuItem>
+        {NavLinks.map((item, index) => (
+          <MenuItem
+            to={item.href}
+            key={index}
+            style={{
+              marginBottom: {
+                base: NavLinks.length - 1 === index ? '1.5rem' : '0',
+                md: '0',
+              },
+            }}
+          >
+            {item.text}
+          </MenuItem>
+        ))}
+        <Divider
+          display={{ md: 'none' }}
+          borderColor={colorMode === 'dark' ? 'white' : 'black'}
+        />
+        <Link
+          target="_blank"
+          href="https://airtable.com/shrYLrOrjhOHJUdVl"
+          width="full"
+          display={{ base: 'flex', md: 'none' }}
+          justifyContent={{ base: 'space-between' }}
+          alignItems="center"
+        >
+          <Text display="block" fontSize={{ base: '20px' }}>
+            Become a Partner
+          </Text>
+          <ArrowForwardIcon
+            w={8}
+            h={8}
+            style={{ strokeWidth: '1px' }}
+            display={{ md: 'none' }}
+          />
+        </Link>
+        <Divider
+          display={{ md: 'none' }}
+          marginTop="100px"
+          borderColor={colorMode === 'dark' ? 'white' : 'black'}
+        />
         <Switch
           size="md"
           display={{ base: 'block', md: 'none' }}
+          padding={{ base: '16px 0', md: 0 }}
           onChange={toggleColorMode}
           colorScheme="blackAlpha"
         />

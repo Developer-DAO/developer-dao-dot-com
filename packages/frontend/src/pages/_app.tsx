@@ -5,18 +5,13 @@ import '@fontsource/source-code-pro/600.css';
 import { appWithTranslation } from 'next-i18next';
 
 import { AppProps } from 'next/app';
-import Page from '../layout';
 import '../styles/globals.css';
 import { theme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <ChakraProvider theme={theme}>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
-    </ChakraProvider>
-  </>
+  <ChakraProvider theme={theme}>
+    <Component {...pageProps} />
+  </ChakraProvider>
 );
 
 export default appWithTranslation(App);

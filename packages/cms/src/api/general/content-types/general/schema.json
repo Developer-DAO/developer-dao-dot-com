@@ -4,7 +4,8 @@
   "info": {
     "singularName": "general",
     "pluralName": "generals",
-    "displayName": "General"
+    "displayName": "General",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,11 @@
       "type": "component",
       "repeatable": false,
       "component": "general.markup"
+    },
+    "Footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.footer"
     }
   }
 }
