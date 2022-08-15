@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "start": "turbo run start",
     "test": "turbo run test",
     "dev": "turbo run dev",
     "run-cms": "turbo run start --filter=cms",
