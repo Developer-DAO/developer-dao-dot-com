@@ -34,8 +34,11 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Build And Test
-        run: yarn turbo run build test
+      - name: Run
+        run: yarn turbo run dev
+
+      - name: Test
+        run: yarn turbo run test
   # cypress-run:
   #   runs-on: ubuntu-latest
   #   steps:

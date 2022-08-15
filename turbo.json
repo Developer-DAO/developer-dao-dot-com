@@ -15,9 +15,7 @@
       "outputs": []
     },
     "start": {
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": [],
       "outputs": []
     },
     "lint-staged": {
