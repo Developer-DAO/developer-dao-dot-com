@@ -46,6 +46,7 @@ jobs:
         with:
           start: yarn dev
           project: ./packages/frontend
+          wait-on: http://localhost:3000
 
         # - name: Test
         #   run: yarn test
