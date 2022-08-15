@@ -35,25 +35,25 @@ jobs:
         run: yarn
 
       - name: Build And Test
-        run: yarn turbo run build
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          start: yarn start
-          project: ./packages/frontend
-          wait-on: http://localhost:3000
-        env:
-          APP_KEYS: value_1,value_2,value_3
-          API_TOKEN_SALT: API_TOKEN_SALT_VALUE
-          ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
-          JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
-          NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
-          NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
+        run: yarn turbo build run test
+  # cypress-run:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Cypress run
+  #       uses: cypress-io/github-action@v4
+  #       with:
+  #         start: yarn start
+  #         project: ./packages/frontend
+  #         wait-on: http://localhost:3000
+  #       env:
+  #         APP_KEYS: value_1,value_2,value_3
+  #         API_TOKEN_SALT: API_TOKEN_SALT_VALUE
+  #         ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
+  #         JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
+  #         NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
+  #         NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
 
-        # - name: Test
-        #   run: yarn test
+  #       # - name: Test
+  #       #   run: yarn test
