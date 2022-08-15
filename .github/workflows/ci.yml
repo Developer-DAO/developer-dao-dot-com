@@ -7,56 +7,36 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
-    name: Build
-    timeout-minutes: 15
-    runs-on: ${{ matrix.os }}
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+  # build:
+  #   name: Build
+  #   timeout-minutes: 15
+  #   runs-on: ${{ matrix.os }}
+  #   # To use Remote Caching, uncomment the next lines and follow the steps below.
+  #   # env:
+  #   #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  #   #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  #   strategy:
+  #     max-parallel: 1
+  #     matrix:
+  #       os: [ubuntu-latest]
 
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: "yarn"
-
-      - name: Install dependencies
-        run: yarn
-
-      - name: Run
-        run: yarn turbo run dev
-        env:
-          APP_KEYS: value_1,value_2,value_3
-          API_TOKEN_SALT: API_TOKEN_SALT_VALUE
-          ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
-          JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
-          NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
-          NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
-
-      - name: Test
-        run: yarn turbo run test
-  # cypress-run:
-  #   runs-on: ubuntu-latest
   #   steps:
-  #     - name: Checkout
+  #     - name: Check out code
   #       uses: actions/checkout@v2
-  #     - name: Cypress run
-  #       uses: cypress-io/github-action@v4
   #       with:
-  #         start: yarn start
-  #         project: ./packages/frontend
-  #         wait-on: http://localhost:3000
+  #         fetch-depth: 2
+
+  #     - name: Setup Node.js environment
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
+  #         cache: "yarn"
+
+  #     - name: Install dependencies
+  #       run: yarn
+
+  #     - name: Run
+  #       run: yarn turbo run dev
   #       env:
   #         APP_KEYS: value_1,value_2,value_3
   #         API_TOKEN_SALT: API_TOKEN_SALT_VALUE
@@ -65,5 +45,22 @@ jobs:
   #         NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
   #         NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
 
-  #       # - name: Test
-  #       #   run: yarn test
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          start: yarn dev
+          project: ./packages/frontend
+          wait-on: http://localhost:3000
+        env:
+          APP_KEYS: value_1,value_2,value_3
+          API_TOKEN_SALT: API_TOKEN_SALT_VALUE
+          ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
+          JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
+          NEXT_PUBLIC_GRAPHQL_API: http://localhost:3000/graphql
+          NEXT_PUBLIC_CMS_URL: http://localhost:3000
+

@@ -9,9 +9,7 @@
       "outputs": []
     },
     "test": {
-      "dependsOn": [
-        "build"
-      ],
+      "dependsOn": [],
       "outputs": []
     },
     "start": {
