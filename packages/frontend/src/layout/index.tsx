@@ -20,7 +20,7 @@ function Layout({
   footer: Footer;
 }) {
   const { colorMode } = useColorMode();
-  console.log(footer);
+
   return (
     <Box>
       <Marquee
