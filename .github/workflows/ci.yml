@@ -48,8 +48,6 @@ jobs:
           project: ./packages/frontend
           wait-on: http://localhost:3000
         env:
-          HOST: 0.0.0.0
-          PORT: 1337
           APP_KEYS: value_1,value_2,value_3
           API_TOKEN_SALT: API_TOKEN_SALT_VALUE
           ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
