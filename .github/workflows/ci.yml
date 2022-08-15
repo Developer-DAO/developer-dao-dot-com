@@ -35,7 +35,7 @@ jobs:
         run: yarn
 
       - name: Build And Test
-        run: yarn turbo build run test
+        run: yarn turbo run build test
   # cypress-run:
   #   runs-on: ubuntu-latest
   #   steps:
