@@ -44,7 +44,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          start: yarn dev
+          start: yarn build
           project: ./packages/frontend
           wait-on: http://localhost:3000
         env:
@@ -52,6 +52,8 @@ jobs:
           API_TOKEN_SALT: API_TOKEN_SALT_VALUE
           ADMIN_JWT_SECRET: ADMIN_JWT_SECRET_VALUE
           JWT_SECRET: __SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
+          NEXT_PUBLIC_GRAPHQL_API: https://cms-new-eog9k.ondigitalocean.app/graphql
+          NEXT_PUBLIC_CMS_URL: https://cms-new-eog9k.ondigitalocean.app
 
         # - name: Test
         #   run: yarn test
