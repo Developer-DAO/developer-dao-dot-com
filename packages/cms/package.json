@@ -8,9 +8,11 @@
     "dev": "strapi develop",
     "develop-pg": "NODE_ENV=pg strapi develop",
     "start": "NODE_ENV=production strapi start",
+    "start-cms": "NODE_ENV=production strapi start",
     "build": "NODE_ENV=production strapi build",
     "seed": "FORCE_APP_BOOTSTRAP_ONLY=true NODE_ENV=development strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "deploy": "npx eslint --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

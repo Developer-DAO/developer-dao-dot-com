@@ -6,15 +6,41 @@
       "dependsOn": [
         "^build"
       ],
-      "outputs": []
+      "outputs": [
+        ".next/**",
+        ".build"
+      ]
+    },
+    "deploy": {
+      "dependsOn": [
+        "frontend#test"
+      ]
     },
     "test": {
+      "dependsOn": [
+        "^test"
+      ],
       "outputs": []
     },
     "lint-staged": {
       "outputs": []
     },
     "dev": {
+      "outputs": []
+    },
+    "start": {},
+    "start-cms": {
+      "dependsOn": [
+        "cms#build"
+      ]
+    },
+    "start-frontend": {
+      "outputs": []
+    },
+    "frontend#build": {
+      "dependsOn": [
+        "cms#build"
+      ],
       "outputs": []
     }
   }
