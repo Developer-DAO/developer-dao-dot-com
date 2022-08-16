@@ -35,12 +35,13 @@
       ]
     },
     "start-frontend": {
+      "dependsOn": [
+        "frontend#build"
+      ],
       "outputs": []
     },
     "frontend#build": {
-      "dependsOn": [
-        "cms#build"
-      ],
+      "dependsOn": [],
       "outputs": []
     }
   }
