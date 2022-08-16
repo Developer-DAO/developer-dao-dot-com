@@ -15,6 +15,29 @@
       "outputs": []
     },
     "dev": {
+      "cache": false,
+      "outputs": []
+    },
+    "cms#deploy": {
+      "cache": false,
+      "dependsOn": [
+        "^cms#build"
+      ]
+    },
+    "frontend#test": {
+      "dependsOn": []
+    },
+    "frontend#build": {
+      "dependsOn": [
+        "^cms#deploy"
+      ]
+    },
+    "frontend#deploy": {
+      "cache": false,
+      "dependsOn": [
+        "cms#deploy",
+        "frontend#build"
+      ],
       "outputs": []
     }
   }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "next-i18next.config.js",
-    "next.config.js"
+    "next.config.js",
+    "src/scripts/*"
   ],
   "exclude": ["node_modules"]
 }
