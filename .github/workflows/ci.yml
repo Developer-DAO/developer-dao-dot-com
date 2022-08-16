@@ -12,9 +12,9 @@ jobs:
         uses: actions/checkout@v2
       - name: create env file
         run: |
-          touch .env
-          echo NEXT_PUBLIC_GRAPHQL_API=${{ https://cms-new-eog9k.ondigitalocean.app/graphql }} >> .env
-          echo NEXT_PUBLIC_CMS_URL=${{ https://cms-new-eog9k.ondigitalocean.app }} >> .env
+        touch .env
+        echo NEXT_PUBLIC_GRAPHQL_API=${{ https://cms-new-eog9k.ondigitalocean.app/graphql }} >> .env
+        echo NEXT_PUBLIC_CMS_URL=${{ https://cms-new-eog9k.ondigitalocean.app }} >> .env
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
