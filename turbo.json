@@ -36,6 +36,7 @@
     },
     "start-frontend": {
       "dependsOn": [
+        "start-cms",
         "frontend#build"
       ],
       "outputs": []
