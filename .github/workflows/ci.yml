@@ -13,6 +13,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          start: yarn turbo run start-frontend test
+          start: yarn turbo run start-frontend
           env: NEXT_PUBLIC_GRAPHQL_API=https://cms-new-eog9k.ondigitalocean.app/graphql,NEXT_PUBLIC_CMS_URL=https://cms-new-eog9k.ondigitalocean.app
-          wait-on: "npx wait-on --timeout 5000 turbo run start-cms"
