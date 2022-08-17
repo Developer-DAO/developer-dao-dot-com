@@ -12,6 +12,7 @@
     "@fontsource/source-code-pro": "^4.5.0",
     "@react-hook/window-size": "^3.0.7",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "framer-motion": "^4",
     "graphql": "^16.5.0",
     "next": "12.2.2",
@@ -40,7 +41,7 @@
     "contributors:generate": "all-contributors generate",
     "type-check": "tsc --noEmit",
     "test": "cypress run",
-    "deploy": "node ./scripts/deploy.ts"
+    "deploy": "NODE_ENV=production node scripts/deploy.mjs"
   },
   "eslintConfig": {
     "extends": [

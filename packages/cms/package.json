@@ -30,6 +30,7 @@
     "@strapi/strapi": "4.2.2",
     "axios": "^0.27.2",
     "better-sqlite3": "7.4.6",
+    "dotenv": "^16.0.1",
     "pg": "^8.7.3"
   },
   "lint-staged": {

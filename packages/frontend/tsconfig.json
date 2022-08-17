@@ -21,7 +21,6 @@
     "**/*.tsx",
     "next-i18next.config.js",
     "next.config.js",
-    "src/scripts/*"
   ],
   "exclude": ["node_modules"]
 }
