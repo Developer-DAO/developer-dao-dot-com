@@ -6,12 +6,13 @@ async function main() {
   try {
     const { data } = await axios.post(
       'https://api.digitalocean.com/v2/apps/21030157-a72b-40d2-afa6-0b498c63144d/deployments',
-      {},
+      {
+        force_build: true,
+      },
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization:
-            'Bearer dop_v1_e71d4dfae7bc57d9915a696ee55cbe2f7d8a428898c6484d0c9f16a0ba0b3cd2',
+          Authorization: `Bearer ${process.env.CMS_DEPLOY_KEY}`,
         },
       }
     );
