@@ -13,6 +13,7 @@ async function main() {
     console.log('🚨🚨 Frontend Deploy Started 🚨🚨');
   } catch (error) {
     console.log(error);
+    throw new Error('Frontend Deploy failed');
   }
 }
 

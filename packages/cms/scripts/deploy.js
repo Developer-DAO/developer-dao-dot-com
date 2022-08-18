@@ -24,24 +24,27 @@ async function main() {
     console.log('\n');
 
     const waitForDeploy = setInterval(async () => {
-      const deployData = await axios(
-        `https://api.digitalocean.com/v2/apps/21030157-a72b-40d2-afa6-0b498c63144d/deployments/${deployId}`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.CMS_DEPLOY_KEY}`,
-          },
+      try {
+        const deployData = await axios(
+          `https://api.digitalocean.com/v2/apps/21030157-a72b-40d2-afa6-0b498c63144d/deployments/${deployId}`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${process.env.CMS_DEPOY_KEY}`,
+            },
+          }
+        );
+        if (deployData.data.deployment.phase === 'ACTIVE') {
+          clearInterval(waitForDeploy);
+          console.log('CMS DEPLOY COMPLETE 🐐🎉🚀');
+          console.log('\n');
         }
-      );
-      if (deployData.data.deployment.phase === 'ACTIVE') {
-        clearInterval(waitForDeploy);
-        console.log('CMS DEPLOY COMPLETE 🐐🎉🚀');
-        console.log('\n');
+      } catch (error) {
+        throw new Error('CMS BUILD FAILED 🚨');
       }
     }, 1500);
   } catch (error) {
-    console.log(error.response.status);
-    console.log('lol error');
+    throw new Error('CMS BUILD FAILED 🚨');
   }
 }
 
