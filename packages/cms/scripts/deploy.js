@@ -30,7 +30,7 @@ async function main() {
           {
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${process.env.CMS_DEPOY_KEY}`,
+              Authorization: `Bearer ${process.env.CMS_DEPLOY_KEY}`,
             },
           }
         );
