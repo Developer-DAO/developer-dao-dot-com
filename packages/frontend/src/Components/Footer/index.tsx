@@ -8,6 +8,7 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import { FC, ReactNode, useCallback } from 'react';
 import { FaDiscord, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { IconOpenSea } from '../OpenSea';
@@ -123,6 +124,11 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
               </ChakraLink>
             ))}
           </ButtonGroup>
+          <NextLink href="https://vercel.com" passHref>
+            <ChakraLink bg="black" display="flex" mt="2rem" borderRadius="20%">
+              <Image src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg" />
+            </ChakraLink>
+          </NextLink>
         </Stack>
       </SimpleGrid>
     </Box>
