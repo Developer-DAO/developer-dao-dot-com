@@ -32,8 +32,6 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
         minW={{ base: '0', xl: '34rem' }}
         maxW={{ xl: '34rem' }}
         margin={{ lg: '0.75rem' }}
-        border="1px solid"
-        borderRadius="11px"
         p={{ base: '1rem', md: '2rem' }}
       >
         <Box>
