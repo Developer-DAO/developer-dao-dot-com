@@ -18,25 +18,42 @@
       "cache": false,
       "outputs": []
     },
-    "cms#deploy": {
-      "cache": false,
+    "deploy": {
       "dependsOn": [
-        "^cms#build"
+        "cms#build",
+        "cms#deploy",
+        "frontend#build",
+        "frontend#deploy"
+      ],
+      "outputs": []
+    },
+    "start": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "build/**",
+        ".next/**"
       ]
     },
-    "frontend#test": {
-      "dependsOn": []
+    "cms#deploy": {
+      "dependsOn": [
+        "cms#build"
+      ],
+      "outputs": []
+    },
+    "cms#build": {
+      "outputs": []
+    },
+    "frontend#deploy": {
+      "dependsOn": [
+        "frontend#build"
+      ],
+      "outputs": []
     },
     "frontend#build": {
       "dependsOn": [
-        "^cms#deploy"
-      ]
-    },
-    "frontend#deploy": {
-      "cache": false,
-      "dependsOn": [
-        "cms#deploy",
-        "frontend#build"
+        "cms#build"
       ],
       "outputs": []
     }

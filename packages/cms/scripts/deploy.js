@@ -7,7 +7,7 @@ async function main() {
     const { data } = await axios.post(
       'https://api.digitalocean.com/v2/apps/21030157-a72b-40d2-afa6-0b498c63144d/deployments',
       {
-        force_build: true,
+        // force_build: true,
       },
       {
         headers: {
