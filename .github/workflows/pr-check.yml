@@ -1,4 +1,4 @@
-name: PR
+name: PR Check
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: PR
+    name: PR Check
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # To use Remote Caching, uncomment the next lines and follow the steps below.
@@ -30,5 +30,8 @@ jobs:
         run: yarn
 
       - name: Build
+        run: yarn build
+
+      - name: Deploy
         run: yarn build
 

@@ -1,4 +1,4 @@
-name: CI
+name: Build And Deploy
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
   JWT_SECRET:__SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
 jobs:
   build:
-    name: Build
+    name: Build And Deploy
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # To use Remote Caching, uncomment the next lines and follow the steps below.
