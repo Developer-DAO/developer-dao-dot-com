@@ -55,7 +55,7 @@ export default function IndexPage(props: HomePageProps) {
   );
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => {
+export const getServerSideProps = async ({ locale }: { locale: string }) => {
   const { data } = await client.query<{
     general: any;
     homePage: StrapiSingleData<HomePage>;

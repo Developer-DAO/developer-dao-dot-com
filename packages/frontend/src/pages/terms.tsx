@@ -489,7 +489,7 @@ export default function TermsPage({
   );
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => {
+export const getServerSideProps = async ({ locale }: { locale: string }) => {
   const { data } = await client.query({
     query: gql`
       query TermsPage {
