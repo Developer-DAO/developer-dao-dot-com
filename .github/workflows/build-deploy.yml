@@ -37,8 +37,5 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          start: yarn dev
-          wait-on: "http://localhost:1337"
+      - name: Deploy
+        run: yarn deploy

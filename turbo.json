@@ -53,7 +53,7 @@
     },
     "frontend#build": {
       "dependsOn": [
-        "cms#build"
+        "cms#deploy"
       ],
       "outputs": []
     }
