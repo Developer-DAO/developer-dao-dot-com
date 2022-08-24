@@ -43,15 +43,10 @@
       "outputs": []
     },
     "cms#build": {
+      
       "outputs": []
     },
     "frontend#deploy": {
-      "dependsOn": [
-        "frontend#build"
-      ],
-      "outputs": []
-    },
-    "frontend#build": {
       "dependsOn": [
         "cms#deploy"
       ],
