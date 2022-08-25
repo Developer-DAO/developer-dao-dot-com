@@ -10,7 +10,8 @@
     "start": "NODE_ENV=production strapi start",
     "build": "NODE_ENV=production strapi build",
     "seed": "FORCE_APP_BOOTSTRAP_ONLY=true NODE_ENV=development strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "deploy": "node ./scripts/deploy.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -27,7 +28,9 @@
     "@strapi/plugin-users-permissions": "4.2.2",
     "@strapi/provider-upload-aws-s3": "^4.3.2",
     "@strapi/strapi": "4.2.2",
+    "axios": "^0.27.2",
     "better-sqlite3": "7.4.6",
+    "dotenv": "^16.0.1",
     "pg": "^8.7.3"
   },
   "lint-staged": {

@@ -87,7 +87,7 @@ function Layout({
 
 export default Layout;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { data } = await client.query({
     query: gql`
       query General {

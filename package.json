@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "dev": "turbo run dev",
+    "deploy": "turbo run deploy",
     "run-cms": "yarn --cwd packages/cms start",
     "build-cms": "yarn --cwd packages/cms build",
     "prepare": "husky install"
@@ -19,5 +20,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "turbo": "^1.4.2"
-  }
+  },
+  "dependencies": {}
 }

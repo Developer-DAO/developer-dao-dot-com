@@ -1,12 +1,17 @@
-name: CI
+name: Build And Deploy
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-
+  push:
+    branches: ["main"]
+env:
+  DAY_OF_WEEK: Monday
+  APP_KEYS:value_1,value_2,value_3
+  API_TOKEN_SALT:API_TOKEN_SALT_VALUE
+  ADMIN_JWT_SECRET:ADMIN_JWT_SECRET_VALUE
+  JWT_SECRET:__SKIP_FOR_LOCAL_ENVIRONMENT--GENERATED__
 jobs:
   build:
-    name: Build
+    name: Build And Deploy
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # To use Remote Caching, uncomment the next lines and follow the steps below.
@@ -32,8 +37,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          start: yarn dev
-          wait-on: "http://localhost:1337"
+      - name: Deploy
+        env:
+          CMS_DEPLOY_KEY: ${{ secrets.CMS_DEPLOY_KEY }}
+          VERCEL_WEBHOOK_URL: ${{ secrets.VERCEL_WEBHOOK_URL }}
+        run: yarn deploy

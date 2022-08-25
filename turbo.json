@@ -15,6 +15,41 @@
       "outputs": []
     },
     "dev": {
+      "cache": false,
+      "outputs": []
+    },
+    "deploy": {
+      "dependsOn": [
+        "cms#build",
+        "cms#deploy",
+        "frontend#build",
+        "frontend#deploy"
+      ],
+      "outputs": []
+    },
+    "start": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "build/**",
+        ".next/**"
+      ]
+    },
+    "cms#deploy": {
+      "dependsOn": [
+        "cms#build"
+      ],
+      "outputs": []
+    },
+    "cms#build": {
+      
+      "outputs": []
+    },
+    "frontend#deploy": {
+      "dependsOn": [
+        "cms#deploy"
+      ],
       "outputs": []
     }
   }

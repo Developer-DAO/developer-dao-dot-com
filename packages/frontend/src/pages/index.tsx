@@ -15,20 +15,20 @@ import { HomePage, StrapiComponent, StrapiSingleData } from '../types';
 
 type HomePageProps = StrapiComponent<HomePage>;
 
-export default function IndexPage({
-  heading,
-  sub_heading,
-  current_status,
-  partners,
-  values,
-  mission,
-  goals,
-  Footer,
-  meta_og,
-  news_ticker,
-}: HomePageProps) {
+export default function IndexPage(props: HomePageProps) {
   const { colorMode } = useColorMode();
-
+  const {
+    heading,
+    sub_heading,
+    current_status,
+    partners,
+    values,
+    mission,
+    goals,
+    Footer,
+    meta_og,
+    news_ticker,
+  } = props;
   return (
     <Layout newsTickerContent={news_ticker?.content} footer={Footer!}>
       <SEO
@@ -55,7 +55,7 @@ export default function IndexPage({
   );
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => {
+export const getServerSideProps = async ({ locale }: { locale: string }) => {
   const { data } = await client.query<{
     general: any;
     homePage: StrapiSingleData<HomePage>;
