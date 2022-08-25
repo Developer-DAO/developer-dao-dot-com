@@ -38,4 +38,7 @@ jobs:
         run: yarn build
 
       - name: Deploy
+        env:
+          CMS_DEPLOY_KEY: ${{ secrets.CMS_DEPLOY_KEY }}
+          VERCEL_WEBHOOK_URL: ${{ secrets.VERCEL_WEBHOOK_URL }}
         run: yarn deploy
