@@ -3,6 +3,7 @@ import {
   Divider,
   Flex,
   HStack,
+  AbsoluteCenter,
   Image,
   Link,
   Stack,
@@ -10,7 +11,7 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react';
-import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import React, { ReactNode, useState } from 'react';
 
 const NavLinks = [
@@ -40,9 +41,45 @@ const NavLinks = [
   },
 ];
 
+const SwitchWithIcons = ({ display }: { display: any }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  return (
+    <Box display={display} width={'min-content'} position="relative">
+      <Switch
+        size={'lg'}
+        padding={{ base: '16px 0', md: 0, sm: '16px 0' }}
+        onChange={toggleColorMode}
+        colorScheme="gray"
+        isChecked={colorMode === 'light'}
+      />
+      <AbsoluteCenter
+        style={{
+          pointerEvents: 'none',
+        }}
+        width="100%"
+      >
+        <Flex alignItems="center" justifyContent="space-evenly">
+          <MoonIcon
+            w={3.5}
+            h={3.5}
+            color={colorMode === 'dark' ? 'black' : 'white'}
+          />
+          <SunIcon
+            w={3.5}
+            h={3.5}
+            color={colorMode === 'dark' ? 'white' : 'black'}
+            fill="currentcolor"
+          />
+        </Flex>
+      </AbsoluteCenter>
+    </Box>
+  );
+};
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const toggle = () => setIsOpen(!isOpen);
 
   return (
@@ -89,12 +126,7 @@ const NavBar = () => {
         width={{ base: '100%', md: 'auto' }}
       >
         <MenuLinks isOpen={isOpen} />
-        <Switch
-          size="md"
-          display={{ base: 'none', md: 'block' }}
-          onChange={toggleColorMode}
-          colorScheme="blackAlpha"
-        />
+        <SwitchWithIcons display={{ base: 'none', md: 'block' }} />
       </HStack>
     </NavBarContainer>
   );
@@ -238,13 +270,7 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
           marginTop="100px"
           borderColor={colorMode === 'dark' ? 'white' : 'black'}
         />
-        <Switch
-          size="md"
-          display={{ base: 'block', md: 'none' }}
-          padding={{ base: '16px 0', md: 0 }}
-          onChange={toggleColorMode}
-          colorScheme="blackAlpha"
-        />
+        <SwitchWithIcons display={{ base: 'block', md: 'none' }} />
       </Stack>
     </Box>
   );
