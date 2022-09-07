@@ -27,7 +27,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 const listLinks = (links: Link[], translate: TFunction) => {
   return (
     <>
-      {links.map((link) => {
+      {links?.map((link) => {
         return (
           <ChakraLink
             key={link.id}
