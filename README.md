@@ -8,7 +8,11 @@
 
 <p align="center">
     <a href="https://developerdao.com">
-    <img src="public/logo512.png" alt="logo" width="80" height="80"/>
+    <picture width="80" height="80">
+    <source media="(prefers-color-scheme: dark)" srcset="packages/frontend/public/D_D_logo-dark.svg" width="80" height="80">
+    <source media="(prefers-color-scheme: light)" srcset="packages/frontend/public/D_D_logo-light.svg" width="80" height="80">
+    <img alt="Shows the DeveloperDAO logo with light or dark mode." src="packages/frontend/public/D_D_logo-dark.svg">
+  </picture>
     </a>
     <h2 align="center">DeveloperDAO</h2>
     <p align="center">
@@ -79,14 +83,18 @@ At the moment it allows members to view their genesis NFT by entering in its ID.
 ```bash
 cd developer-dao;
 nvm install; # to install the version in .nvmrc
+nvm use;
 ```
 
 1. Clone this repo with git
-2. Install dependencies by running `yarn`
-3. Start the development server with `yarn dev`
-4. Open development site by going to `http:localhost:3000`
-5. To test Walletconnect functionality, copy `.env.development` to `.env.local` and fill in your `INFURA_ID`.
-   `INFURA_ID` can be easily obtained by register at <https://infura.io/>, then create a new Ethereum project for free.
+1. Install dependencies by running `yarn`
+1. In each of the subfolders of `package` copy the `.env.example` and name it `.env`
+> Note: You can fill these out with functionality as required. Read them and use your best judgement. 
+1. Seed the CMS with data by running `yarn workspace cmd seed`
+1. Start the development server with `yarn dev`
+1. Open the development site by going to `http://localhost:3000`
+1. Open the development server by going to `http://localhost:1317` (admin page `http://localhost:1317/admin`)
+
 
 ### Deployment
 
