@@ -112,7 +112,7 @@ In both cases, Vercel runs `next build` to build the project. Since running `nex
 
 ## Contributing
 
-Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](./CONTRIBUTING.md).
+Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## Contributors ✨
 
