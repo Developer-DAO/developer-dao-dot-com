@@ -90,11 +90,14 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
                 borderColor: 'black',
               }}
               onClick={() => {
-                window.open('https://discord.gg/devdao', '_blank');
+                window.open('https://www.guild.xyz/dd', '_blank');
               }}
             >
               <Box as={FaDiscord} mr=".75rem" fontSize="2rem" />
-              Join Discord
+              <Box>
+                <Text>Join Discord</Text>
+                <Text fontSize="0.75rem">(via Guild.xyz)</Text>
+              </Box>
             </Button>
           </Flex>
         </Box>
