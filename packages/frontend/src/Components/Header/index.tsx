@@ -20,6 +20,10 @@ const NavLinks = [
     href: 'https://blog.developerdao.com/',
   },
   {
+    text: 'Academy',
+    href: 'https://academy.developerdao.com',
+  },
+  {
     text: 'Twitter',
     href: 'https://twitter.com/developer_dao',
   },
@@ -34,10 +38,6 @@ const NavLinks = [
   {
     text: 'Jobs',
     href: 'https://developerdao.pallet.com/jobs',
-  },
-  {
-    text: 'P3RKS',
-    href: 'https://p3rks.xyz/',
   },
 ];
 
