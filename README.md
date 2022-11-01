@@ -89,7 +89,7 @@ nvm use;
 1. Install dependencies by running `yarn`
 1. In each of the subfolders of `package` copy the `.env.example` and name it `.env`
 > Note: You can fill these out with functionality as required. Read them and use your best judgement. 
-1. Seed the CMS with data by running `yarn workspace cmd seed`
+1. Seed the CMS with data by running `yarn workspace cms seed`
 1. Start the development server with `yarn dev`
 1. Open the development site by going to `http://localhost:3000`
 1. Open the development server by going to `http://localhost:1317` (admin page `http://localhost:1317/admin`)
