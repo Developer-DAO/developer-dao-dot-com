@@ -1,79 +1,35 @@
 {
   "name": "frontend",
-  "version": "0.2.1",
+  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@apollo/client": "^3.6.9",
-    "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.7",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "@fontsource/inter": "^4.5.0",
-    "@fontsource/source-code-pro": "^4.5.0",
-    "@react-hook/window-size": "^3.0.7",
-    "@vercel/analytics": "^0.1.3",
-    "axios": "^0.27.2",
-    "dotenv": "^16.0.1",
-    "framer-motion": "^4",
-    "graphql": "^16.5.0",
-    "next": "12.2.2",
-    "next-i18next": "^12.0.0",
-    "react": "^17.0.2",
-    "react-confetti": "^6.0.1",
-    "react-dom": "^17.0.2",
-    "react-fast-marquee": "^1.3.2",
-    "react-icons": "^4.3.1",
-    "react-markdown": "^8.0.3",
-    "web-vitals": "2.1.4"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,graphql}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
   "scripts": {
-    "start": "next start",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "fmt": "prettier --write **/*.js",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
-    "type-check": "tsc --noEmit",
-    "test": "cypress run",
-    "deploy": "NODE_ENV=production node scripts/deploy.mjs"
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "prettier"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "next": "12.3.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "^3.18.0"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^8.0.1",
-    "@testing-library/react-hooks": "^7.0.2",
-    "all-contributors-cli": "^6.20.0",
-    "cypress": "^10.4.0",
-    "eslint": "^8.21.0",
-    "eslint-config-next": "11.1.2",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "prettier": "2.3.2",
-    "typechain": "^6.0.2",
-    "typescript": "^4.4.3"
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.22.0",
+    "eslint-config-next": "13.0.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^4.8.4"
+  },
+  "ct3aMetadata": {
+    "initVersion": "6.6.0"
   }
 }
