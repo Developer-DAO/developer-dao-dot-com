@@ -9,9 +9,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "graphql": "^16.6.0",
     "next": "12.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "urql": "^3.0.3",
     "zod": "^3.18.0"
   },
   "devDependencies": {

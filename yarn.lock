@@ -1412,6 +1412,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@graphql-typed-document-node/core@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
+  integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
+
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.4.tgz#01e7366e57d2ad104feea63e72248f22015c520c"
@@ -2787,6 +2792,14 @@
   integrity sha512-/zH1TdBJlYGKKD+Wh0oyD+aBvDSWrwHcD8b4tUL9UgHLhzHtkEnMVFuxbw3SRIRsAa01wmy06+LWt+WoZdj1Bw==
   dependencies:
     "@ucast/core" "^1.4.1"
+
+"@urql/core@^3.0.3":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@urql/core/-/core-3.0.5.tgz#a26c326dd788d6d6abb839493bce86147f5a45c9"
+  integrity sha512-6/1HG+WEAcPs+hXSFnxWBTWkNUwa8dj2cHysWokMaFIbAioGtUaSdxp2q9FDMtWAIGdc640NFSt2B8itGLdoAA==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.1.1"
+    wonka "^6.0.0"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -6726,6 +6739,11 @@ graphql@^15.5.1:
   version "15.8.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.8.0.tgz#33410e96b012fa3bdb1091cc99a94769db212b38"
   integrity sha512-5gghUc24tP9HRznNpV2+FIoq3xKkj5dTQqf4v0CpdPbFVwFkWoxOM+o+2OC9ZSvjEMTjfmG9QT+gcvggTwW1zw==
+
+graphql@^16.6.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.6.0.tgz#c2dcffa4649db149f6282af726c8c83f1c7c5fdb"
+  integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
 
 handle-thing@^2.0.0:
   version "2.0.1"
@@ -12293,6 +12311,14 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+urql@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-3.0.3.tgz#275631f487558354e090d9ffc4ea2030bd56c34a"
+  integrity sha512-aVUAMRLdc5AOk239DxgXt6ZxTl/fEmjr7oyU5OGo8uvpqu42FkeJErzd2qBzhAQ3DyusoZIbqbBLPlnKo/yy2A==
+  dependencies:
+    "@urql/core" "^3.0.3"
+    wonka "^6.0.0"
+
 use-sync-external-store@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
@@ -12668,6 +12694,11 @@ wkx@^0.4.8:
   integrity sha512-ikPXMM9IR/gy/LwiOSqWlSL3X/J5uk9EO2hHNRXS41eTLXaUFEVw9fn/593jW/tE5tedNg8YjT5HkCa4FqQZyQ==
   dependencies:
     "@types/node" "*"
+
+wonka@^6.0.0:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/wonka/-/wonka-6.1.1.tgz#134ece7d07848477e3a8b7d35f2333af2edde138"
+  integrity sha512-shBtyZ0KFvUadtnDGlTRA4mF4pgcRoyZKikdputKhmShoXWcZDvlg6CUw6Jx9nTL7Ub8QUJoIarPpxdlosg9cw==
 
 word-wrap@^1.2.3:
   version "1.2.3"
