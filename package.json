@@ -12,6 +12,7 @@
     "test": "turbo run test",
     "dev": "turbo run dev",
     "deploy": "turbo run deploy",
+    "dev-cms": "yarn --cwd packages/cms dev",
     "run-cms": "yarn --cwd packages/cms start",
     "build-cms": "yarn --cwd packages/cms build",
     "prepare": "husky install"
