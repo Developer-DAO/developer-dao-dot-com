@@ -9,5 +9,5 @@ export type StrapiMultipleData<T> = {
   data: StrapiEntity<T>[] | null;
 };
 export type StrapiSingleData<T> = {
-  data: StrapiEntity<T> | null;
+  data: StrapiEntity<T>;
 };

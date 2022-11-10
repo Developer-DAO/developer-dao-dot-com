@@ -129,7 +129,7 @@ const Menu = () => {
                     key={footerItem.id}
                     href={footerItem.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noreferrer"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-[#353535]">
                       <footerItem.logoComponent size={16} color="#c2c2c2" />

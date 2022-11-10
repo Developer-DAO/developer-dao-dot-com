@@ -30,7 +30,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, general }) => {
         <Menu />
         <div className="w-full">
           {children}
-          <Footer data={general.data?.attributes.Footer!} />
+          <Footer data={general.data.attributes.Footer} />
         </div>
       </div>
     </>

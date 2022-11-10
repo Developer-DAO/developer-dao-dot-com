@@ -66,12 +66,12 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
             a better internet. Join us and help create the future!
           </h2>
           <div className="relative mb-5 flex gap-4">
-            <a href="https://developerdao.com" target="_blank">
+            <a href="https://developerdao.com" target="_blank" rel="noreferrer">
               <button className="h-14 rounded-full bg-white px-8 text-black hover:bg-slate-100">
                 Claim $CODE
               </button>
             </a>
-            <a href="https://developerdao.com" target="_blank">
+            <a href="https://developerdao.com" target="_blank" rel="noreferrer">
               <button className="flex h-14 items-center gap-3 rounded-full border bg-[#151515]/70 px-8">
                 <Discord />
                 <div>
@@ -101,6 +101,7 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
                       href={partnerEntity.attributes.website}
                       key={partnerEntity.id}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <a className="relative h-14 w-52">
                         <Image
@@ -121,7 +122,7 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
             <a
               href="https://airtable.com/shrYLrOrjhOHJUdVl"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               <button className="flex h-14 items-center gap-3 rounded-full border bg-[#151515]/70 px-8">
                 <PartnerIcon />

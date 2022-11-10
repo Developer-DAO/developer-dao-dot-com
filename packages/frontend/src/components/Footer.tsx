@@ -49,11 +49,11 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
 
         <div className="flex flex-col items-center">
           <h2 className="my-6 text-2xl">Useful Links</h2>
-          {listLinks(footer?.useful_links!)}
+          {listLinks(footer?.useful_links)}
         </div>
         <div className="flex flex-col items-center">
           <h2 className="my-6 text-2xl">Discover</h2>
-          {listLinks(footer?.discover!)}
+          {listLinks(footer?.discover)}
         </div>
         <div className="flex flex-col items-center">
           <h2 className="my-6 text-2xl">Social</h2>
@@ -63,7 +63,7 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
                 key={link.id}
                 href={link.link}
                 target="_blank"
-                rel="noreferrer noopener"
+                rel="noreferrer"
               >
                 {getSocialIcon(link.name as SocialLinkName)}
               </a>
@@ -73,7 +73,7 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
             className="relative h-14 w-36"
             href="https://vercel.com"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noreferrer"
           >
             <Image
               src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg"
@@ -88,8 +88,8 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
   );
 };
 
-const listLinks = (links: Link[]) =>
-  links?.map((link) => (
+const listLinks = (links: Link[] = []) =>
+  links.map((link) => (
     <a key={link.id} className="mb-2 text-xl" href={link.link}>
       {link.title}
     </a>

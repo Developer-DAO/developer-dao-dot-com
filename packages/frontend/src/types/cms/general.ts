@@ -37,6 +37,6 @@ export type MetaOpenGraph = StrapiId & {
 };
 
 export type General = {
-  news_ticker?: { content: string };
-  Footer?: Footer;
+  news_ticker: { content: string };
+  Footer: Footer;
 };
