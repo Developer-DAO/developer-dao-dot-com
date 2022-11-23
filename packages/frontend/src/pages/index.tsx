@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -21,6 +21,10 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({ general, homePage }) => {
   const { theme } = useTheme();
   const { partners } = homePage.data?.attributes || {};
+  const partnersRef = useRef<HTMLElement>(null);
+
+  const handleScrollToPartners = () =>
+    partnersRef.current!.scrollIntoView({ behavior: "smooth" });
 
   const getLogo = useCallback(
     (partner: Partner) =>
@@ -82,12 +86,17 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
             </a>
 
             <div className="absolute inset-x-0 -bottom-32 flex hidden justify-center lg:flex">
-              <Scroll />
+              <button onClick={handleScrollToPartners}>
+                <Scroll />
+              </button>
             </div>
           </div>
         </section>
 
-        <section className="mt-14 flex w-full flex-col justify-center lg:mt-0">
+        <section
+          ref={partnersRef}
+          className="mt-14 flex w-full flex-col justify-center lg:mt-0"
+        >
           <h2 className="mt-0 mb-14 text-center font-heading text-6xl font-bold uppercase text-[#DBDBDB]">
             Partners
           </h2>

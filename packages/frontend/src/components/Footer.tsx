@@ -18,11 +18,11 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
   const getSocialIcon = useCallback(
     (name: SocialLinkName) => {
       return {
-        twitter: <Twitter />,
-        discord: <Discord />,
-        github: <GitHub />,
-        youtube: <Youtube />,
-        opensea: <OpenSeaIcon color={theme === "dark" ? "white" : "black"} />,
+        twitter: Twitter,
+        discord: Discord,
+        github: GitHub,
+        youtube: Youtube,
+        opensea: OpenSeaIcon,
       }[name];
     },
     [theme]
@@ -47,27 +47,33 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
           </a>
         </NextLink>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:items-start">
           <h2 className="my-6 text-2xl">Useful Links</h2>
           {listLinks(footer?.useful_links)}
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:items-start">
           <h2 className="my-6 text-2xl">Discover</h2>
           {listLinks(footer?.discover)}
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:items-start">
           <h2 className="my-6 text-2xl">Social</h2>
           <div className="flex gap-2">
-            {footer?.social?.map((link) => (
-              <a
-                key={link.id}
-                href={link.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {getSocialIcon(link.name as SocialLinkName)}
-              </a>
-            ))}
+            {footer?.social?.map((link) => {
+              const SocialIcon = getSocialIcon(link.name as SocialLinkName);
+              return (
+                <a
+                  key={link.id}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SocialIcon
+                    size={24}
+                    color={theme === "light" ? "black" : "white"}
+                  />
+                </a>
+              );
+            })}
           </div>
           <a
             className="relative h-14 w-36"

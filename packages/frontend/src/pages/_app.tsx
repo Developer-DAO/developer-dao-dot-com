@@ -21,7 +21,7 @@ const App = ({
           <Component {...pageProps} general={general} />
         </Layout>
       </ThemeProvider>
-    </Provider>  
+    </Provider>
   );
 };
 
