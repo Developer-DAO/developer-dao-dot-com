@@ -1,12 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Twitter, Youtube, GitHub } from "react-feather";
+import {
+  Twitter,
+  Youtube,
+  GitHub,
+  X as CrossIcon,
+  Menu as MenuIcon,
+} from "react-feather";
 
 import Rocket from "../../public/icons/rocket.svg";
 import Book from "../../public/icons/book.svg";
 import Tools from "../../public/icons/tools.svg";
 import Sparkles from "../../public/icons/sparkles.svg";
 import Diamond from "../../public/icons/diamond.svg";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const menuItems = [
   {
@@ -23,7 +31,7 @@ const menuItems = [
   },
   {
     id: "tools",
-    name: "Toosl",
+    name: "Tools",
     link: "/tools",
     logoIcon: Tools,
   },
@@ -63,31 +71,62 @@ const footerItems = [
 ];
 
 const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = (nextIsOpen: boolean) => {
+    if (nextIsOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    setIsOpen(nextIsOpen);
+  };
+  const { theme } = useTheme();
+
   return (
     <>
+      <Link href="/">
+        <a className="absolute m-3 cursor-pointer rounded-lg p-2 lg:hidden">
+          <Image
+            src={`/D_D_logo-${theme === "dark" ? "dark" : "light"}.svg`}
+            alt="D_D logo"
+            width={40}
+            height={40}
+          />
+        </a>
+      </Link>
+
       <button
-        data-collapse-toggle="navbar-default"
-        type="button"
-        className="absolute m-3 rounded-lg p-2 lg:hidden"
-        aria-controls="navbar-default"
-        aria-expanded="false"
+        className="absolute right-0 m-3 cursor-pointer rounded-lg p-2 lg:hidden"
+        onClick={() => toggle(!isOpen)}
       >
-        <span className="sr-only">Open main menu</span>
-        <svg
-          className="h-6 w-6"
-          aria-hidden="true"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          ></path>
-        </svg>
+        {isOpen ? <CrossIcon size={40} /> : <MenuIcon size={40} />}
       </button>
-      <div className="hidden w-28 justify-center lg:flex">
+
+      {isOpen && (
+        <div
+          id="mobile-menu"
+          className="bg-main fixed top-20 bottom-0 z-10 w-full lg:hidden"
+        >
+          <div className="font-xl flex flex-col gap-10 p-5 uppercase">
+            {menuItems.map((menuItem) => (
+              <Link key={menuItem.id} href={menuItem.link}>
+                <a className="flex items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-[#353535]">
+                    <menuItem.logoIcon
+                      style={{ display: "flex", margin: "auto" }}
+                      stroke="#c2c2c2"
+                    />
+                  </div>
+                  <span className="ml-3 text-xl">{menuItem.name}</span>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div id="desktop-menu" className="hidden w-28 justify-center lg:flex">
         <div className="invisible w-28" />
         <div className="fixed top-8 bottom-8 flex h-[calc(100vh-64px)] w-24 flex-col items-center rounded-full border bg-[#565656]/30 p-2 ">
           <div className="relative h-24 w-full">

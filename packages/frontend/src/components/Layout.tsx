@@ -14,7 +14,6 @@ type LayoutProps = {
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, general }) => {
   return (
     <>
-      {isDevelopment && <ThemeToggle />}
       <div className="container mx-auto flex">
         <Menu />
         <div className="w-full">

@@ -53,9 +53,9 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
       </Head>
 
       <main className="container mx-auto flex flex-col items-center justify-center">
-        <section className="flex w-full flex-col items-center justify-center bg-[url(/home.svg)] bg-center bg-no-repeat pt-5 md:h-screen md:p-0">
+        <section className="flex h-screen w-full flex-col items-center justify-center bg-center bg-no-repeat p-5 md:bg-[url(/home.svg)] md:p-0">
           <div className="relative p-5">
-            <h1 className="mt-0 mb-5 text-center font-heading text-7xl font-bold uppercase">
+            <h1 className="mt-0 mb-5 text-center font-heading text-4xl font-bold uppercase lg:text-7xl">
               Buidl web3 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> with frens
             </h1>
             <div className="absolute -top-8 -right-8 hidden xl:block">
@@ -65,27 +65,29 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
               <SparkleWhite style={{ transform: "scale(0.5)" }} />
             </div>
           </div>
-          <h2 className="mt-0 mb-6 max-w-3xl text-center text-2xl opacity-60">
+          <h2 className="mt-0 mb-6 max-w-3xl text-center text-lg opacity-60 lg:text-2xl">
             Developer DAO is a community of thousands of web3 builders creating
             a better internet. Join us and help create the future!
           </h2>
           <div className="relative mb-5 flex gap-4">
             <a href="https://developerdao.com" target="_blank" rel="noreferrer">
-              <button className="h-14 rounded-full bg-white px-8 text-black hover:bg-slate-100">
+              <button className="h-14 rounded-full bg-white px-8 text-xs text-black hover:bg-slate-100 md:text-base">
                 Claim $CODE
               </button>
             </a>
             <a href="https://developerdao.com" target="_blank" rel="noreferrer">
-              <button className="flex h-14 items-center gap-3 rounded-full border bg-[#151515]/70 px-8">
+              <button className="flex h-14 items-center gap-3 rounded-full border bg-[#151515]/70 px-5 text-xs md:text-base lg:px-8">
                 <Discord />
                 <div>
                   <div>Join Discord</div>
-                  <div className="text-xs opacity-60">(via Guild.xyz)</div>
+                  <div className="text-[8px] opacity-60 md:text-xs">
+                    (via Guild.xyz)
+                  </div>
                 </div>
               </button>
             </a>
 
-            <div className="absolute inset-x-0 -bottom-32 flex hidden justify-center lg:flex">
+            <div className="absolute inset-x-0 -bottom-32 flex justify-center">
               <button onClick={handleScrollToPartners}>
                 <Scroll />
               </button>
@@ -102,7 +104,7 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
           </h2>
 
           <div className="mb-14 flex flex-col items-center justify-center">
-            <div className="mb-14 flex flex-wrap justify-center gap-4">
+            <div className="mb-14 flex flex-wrap justify-center gap-8 md:gap-4">
               {partners?.data ? (
                 partners.data.map((partnerEntity) => {
                   return (

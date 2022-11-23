@@ -16,7 +16,7 @@ const App = ({
 }: AppProps & { general: StrapiSingleData<General> }) => {
   return (
     <Provider value={client}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
         <Layout general={general}>
           <Component {...pageProps} general={general} />
         </Layout>

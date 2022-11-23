@@ -19,7 +19,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="dark:bg-gradient-to-r dark:from-[#090909] dark:to-[#222222] md:px-2">
+      <body className="bg-main md:px-2">
         <Main />
         <NextScript />
       </body>
