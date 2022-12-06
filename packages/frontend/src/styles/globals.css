@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer component {
+  .bg-main {
+    @apply dark:bg-gradient-to-r dark:from-[#090909] dark:to-[#222222];
+  }
+}
