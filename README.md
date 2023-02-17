@@ -36,7 +36,7 @@
 
 ## What is a DAO
 
-DAO stands for **D**ecentalized **A**utonomous **O**rganisation. That is a group of people with shared goals/mission that are governed by an agreed set of rules coded into a smart contract(s) on a blockchain.
+DAO stands for **D**ecentralized **A**utonomous **O**rganisation. That is a group of people with shared goals/mission that are governed by an agreed set of rules coded into a smart contract(s) on a blockchain.
 
 If you want to learn more about DAOs, check out Cooper Turley's blog at https://alias.co/coopahtroopa/essays, mainly ["The Rise of Micro-Economies"](https://coopahtroopa.mirror.xyz/gWY6Kfebs9wHdfoZZswfiLTBVzfKiyFaIwNf2q8JpgI).
 
@@ -48,7 +48,7 @@ The project was started as an experiment by [Nader Dabit](https://twitter.com/da
 
 The DAO operates inside our [discord server](https://discord.gg/ASjBPJuNhS). To gain access to this server you need to own a [Devs for Revolution](https://opensea.io/collection/devs-for-revolution) NFT. The contract for purchasing one [can be found on etherscan.io](https://etherscan.io/address/0x25ed58c027921e14d86380ea2646e3a1b5c55a8b#writeContract). If you're not sure how to mint an NFT, [check out this how-to article](https://jonkuperman.com/how-to-join-developer-dao/) by @jkup.
 
-Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildy from about $40 up to and over $400 at peak times. You can check current gas fee uisng the [Etherum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later.
+Whilst there is no charge for the NFT you will have to pay a "gas fee" for the Ethereum Blockchain network in order to mint one. This fee can range wildly from about $40 up to and over $400 at peak times. You can check current gas fee using the [Ethereum gas price tracker](https://etherscan.io/gastracker). If the fee is high you may want to wait and come back later.
 
 That said, there is a limited supply of NFT's that can be created so don't wait too long!
 
@@ -112,7 +112,7 @@ In both cases, Vercel runs `next build` to build the project. Since running `nex
 
 ## Contributing
 
-Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing gudielines in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+Thanks for showing interest in contributing to Developer DAO. Before submitting any changes please review our contributing guidelines in [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## Contributors ✨
 
