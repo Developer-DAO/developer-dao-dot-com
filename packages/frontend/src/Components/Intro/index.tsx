@@ -53,8 +53,8 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
           >
             {t(subHeading!)}
           </Text>
-          <Flex justifyContent="center" w="100" mt="3rem">
-            <Button
+          <Flex justifyContent="start" w="100" mt="3rem">
+            {/* <Button
               px="1.5rem"
               border="1px solid black"
               borderRadius="0.625rem"
@@ -72,22 +72,22 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
               }}
             >
               Claim $CODE
-            </Button>
+            </Button> */}
 
             <Button
               px="1.5rem"
               border="1px solid white"
               borderRadius="0.625rem"
-              bg="black"
-              color="white"
+              maxW={{ base: '75%', md: '20rem' }}
+              bg="white"
+              color="black"
               flexGrow={1}
               py={{ base: '1.75rem', xl: '2rem' }}
-              ml={{ base: '1.25rem', xl: '2rem' }}
+              // ml={{ base: '0', xl: '2rem' }}
               fontSize={{ base: '0.875rem', xl: '1.25rem' }}
               _hover={{
-                bg: 'white',
-                color: 'black',
-                borderColor: 'black',
+                bg: 'black',
+                color: 'white',
               }}
               onClick={() => {
                 window.open('https://www.guild.xyz/dd', '_blank');
