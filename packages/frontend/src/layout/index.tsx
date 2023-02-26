@@ -22,7 +22,7 @@ function Layout({
   const { colorMode } = useColorMode();
   return (
     <Box>
-      <Marquee
+      {/* <Marquee
         style={{
           background: `${colorMode === 'dark' ? '#ffffff' : '#000000'}`,
           width: '100%',
@@ -45,7 +45,7 @@ function Layout({
             </ReactMarkdown>
           ))}
         </HStack>
-      </Marquee>
+      </Marquee> */}
       <Stack
         paddingY="2.06rem"
         paddingX={{ base: '16px', md: '4px', lg: '48px' }}
@@ -57,7 +57,7 @@ function Layout({
           <FooterComponent data={footer!} />
         </>
       </Stack>
-      <Marquee
+      {/* <Marquee
         style={{
           background: `${colorMode === 'light' ? '#ffffff' : '#000000'}`,
           width: '100%',
@@ -80,7 +80,7 @@ function Layout({
             </ReactMarkdown>
           ))}
         </HStack>
-      </Marquee>
+      </Marquee> */}
     </Box>
   );
 }
