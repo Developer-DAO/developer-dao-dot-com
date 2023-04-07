@@ -126,7 +126,11 @@ const Footer: FC<FooterProps> = ({ data: footer }) => {
           </ButtonGroup>
           <NextLink href="https://vercel.com" passHref>
             <ChakraLink bg="black" borderRadius="20%" mt="2rem !important">
-              <Image src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg" />
+              <Image
+                src="/powered-by-vercel.svg"
+                width={125}
+                alt="Powered By Vercel Logo"
+              />
             </ChakraLink>
           </NextLink>
         </Stack>
