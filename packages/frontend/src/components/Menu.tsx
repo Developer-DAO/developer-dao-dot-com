@@ -138,7 +138,7 @@ const Menu = () => {
 
       <div id="desktop-menu" className="hidden w-28 justify-center lg:flex">
         <div className="invisible w-28" />
-        <div className="fixed top-8 bottom-8 flex h-[calc(100vh-64px)] w-24 flex-col items-center rounded-full border border-white/30 bg-[#565656]/30 p-2 py-5">
+        <div className="absolute top-8 bottom-8 flex h-[calc(100vh-64px)] w-24 flex-col items-center rounded-full border border-white/30 bg-[#565656]/30 p-2 py-5">
           <div className="relative w-full">
             <img
               src="/D_D_logo-light.svg"

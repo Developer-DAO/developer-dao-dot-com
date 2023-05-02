@@ -11,14 +11,21 @@ import Discord from "../../public/icons/discord.svg";
 import PartnerIcon from "../../public/icons/partner.svg";
 
 import { client } from "../hooks/useUrql";
-import type { General, HomePage, Media, Partner, StrapiSingleData } from "../types";
+import type {
+  General,
+  HomePage,
+  Media,
+  Partner,
+  StrapiSingleData,
+} from "../types";
+import { Eye } from "react-feather";
 
 type HomeProps = {
   general: StrapiSingleData<General>;
   homePage: StrapiSingleData<HomePage>;
 };
 
-const Home: NextPage<HomeProps> = ({ general, homePage }) => {
+const Home: NextPage<HomeProps> = ({ homePage }) => {
   const { theme } = useTheme();
   const { partners } = homePage.data?.attributes || {};
   const partnersRef = useRef<HTMLElement>(null);
@@ -100,7 +107,10 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
           className="mt-14 flex w-full flex-col justify-center lg:mt-0"
         >
           <h2 className="mt-0 mb-14 text-center font-heading text-6xl font-bold uppercase text-[#DBDBDB]">
-            Partners
+            <span className="relative">
+              Partners
+              <SparkleWhite className="absolute -top-3 -right-9 inline scale-50" />
+            </span>
           </h2>
 
           <div className="mb-14 flex flex-col items-center justify-center">
@@ -143,6 +153,78 @@ const Home: NextPage<HomeProps> = ({ general, homePage }) => {
           </div>
         </section>
       </main>
+
+      <section className="relative isolate mt-14 flex w-full flex-col lg:mt-24 lg:mb-24">
+        {/* <div className="absolute right-0 bottom-0 z-10 -mr-8 h-[83%] w-64 overflow-hidden bg-[linear-gradient(270deg,#000000_0%,#00000000_87.03%)]"></div> */}
+        <h2 className="mt-0 mb-14 font-heading text-6xl font-bold uppercase text-[#DBDBDB]">
+          <span className="relative">
+            Blog
+            <SparkleWhite className="absolute -top-3 -right-9 inline scale-50" />
+          </span>
+        </h2>
+        <div className="relative z-0 flex min-w-full gap-9 2xl:gap-16 -mr-8 flex-wrap">
+          {/* CARDS */}
+          {[0, 0, 0, 0, 0].map((_, idx) => (
+            <div
+              key={idx}
+              className="flex min-w-0 max-w-sm w-full flex-col rounded-3xl border border-t-0 border-[#2a2a2a] bg-[linear-gradient(323.75deg,#2e2e2e66_6.96%,#2a2a2a66_93.77%)] pb-2"
+            >
+              <div className="relative">
+                <img
+                  src="https://picsum.photos/600"
+                  alt="lorem picsum"
+                  className="aspect-[3/2] w-full rounded-3xl rounded-b-none object-cover"
+                />
+
+                <span className="absolute bottom-2 right-2 inline-flex items-center rounded-full border border-[#565656]/30 bg-[#565656]/30 px-2 py-1 text-sm font-medium text-white backdrop-blur">
+                  Nov 28
+                </span>
+              </div>
+
+              <div className="flex flex-col gap-4 py-4 px-4">
+                <div className="flex flex-wrap gap-4">
+                  <span className="inline-flex items-center rounded-full border border-[#565656]/30 bg-[#565656]/30 px-2 py-1 text-sm font-medium text-white backdrop-blur">
+                    Web3
+                  </span>
+
+                  <span className="inline-flex items-center rounded-full border border-[#565656]/30 bg-[#565656]/30 px-2 py-1 text-sm font-medium text-white backdrop-blur">
+                    DeFi
+                  </span>
+                </div>
+
+                <h3 className="font-heading text-3xl font-bold leading-7 tracking-wide text-[#DBDBDB]">
+                  A Gentle Introduction to Decentralized Storage
+                </h3>
+
+                <p className="leading-4 text-white/60">
+                  A blog post explaining Decentralized storage, how it works,
+                  and popular dStorage protocols & platforms like IPFS, Swarm,
+                  Filecoin, etc.
+                </p>
+              </div>
+              <div className="mt-2 flex items-center justify-between border-t border-t-white/10 py-2 px-4">
+                <div className="flex -space-x-2">
+                  <img
+                    className="inline-block h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <img
+                    className="inline-block h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                </div>
+
+                <button className="inline-flex items-center justify-center gap-x-2 rounded-full bg-white px-4 py-3 text-xs font-medium text-black/[85%] hover:bg-slate-100">
+                  <Eye size={16} className="stroke-black" />
+                  Read
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 };

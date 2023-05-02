@@ -1,24 +1,23 @@
 import type { FC, PropsWithChildren } from "react";
 
 import Menu from "./Menu";
-import Footer from "./Footer";
-import type { General, StrapiSingleData } from "../types";
-import ThemeToggle from "./ThemeToggle";
+// import Footer from "./Footer";
+import { General, StrapiSingleData } from "../types";
+// import ThemeToggle from "./ThemeToggle";
 
-const isDevelopment = process.env.NODE_ENV === "development";
+// const isDevelopment = process.env.NODE_ENV === "development";
 
 type LayoutProps = {
   general: StrapiSingleData<General>;
 };
 
-const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, general }) => {
+const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children }) => {
   return (
     <>
-      <div className="container mx-auto flex">
+      <div className="flex">
         <Menu />
-        <div className="w-full">
+        <div className="w-full px-6">
           {children}
-          {/*<Footer data={general.data.attributes.Footer} />*/}
         </div>
       </div>
     </>
