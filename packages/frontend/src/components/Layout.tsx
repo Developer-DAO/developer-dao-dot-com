@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from "react";
 
 import Menu from "./Menu";
 import Footer from "./Footer";
-import { General, StrapiSingleData } from "../types";
+import type { General, StrapiSingleData } from "../types";
 import ThemeToggle from "./ThemeToggle";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -18,7 +18,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, general }) => {
         <Menu />
         <div className="w-full">
           {children}
-          <Footer data={general.data.attributes.Footer} />
+          {/*<Footer data={general.data.attributes.Footer} />*/}
         </div>
       </div>
     </>

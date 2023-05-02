@@ -11,7 +11,7 @@ import Discord from "../../public/icons/discord.svg";
 import PartnerIcon from "../../public/icons/partner.svg";
 
 import { client } from "../hooks/useUrql";
-import { General, HomePage, Media, Partner, StrapiSingleData } from "../types";
+import type { General, HomePage, Media, Partner, StrapiSingleData } from "../types";
 
 type HomeProps = {
   general: StrapiSingleData<General>;

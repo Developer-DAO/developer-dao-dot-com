@@ -1,5 +1,5 @@
-import { Media } from "../general";
-import { StrapiId, StrapiSingleData } from "../strapi";
+import type { Media } from "../general";
+import type { StrapiId, StrapiSingleData } from "../strapi";
 
 export type Partner = StrapiId & {
   name: string;

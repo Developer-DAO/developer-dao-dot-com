@@ -1,8 +1,10 @@
 import Image from "next/image";
 import NextLink from "next/link";
-import { FC, useCallback } from "react";
+import type { FC} from "react";
+import { useCallback } from "react";
 
-import { Footer, Link, SocialLinkName } from "../types";
+import type { Link, SocialLinkName } from "../types";
+import { Footer } from "../types";
 import { useTheme } from "next-themes";
 import { Twitter, Youtube, GitHub } from "react-feather";
 import OpenSeaIcon from "./OpenSeaIcon";

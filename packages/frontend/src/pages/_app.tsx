@@ -5,7 +5,7 @@ import "../styles/globals.css";
 
 import { client } from "../hooks/useUrql";
 import Layout from "../components/Layout";
-import { General, StrapiSingleData } from "../types";
+import type { General, StrapiSingleData } from "../types";
 
 import { Provider } from "urql";
 
@@ -13,12 +13,18 @@ const App = ({
   Component,
   pageProps,
   general,
-}: AppProps & { general: StrapiSingleData<General> }) => {
+}: AppProps
+  & { general: StrapiSingleData<General> }
+) => {
   return (
     <Provider value={client}>
       <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
-        <Layout general={general}>
-          <Component {...pageProps} general={general} />
+        <Layout
+          general={general}
+        >
+          <Component {...pageProps}
+            general={general}
+          />
         </Layout>
       </ThemeProvider>
     </Provider>
@@ -78,7 +84,10 @@ App.getInitialProps = async () => {
     )
     .toPromise();
 
-  return { general: data.general };
+
+  return {
+    general: data.general
+  };
 };
 
 export default App;

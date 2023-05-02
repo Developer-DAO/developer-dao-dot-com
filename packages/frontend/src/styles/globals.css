@@ -4,6 +4,6 @@
 
 @layer component {
   .bg-main {
-    @apply dark:bg-gradient-to-r dark:from-[#090909] dark:to-[#222222];
+    @apply dark:bg-gradient-to-br dark:from-[#090909] dark:to-[#222222];
   }
 }

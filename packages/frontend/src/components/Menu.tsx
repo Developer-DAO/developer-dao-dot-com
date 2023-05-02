@@ -13,7 +13,8 @@ import Book from "../../public/icons/book.svg";
 import Tools from "../../public/icons/tools.svg";
 import Sparkles from "../../public/icons/sparkles.svg";
 import Diamond from "../../public/icons/diamond.svg";
-import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { useState } from "react";
 import { useTheme } from "next-themes";
 
 const menuItems = [
@@ -69,6 +70,15 @@ const footerItems = [
     logoComponent: GitHub,
   },
 ];
+
+
+const MenuItemContainer = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="flex h-10 w-10 items-center justify-center rounded-[20px] border border-white/30 bg-[#353535] group-hover:bg-white group-hover:rounded-lg group-hover:before:opacity-100 before:opacity-0 before:absolute before:bg-[#D7D7D7] before:rounded-full before:w-2 before:h-2 before:-left-1/2 before:transition-opacity transition-[border-radius_background-color] duration-100">
+      {children}
+    </div>
+  )
+}
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,31 +138,28 @@ const Menu = () => {
 
       <div id="desktop-menu" className="hidden w-28 justify-center lg:flex">
         <div className="invisible w-28" />
-        <div className="fixed top-8 bottom-8 flex h-[calc(100vh-64px)] w-24 flex-col items-center rounded-full border bg-[#565656]/30 p-2 ">
-          <div className="relative h-24 w-full">
-            <Image
+        <div className="fixed top-8 bottom-8 flex h-[calc(100vh-64px)] w-24 flex-col items-center rounded-full border border-white/30 bg-[#565656]/30 p-2 py-5">
+          <div className="relative w-full">
+            <img
               src="/D_D_logo-light.svg"
               alt="D_D Logo"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-full"
+              className="rounded-full object-cover object-center h-20 w-20"
             />
           </div>
           <div className="flex h-full w-full flex-col items-center justify-between">
             <div className="flex w-full flex-col p-2">
               <div className="mb-4">
-                <hr />
+                <hr className="border-white/10" />
               </div>
               <div className="flex flex-col items-center gap-3">
                 {menuItems.map((menuItem) => (
                   <Link key={menuItem.id} href={menuItem.link}>
-                    <a>
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-[#353535]">
+                    <a className="relative group">
+                      <MenuItemContainer>
                         <menuItem.logoIcon
-                          style={{ display: "flex", margin: "auto" }}
-                          stroke="#c2c2c2"
+                          className="flex mx-auto text-[#c2c2c2] group-hover:text-black"
                         />
-                      </div>
+                      </MenuItemContainer>
                     </a>
                   </Link>
                 ))}
@@ -160,7 +167,7 @@ const Menu = () => {
             </div>
             <div>
               <div className="mb-4">
-                <hr />
+                <hr className="border-white/10" />
               </div>
               <div className="flex flex-col items-center gap-3">
                 {footerItems.map((footerItem) => (
@@ -169,10 +176,11 @@ const Menu = () => {
                     href={footerItem.url}
                     target="_blank"
                     rel="noreferrer"
+                    className="relative group"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-[#353535]">
-                      <footerItem.logoComponent size={16} color="#c2c2c2" />
-                    </div>
+                    <MenuItemContainer>
+                      <footerItem.logoComponent size={16} className="text-[#c2c2c2] group-hover:text-black" />
+                    </MenuItemContainer>
                   </a>
                 ))}
               </div>

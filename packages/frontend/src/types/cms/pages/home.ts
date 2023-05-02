@@ -1,6 +1,6 @@
-import { Link, MetaOpenGraph, Statement } from "../general";
-import { StrapiComponent, StrapiId, StrapiMultipleData } from "../strapi";
-import { Partner } from "../collection";
+import type { Link, MetaOpenGraph, Statement } from "../general";
+import type { StrapiComponent, StrapiId, StrapiMultipleData } from "../strapi";
+import type { Partner } from "../collection";
 import { Footer } from "../footer";
 
 export type HomePage = {

@@ -1,5 +1,5 @@
-import { Link, Media } from "./general";
-import { StrapiComponent, StrapiId, StrapiSingleData } from "./strapi";
+import type { Link, Media } from "./general";
+import type { StrapiComponent, StrapiId, StrapiSingleData } from "./strapi";
 
 export type Footer = StrapiId & {
   logo: StrapiSingleData<Media>;

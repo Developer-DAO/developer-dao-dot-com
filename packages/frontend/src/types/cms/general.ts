@@ -1,5 +1,5 @@
-import { Footer } from "./footer";
-import { StrapiId, StrapiSingleData } from "./strapi";
+import type { Footer } from "./footer";
+import type { StrapiId, StrapiSingleData } from "./strapi";
 
 export type Media = {
   provider: "local" | string;
