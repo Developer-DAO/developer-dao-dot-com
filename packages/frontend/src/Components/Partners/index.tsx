@@ -61,6 +61,7 @@ const Partners = ({ data: partners }: PartnersProps) => {
                 mb={{ base: '4rem', xl: '0' }}
                 mx={{ base: '0', xl: '3rem' }}
                 target="_blank"
+                maxW={'300px'}
               >
                 <img
                   loading="lazy"
