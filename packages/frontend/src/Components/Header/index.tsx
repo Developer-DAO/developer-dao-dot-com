@@ -249,7 +249,7 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
         />
         <Link
           target="_blank"
-          href="https://airtable.com/shrYLrOrjhOHJUdVl"
+          href="https://devdao.to/partner-with-us"
           width="full"
           display={{ base: 'flex', md: 'none' }}
           justifyContent={{ base: 'space-between' }}
