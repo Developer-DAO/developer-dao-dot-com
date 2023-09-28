@@ -19,7 +19,7 @@ interface PartnersProps {
 const Partners = ({ data: partners }: PartnersProps) => {
   const { colorMode } = useColorMode();
   const handleButtonClick = useCallback(() => {
-    const partnerFormUrl = 'https://airtable.com/shrYLrOrjhOHJUdVl';
+    const partnerFormUrl = 'https://devdao.to/partner-with-us';
     window.open(partnerFormUrl, '_blank');
   }, []);
 
