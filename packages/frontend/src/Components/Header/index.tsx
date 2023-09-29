@@ -32,7 +32,7 @@ const NavLinks = [
     href: 'https://forum.developerdao.com/',
   },
   {
-    text: 'Partner with us',
+    text: 'Partner',
     href: 'https://airtable.com/appDMMIARfSeiovpk/shrZExypPetXEx6Ox',
   },
 ];
