@@ -6,6 +6,7 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import { FaDiscord } from 'react-icons/fa';
+import { SiSubstack } from 'react-icons/si';
 import { HomePage } from '../../types';
 
 import mainImg from '../../../public/main.png';
@@ -54,7 +55,7 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
             {t(subHeading!)}
           </Text>
           <Flex justifyContent="start" w="100" mt="3rem">
-            {/* <Button
+            <Button
               px="1.5rem"
               border="1px solid black"
               borderRadius="0.625rem"
@@ -68,22 +69,26 @@ const Intro: FC<IntroProps> = ({ heading, subHeading }) => {
                 color: 'white',
               }}
               onClick={() => {
-                window.open('https://claim.developerdao.com', '_blank');
+                window.open('https://developerdao.substack.com/', '_blank');
               }}
             >
-              Claim $CODE
-            </Button> */}
+              <Box as={SiSubstack} mr=".75rem" fontSize="2rem" color="black" />
+              <Box>
+                <Text>Subscribe</Text>
+                <Text fontSize="0.75rem">to our newsletter</Text>
+              </Box>
+            </Button>
 
             <Button
               px="1.5rem"
               border="1px solid white"
               borderRadius="0.625rem"
               maxW={{ base: '75%', md: '20rem' }}
-              bg="white"
-              color="black"
+              bg="black"
+              color="white"
               flexGrow={1}
               py={{ base: '1.75rem', xl: '2rem' }}
-              // ml={{ base: '0', xl: '2rem' }}
+              ml={{ base: '0', xl: '2rem' }}
               fontSize={{ base: '0.875rem', xl: '1.25rem' }}
               _hover={{
                 bg: 'black',

@@ -24,20 +24,16 @@ const NavLinks = [
     href: 'https://academy.developerdao.com',
   },
   {
-    text: 'Twitter',
-    href: 'https://twitter.com/developer_dao',
+    text: 'Agency',
+    href: 'https://agency.developerdao.com/',
   },
   {
-    text: 'Newsletter',
-    href: 'https://developerdao.substack.com/',
-  },
-  {
-    text: 'Forum',
+    text: 'Governance',
     href: 'https://forum.developerdao.com/',
   },
   {
-    text: 'Jobs',
-    href: 'https://developerdao.pallet.com/jobs',
+    text: 'Partner with us',
+    href: 'https://airtable.com/appDMMIARfSeiovpk/shrZExypPetXEx6Ox',
   },
 ];
 
