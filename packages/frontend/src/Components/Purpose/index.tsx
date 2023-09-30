@@ -111,7 +111,7 @@ const Purpose: FC<PurposeProps> = ({ values, mission, goals }) => {
             </OrderedList>
           </Box>
         </Box>
-        <LinkBox
+        {/* <LinkBox
           as="article"
           rounded="10"
           border="1px solid black"
@@ -121,7 +121,6 @@ const Purpose: FC<PurposeProps> = ({ values, mission, goals }) => {
           height="18rem"
           padding="1rem"
         >
-          {/*todo: check if need to add to CMS*/}
           <LinkOverlay href={DEVELOPER_DAO_WIKI} target="_blank">
             <Icon
               as={BsArrowUpRight}
@@ -142,7 +141,7 @@ const Purpose: FC<PurposeProps> = ({ values, mission, goals }) => {
               </Text>
             </Box>
           </LinkOverlay>
-        </LinkBox>
+        </LinkBox> */}
       </Flex>
     </Flex>
   );
