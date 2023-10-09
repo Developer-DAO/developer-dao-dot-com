@@ -32,6 +32,10 @@ const NavLinks = [
     href: 'https://forum.developerdao.com/',
   },
   {
+    text: 'Jobs',
+    href: 'https://devdao.to/jobs',
+  },
+  {
     text: 'Partner',
     href: 'https://airtable.com/appDMMIARfSeiovpk/shrZExypPetXEx6Ox',
   },
